@@ -11,3 +11,15 @@ http://www.sciencedirect.com/science/article/pii/S1361841509000516#
 Murphy et al.
 Automated detection of pulmonary nodules from low-dose computed tomography scans using a two-stage classification system based on local image features
 http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1299884
+
+Messay et al.
+A new computationally efficient CAD system for pulmonary nodule detection in CT imagery
+http://www.sciencedirect.com/science/article/pii/S1361841510000198
+
+Keshani et al.
+Lung nodule segmentation and recognition using SVM classifier and active contour modeling: a complete intelligent system
+http://www.sciencedirect.com/science/article/pii/S0010482512002089
+
+Guo and Li
+High performance lung nodule detection schemes in CT using local and global information
+http://scitation.aip.org/content/aapm/journal/medphys/39/8/10.1118/1.4737109
