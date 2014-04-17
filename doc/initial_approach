@@ -1,0 +1,20 @@
+Initial approach
+
+1. Segmentation
+	- As in assignment 5 with morphological operations.
+	- Threshold dark stuff.
+	
+2. Find spherical structuers as in assignment 3 (3d). Assumption: little to no pathways.
+
+3. Aggregate mask to single nodules.
+	- Assignment 4 (Connected Components module).
+	- Then find center (average of positions).
+
+4. Write nodule positions to file.
+
+Optional Noise filtering:
+	- See assignment 3.4
+	
+Filter out air pathways:
+	- See assignment 5 on vessel detection.
+	- Skeleton growing.
