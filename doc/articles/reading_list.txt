@@ -1,0 +1,13 @@
+Reading List
+
+Gineken et al.
+Comparing and combining algorithms for computer-aided detection of pulmonary nodules in computed tomography scans: The ANODE09 study
+http://www.sciencedirect.com/science/article/pii/S1361841510000587
+
+Murphy et al.
+A large-scale evaluation of automatic pulmonary nodule detection in chest CT using local image features and k-nearest-neighbour classification
+http://www.sciencedirect.com/science/article/pii/S1361841509000516#
+
+Murphy et al.
+Automated detection of pulmonary nodules from low-dose computed tomography scans using a two-stage classification system based on local image features
+http://proceedings.spiedigitallibrary.org/proceeding.aspx?articleid=1299884
