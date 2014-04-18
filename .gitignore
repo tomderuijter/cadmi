@@ -2,6 +2,9 @@
 *.raw
 *.mhd
 
+## MeVisLab files
+*.mlab.auto
+
 ## Default c++ gitignore
 # Compiled Object files
 *.slo
