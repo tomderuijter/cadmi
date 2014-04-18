@@ -4,12 +4,17 @@ network  {
 }
 module View3D {
   internal  {
-    frame = "-223 109 144 56"
+    frame = "-223 165 144 56"
     moduleGroupName = ""
     windows  {
       window _default {
         geometry = "465 286 988 675"
         sizeHint = "988 675"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "120 284 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
@@ -32,16 +37,16 @@ module View3D {
     orientationLocation = LOWER_RIGHT
     orientationOn = TRUE
     orientationModel = CUBE
-    greyCenter = 0.65999931
-    greyWidth = 0.61750036
+    greyCenter = 0.34749976
+    greyWidth = 0.46750036
     alphaFactor = 1
     colorFactor = "1 1 1"
     camType = TRUE
-    camPosition = "612.467163085938 -424.053100585938 180.811782836914"
-    camOrientation = "0.909934401512146 0.282735377550125 0.30344694852829 1.65904462337494"
+    camPosition = "-380.637145996094 -302.947509765625 238.453033447266"
+    camOrientation = "0.80672562122345 -0.128829538822174 -0.57671183347702 1.94338119029999"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 997.64557
-    camNear = 488.78009
+    camFar = 1012.7355
+    camNear = 473.72021
     camFocal = 742.95929
     camHeight = 0.78539801
     decoration = FALSE
@@ -121,12 +126,17 @@ module View3D {
 }
 module View2D {
   internal  {
-    frame = "-43 181 120 56"
+    frame = "-27 173 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "428 220 400 400"
+        geometry = "162 316 400 400"
         sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
@@ -136,7 +146,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 170
+    startSlice = 223
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -158,11 +168,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 156.449996948242"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 212.47278
-    lutWidth = 2480.6379
+    lutCenter = 42.072323
+    lutWidth = 2498.3862
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
