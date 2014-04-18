@@ -1,8 +1,0 @@
-
-Package {
-  packageGroup = "ANODE09"
-  packageName  = "General"
-
-  owner = "   wieke"
-  description = "Modules created for the ANODE09 competition."
-}
