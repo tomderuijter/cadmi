@@ -1,0 +1,33 @@
+//----------------------------------------------------------------------------------
+//! _MLAxisEdgeMask module definitions.
+/*!
+// \file    AxisEdgeMask.script
+// \author     wieke
+// \date    2014-04-23
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    margin = 3
+    CheckBox front {
+      tooltip = ""
+    }
+    CheckBox back {
+      tooltip = ""
+    }
+    CheckBox right {
+      tooltip = ""
+    }
+    CheckBox left {
+      tooltip = ""
+    }
+    CheckBox top {
+      tooltip = ""
+    }
+    CheckBox bottom {
+      tooltip = ""
+    }
+  }
+}

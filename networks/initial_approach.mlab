@@ -2,19 +2,157 @@
 network  {
   watchlist = ""
 }
-module View3D {
+module View2D {
   internal  {
-    frame = "-223 165 144 56"
+    frame = "-147 253 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "465 286 988 675"
-        sizeHint = "988 675"
+        geometry = "1029 206 400 400"
+        sizeHint = "400 400"
         wasOpen = no
       }
-      window _automatic {
-        geometry = "120 284 500 600"
-        sizeHint = "260 223"
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 360
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.40499988
+    lutWidth = 0.94000006
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "455 276 168 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "921 479 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PageToImageExtent1
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "467 92 144 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "61 609 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers2
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "471 196 136 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "769 563 381 233"
+        sizeHint = "381 233"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask1
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "291 252 80 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "822 687 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask1
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module View3D {
+  internal  {
+    frame = "-119 109 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "928 222 988 675"
+        sizeHint = "988 675"
         wasOpen = no
       }
     }
@@ -37,17 +175,17 @@ module View3D {
     orientationLocation = LOWER_RIGHT
     orientationOn = TRUE
     orientationModel = CUBE
-    greyCenter = 0.34749976
-    greyWidth = 0.46750036
+    greyCenter = 0.36499965
+    greyWidth = 0.46499974
     alphaFactor = 1
     colorFactor = "1 1 1"
     camType = TRUE
-    camPosition = "-380.637145996094 -302.947509765625 238.453033447266"
-    camOrientation = "0.80672562122345 -0.128829538822174 -0.57671183347702 1.94338119029999"
+    camPosition = "343.796173095703 900.685546875 252.403411865234"
+    camOrientation = "-0.0479925237596035 -0.668151259422302 -0.742476105690002 3.3654510974884"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 1012.7355
-    camNear = 473.72021
-    camFocal = 742.95929
+    camFar = 978.22583
+    camNear = 506.41714
+    camFocal = 742.0863
     camHeight = 0.78539801
     decoration = FALSE
     annotations = TRUE
@@ -95,13 +233,13 @@ module View3D {
     renderer.light3PolarRho = 0
     renderer.sizeOutputX = 512
     renderer.sizeOutputY = 512
-    renderer.sizeOutputZ = 491
+    renderer.sizeOutputZ = 480
     renderer.subVolumeStartX = 0
     renderer.subVolumeStartY = 0
     renderer.subVolumeStartZ = 0
     renderer.subVolumeEndX = 512
     renderer.subVolumeEndY = 512
-    renderer.subVolumeEndZ = 491
+    renderer.subVolumeEndZ = 480
     clip.hideGeometry = FALSE
     clip.on = FALSE
     clip.left = FALSE
@@ -124,14 +262,167 @@ module View3D {
     clip.rotation5 = "0.999999940395355 0 0 1.57079994678497"
   }
 }
-module View2D {
+module AxisEdgeMask {
   internal  {
-    frame = "-27 173 120 56"
-    moduleGroupName = ""
+    frame = "969 469 128 56"
+    moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "162 316 400 400"
-        sizeHint = "400 400"
+        geometry = "983 774 381 233"
+        sizeHint = "381 233"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask
+    front = TRUE
+    back = TRUE
+    right = FALSE
+    left = FALSE
+    top = FALSE
+    bottom = FALSE
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "303 -4 136 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "4 385 648 617"
+        sizeHint = "648 617"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "793 159 611 923"
+        sizeHint = "400 440"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing1
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -1000
+    upperThreshold = -940
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_3D_18_XYZ
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 2
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "-558 530 144 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1220 379 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50350
+    threshWidth = 99300
+    threshMin = 700
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "-622 394 128 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1126 366 648 617"
+        sizeHint = "648 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = 120
+    upperThreshold = 10000
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_4D_8_XYZT
+    extendedNeighborhoodType = ENBH_2D_4_XY
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.100000001490116
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeHounsfieldUnits
+    internalAccuracy = Auto
+    autoUpdateUnitType = FALSE
+    stretchOutputOverTime = FALSE
+    unitLabel = HU
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 30
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "-470 402 144 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1262 350 312 136"
+        sizeHint = "312 136"
         wasOpen = no
       }
       window _automatic {
@@ -142,56 +433,52 @@ module View2D {
     }
   }
   fields  {
-    instanceName = View2D
-    inventorInputOn = TRUE
-    inventorOutputOn = FALSE
-    view2DExtensionsOn = TRUE
-    startSlice = 223
-    numSlices = 1
-    numXSlices = 1
-    sliceStep = 1
-    slab = 1
-    blendMode = BLEND_REPLACE
-    timePoint = 0
-    maxTimePoint = 0
-    filterMode = FILTER_LINEAR
-    standardKeys = TRUE
-    cineMode = CINE_Z
-    cineDirection = CINE_PINGPONG
-    cineRepeat = CINE_ONCE
-    cineSpeed = 0.1
-    snapToCenter = FALSE
-    zoomMode = VIEW2D_AUTO_ZOOM
-    unzoomOnImageChange = FALSE
-    sliceZoom = 1
-    sliceZoomSynced = 1
-    baseColor = "1 1 1"
-    margin = "2 2"
-    sliceOrigin = "0 0"
-    plane = "0 0 1 156.449996948242"
-    useShaders = TRUE
-    useManagedInteraction = FALSE
-    lutCenter = 42.072323
-    lutWidth = 2498.3862
-    annotationOn = TRUE
-    annotationMode = ANNO_MODE_AUTO
-    annotationSizeMode = ANNO_SHOW_DETAILED
-    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
-    annotationFontSize = ANNO_SIZE_AUTO
-    annoCoords = Voxel
-    annoCTValue = AsIs
-    borderOn = FALSE
-    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
-    valueHighPrecision = TRUE
-    maxPrecision = 4
-    enableSlicing = TRUE
-    useRelativeLUTIfNoInputImage = FALSE
+    instanceName = MaskToMarkers1
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "881 197 176 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1153 496 676 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = TRUE
+    objectValue = 1
+    minClusterSize = 200
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
   }
 }
 module Mask {
   internal  {
-    frame = "-55 325 80 56"
-    moduleGroupName = ""
+    frame = "817 277 80 56"
+    moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
         geometry = "822 519 406 97"
@@ -199,18 +486,6 @@ module Mask {
         wasOpen = no
       }
     }
-  }
-  fields  {
-    instanceName = Mask1
-    mode = MaskedOriginal
-    blending = 0.5
-    background = -1000
-  }
-}
-module Mask {
-  internal  {
-    frame = "601 277 80 56"
-    moduleGroupName = "Lung Segmentation Mask"
   }
   fields  {
     instanceName = Mask
@@ -221,11 +496,11 @@ module Mask {
 }
 module FastMorphology {
   internal  {
-    frame = "656 99 136 64"
+    frame = "881 19 136 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "108 351 380 415"
+        geometry = "108 519 380 415"
         sizeHint = "380 415"
         wasOpen = no
       }
@@ -234,9 +509,9 @@ module FastMorphology {
   fields  {
     instanceName = Closing
     morphologicOperation = Closing
-    xSize = 4
-    ySize = 4
-    zSize = 4
+    xSize = 5
+    ySize = 5
+    zSize = 5
     cSize = 0
     tSize = 0
     uSize = 0
@@ -244,13 +519,13 @@ module FastMorphology {
     userSetMaxValue = 1
     autoUpdate = TRUE
     useGreyScaleMorphology = FALSE
-    boundaryHandling = "Pad with input min value"
+    boundaryHandling = "Propagate boundary values"
     boundaryFillValue = 0
   }
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "632 183 184 56"
+    frame = "857 103 184 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -308,7 +583,7 @@ module ImagePropertyConvert {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "540 471 176 56"
+    frame = "761 477 176 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -366,7 +641,7 @@ module ImagePropertyConvert {
 }
 module FastMorphology {
   internal  {
-    frame = "560 387 136 64"
+    frame = "781 393 136 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -395,7 +670,7 @@ module FastMorphology {
 }
 module PageToImageExtent {
   internal  {
-    frame = "740 543 160 56"
+    frame = "961 549 160 56"
     moduleGroupName = "Lung Segmentation Mask"
   }
   fields  {
@@ -410,7 +685,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "752 391 136 56"
+    frame = "973 397 136 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -431,7 +706,7 @@ module MaskToMarkers {
 }
 module RegionGrowing {
   internal  {
-    frame = "696 279 136 56"
+    frame = "909 281 152 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -482,29 +757,13 @@ module RegionGrowing {
     intervalSize = 15
   }
 }
-module FrontBackMask {
-  internal  {
-    frame = "756 463 128 56"
-    moduleGroupName = "Lung Segmentation Mask"
-    windows  {
-      window _default {
-        geometry = "769 539 381 57"
-        sizeHint = "381 57"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = FrontBackMask
-  }
-}
 module IntervalThreshold {
   internal  {
-    frame = "556 551 144 56"
+    frame = "777 553 144 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "44 349 412 372"
+        geometry = "676 407 412 372"
         sizeHint = "412 372"
         wasOpen = no
       }
@@ -530,11 +789,11 @@ module IntervalThreshold {
 }
 module itkImageFileReader {
   internal  {
-    frame = "-91 477 152 56"
+    frame = "-43 653 152 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "25 335 322 411"
+        geometry = "360 449 322 411"
         sizeHint = "300 411"
         wasOpen = no
       }
@@ -553,25 +812,35 @@ module itkImageFileReader {
     loaderType = MetaImageIO
     outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
 "
-    unresolvedFileName = /mnt/Multimedia/CADMICompetition/examples/example04.mhd
+    unresolvedFileName = /mnt/Multimedia/CADMICompetition/examples/example05.mhd
   }
 }
 connections  {
-  View3D.inImage = Mask1.output0
-  View2D.inImage = Mask1.output0
+  View2D.inImage = AxisEdgeMask1.output0
+  PageToImageExtent1.input0 = Closing.output0
+  MaskToMarkers2.input0 = AxisEdgeMask1.output0
+  AxisEdgeMask1.input0 = PageToImageExtent1.output0
   Mask1.input0 = itkImageFileReader.output0
   Mask1.input1 = Closing.output0
+  View3D.inImage = RegionGrowing1.output0
+  AxisEdgeMask.input0 = PageToImageExtent.output0
+  RegionGrowing1.input0 = Mask1.output0
+  RegionGrowing1.inMarkerList = MaskToMarkers2.outputXMarkerList
+  IntervalThreshold.input0 = itkImageFileReader.output0
+  RegionGrowing.input0 = itkImageFileReader.output0
+  RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
+  MaskToMarkers1.input0 = IntervalThreshold.output0
+  ConnectedComponents.input0 = Mask.output0
   Mask.input0 = Opening.output0
   Mask.input1 = OutsideAirRemoval.output0
   Closing.input0 = ImagePropertyConvert1.output0
-  ImagePropertyConvert1.input0 = Mask.output0
+  ImagePropertyConvert1.input0 = ConnectedComponents.output0
   ImagePropertyConvert.input0 = LungAirFilter.output0
   Opening.input0 = ImagePropertyConvert.output0
   PageToImageExtent.input0 = Opening.output0
-  MaskToMarkers.input0 = FrontBackMask.output0
+  MaskToMarkers.input0 = AxisEdgeMask.output0
   OutsideAirRemoval.input0 = Opening.output0
   OutsideAirRemoval.inMarkerList = MaskToMarkers.outputXMarkerList
-  FrontBackMask.input0 = PageToImageExtent.output0
   LungAirFilter.input0 = itkImageFileReader.output0
 }
 networkModel  {
@@ -580,6 +849,28 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 65
         objectName = "Lung Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 54
+        objectName = "Skeleton Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 62
+        objectName = "Airway Segmentation Mask"
         parentUniqueId = 0
         color  {
           r = 45

@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask.Release: /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/_MLAxisEdgeMask.pro
+#	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLAxisEdgeMask
+#/home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask.Debug: /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/_MLAxisEdgeMask.pro
+#	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLAxisEdgeMask
+
+release: #/home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask.Release
+	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask
+	$(MAKE) -k -j 4 -f Makefile._MLAxisEdgeMask.Release
+debug: #/home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask.Debug 
+	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask 
+	$(MAKE) -k -j 4 -f Makefile._MLAxisEdgeMask.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask && if test -e Makefile._MLAxisEdgeMask.Release; then $(MAKE) -k -f Makefile._MLAxisEdgeMask.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask && if test -e Makefile._MLAxisEdgeMask.Debug; then $(MAKE) -k -f Makefile._MLAxisEdgeMask.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

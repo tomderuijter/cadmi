@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLAxisEdgeMask module definitions.
+/*!
+// \file    _MLAxisEdgeMask.def
+// \author     wieke
+// \date    2014-04-23
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule AxisEdgeMask {
+  DLL                = "_MLAxisEdgeMask"
+
+  genre              = ""
+  author             = "   wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/AxisEdgeMask.script
+}  
