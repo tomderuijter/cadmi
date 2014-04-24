@@ -2,288 +2,37 @@
 network  {
   watchlist = ""
 }
-module MorphologicalGradient {
+module ImageStatistics {
   internal  {
-    frame = "185 85 144 56"
+    frame = "397 141 104 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "535 349 208 157"
-        sizeHint = "208 157"
+        geometry = "400 119 479 617"
+        sizeHint = "479 617"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = MorphologicalGradient
-    dilationSize = 3
-    erosionSize = 3
-    sphericalKernel = FALSE
-    threeDimensional = FALSE
-    gradientType = Central
-  }
-}
-module ExtendedConvolution {
-  internal  {
-    frame = "213 357 136 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "476 198 327 458"
-        sizeHint = "327 458"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = ExtendedConvolution
-    borderHandling = PadSrcClamp
-    fillValue = 0
-    referenceExtentMode = Overlap
-    kernelX = 3
-    kernelY = 3
-    kernelZ = 1
-    kernelC = 1
-    kernelT = 1
-    kernelU = 1
-    makeSpherical = FALSE
-    intervalMinOfFilteredVoxels = 0
-    intervalMaxOfFilteredVoxels = 1024
-    useIntervalOfFilteredVoxels = FALSE
-    intervalMinOfVoxelsForFiltering = 1
-    intervalMaxOfVoxelsForFiltering = 4095
-    useIntervalOfVoxelsForFiltering = FALSE
-    kernelInfo = "9 elems, 3x3x1x1x1x1"
-    numKernelElements = 9
-    kernelElementsSum = 1
-    kernelType = "Gauss Kernel"
-  }
-}
-module SoView2DOverlay {
-  internal  {
-    frame = "125 -111 120 64"
-    moduleGroupName = "Marked View"
-    windows  {
-      window _automatic {
-        geometry = "786 409 355 440"
-        sizeHint = "355 440"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Overlay
-    drawingOn = TRUE
-    editingOn = TRUE
-    maskValid = TRUE
-    fixZOn = TRUE
-    color = "1 1 1"
-    selectionTolerance = 4
-    needsValidVoxel = TRUE
-    button1 = IGNORED
-    button2 = IGNORED
-    button3 = IGNORED
-    shift = IGNORED
-    control = IGNORED
-    alt = IGNORED
-    wantsAllEvents = TRUE
-    wantsKeyEvents = TRUE
-    wantsMouseWheelEvents = FALSE
-    setEventHandled = FALSE
-    ignoreHandledEvents = FALSE
-    createNewMode = FALSE
-    renderOnSlab = TRUE
-    clipToSlice = TRUE
-    cursorShape = DEFAULT_CURSOR
-    cacheTextures = FALSE
-    blendMode = BLEND_BLEND
-    overwriteCurrentTimePoint = TRUE
-    timePoint = 0
-    maxTimePoint = 0
-    filterMode = FILTER_LINEAR
-    inheritFilterMode = TRUE
-    lutPrecision = VIEW2D_LUT_AUTO
-    alphaFactor = 0.5
-    baseColor = "1 0.420675009489059 0"
-    useWorldCoords = FALSE
-    applyLut = TRUE
-    isCheckerTiling = FALSE
-    checkerTileSize = 2
-    areCheckerTilesInverted = FALSE
-  }
-}
-module SoView2DMarkerEditor {
-  internal  {
-    frame = "501 -111 152 64"
-    moduleGroupName = "Marked View"
-    windows  {
-      window _default {
-        geometry = "302 75 701 704"
-        sizeHint = "675 704"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = MarkerListEditor
-    drawingOn = TRUE
-    editingOn = TRUE
-    maskValid = FALSE
-    fixZOn = TRUE
-    color = "1 0.0284010004252195 0.165316000580788"
-    selectionTolerance = 3
-    needsValidVoxel = TRUE
-    button1 = PRESSED
-    button2 = IGNORED
-    button3 = IGNORED
-    shift = IGNORED
-    control = IGNORED
-    alt = IGNORED
-    wantsAllEvents = FALSE
-    wantsKeyEvents = FALSE
-    wantsMouseWheelEvents = FALSE
-    setEventHandled = FALSE
-    ignoreHandledEvents = FALSE
-    createNewMode = TRUE
-    renderOnSlab = FALSE
-    clipToSlice = FALSE
-    cursorShape = UNDEFINED_CURSOR
-    depthVisibility = 2
-    snapToVoxel = TRUE
-    snapToSlice = TRUE
-    currentType = 0
-    deleteOnClick = TRUE
-    addOnClick = TRUE
-    alphaFactor = 1
-    minimumAlpha = 0
-    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
-    useIconFile = FALSE
-    iconIdx = 0
-    drawMarkerShapesWithLines = FALSE
-    selectingOn = TRUE
-    actOnReleaseOnly = TRUE
-    editorMode = EDIT_MARKER
-    colorMode = COLOR_BY_TYPE
-    textColorMode = COLOR_TEXT
-    textMode = TEXT_OFF
-    textPosition = TEXT_POSITION_RIGHT_BELOW
-    textColor = "1 1 1"
-    textShadow = TRUE
-    textFontSize = 12
-    showTextOnlyForSelectedMarker = FALSE
-    cutText = FALSE
-    maxNumberOfLines = 1
-    vectorArrow = VECTOR_END_ARROW
-    vectorLineWidth = 1
-    useAntiAlias = FALSE
-    useVectorLengthAsMarkerSize = FALSE
-    depthVectorDrawMode = DRAW_NONE
-    drawMode = DRAW_MARKER
-    highlightSelection = TRUE
-    selectiveDrawing = FALSE
-    selectionBoxesForCurrentOnly = FALSE
-    cooperative = TRUE
-    overwriteCurrentTimePoint = FALSE
-    newCurrentTimePoint = 0
-    depthVisibilityMode = DEPTH_IN_SLICES
-    listString = ""
-    index = 3
-    persistent = FALSE
-    listStringEnable = TRUE
-    ownsList = TRUE
-    applySelect = FALSE
-    id = 4
-    name = ""
-    newName = ""
-    overflowMode = None
-    maxSize = 0
-    useInsertTemplate = FALSE
-    upToDate = TRUE
-    posXYZ = "114.902389526367 249.058685302734 199.5"
-    posC = 0
-    posT = 0
-    posU = 0
-    vecXYZ = "0 0 0"
-    type = 0
-    newPosXYZ = "0 0 0"
-    newPosC = 0
-    newPosT = 0
-    newPosU = 0
-    newVecXYZ = "0 0 0"
-    newType = 0
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = FALSE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
   }
 }
 module View2D {
   internal  {
-    frame = "45 -263 120 64"
-    moduleGroupName = "Marked View"
-    windows  {
-      window _automatic {
-        geometry = "153 45 301 440"
-        sizeHint = "301 440"
-        wasOpen = no
-      }
-      window _default {
-        geometry = "-1101 118 400 400"
-        sizeHint = "400 400"
-        wasOpen = yes
-      }
-    }
-  }
-  fields  {
-    instanceName = view
-    inventorInputOn = TRUE
-    inventorOutputOn = FALSE
-    view2DExtensionsOn = TRUE
-    startSlice = 153
-    numSlices = 1
-    numXSlices = 1
-    sliceStep = 1
-    slab = 1
-    blendMode = BLEND_REPLACE
-    timePoint = 0
-    maxTimePoint = 0
-    filterMode = FILTER_LINEAR
-    standardKeys = TRUE
-    cineMode = CINE_Z
-    cineDirection = CINE_PINGPONG
-    cineRepeat = CINE_ONCE
-    cineSpeed = 0.1
-    snapToCenter = TRUE
-    zoomMode = VIEW2D_AUTO_ZOOM
-    unzoomOnImageChange = FALSE
-    sliceZoom = 1
-    sliceZoomSynced = 1
-    baseColor = "1 1 1"
-    margin = "2 2"
-    sliceOrigin = "0 0"
-    plane = "0 0 1 214.899993896484"
-    useShaders = TRUE
-    useManagedInteraction = FALSE
-    lutCenter = 256.5
-    lutWidth = 2513
-    annotationOn = TRUE
-    annotationMode = ANNO_MODE_AUTO
-    annotationSizeMode = ANNO_SHOW_DETAILED
-    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
-    annotationFontSize = ANNO_SIZE_AUTO
-    annoCoords = Voxel
-    annoCTValue = AsIs
-    borderOn = TRUE
-    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
-    valueHighPrecision = FALSE
-    maxPrecision = 4
-    enableSlicing = TRUE
-    useRelativeLUTIfNoInputImage = FALSE
-  }
-}
-module View2D {
-  internal  {
-    frame = "525 525 120 56"
+    frame = "21 477 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "666 120 400 400"
+        geometry = "439 255 400 400"
         sizeHint = "400 400"
         wasOpen = no
       }
@@ -294,7 +43,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 151
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -316,11 +65,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 212.099990844727"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 401
-    lutWidth = 2513
+    lutCenter = 352
+    lutWidth = 701
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -336,15 +85,566 @@ module View2D {
     useRelativeLUTIfNoInputImage = FALSE
   }
 }
-module View3D {
+module Threshold {
   internal  {
-    frame = "569 149 144 56"
+    frame = "89 717 80 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "-21 52 988 669"
-        sizeHint = "988 669"
+        geometry = "502 395 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold
+    threshold = 1
+    minValue = 0
+    maxValue = 701
+    relativeThreshold = FALSE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "-330 259 136 56"
+    moduleGroupName = Sphericity
+  }
+  fields  {
+    instanceName = PageToImageExtent2
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-338 323 152 56"
+    moduleGroupName = Sphericity
+  }
+  fields  {
+    instanceName = ImagePropertyConvert2
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "-142 391 144 64"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "482 339 676 433"
+        sizeHint = "523 433"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SelectCandidates
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module MorphologicalGradient {
+  internal  {
+    frame = "-150 307 144 56"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "535 377 208 157"
+        sizeHint = "208 157"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MorphologicalGradient
+    dilationSize = 3
+    erosionSize = 3
+    sphericalKernel = TRUE
+    threeDimensional = TRUE
+    gradientType = Central
+  }
+}
+module Sphericity {
+  internal  {
+    frame = "-174 187 80 56"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "449 469 381 84"
+        sizeHint = "381 84"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Sphericity
+    threshold = 0.050000001
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "381 -11 88 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "555 160 689 529"
+        sizeHint = "689 529"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 0 1"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 4
+    lineWidth3 = 4
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = None
+    markerType2 = Circle
+    markerType3 = Circle
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 4
+    markerSize2 = 8
+    markerSize3 = 8
+    markerSize4 = 4
+    markerSize5 = 4
+    markerSize6 = 4
+    markerSize7 = 4
+    markerSize8 = 4
+    markerSize9 = 4
+    markerSize10 = 4
+    markerSize11 = 4
+    markerSize12 = 4
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = 1
+    name3 = 2
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 1
+    currentColor = "1 1 0"
+    currentLineStyle = Solid
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "445 -155 152 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "302 75 701 704"
+        sizeHint = "675 704"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = FALSE
+    iconIdx = 0
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = -1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module ConstantXMarkerList {
+  internal  {
+    frame = "509 1 136 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "343 231 394 569"
+        sizeHint = "394 569"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "410 187 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AnnotationMarkers
+    markerList = "108 288 374 
+102 283 216 
+175 173 209 
+\\"
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "325 -115 120 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "290 180 698 551"
+        sizeHint = "698 551"
         wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+example_path = "/home/wieke/git-workspace/cadmi/data/example_annotations.txt"
+
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath, "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				markers += str(int(int(fields[1]) * scale)) + " "
+				markers += str(int(int(fields[2]) * scale)) + " "
+				markers += str(int(int(fields[3]) * scale)) + " "
+				#markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers*"
+    wakeUpCode = ""
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path,1,1)*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "45 -231 120 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _automatic {
+        geometry = "153 45 301 440"
+        sizeHint = "301 440"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "82 373 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = view
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = TRUE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 1
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = FALSE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module View3D {
+  internal  {
+    frame = "17 629 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "145 121 988 669"
+        sizeHint = "988 669"
+        wasOpen = no
       }
     }
   }
@@ -366,17 +666,17 @@ module View3D {
     orientationLocation = LOWER_RIGHT
     orientationOn = TRUE
     orientationModel = CUBE
-    greyCenter = 0.42499971
-    greyWidth = 0.44249979
+    greyCenter = 0.68249983
+    greyWidth = 0.34250006
     alphaFactor = 1
     colorFactor = "1 1 1"
     camType = TRUE
-    camPosition = "81.6499633789062 777.126770019531 186.200561523438"
-    camOrientation = "-0.0515891052782536 0.671091079711914 0.739577829837799 3.21227121353149"
+    camPosition = "468.804748535156 870.136108398438 88.6471939086914"
+    camOrientation = "-0.199752762913704 -0.715074479579926 -0.669901072978973 3.30272388458252"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 816.10986
-    camNear = 435.83472
-    camFocal = 625.78265
+    camFar = 1002.7804
+    camNear = 486.38864
+    camFocal = 744.32709
     camHeight = 0.78539801
     decoration = FALSE
     annotations = TRUE
@@ -424,13 +724,13 @@ module View3D {
     renderer.light3PolarRho = 0
     renderer.sizeOutputX = 256
     renderer.sizeOutputY = 256
-    renderer.sizeOutputZ = 181
+    renderer.sizeOutputZ = 228
     renderer.subVolumeStartX = 0
     renderer.subVolumeStartY = 0
     renderer.subVolumeStartZ = 0
     renderer.subVolumeEndX = 256
     renderer.subVolumeEndY = 256
-    renderer.subVolumeEndZ = 181
+    renderer.subVolumeEndZ = 228
     clip.hideGeometry = FALSE
     clip.on = FALSE
     clip.left = FALSE
@@ -453,73 +753,28 @@ module View3D {
     clip.rotation5 = "0.999999940395355 0 0 1.57079994678497"
   }
 }
-module SynchroView2D {
-  internal  {
-    frame = "433 109 112 56"
-    moduleGroupName = ""
-    windows  {
-      window _automatic {
-        geometry = "389 127 500 600"
-        sizeHint = "260 223"
-        wasOpen = no
-      }
-      window _default {
-        geometry = "55 390 804 400"
-        sizeHint = "804 400"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = SynchroView2D
-    leftInventorInputOn = FALSE
-    rightInventorInputOn = FALSE
-    synchSlicing = TRUE
-    synchZooming = TRUE
-    synchTiming = TRUE
-    synchLUTs = FALSE
-    disconnectOnHide = TRUE
-    snapToCenter1 = FALSE
-    snapToCenter2 = FALSE
-    slice1 = 51
-    timepoint1 = 0
-    filterMode = FILTER_LINEAR
-    slice2 = 51
-    timepoint2 = 0
-    lut1w = 2513
-    lut1c = 256.5
-    lut2w = 2513
-    lut2c = 256.5
-    annotationColor = "0.899999976158142 0.899999976158142 0.899999976158142"
-    borderOn = FALSE
-    drawCurrentPos = FALSE
-    showCurrentPos = FALSE
-    worldPosition = "175.194351196289 80.5706634521484 146.300003051758"
-    background = "0 0 0"
-  }
-}
 module IntervalThreshold {
   internal  {
-    frame = "537 269 128 56"
+    frame = "413 649 136 64"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "2094 410 412 369"
+        geometry = "433 356 412 366"
         sizeHint = "412 366"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = IntervalThreshold1
-    lowerType = ImgMin
-    innerType = ImgOrig
-    upperType = ImgMin
+    instanceName = RemoveDenseMatter
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
     centerWidthSet = FALSE
-    threshCenter = -36
-    threshWidth = 672
+    threshCenter = 64
+    threshWidth = 872
     threshMin = -372
-    threshMax = 300
+    threshMax = 500
     lowerUserValue = 0
     innerUserValue = 1
     upperUserValue = 0
@@ -530,37 +785,18 @@ module IntervalThreshold {
 }
 module Mask {
   internal  {
-    frame = "393 445 80 56"
+    frame = "425 729 112 64"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "502 379 406 97"
+        geometry = "502 407 406 97"
         sizeHint = "274 97"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Mask3
-    mode = MaskedOriginal
-    blending = 0.5
-    background = -1000
-  }
-}
-module Mask {
-  internal  {
-    frame = "353 349 80 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "502 379 406 97"
-        sizeHint = "274 97"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Mask2
+    instanceName = ApplyLungMask
     mode = MaskedOriginal
     blending = 0.5
     background = -1000
@@ -568,11 +804,11 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "433 669 96 56"
+    frame = "425 837 96 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "459 282 360 347"
+        geometry = "459 338 360 347"
         sizeHint = "360 347"
         wasOpen = no
       }
@@ -586,15 +822,15 @@ module Resample3D {
     filterAlways = FALSE
     filterAlwaysTolerance = 0
     zoom = "0.5 0.5 0.5"
-    imageSize = "256 256 181"
-    voxelSize = "1.24218797683716 1.24218797683716 1.39999997615814"
+    imageSize = "256 256 228"
+    voxelSize = "1.44921803474426 1.44921803474426 1.39999997615814"
     subVoxelShift = "0 0 0"
     useReferenceImage = FALSE
   }
 }
 module ConnectedComponents {
   internal  {
-    frame = "-546 226 152 56"
+    frame = "1257 192 152 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -628,7 +864,7 @@ module ConnectedComponents {
 }
 module PageToImageExtent {
   internal  {
-    frame = "-88 491 136 56"
+    frame = "1367 892 136 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -650,7 +886,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "-80 307 120 56"
+    frame = "1375 708 120 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -671,7 +907,7 @@ module MaskToMarkers {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "-76 411 112 56"
+    frame = "1379 812 112 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -693,7 +929,7 @@ module AxisEdgeMask {
 }
 module Mask {
   internal  {
-    frame = "-268 467 80 56"
+    frame = "1187 868 80 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -712,7 +948,7 @@ module Mask {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "969 469 128 56"
+    frame = "947 609 104 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -734,7 +970,7 @@ module AxisEdgeMask {
 }
 module RegionGrowing {
   internal  {
-    frame = "-244 211 112 56"
+    frame = "1211 612 112 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -787,7 +1023,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "-529 471 120 56"
+    frame = "1274 437 120 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -817,7 +1053,7 @@ module IntervalThreshold {
 }
 module RegionGrowing {
   internal  {
-    frame = "-597 335 112 56"
+    frame = "1206 301 112 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -865,7 +1101,7 @@ module RegionGrowing {
 }
 module MaskToMarkers {
   internal  {
-    frame = "-441 343 120 56"
+    frame = "1362 309 120 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -891,7 +1127,7 @@ module MaskToMarkers {
 }
 module ConnectedComponents {
   internal  {
-    frame = "881 197 176 56"
+    frame = "863 337 144 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -925,7 +1161,7 @@ module ConnectedComponents {
 }
 module Mask {
   internal  {
-    frame = "817 277 80 56"
+    frame = "783 417 80 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -944,7 +1180,7 @@ module Mask {
 }
 module FastMorphology {
   internal  {
-    frame = "881 19 136 64"
+    frame = "859 159 112 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -973,7 +1209,7 @@ module FastMorphology {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "857 103 184 56"
+    frame = "839 243 152 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1031,7 +1267,7 @@ module ImagePropertyConvert {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "761 477 176 56"
+    frame = "743 617 144 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1089,7 +1325,7 @@ module ImagePropertyConvert {
 }
 module FastMorphology {
   internal  {
-    frame = "781 393 136 64"
+    frame = "759 533 112 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1118,7 +1354,7 @@ module FastMorphology {
 }
 module PageToImageExtent {
   internal  {
-    frame = "961 549 160 56"
+    frame = "943 689 128 56"
     moduleGroupName = "Lung Segmentation Mask"
   }
   fields  {
@@ -1133,7 +1369,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "973 397 136 56"
+    frame = "951 537 112 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1154,7 +1390,7 @@ module MaskToMarkers {
 }
 module RegionGrowing {
   internal  {
-    frame = "909 281 152 64"
+    frame = "887 421 128 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1207,7 +1443,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "777 553 144 64"
+    frame = "755 693 120 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1237,7 +1473,7 @@ module IntervalThreshold {
 }
 module itkImageFileReader {
   internal  {
-    frame = "393 901 128 56"
+    frame = "409 909 128 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1260,27 +1496,23 @@ module itkImageFileReader {
     loaderType = MetaImageIO
     outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
 "
-    unresolvedFileName = $(HOME)/git-workspace/cadmi/data/examples/example02.mhd
+    unresolvedFileName = $(HOME)/git-workspace/cadmi/data/examples/example01.mhd
   }
 }
 connections  {
-  Overlay.timePoint = view.timePoint
-  view.inImage = IntervalThreshold1.output0
-  view.inInvPreLUT = Overlay.self
-  view.inInvPostLUT = MarkerListEditor.self
-  View2D.inImage = Resample3D.output0
-  View3D1.inImage = IntervalThreshold1.output0
-  SynchroView2D.inImage1 = Mask2.output0
-  SynchroView2D.inImage2 = Mask3.output0
-  SynchroView2D.lut1w = SynchroView2D.lut2w
-  SynchroView2D.lut1c = SynchroView2D.lut2c
-  SynchroView2D.lut2w = SynchroView2D.lut1w
-  SynchroView2D.lut2c = SynchroView2D.lut1c
-  IntervalThreshold1.input0 = Mask2.output0
-  Mask3.input0 = Resample3D.output0
-  Mask3.input1 = Closing.output0
-  Mask2.input0 = Mask3.output0
-  Mask2.input1 = RegionGrowing.output0
+  View2D.inImage = Threshold.output0
+  PageToImageExtent2.input0 = ImagePropertyConvert2.output0
+  ImagePropertyConvert2.input0 = SelectCandidates.output0
+  MorphologicalGradient.imageIn = SelectCandidates.output0
+  Sphericity.input0 = PageToImageExtent2.output0
+  Sphericity.input1 = MorphologicalGradient.imageOut
+  SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
+  SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inInvPostLUT = SoView2DMarkerEditor.self
+  View3D1.inImage = RemoveDenseMatter.output0
+  RemoveDenseMatter.input0 = ApplyLungMask.output0
+  ApplyLungMask.input0 = Resample3D.output0
+  ApplyLungMask.input1 = Closing.output0
   Resample3D.input0 = itkImageFileReader.output0
   ConnectedComponents1.input0 = RegionGrowing.output0
   MaskToMarkers2.input0 = AxisEdgeMask1.output0
@@ -1288,8 +1520,6 @@ connections  {
   AxisEdgeMask.input0 = PageToImageExtent.output0
   RegionGrowing1.input0 = Mask1.output0
   RegionGrowing1.inMarkerList = MaskToMarkers2.outputXMarkerList
-  IntervalThreshold.input0 = Resample3D.output0
-  RegionGrowing.input0 = Resample3D.output0
   RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
   MaskToMarkers1.input0 = IntervalThreshold.output0
   ConnectedComponents.input0 = Mask.output0
@@ -1344,6 +1574,17 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 168
         objectName = "Marked View"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 114
+        objectName = Sphericity
         parentUniqueId = 0
         color  {
           r = 45
