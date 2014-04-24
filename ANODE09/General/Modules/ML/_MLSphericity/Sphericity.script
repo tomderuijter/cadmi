@@ -1,0 +1,18 @@
+//----------------------------------------------------------------------------------
+//! _MLSphericity module definitions.
+/*!
+// \file    Sphericity.script
+// \author  Wieke
+// \date    2014-04-24
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    margin = 3
+    Field threshold {
+      tooltip = ""
+    }
+  }
+}

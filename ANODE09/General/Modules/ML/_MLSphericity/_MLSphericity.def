@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLSphericity module definitions.
+/*!
+// \file    _MLSphericity.def
+// \author  Wieke
+// \date    2014-04-24
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule Sphericity {
+  DLL                = "_MLSphericity"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/Sphericity.script
+}  

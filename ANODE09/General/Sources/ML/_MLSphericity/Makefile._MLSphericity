@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/Makefile._MLSphericity.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/_MLSphericity.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLSphericity
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/Makefile._MLSphericity.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/_MLSphericity.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLSphericity
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/Makefile._MLSphericity.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity
+	$(MAKE) -k -j 4 -f Makefile._MLSphericity.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity/Makefile._MLSphericity.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity 
+	$(MAKE) -k -j 4 -f Makefile._MLSphericity.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity && if test -e Makefile._MLSphericity.Release; then $(MAKE) -k -f Makefile._MLSphericity.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLSphericity && if test -e Makefile._MLSphericity.Debug; then $(MAKE) -k -f Makefile._MLSphericity.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release
