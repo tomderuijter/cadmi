@@ -2,5 +2,8 @@
 *.raw
 *.mhd
 
+# File system
+*.DS_Store
+
 ## MeVisLab files
 *.mlab.auto
