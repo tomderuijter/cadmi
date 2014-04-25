@@ -1,0 +1,180 @@
+% Needed packages
+\documentclass[a4paper, 10pt, english, onecolumn]{article}
+\usepackage[english]{babel}
+\usepackage[cm]{fullpage}
+\usepackage{cite}
+\usepackage{anysize}
+\usepackage[compact]{titlesec}
+\usepackage{hyperref}
+
+\usepackage{amssymb,amsmath}
+
+% Margins & Headers
+\marginsize{2.5cm}{2.5cm}{3.0cm}{2.0cm}
+\columnsep 0.4in
+\footskip 0.4in 
+\usepackage{changepage}
+
+% E-mail formatting
+\usepackage{color,hyperref}
+    \catcode`\_=11\relax
+    \newcommand\email[1]{\_email #1\q_nil}
+    \def\_email#1@#2\q_nil{
+      \href{mailto:#1@#2}{{\emailfont #1\emailampersat #2}}
+    }
+    \newcommand\emailfont{\sffamily}
+    \newcommand\emailampersat{{\color{red}\small@}}
+    \catcode`\_=8\relax 
+
+% List modifications
+\newenvironment{packed_item}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+% ############## End Macros ##############
+
+% Title
+\title{\fontfamily{phv}\selectfont{Lung Nodule CAD System Proposal}}
+\author{
+  \textbf{W. Kanters} - \href{mailto:kantersw@gmail.com}{kantersw@gmail.com} \\
+  \textbf{T. de Ruijter} - \href{mailto:t.deruijter@student.ru.nl}{t.deruijter@student.ru.nl}\\
+}
+
+\date{\fontfamily{ptm}\selectfont{\small{\bfseries{\today - Radboud
+Universiteit Nijmegen}}}\\[0.5cm]\rule{\linewidth}{0.3mm}}
+
+\begin{document}
+
+\maketitle
+
+\setlength{\parindent}{0.0cm}
+\setlength{\parskip}{0.25cm}
+
+\section{Introduction}
+In this work we propose an approach for a Computer Aided Diagnosis (CAD) system for the \textbf{ANODE09}\footnote{anode09.grand-challenge.org} challenge.
+The task is, given chest CT images and pulmonary nodule annotation provided by radiologists, to detect and classify lung nodules in new images.
+We are provided with images from 5 patients with a total of 70 annotated nodules from the NELSON study.
+The image resolution is 512x512x361 voxels, with a voxel volume of 0.62 x 0.62 x 0.7 mm.
+
+\section{CAD Pipeline}
+We will closely follow the CAD pipeline as proposed by Murphy et al. \cite{murphy2009large} for our initial approach
+
+\begin{packed_enum}
+  \item Pre-processing
+  	\begin{packed_enum}
+	  \item Subsampling original image
+	  \item Lung volume segmentation
+	\end{packed_enum}
+  \item Initial Candidate selection
+  	\begin{packed_enum}
+	  \item Blobness, Shape Index, Curvedness for finding seed points 
+	  \item Grow seed points to clusters with region growing
+	  \item Discard small clusters
+	  \item Merge close clusters
+	\end{packed_enum}
+  \item Candidate filtering
+  	\begin{packed_enum}
+	    \item Candidate Feature calculation
+	    \item (Business rule) Classification for first candidate selection
+	\end{packed_enum}
+  \item Nodule classification
+  	\begin{packed_enum}
+	    \item Extensive feature calculation
+	    \item Semi-supervised classification
+	\end{packed_enum}
+   \item Post-processing
+   	\begin{packed_enum}
+	  \item Location adjustment
+	\end{packed_enum}
+   \item Evaluation with FROC analysis
+\end{packed_enum}
+
+\paragraph{Pre-processing}
+Subsampling is done for efficiency reasons.
+The scaling coefficient is set to $c = 0.5$, yielding images with resolution 256x256x180.
+Ginneken et al. and Murphy et al. have shown this constant works well for this particular dataset \cite{ginneken2010comparing}.
+
+We perform a naive lung segmentation based on thresholding according to the following steps:
+\begin{packed_enum}
+\item Threshold rejecting voxels ($> -500$ HU).
+\item Remove air-voxels outside of the patient with region growing.
+\item Remove non-lung volumes by rejecting small volumes ($< 200$ ml).
+\item Apply morphological dilation.
+\end{packed_enum}
+This provides a coarse but sufficient lung segmentation.
+If time allows, we will fine-tune this approach.
+
+\paragraph{Initial Candidate Selection}
+We propose to perform candidate selection based on blob detection, using multiple scale Laplacian of Gaussian kernels.
+If time allows this measure will be combined with the shape index and curvedness as used by Murphy et al. \cite{murphy2009large} which are based on the first and second order derivatives of the image.
+These features are used to determine seed points for a region growing algorithm by applying a empirically established threshold.
+The result of the region growing algorithm is used to segment the candidate nodules.
+Finally segmentations with a volume below a certain threshold will be discarded.
+
+Clusters that lie very near each other will be merged into single clusters.
+
+\paragraph{Candidate filtering}
+Messay et al. employ a business rule-like approach for filtering false positives from initial candidates, based on features such as sphericity and circularity \cite{messay2010new}.
+We propose to instead employ classification techniques for this purpose.
+Closely related but automated are Random Forest Classifiers, an ensemble method based on decision trees \cite{breiman2001random}.
+These can also be used for feature selection for input in other classification systems.
+Implementation for Random Forests is readily available, for instance in the Python library Sci-kit learn\footnote{http://scikit-learn.org}.
+
+\paragraph{Nodule classification}
+We have noticed previous research employs basic statistics and learning methods for classification of candidate nodules.
+We propose to use more recent state-of-the-art statistical machine learning methods.
+
+Annotation of data is expensive and time consuming.
+For this reason we want to apply semi-supervised methods on the large body of unlabelled data that is also available from the NELSON study.
+The Co-regularized multi-view methods proposed by Tsivtsivadze and de Ruijter seem appropriate for this purpose \cite{ruijter2012online}.
+This demands for cross-validation for the additional regularisation parameters required for these methods.
+
+Alternatively, approximated full Bayesian tend to work well when little labeled data is available.
+If the previously suggested method does not work out, we propose to apply Bayesian classification methods, where the posterior is approximated by Monte Carlo sampling.
+
+\paragraph{Post-processing and evaluation}
+Resulting annotations from the classification step are processed and aggregated to match the center of mass of the intended nodule based on image intensity.
+
+Performance of our method is evaluated with FROC and AUC analysis.
+
+\section{Feature Selection}
+The set of features which we will use for the classification will largely be a set of generic features for this problem, based on a selection of features used by Murphy et al. \cite{murphy2009large} and Messay et al. \cite{messay2010new}.
+Should time allow it, we intend to include some custom features, enumerated below.
+
+\begin{packed_enum}
+\item A \emph{distance-to-skeleton} feature. According to Ginneken et al. \cite{ginneken2010comparing} a common cause of false positives are protrusions caused by the rib cage. We expect a distance-to-skeleton measure cab be used to mitigate this.
+\item A \emph{lung-symmetry} feature. We know that lung nodules usually do not occur symmetrically in lung lobes. This fact is used by radiologist to aid in their diagnosis by comparing differences between lungs. This feature calculates whether similar structure is present at a mirrored point in the other lung.
+\item Local and global 2d features as suggested by Guo et al. \cite{guo2012high}. In their paper, Guo et al. propose a method that decomposes a 3d segmentation of a candidate nodule into a number of 2d images of which a number of global and local features are determined. The underlying principle of this approach is if the 3d segmented nodule is spherical, all of the images would be identical. This approach should allow for a decent analysis of the 3d shape.
+\end{packed_enum}
+
+\section{Time schedule}
+From today, the project stretches roughly 7 weeks, until the deadline at the end of june.
+
+\begin{packed_item}
+  \item Week 1 - Coarse image segmentation and candidate selection
+  \item Week 2 - Feature building
+  \item Week 3 - Classification with Random Forests
+  \item Week 4 - Classification with Co-reguralized methods
+  \item Week 5 - Buffer
+  \item Week 6 - Fine tuning and report writing
+  \item Week 7 - Fine tuning and report writing
+\end{packed_item}
+
+This planning is too coarse for practical purposes, but demonstrates we have a clear idea of how to continue.
+Again, it is flexible enough to compensate for problems down the road.
+
+\bibliography{references}{}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apalike}
+
+\end{document}

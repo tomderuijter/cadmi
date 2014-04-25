@@ -92,7 +92,7 @@ void SphericityOutputImageHandler::typedCalculateOutputSubImage(TSubImage<OUTTYP
 	std::vector<int> label((int)max - 1);
 	int lbl = 1;
 	for (int i = 0; i < max; i++){
-		circularity[i] = (pow(M_PI, 1/3)*pow(6*area[i],2/3))/perimiter[i]);
+		circularity[i] = (pow(M_PI, 1/3)*pow(6*area[i],2/3))/perimiter[i];
 		if (circularity[i] > threshold)
 		{
 			label[i] = lbl++;
