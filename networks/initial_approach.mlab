@@ -2,6 +2,86 @@
 network  {
   watchlist = ""
 }
+module RunPythonScript {
+  internal  {
+    frame = "801 709 144 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "23 219 698 553"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CreateLungMask
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*CTX.field("LSM_MaskToMarkers.update").touch()
+CTX.field("LSM_OutsideAirRemoval.update").touch()
+CTX.field("LSM_ConnectedComponents.update").touch()*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
 module Morphology {
   internal  {
     frame = "1002 556 112 64"
@@ -15,7 +95,7 @@ module Morphology {
     }
   }
   fields  {
-    instanceName = Erosion1
+    instanceName = LSM_Erosion1
     borderHandling = PadSrcClamp
     fillValue = 0
     referenceExtentMode = Overlap
@@ -46,14 +126,19 @@ module Morphology {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "134 423 327 525"
+        geometry = "134 451 327 525"
         sizeHint = "327 525"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Dilation1
+    instanceName = LSM_Dilation1
     borderHandling = PadSrcClamp
     fillValue = 0
     referenceExtentMode = Overlap
@@ -89,14 +174,14 @@ module Morphology {
         wasOpen = no
       }
       window _default {
-        geometry = "796 417 327 525"
+        geometry = "796 445 327 525"
         sizeHint = "327 525"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Dilation0
+    instanceName = LSM_Dilation0
     borderHandling = PadSrcClamp
     fillValue = 0
     referenceExtentMode = Overlap
@@ -123,7 +208,7 @@ module Morphology {
 }
 module Info {
   internal  {
-    frame = "805 1285 56 56"
+    frame = "765 1229 56 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -171,7 +256,7 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "234 796 152 56"
+    frame = "221 786 152 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -188,14 +273,14 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 329.000000000001
-    voxelY = 427
-    voxelZ = 25.9999999999999
-    worldX = 204.339922189713
-    worldY = 265.207133054733
+    voxelX = 339.052610439724
+    voxelY = 440.047005038791
+    voxelZ = 26
+    worldX = 238.396366715431
+    worldY = 309.4080504179
     worldZ = 18.1999996900558
-    voxelPos = "329.000000000001 427 25.9999999999999"
-    worldPos = "204.339922189713 265.207133054733 18.1999996900558"
+    voxelPos = "339.052610439724 440.047005038791 26"
+    worldPos = "238.396366715431 309.4080504179 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
     intVoxelCoords = FALSE
@@ -204,19 +289,19 @@ module WorldVoxelConvert {
 }
 module Comment {
   internal  {
-    frame = "69 653 88 56"
+    frame = "-135 389 96 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "80 530 256 209"
+        geometry = "49 662 256 209"
         sizeHint = "256 209"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
   fields  {
     instanceName = Comment
-    comment = "- Replace lung segmentation autoupdate with pythonscript"
+    comment = ""
   }
 }
 module Morphology {
@@ -230,14 +315,14 @@ module Morphology {
         wasOpen = no
       }
       window _default {
-        geometry = "796 389 327 525"
+        geometry = "1151 398 327 525"
         sizeHint = "327 525"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Erosion0
+    instanceName = LSM_Erosion0
     borderHandling = PadSrcClamp
     fillValue = 0
     referenceExtentMode = Overlap
@@ -402,7 +487,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "454 764 112 56"
+    frame = "441 754 112 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -511,7 +596,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "431 697 184 56"
+    frame = "418 687 184 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -587,7 +672,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = TRUE
+    ownsList = FALSE
     applySelect = FALSE
     id = -1
     name = ""
@@ -612,11 +697,11 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "450 832 168 64"
+    frame = "437 822 168 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "866 295 505 625"
+        geometry = "866 323 505 625"
         sizeHint = "394 573"
         wasOpen = no
       }
@@ -629,55 +714,60 @@ module ConstantXMarkerList {
   }
   fields  {
     instanceName = AnnotationMarkers
-    markerList = "106.20707202 251.54306531 215.599996328 
-198.128982306 196.26570034 214.89999634 
-240.984467506 186.949290514 211.3999964 
-186.328196526 206.824298143 203.699996531 
-115.523481846 248.437595367 199.499996603 
-65.214868784 222.972741842 198.099996626 
-189.433666468 142.851617336 187.599996805 
-244.089937449 236.636809587 185.499996841 
-256.511817217 168.93756485 183.399996877 
-75.1523725986 159.000061035 182.699996889 
-234.773527622 139.746147394 181.999996901 
-116.765669823 255.890723228 181.299996912 
-253.406347275 216.761801958 179.899996936 
-249.679783344 223.593835831 177.099996984 
-255.890723228 222.972741842 167.999997139 
-262.101663113 180.117256641 163.099997222 
-253.406347275 150.925839186 156.79999733 
-261.480569124 202.476640224 150.499997437 
-244.089937449 251.54306531 143.499997556 
-58.3828349113 163.347718954 142.09999758 
-70.1836206913 111.175823927 140.699997604 
-85.7109704018 112.418011904 136.499997675 
-46.5820491314 217.382895947 136.499997675 
-75.1523725986 204.961016178 118.299997985 
-52.1718950272 249.058689356 110.599998116 
-44.7187671661 133.53520751 105.6999982 
-130.429737568 263.964945078 102.19999826 
-29.1914174557 136.019583464 101.499998271 
-270.175884962 206.824298143 93.7999984026 
-244.089937449 255.890723228 92.3999984264 
-252.164159298 241.605561495 83.2999985814 
-261.480569124 236.015715599 67.1999988556 
-62.7304928303 257.132911205 56.6999990344 
-37.2656393051 232.289151669 51.7999991179 
-197.507888317 255.890723228 48.2999991775 
-281.976670742 178.253974676 44.7999992371 
-115.523481846 273.281354904 20.2999996543 
-204.33992219 265.207133055 18.1999996901 
+    markerList = "123.908141971 293.466652036 215.599996328 
+231.150276542 228.97644949 214.89999634 
+281.14829874 218.107314229 211.3999964 
+217.382705212 241.294802785 203.699996531 
+134.777277231 289.843606949 199.499996603 
+76.0839468241 260.134637237 198.099996626 
+221.005750299 166.660073996 187.599996805 
+284.771343827 276.076035619 185.499996841 
+299.263524175 197.093652725 183.399996877 
+87.677691102 185.499908447 182.699996889 
+273.902208567 163.037028909 181.999996901 
+136.226495266 298.538915157 181.299996912 
+295.640479088 252.888547063 179.899996936 
+291.292824984 260.859246254 177.099996984 
+298.538915157 260.134637237 167.999997139 
+305.785005331 210.136615038 163.099997222 
+295.640479088 176.079991221 156.79999733 
+305.060396314 236.222539663 150.499997437 
+284.771343827 293.466652036 143.499997556 
+68.113247633 190.572171569 142.09999758 
+81.8808189631 129.70501411 140.699997604 
+99.9960443974 131.154232144 136.499997675 
+54.3456763029 253.61315608 136.499997675 
+87.677691102 239.120975733 118.299997985 
+60.8671574593 290.568215966 110.599998116 
+52.1718492508 155.790938735 105.6999982 
+152.167893648 307.958832383 102.19999826 
+34.0566238165 158.689374804 101.499998271 
+315.204922557 241.294802785 93.7999984026 
+284.771343827 298.538915157 92.3999984264 
+294.191261053 281.872907758 83.2999985814 
+305.060396314 275.351426601 67.1999988556 
+73.1855107546 299.988133192 56.6999990344 
+43.4765410423 271.003772497 51.7999991179 
+230.425667524 298.538915157 48.2999991775 
+328.972493887 207.962787986 44.7999992371 
+134.777277231 318.827967644 20.2999996543 
+238.396366715 309.408050418 18.1999996901 
 \\"
   }
 }
 module RunPythonScript {
   internal  {
-    frame = "234 708 136 56"
+    frame = "221 698 136 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
         geometry = "1139 238 698 650"
         sizeHint = "698 553"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
         wasOpen = no
       }
     }
@@ -776,7 +866,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "362 608 120 64"
+    frame = "349 598 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -796,7 +886,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 180
+    startSlice = 245
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -818,7 +908,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.349998474121"
+    plane = "0 0 1 171.849990844727"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 256.5
@@ -844,8 +934,8 @@ module View3D {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "145 111 1050 685"
-        sizeHint = "1050 685"
+        geometry = "861 131 988 675"
+        sizeHint = "988 675"
         wasOpen = no
       }
     }
@@ -868,17 +958,17 @@ module View3D {
     orientationLocation = LOWER_RIGHT
     orientationOn = TRUE
     orientationModel = CUBE
-    greyCenter = 0.21249975
-    greyWidth = 0.15749982
+    greyCenter = 0.36499956
+    greyWidth = 0.22499987
     alphaFactor = 1
     colorFactor = "1 1 1"
     camType = TRUE
-    camPosition = "-167.529876708984 -362.961608886719 238.673965454102"
-    camOrientation = "0.911424934864044 -0.244119241833687 -0.331225663423538 1.49296343326569"
+    camPosition = "-526.060241699219 347.638488769531 340.284362792969"
+    camOrientation = "0.300592094659805 -0.752088308334351 -0.586521744728088 1.75222063064575"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 865.87244
-    camNear = 386.17142
-    camFocal = 625.78265
+    camFar = 996.85815
+    camNear = 493.44376
+    camFocal = 744.90015
     camHeight = 0.78539801
     decoration = FALSE
     annotations = TRUE
@@ -926,13 +1016,13 @@ module View3D {
     renderer.light3PolarRho = 0
     renderer.sizeOutputX = 256
     renderer.sizeOutputY = 256
-    renderer.sizeOutputZ = 181
+    renderer.sizeOutputZ = 246
     renderer.subVolumeStartX = 0
     renderer.subVolumeStartY = 0
     renderer.subVolumeStartZ = 0
     renderer.subVolumeEndX = 256
     renderer.subVolumeEndY = 256
-    renderer.subVolumeEndZ = 181
+    renderer.subVolumeEndZ = 246
     clip.hideGeometry = FALSE
     clip.on = FALSE
     clip.left = FALSE
@@ -1010,7 +1100,7 @@ module Resample3D {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "459 338 360 347"
+        geometry = "459 366 360 347"
         sizeHint = "360 347"
         wasOpen = no
       }
@@ -1024,8 +1114,8 @@ module Resample3D {
     filterAlways = FALSE
     filterAlwaysTolerance = 0
     zoom = "0.5 0.5 0.5"
-    imageSize = "256 256 181"
-    voxelSize = "1.24218797683716 1.24218797683716 1.39999997615814"
+    imageSize = "256 256 246"
+    voxelSize = "1.40625 1.40625 1.39999997615814"
     subVoxelShift = "0 0 0"
     useReferenceImage = FALSE
   }
@@ -1154,14 +1244,14 @@ module AxisEdgeMask {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "983 774 381 233"
+        geometry = "983 802 381 233"
         sizeHint = "381 233"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = AxisEdgeMask
+    instanceName = LSM_AxisEdgeMask
     front = TRUE
     back = TRUE
     right = FALSE
@@ -1333,15 +1423,20 @@ module ConnectedComponents {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "378 239 676 441"
+        geometry = "1196 340 676 441"
         sizeHint = "523 441"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1214 351 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = ConnectedComponents
-    autoUpdate = TRUE
+    instanceName = LSM_ConnectedComponents
+    autoUpdate = FALSE
     useAdditionalSeed = FALSE
     additionalSeed = "0 0 0 0 0 0"
     additionalSeedType = 0
@@ -1367,14 +1462,14 @@ module Mask {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "822 519 406 97"
+        geometry = "822 547 406 97"
         sizeHint = "274 97"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Mask
+    instanceName = LSM_mask
     mode = MaskedOriginal
     blending = 0.5
     background = 0
@@ -1384,9 +1479,16 @@ module PageToImageExtent {
   internal  {
     frame = "1048 1092 160 56"
     moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "921 479 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
   }
   fields  {
-    instanceName = PageToImageExtent
+    instanceName = LSM_PageToImageExtent
     setX = TRUE
     setY = TRUE
     setZ = TRUE
@@ -1401,18 +1503,23 @@ module MaskToMarkers {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "702 525 312 136"
+        geometry = "1289 551 312 136"
         sizeHint = "312 136"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1048 264 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = MaskToMarkers
+    instanceName = LSM_MaskToMarkers
     lowerThreshold = 0
     setType = User
     type = 0
-    updateMode = AutoUpdate
+    updateMode = Off
     vectorMode = Zero
   }
 }
@@ -1422,8 +1529,8 @@ module RegionGrowing {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "15 168 620 628"
-        sizeHint = "620 628"
+        geometry = "1008 199 648 617"
+        sizeHint = "648 617"
         wasOpen = no
       }
       window _automatic {
@@ -1434,8 +1541,8 @@ module RegionGrowing {
     }
   }
   fields  {
-    instanceName = OutsideAirRemoval
-    autoUpdateMode = AutoUpdate
+    instanceName = LSM_OutsideAirRemoval
+    autoUpdateMode = AutoClear
     lowerThreshold = 0.85
     upperThreshold = 1.15
     autoThreshold = TRUE
@@ -1475,14 +1582,14 @@ module IntervalThreshold {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "676 407 412 372"
+        geometry = "1266 375 412 372"
         sizeHint = "412 372"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = LungAirFilter
+    instanceName = LSM_LungAirFilter
     lowerType = UserDef
     innerType = UserDef
     upperType = UserDef
@@ -1501,12 +1608,17 @@ module IntervalThreshold {
 }
 module itkImageFileReader {
   internal  {
-    frame = "593 1317 144 56"
+    frame = "589 1301 152 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "360 408 367 411"
+        geometry = "360 492 367 411"
         sizeHint = "300 411"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1009 293 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
@@ -1524,17 +1636,17 @@ module itkImageFileReader {
     loaderType = MetaImageIO
     outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
 "
-    unresolvedFileName = $(HOME)/git-workplace/cadmi/data/examples/example02.mhd
+    unresolvedFileName = $(HOME)/git-workplace/cadmi/data/examples/example04.mhd
   }
 }
 connections  {
-  Erosion1.input0 = Dilation1.output0
-  Dilation1.input0 = ConnectedComponents.output0
-  Dilation0.input0 = Mask.output0
+  LSM_Erosion1.input0 = LSM_Dilation1.output0
+  LSM_Dilation1.input0 = LSM_ConnectedComponents.output0
+  LSM_Dilation0.input0 = LSM_mask.output0
   Info.input0 = itkImageFileReader.output0
   DicomTagViewer.input0 = itkImageFileReader.output0
   WorldVoxelConvert.input0 = itkImageFileReader.output0
-  Erosion0.input0 = LungAirFilter.output0
+  LSM_Erosion0.input0 = LSM_LungAirFilter.output0
   PageToImageExtent2.input0 = ImagePropertyConvert2.output0
   ImagePropertyConvert2.input0 = SelectCandidates.output0
   MorphologicalGradient.imageIn = SelectCandidates.output0
@@ -1542,27 +1654,28 @@ connections  {
   Sphericity.input1 = MorphologicalGradient.imageOut
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  RunPythonScript.execute = itkImageFileReader.open
   view.inImage = itkImageFileReader.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
-  View3D1.inImage = ApplyLungMask.output0
+  View3D1.inImage = LSM_Erosion1.output0
   RemoveDenseMatter.input0 = ApplyLungMask.output0
   Resample3D.input0 = itkImageFileReader.output0
   ConnectedComponents1.input0 = RegionGrowing.output0
   MaskToMarkers2.input0 = AxisEdgeMask1.output0
   AxisEdgeMask1.input0 = PageToImageExtent1.output0
-  AxisEdgeMask.input0 = PageToImageExtent.output0
+  LSM_AxisEdgeMask.input0 = LSM_PageToImageExtent.output0
   RegionGrowing1.input0 = Mask1.output0
   RegionGrowing1.inMarkerList = MaskToMarkers2.outputXMarkerList
   RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
   MaskToMarkers1.input0 = IntervalThreshold.output0
-  ConnectedComponents.input0 = Dilation0.output0
-  Mask.input0 = Erosion0.output0
-  Mask.input1 = OutsideAirRemoval.output0
-  PageToImageExtent.input0 = Erosion0.output0
-  MaskToMarkers.input0 = AxisEdgeMask.output0
-  OutsideAirRemoval.input0 = Erosion0.output0
-  OutsideAirRemoval.inMarkerList = MaskToMarkers.outputXMarkerList
-  LungAirFilter.input0 = Resample3D.output0
+  LSM_ConnectedComponents.input0 = LSM_Dilation0.output0
+  LSM_mask.input0 = LSM_Erosion0.output0
+  LSM_mask.input1 = LSM_OutsideAirRemoval.output0
+  LSM_PageToImageExtent.input0 = LSM_Erosion0.output0
+  LSM_MaskToMarkers.input0 = LSM_AxisEdgeMask.output0
+  LSM_OutsideAirRemoval.input0 = LSM_Erosion0.output0
+  LSM_OutsideAirRemoval.inMarkerList = LSM_MaskToMarkers.outputXMarkerList
+  LSM_LungAirFilter.input0 = Resample3D.output0
 }
 networkModel  {
   parentItems  {
