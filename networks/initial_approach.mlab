@@ -56,7 +56,7 @@ module View3D {
     colorFactor = "1 1 1"
     camType = TRUE
     camPosition = "436.643218994141 310.407409667969 -411.611755371094"
-    camOrientation = "0.964343428611755 -0.161953240633011 0.209315255284309 3.46738147735596"
+    camOrientation = "0.964343369007111 -0.161953240633011 0.209315255284309 3.46738147735596"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
     camFar = 843.63129
     camNear = 404.86523
@@ -169,30 +169,35 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "425 1101 144 56"
-    moduleGroupName = ""
+    frame = "141 1029 152 56"
+    moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "434 299 410 245"
-        sizeHint = "410 245"
-        wasOpen = no
+        geometry = "1156 211 460 251"
+        sizeHint = "460 251"
+        wasOpen = yes
+      }
+      window _automatic {
+        geometry = "1354 515 500 600"
+        sizeHint = "260 223"
+        wasOpen = yes
       }
     }
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 30
-    voxelY = 0
-    voxelZ = 0
-    worldX = 18.6328196525574
-    worldY = 0
-    worldZ = 0
-    voxelPos = "30 0 0"
-    worldPos = "18.6328196525574 0 0"
-    voxelMode = TRUE
-    worldMode = FALSE
+    voxelX = 329
+    voxelY = 427
+    voxelZ = 26
+    worldX = 204.339922189713
+    worldY = 265.207133054733
+    worldZ = 18.1999996900558
+    voxelPos = "329 427 26"
+    worldPos = "204.339922189713 265.207133054733 18.1999996900558"
+    voxelMode = FALSE
+    worldMode = TRUE
     intVoxelCoords = FALSE
-    keepConstant = Voxel
+    keepConstant = World
   }
 }
 module Comment {
@@ -201,17 +206,15 @@ module Comment {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "511 317 256 208"
-        sizeHint = "256 208"
-        wasOpen = no
+        geometry = "80 502 256 209"
+        sizeHint = "256 209"
+        wasOpen = yes
       }
     }
   }
   fields  {
     instanceName = Comment
-    comment = "- Pipe annotation file through WorldVoxelConvert
-
-- Spherical kernel for morphological operators for lung mask
+    comment = "- Spherical kernel for morphological operators for lung mask
 
 - Grow lung mask several voxels to prevent false negatives"
   }
@@ -425,7 +428,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "301 981 104 56"
+    frame = "361 997 112 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -534,7 +537,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "391 863 168 56"
+    frame = "338 930 184 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -610,7 +613,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = TRUE
+    ownsList = FALSE
     applySelect = FALSE
     id = -1
     name = ""
@@ -635,12 +638,12 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "455 1019 152 64"
+    frame = "357 1065 168 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "343 124 483 616"
-        sizeHint = "372 564"
+        geometry = "866 295 505 625"
+        sizeHint = "394 573"
         wasOpen = no
       }
       window _automatic {
@@ -652,56 +655,56 @@ module ConstantXMarkerList {
   }
   fields  {
     instanceName = AnnotationMarkers
-    markerList = "171 405 308 
-319 316 307 
-388 301 302 
-300 333 291 
-186 400 285 
-105 359 283 
-305 230 268 
-393 381 265 
-413 272 262 
-121 256 261 
-378 225 260 
-188 412 259 
-408 349 257 
-402 360 253 
-412 359 240 
-422 290 233 
-408 243 224 
-421 326 215 
-393 405 205 
-94 263 203 
-113 179 201 
-138 181 195 
-75 350 195 
-121 330 169 
-84 401 158 
-72 215 151 
-210 425 146 
-47 219 145 
-435 333 134 
-393 412 132 
-406 389 119 
-421 380 96 
-101 414 81 
-60 374 74 
-318 412 69 
-454 287 64 
-186 440 29 
-329 427 26 
+    markerList = "106.20707202 251.54306531 215.599996328 
+198.128982306 196.26570034 214.89999634 
+240.984467506 186.949290514 211.3999964 
+186.328196526 206.824298143 203.699996531 
+115.523481846 248.437595367 199.499996603 
+65.214868784 222.972741842 198.099996626 
+189.433666468 142.851617336 187.599996805 
+244.089937449 236.636809587 185.499996841 
+256.511817217 168.93756485 183.399996877 
+75.1523725986 159.000061035 182.699996889 
+234.773527622 139.746147394 181.999996901 
+116.765669823 255.890723228 181.299996912 
+253.406347275 216.761801958 179.899996936 
+249.679783344 223.593835831 177.099996984 
+255.890723228 222.972741842 167.999997139 
+262.101663113 180.117256641 163.099997222 
+253.406347275 150.925839186 156.79999733 
+261.480569124 202.476640224 150.499997437 
+244.089937449 251.54306531 143.499997556 
+58.3828349113 163.347718954 142.09999758 
+70.1836206913 111.175823927 140.699997604 
+85.7109704018 112.418011904 136.499997675 
+46.5820491314 217.382895947 136.499997675 
+75.1523725986 204.961016178 118.299997985 
+52.1718950272 249.058689356 110.599998116 
+44.7187671661 133.53520751 105.6999982 
+130.429737568 263.964945078 102.19999826 
+29.1914174557 136.019583464 101.499998271 
+270.175884962 206.824298143 93.7999984026 
+244.089937449 255.890723228 92.3999984264 
+252.164159298 241.605561495 83.2999985814 
+261.480569124 236.015715599 67.1999988556 
+62.7304928303 257.132911205 56.6999990344 
+37.2656393051 232.289151669 51.7999991179 
+197.507888317 255.890723228 48.2999991775 
+281.976670742 178.253974676 44.7999992371 
+115.523481846 273.281354904 20.2999996543 
+204.33992219 265.207133055 18.1999996901 
 \\"
   }
 }
 module RunPythonScript {
   internal  {
-    frame = "113 1013 128 56"
+    frame = "141 941 136 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "292 154 669 551"
-        sizeHint = "669 551"
-        wasOpen = no
+        geometry = "1139 238 698 650"
+        sizeHint = "698 553"
+        wasOpen = yes
       }
     }
   }
@@ -763,7 +766,8 @@ global CTX
 # Use this to access the network context
 CTX=ctx.owner().owner()
 
-example_path = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_wieke = "/home/wieke/git-workplace/cadmi/data/examples/example_annotations.txt"
 
 def getMarkers(filepath, subjectNr, scale):
 	markers = "";
@@ -771,16 +775,24 @@ def getMarkers(filepath, subjectNr, scale):
 		for line in file:
 			fields = line.strip('\\n').strip('\\r').split(' ')
 			if int(fields[0][-2:]) == subjectNr:
-				markers += str(int(fields[1]) * scale) + " "
-				markers += str(int(fields[2]) * scale) + " "
-				markers += str(int(fields[3]) * scale) + " "
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
 				# markers += "0 0 0 " + fields[4]
 				
 				markers += "\\n"	
 	markers += "\\\\"
-	return markers*"
+	return markers
+
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z*"
     wakeUpCode = ""
-    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path,2,1)*"
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_wieke,2,1)*"
     showFields = FALSE
     showInitCode = TRUE
     showWakeUpCode = FALSE
@@ -790,7 +802,7 @@ def getMarkers(filepath, subjectNr, scale):
 }
 module View2D {
   internal  {
-    frame = "38 854 120 64"
+    frame = "269 841 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -799,7 +811,7 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "300 325 400 400"
+        geometry = "224 414 400 400"
         sizeHint = "400 400"
         wasOpen = no
       }
@@ -810,7 +822,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 180
+    startSlice = 176
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -832,10 +844,10 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.349998474121"
+    plane = "0 0 1 123.549995422363"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 256.5
+    lutCenter = 401
     lutWidth = 2513
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -1693,8 +1705,8 @@ module itkImageFileReader {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "360 352 337 444"
-        sizeHint = "270 444"
+        geometry = "360 408 367 411"
+        sizeHint = "300 411"
         wasOpen = no
       }
     }
@@ -1712,7 +1724,7 @@ module itkImageFileReader {
     loaderType = MetaImageIO
     outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
 "
-    unresolvedFileName = $(DicomBrowserPath)/workspace/cadmi/data/examples/example02.mhd
+    unresolvedFileName = $(HOME)/git-workplace/cadmi/data/examples/example02.mhd
   }
 }
 connections  {
@@ -1731,8 +1743,6 @@ connections  {
   view.inInvPostLUT = SoView2DMarkerEditor.self
   View3D1.inImage = ApplyLungMask.output0
   RemoveDenseMatter.input0 = ApplyLungMask.output0
-  ApplyLungMask.input0 = Resample3D.output0
-  ApplyLungMask.input1 = Closing.output0
   Resample3D.input0 = itkImageFileReader.output0
   ConnectedComponents1.input0 = RegionGrowing.output0
   MaskToMarkers2.input0 = AxisEdgeMask1.output0
@@ -1753,7 +1763,6 @@ connections  {
   MaskToMarkers.input0 = AxisEdgeMask.output0
   OutsideAirRemoval.input0 = Opening.output0
   OutsideAirRemoval.inMarkerList = MaskToMarkers.outputXMarkerList
-  LungAirFilter.input0 = Resample3D.output0
 }
 networkModel  {
   parentItems  {
