@@ -2,13 +2,271 @@
 network  {
   watchlist = ""
 }
-module RunPythonScript {
+module ImageLoad {
   internal  {
-    frame = "801 709 144 56"
+    frame = "853 577 104 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "162 646 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskLoad
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask05.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1208 393 152 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "23 219 698 553"
+        geometry = "753 381 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50000.5
+    threshWidth = 99999
+    threshMin = 1
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module OrthoView2D {
+  internal  {
+    frame = "933 133 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "0 52 960 1028"
+        sizeHint = "400 431"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = OrthoView2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    synchronizePosition = TRUE
+    layout = LAYOUT_CUBE_EQUAL
+    filterMode = FILTER_LINEAR
+    synchronizeZoom = TRUE
+    synchronizePanning = FALSE
+    useGlobalInputImage = TRUE
+    snapToCenter = FALSE
+    alternCubeLayout = FALSE
+    timePoint = 0
+    useManagedInteraction = FALSE
+    enableSlicing = TRUE
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    grayWidth = 1
+    grayCenter = 0.5
+    annotationOn = TRUE
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationFontSize = ANNO_SIZE_AUTO
+    valueHighPrecision = TRUE
+    annoCoords = Voxel
+    showCurrentPos = TRUE
+    worldPosition = "356.651550292969 144.750076293945 170.924911499023"
+    coloredMode = FALSE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1403 246 104 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1014 287 446 382"
+        sizeHint = "446 382"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 864 768"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave
+    taskVerboseLogging = FALSE
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask05.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "489 813 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "230 339 1208 782"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke = "/mnt/Multimedia/CADMICompetition/"
+
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+def loadFile(file):
+	CTX.field("itkImageFileReader.fileName").value = file
+
+def createMask():
+	CTX.field("LSM_MaskToMarkers.update").touch()
+	CTX.field("LSM_OutsideAirRemoval.update").touch()
+	CTX.field("LSM_ConnectedComponents.update").touch()
+
+def prerenderMasks(path, outpath):
+	for file in getFilePaths(path):
+		print("Loading", basename(file))
+		loadFile(file)
+		print("Creating Mask")
+		createMask()
+		print("Saving Mask")
+		out = outpath + "lungmask" + basename(file).split(".")[0][-2:] + ".dcm"
+		CTX.field("ImageSave.filename").value = out
+		CTX.field("ImageSave.save").touch()*"
+    wakeUpCode = ""
+    code = ""
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "1196 533 144 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "23 303 698 553"
         sizeHint = "698 553"
         wasOpen = no
       }
@@ -84,7 +342,7 @@ CTX.field("LSM_ConnectedComponents.update").touch()*"
 }
 module Morphology {
   internal  {
-    frame = "1002 556 112 64"
+    frame = "1393 384 120 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -122,7 +380,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "1002 636 112 64"
+    frame = "1389 464 128 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -165,7 +423,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "906 788 112 64"
+    frame = "1293 616 128 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _automatic {
@@ -208,7 +466,7 @@ module Morphology {
 }
 module Info {
   internal  {
-    frame = "765 1229 56 56"
+    frame = "277 1221 56 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -226,7 +484,7 @@ module Info {
 }
 module DicomTagViewer {
   internal  {
-    frame = "397 1237 136 56"
+    frame = "373 1213 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -256,7 +514,7 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "221 786 152 56"
+    frame = "14 741 152 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -273,13 +531,13 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 238.396366715431
-    voxelY = 309.4080504179
-    voxelZ = 18.1999996900558
+    voxelX = 336.250692362648
+    voxelY = 436.410473066416
+    voxelZ = 25.9999999999999
     worldX = 238.396366715431
     worldY = 309.4080504179
     worldZ = 18.1999996900558
-    voxelPos = "238.396366715431 309.4080504179 18.1999996900558"
+    voxelPos = "336.250692362648 436.410473066416 25.9999999999999"
     worldPos = "238.396366715431 309.4080504179 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
@@ -293,7 +551,7 @@ module Comment {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "49 662 256 209"
+        geometry = "49 690 256 209"
         sizeHint = "256 209"
         wasOpen = no
       }
@@ -306,7 +564,7 @@ module Comment {
 }
 module Morphology {
   internal  {
-    frame = "904 1008 112 64"
+    frame = "1295 836 120 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _automatic {
@@ -315,7 +573,7 @@ module Morphology {
         wasOpen = no
       }
       window _default {
-        geometry = "1151 398 327 525"
+        geometry = "1151 426 327 525"
         sizeHint = "327 525"
         wasOpen = no
       }
@@ -323,7 +581,7 @@ module Morphology {
   }
   fields  {
     instanceName = LSM_Erosion0
-    borderHandling = PadSrcClamp
+    borderHandling = PadDstFillWithOrig
     fillValue = 0
     referenceExtentMode = Overlap
     filterMode = Erosion
@@ -487,7 +745,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "441 754 112 56"
+    frame = "234 709 112 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -596,7 +854,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "418 687 184 56"
+    frame = "211 642 184 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -697,7 +955,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "437 822 168 64"
+    frame = "230 777 168 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -757,7 +1015,7 @@ module ConstantXMarkerList {
 }
 module RunPythonScript {
   internal  {
-    frame = "221 698 136 56"
+    frame = "14 653 136 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -866,7 +1124,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "349 598 120 64"
+    frame = "142 553 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -886,7 +1144,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 0
+    startSlice = 240
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -908,10 +1166,10 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 168.349990844727"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 256.5
+    lutCenter = 401
     lutWidth = 2513
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -930,11 +1188,11 @@ module View2D {
 }
 module View3D {
   internal  {
-    frame = "609 101 144 56"
+    frame = "625 165 144 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "861 131 988 675"
+        geometry = "666 217 988 675"
         sizeHint = "988 675"
         wasOpen = no
       }
@@ -958,17 +1216,17 @@ module View3D {
     orientationLocation = LOWER_RIGHT
     orientationOn = TRUE
     orientationModel = CUBE
-    greyCenter = 0.36499956
-    greyWidth = 0.22499987
+    greyCenter = 0.62500036
+    greyWidth = 0.93749946
     alphaFactor = 1
     colorFactor = "1 1 1"
     camType = TRUE
-    camPosition = "-526.060241699219 347.638488769531 340.284362792969"
-    camOrientation = "0.300592094659805 -0.752088308334351 -0.586521685123444 1.75222063064575"
+    camPosition = "286.100341796875 856.221557617188 -122.692016601562"
+    camOrientation = "-0.12222396582365 -0.825186192989349 -0.551478981971741 3.14904356002808"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 996.85815
-    camNear = 493.44376
-    camFocal = 744.90015
+    camFar = 1000.0113
+    camNear = 484.67554
+    camFocal = 742.0863
     camHeight = 0.78539801
     decoration = FALSE
     annotations = TRUE
@@ -1014,15 +1272,15 @@ module View3D {
     renderer.light3Color = "1 1 1"
     renderer.light3PolarPhi = -45
     renderer.light3PolarRho = 0
-    renderer.sizeOutputX = 256
-    renderer.sizeOutputY = 256
-    renderer.sizeOutputZ = 246
+    renderer.sizeOutputX = 512
+    renderer.sizeOutputY = 512
+    renderer.sizeOutputZ = 480
     renderer.subVolumeStartX = 0
     renderer.subVolumeStartY = 0
     renderer.subVolumeStartZ = 0
-    renderer.subVolumeEndX = 256
-    renderer.subVolumeEndY = 256
-    renderer.subVolumeEndZ = 246
+    renderer.subVolumeEndX = 512
+    renderer.subVolumeEndY = 512
+    renderer.subVolumeEndZ = 480
     clip.hideGeometry = FALSE
     clip.on = FALSE
     clip.left = FALSE
@@ -1047,7 +1305,7 @@ module View3D {
 }
 module IntervalThreshold {
   internal  {
-    frame = "597 217 152 64"
+    frame = "921 297 160 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1077,12 +1335,12 @@ module IntervalThreshold {
 }
 module Mask {
   internal  {
-    frame = "609 329 128 64"
+    frame = "757 369 136 64"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "502 407 417 97"
-        sizeHint = "284 97"
+        geometry = "502 435 407 97"
+        sizeHint = "274 97"
         wasOpen = no
       }
     }
@@ -1096,7 +1354,7 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "609 1205 112 56"
+    frame = "489 989 112 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1114,15 +1372,15 @@ module Resample3D {
     filterAlways = FALSE
     filterAlwaysTolerance = 0
     zoom = "0.5 0.5 0.5"
-    imageSize = "256 256 246"
-    voxelSize = "1.40625 1.40625 1.39999997615814"
+    imageSize = "256 256 240"
+    voxelSize = "1.41796803474426 1.41796803474426 1.39999997615814"
     subVoxelShift = "0 0 0"
     useReferenceImage = FALSE
   }
 }
 module ConnectedComponents {
   internal  {
-    frame = "1555 207 176 56"
+    frame = "1853 211 184 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -1156,7 +1414,7 @@ module ConnectedComponents {
 }
 module PageToImageExtent {
   internal  {
-    frame = "1673 1049 160 56"
+    frame = "1872 1037 168 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -1178,7 +1436,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1685 865 136 56"
+    frame = "1884 853 144 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -1199,7 +1457,7 @@ module MaskToMarkers {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "1689 969 128 56"
+    frame = "1888 957 136 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -1221,7 +1479,7 @@ module AxisEdgeMask {
 }
 module Mask {
   internal  {
-    frame = "1505 1025 80 56"
+    frame = "1708 1013 80 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -1240,11 +1498,11 @@ module Mask {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "1064 1012 128 56"
+    frame = "1443 836 160 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "983 802 381 233"
+        geometry = "983 830 381 233"
         sizeHint = "381 233"
         wasOpen = no
       }
@@ -1254,15 +1512,15 @@ module AxisEdgeMask {
     instanceName = LSM_AxisEdgeMask
     front = TRUE
     back = TRUE
-    right = FALSE
-    left = FALSE
+    right = TRUE
+    left = TRUE
     top = FALSE
     bottom = FALSE
   }
 }
 module RegionGrowing {
   internal  {
-    frame = "1521 769 128 56"
+    frame = "1720 757 136 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -1315,7 +1573,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1576 452 136 56"
+    frame = "1874 456 144 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -1345,7 +1603,7 @@ module IntervalThreshold {
 }
 module RegionGrowing {
   internal  {
-    frame = "1512 316 120 56"
+    frame = "1810 320 128 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -1393,7 +1651,7 @@ module RegionGrowing {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1664 324 136 56"
+    frame = "1962 328 144 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -1419,11 +1677,11 @@ module MaskToMarkers {
 }
 module ConnectedComponents {
   internal  {
-    frame = "978 712 176 56"
+    frame = "1357 536 208 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "1196 340 676 441"
+        geometry = "1196 368 676 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -1458,7 +1716,7 @@ module ConnectedComponents {
 }
 module Mask {
   internal  {
-    frame = "922 880 80 56"
+    frame = "1305 704 104 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1477,7 +1735,7 @@ module Mask {
 }
 module PageToImageExtent {
   internal  {
-    frame = "1048 1092 160 56"
+    frame = "1427 916 192 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1499,7 +1757,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1060 940 136 56"
+    frame = "1439 764 168 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1525,11 +1783,11 @@ module MaskToMarkers {
 }
 module RegionGrowing {
   internal  {
-    frame = "1036 832 152 64"
+    frame = "1415 660 184 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "1008 199 648 617"
+        geometry = "1229 369 648 617"
         sizeHint = "648 617"
         wasOpen = no
       }
@@ -1578,11 +1836,11 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "888 1088 144 64"
+    frame = "1279 916 152 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "1266 375 412 372"
+        geometry = "1266 431 412 372"
         sizeHint = "412 372"
         wasOpen = no
       }
@@ -1594,8 +1852,8 @@ module IntervalThreshold {
     innerType = UserDef
     upperType = UserDef
     centerWidthSet = FALSE
-    threshCenter = -700
-    threshWidth = 600
+    threshCenter = -712
+    threshWidth = 624
     threshMin = -1000
     threshMax = -400
     lowerUserValue = 0
@@ -1612,12 +1870,12 @@ module itkImageFileReader {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "360 492 367 411"
+        geometry = "668 641 367 411"
         sizeHint = "300 411"
         wasOpen = no
       }
       window _automatic {
-        geometry = "1009 293 500 600"
+        geometry = "1009 377 500 600"
         sizeHint = "260 223"
         wasOpen = no
       }
@@ -1628,20 +1886,21 @@ module itkImageFileReader {
     fileDataType = int16
     correctSubVoxelShift = FALSE
     fileDimension = 3
-    info = " Could not create IO object for file /home/wieke/git-workplace/cadmi/data/examples/example04.mhd
-The file doesn't exist. 
-Filename = /home/wieke/git-workplace/cadmi/data/examples/example04.mhd
- Loaded data may be undefined."
-    numDims = 0
-    fileType = TypeNotApplicable
-    componentType = ""
-    pixelType = UNKNOWNPIXELTYPE
-    loaderType = ""
-    outputMetaDataStr = ""
-    unresolvedFileName = $(HOME)/git-workplace/cadmi/data/examples/example04.mhd
+    info = "Loading okay."
+    numDims = 3
+    fileType = Binary
+    componentType = int16
+    pixelType = SCALAR
+    loaderType = MetaImageIO
+    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
+"
+    unresolvedFileName = $(HOME)/git-workspace/cadmi/data/examples/example01.mhd
   }
 }
 connections  {
+  IntervalThreshold1.input0 = LSM_Erosion1.output0
+  OrthoView2D.image = RemoveDenseMatter.output0
+  ImageSave.input0 = IntervalThreshold1.output0
   LSM_Erosion1.input0 = LSM_Dilation1.output0
   LSM_Dilation1.input0 = LSM_ConnectedComponents.output0
   LSM_Dilation0.input0 = LSM_mask.output0
@@ -1656,11 +1915,12 @@ connections  {
   Sphericity.input1 = MorphologicalGradient.imageOut
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
-  RunPythonScript.execute = itkImageFileReader.open
   view.inImage = itkImageFileReader.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
-  View3D1.inImage = LSM_Erosion1.output0
+  View3D1.inImage = ApplyLungMask.output0
   RemoveDenseMatter.input0 = ApplyLungMask.output0
+  ApplyLungMask.input0 = itkImageFileReader.output0
+  ApplyLungMask.input1 = MaskLoad.output0
   Resample3D.input0 = itkImageFileReader.output0
   ConnectedComponents1.input0 = RegionGrowing.output0
   MaskToMarkers2.input0 = AxisEdgeMask1.output0
@@ -1677,7 +1937,7 @@ connections  {
   LSM_MaskToMarkers.input0 = LSM_AxisEdgeMask.output0
   LSM_OutsideAirRemoval.input0 = LSM_Erosion0.output0
   LSM_OutsideAirRemoval.inMarkerList = LSM_MaskToMarkers.outputXMarkerList
-  LSM_LungAirFilter.input0 = Resample3D.output0
+  LSM_LungAirFilter.input0 = itkImageFileReader.output0
 }
 networkModel  {
   parentItems  {
