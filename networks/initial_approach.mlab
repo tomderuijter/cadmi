@@ -2,9 +2,128 @@
 network  {
   watchlist = ""
 }
+module Morphology {
+  internal  {
+    frame = "1002 556 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "492 411 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Erosion1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 7
+    kernelY = 7
+    kernelZ = 7
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 179 elems, 7x7x7x1x1x1"
+    numKernelElements = 179
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1002 636 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "134 423 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Dilation1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 10
+    kernelY = 10
+    kernelZ = 10
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 552 elems, 10x10x10x1x1x1"
+    numKernelElements = 552
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "906 788 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "796 417 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Dilation0
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
 module Info {
   internal  {
-    frame = "1005 1325 56 56"
+    frame = "805 1285 56 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -20,126 +139,9 @@ module Info {
     inPlaceIndex = -1
   }
 }
-module View3D {
-  internal  {
-    frame = "1009 1197 144 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "310 258 1050 685"
-        sizeHint = "1050 685"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = View3D
-    autoViewAll = TRUE
-    inventorInputOn = TRUE
-    inventorOutputOn = FALSE
-    lutType = Ramp
-    currentTimePoint = 0
-    staticSamplingRate = 1
-    quality = 1
-    lutEditorColorPoints = "[ 0 0 0 0, 4095 1 1 1 ]"
-    lutEditorAlphaPoints = "[ 0 0, 4095 1 ]"
-    lutEditorRelativeLut = FALSE
-    lutEditorColorInterpolation = InterpolateRGB
-    lutEditorAlphaFactor = 1
-    orientationProjectionType = PERSPECTIVE
-    orientationLocation = LOWER_RIGHT
-    orientationOn = TRUE
-    orientationModel = CUBE
-    greyCenter = 0.21749976
-    greyWidth = 0.30749983
-    alphaFactor = 1
-    colorFactor = "1 1 1"
-    camType = TRUE
-    camPosition = "436.643218994141 310.407409667969 -411.611755371094"
-    camOrientation = "0.964343369007111 -0.161953240633011 0.209315255284309 3.46738147735596"
-    initialCameraOrientation = CAMERA_KEEP_AS_IS
-    camFar = 843.63129
-    camNear = 404.86523
-    camFocal = 624.02942
-    camHeight = 0.78539801
-    decoration = FALSE
-    annotations = TRUE
-    background = TRUE
-    mode = VolumeRendering
-    interactiveQuality = Medium
-  }
-  internalFields  {
-    renderer.gradientQuality = GradientQualityAutomatic
-    renderer.enhancementAlphaMix = 0.25
-    renderer.boundaryEnhancement = FALSE
-    renderer.boundaryEnhancementFactor = 1
-    renderer.boundaryEnhancementExponent = 1
-    renderer.boundaryEnhancementGradientBias = 0
-    renderer.silhouetteEnhancement = FALSE
-    renderer.silhouetteEnhancementExponent = 1
-    renderer.silhouetteEnhancementFactor = 1
-    renderer.toneShading = FALSE
-    renderer.toneShadingWarmColor = "0.67451000213623 0.533333003520966 0.141176000237465"
-    renderer.toneShadingColdColor = "0 0 0.400000005960464"
-    renderer.toneShadingWarmDiffuse = 0.60000002
-    renderer.toneShadingColdDiffuse = 0.2
-    renderer.toneShadingAngle = 45
-    renderer.materialAmbient = 0.60000002
-    renderer.materialDiffuse = 1
-    renderer.materialSpecular = 1
-    renderer.materialSpecularity = 32
-    renderer.light1Enabled = TRUE
-    renderer.light1DiffuseIntensity = 1
-    renderer.light1SpecularIntensity = 1
-    renderer.light1Color = "1 1 1"
-    renderer.light1PolarPhi = 45
-    renderer.light1PolarRho = 0
-    renderer.light2Enabled = FALSE
-    renderer.light2DiffuseIntensity = 1
-    renderer.light2SpecularIntensity = 1
-    renderer.light2Color = "1 1 1"
-    renderer.light2PolarPhi = 0
-    renderer.light2PolarRho = 0
-    renderer.light3Enabled = FALSE
-    renderer.light3DiffuseIntensity = 1
-    renderer.light3SpecularIntensity = 1
-    renderer.light3Color = "1 1 1"
-    renderer.light3PolarPhi = -45
-    renderer.light3PolarRho = 0
-    renderer.sizeOutputX = 512
-    renderer.sizeOutputY = 512
-    renderer.sizeOutputZ = 361
-    renderer.subVolumeStartX = 0
-    renderer.subVolumeStartY = 0
-    renderer.subVolumeStartZ = 0
-    renderer.subVolumeEndX = 512
-    renderer.subVolumeEndY = 512
-    renderer.subVolumeEndZ = 361
-    clip.hideGeometry = FALSE
-    clip.on = FALSE
-    clip.left = FALSE
-    clip.right = FALSE
-    clip.top = FALSE
-    clip.bottom = FALSE
-    clip.rear = FALSE
-    clip.front = FALSE
-    clip.translation0 = "1 0 0"
-    clip.translation1 = "-1 0 0"
-    clip.translation2 = "0 1 0"
-    clip.translation3 = "0 -1 0"
-    clip.translation4 = "0 0 1"
-    clip.translation5 = "0 0 -1"
-    clip.rotation0 = "0 0 0.999999940395355 1.57079994678497"
-    clip.rotation1 = "0 0 -0.999999940395355 1.57079994678497"
-    clip.rotation2 = "0 0 -1 3.1415901184082"
-    clip.rotation3 = "0 0 1 0"
-    clip.rotation4 = "-0.999999940395355 0 0 1.57079994678497"
-    clip.rotation5 = "0.999999940395355 0 0 1.57079994678497"
-  }
-}
 module DicomTagViewer {
   internal  {
-    frame = "845 1245 136 56"
+    frame = "397 1237 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -169,30 +171,30 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "141 1029 152 56"
+    frame = "234 796 152 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
         geometry = "1156 211 460 251"
         sizeHint = "460 251"
-        wasOpen = yes
+        wasOpen = no
       }
       window _automatic {
         geometry = "1354 515 500 600"
         sizeHint = "260 223"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 329
+    voxelX = 329.000000000001
     voxelY = 427
-    voxelZ = 26
+    voxelZ = 25.9999999999999
     worldX = 204.339922189713
     worldY = 265.207133054733
     worldZ = 18.1999996900558
-    voxelPos = "329 427 26"
+    voxelPos = "329.000000000001 427 25.9999999999999"
     worldPos = "204.339922189713 265.207133054733 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
@@ -206,7 +208,7 @@ module Comment {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "80 502 256 209"
+        geometry = "80 530 256 209"
         sizeHint = "256 209"
         wasOpen = yes
       }
@@ -214,32 +216,35 @@ module Comment {
   }
   fields  {
     instanceName = Comment
-    comment = "- Spherical kernel for morphological operators for lung mask
-
-- Grow lung mask several voxels to prevent false negatives"
+    comment = "- Replace lung segmentation autoupdate with pythonscript"
   }
 }
 module Morphology {
   internal  {
-    frame = "945 301 112 56"
-    moduleGroupName = ""
+    frame = "904 1008 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
     windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
       window _default {
-        geometry = "471 169 342 504"
-        sizeHint = "337 504"
+        geometry = "796 389 327 525"
+        sizeHint = "327 525"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Morphology1
+    instanceName = Erosion0
     borderHandling = PadSrcClamp
     fillValue = 0
     referenceExtentMode = Overlap
-    filterMode = Dilation
-    kernelX = 3
-    kernelY = 3
-    kernelZ = 3
+    filterMode = Erosion
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
     kernelC = 1
     kernelT = 1
     kernelU = 1
@@ -252,39 +257,8 @@ module Morphology {
     useIntervalOfVoxelsForFiltering = FALSE
     externalKernel = ""
     useExternalKernel = FALSE
-    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
-    numKernelElements = 19
-    kernelElementsSum = 0
-  }
-}
-module Morphology {
-  internal  {
-    frame = "941 237 104 56"
-    moduleGroupName = ""
-  }
-  fields  {
-    instanceName = Morphology
-    borderHandling = PadSrcClamp
-    fillValue = 0
-    referenceExtentMode = Overlap
-    filterMode = Dilation
-    kernelX = 3
-    kernelY = 3
-    kernelZ = 1
-    kernelC = 1
-    kernelT = 1
-    kernelU = 1
-    makeSpherical = FALSE
-    intervalMinOfFilteredVoxels = 0
-    intervalMaxOfFilteredVoxels = 1024
-    useIntervalOfFilteredVoxels = FALSE
-    intervalMinOfVoxelsForFiltering = 0
-    intervalMaxOfVoxelsForFiltering = 1024
-    useIntervalOfVoxelsForFiltering = FALSE
-    externalKernel = ""
-    useExternalKernel = FALSE
-    kernelInfo = "9 elems, 3x3x1x1x1x1"
-    numKernelElements = 9
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
     kernelElementsSum = 0
   }
 }
@@ -428,7 +402,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "361 997 112 56"
+    frame = "454 764 112 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -537,7 +511,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "338 930 184 56"
+    frame = "431 697 184 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -613,7 +587,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = FALSE
+    ownsList = TRUE
     applySelect = FALSE
     id = -1
     name = ""
@@ -638,7 +612,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "357 1065 168 64"
+    frame = "450 832 168 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -698,13 +672,13 @@ module ConstantXMarkerList {
 }
 module RunPythonScript {
   internal  {
-    frame = "141 941 136 56"
+    frame = "234 708 136 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
         geometry = "1139 238 698 650"
         sizeHint = "698 553"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -802,7 +776,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "269 841 120 64"
+    frame = "362 608 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -822,7 +796,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 176
+    startSlice = 180
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -844,10 +818,10 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 123.549995422363"
+    plane = "0 0 1 126.349998474121"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 401
+    lutCenter = 256.5
     lutWidth = 2513
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -1032,7 +1006,7 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "613 1205 104 56"
+    frame = "609 1205 112 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1176,7 +1150,7 @@ module Mask {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "1037 949 120 56"
+    frame = "1064 1012 128 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1355,12 +1329,12 @@ module MaskToMarkers {
 }
 module ConnectedComponents {
   internal  {
-    frame = "939 676 168 56"
+    frame = "978 712 176 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "378 211 676 433"
-        sizeHint = "523 433"
+        geometry = "378 239 676 441"
+        sizeHint = "523 441"
         wasOpen = no
       }
     }
@@ -1389,7 +1363,7 @@ module ConnectedComponents {
 }
 module Mask {
   internal  {
-    frame = "871 756 80 56"
+    frame = "922 880 80 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1406,183 +1380,9 @@ module Mask {
     background = 0
   }
 }
-module FastMorphology {
-  internal  {
-    frame = "939 498 128 64"
-    moduleGroupName = "Lung Segmentation Mask"
-    windows  {
-      window _default {
-        geometry = "108 519 380 415"
-        sizeHint = "380 415"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Closing
-    morphologicOperation = Closing
-    xSize = 5
-    ySize = 5
-    zSize = 5
-    cSize = 0
-    tSize = 0
-    uSize = 0
-    useInputMaxValue = FALSE
-    userSetMaxValue = 1
-    autoUpdate = TRUE
-    useGreyScaleMorphology = FALSE
-    boundaryHandling = "Propagate boundary values"
-    boundaryFillValue = 0
-  }
-}
-module ImagePropertyConvert {
-  internal  {
-    frame = "915 582 176 56"
-    moduleGroupName = "Lung Segmentation Mask"
-    windows  {
-      window _default {
-        geometry = "408 407 352 661"
-        sizeHint = "352 661"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = ImagePropertyConvert1
-    changeDimensionInfo = FALSE
-    cDimInfo = ""
-    tDimInfo = ""
-    uDimInfo = ""
-    a00 = 1
-    a01 = 0
-    a02 = 0
-    a03 = 0
-    a10 = 0
-    a11 = 1
-    a12 = 0
-    a13 = 0
-    a20 = 0
-    a21 = 0
-    a22 = 1
-    a23 = 0
-    a30 = 0
-    a31 = 0
-    a32 = 0
-    a33 = 1
-    worldMatrix = "1 0 0 0
-0 1 0 0
-0 0 1 0
-0 0 0 1"
-    changeDatatype = FALSE
-    datatype = "unsigned int8"
-    changePageSize = TRUE
-    pageSizeX = 32
-    pageSizeY = 32
-    pageSizeZ = 32
-    pageSizeC = 1
-    pageSizeT = 1
-    pageSizeU = 1
-    changeMinGreyvalue = FALSE
-    minGreyvalue = 0
-    changeMaxGreyvalue = FALSE
-    maxGreyvalue = 1
-    changeWorldMatrix = FALSE
-    voxelSizeX = 1
-    voxelSizeY = 1
-    voxelSizeZ = 1
-    autoApply = TRUE
-  }
-}
-module ImagePropertyConvert {
-  internal  {
-    frame = "819 956 168 56"
-    moduleGroupName = "Lung Segmentation Mask"
-    windows  {
-      window _default {
-        geometry = "408 407 352 661"
-        sizeHint = "352 661"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = ImagePropertyConvert
-    changeDimensionInfo = FALSE
-    cDimInfo = ""
-    tDimInfo = ""
-    uDimInfo = ""
-    a00 = 1
-    a01 = 0
-    a02 = 0
-    a03 = 0
-    a10 = 0
-    a11 = 1
-    a12 = 0
-    a13 = 0
-    a20 = 0
-    a21 = 0
-    a22 = 1
-    a23 = 0
-    a30 = 0
-    a31 = 0
-    a32 = 0
-    a33 = 1
-    worldMatrix = "1 0 0 0
-0 1 0 0
-0 0 1 0
-0 0 0 1"
-    changeDatatype = FALSE
-    datatype = "unsigned int8"
-    changePageSize = TRUE
-    pageSizeX = 32
-    pageSizeY = 32
-    pageSizeZ = 32
-    pageSizeC = 1
-    pageSizeT = 1
-    pageSizeU = 1
-    changeMinGreyvalue = FALSE
-    minGreyvalue = 0
-    changeMaxGreyvalue = FALSE
-    maxGreyvalue = 1
-    changeWorldMatrix = FALSE
-    voxelSizeX = 1
-    voxelSizeY = 1
-    voxelSizeZ = 1
-    autoApply = TRUE
-  }
-}
-module FastMorphology {
-  internal  {
-    frame = "839 872 128 64"
-    moduleGroupName = "Lung Segmentation Mask"
-    windows  {
-      window _default {
-        geometry = "108 239 390 413"
-        sizeHint = "384 413"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Opening
-    morphologicOperation = Opening
-    xSize = 2
-    ySize = 2
-    zSize = 2
-    cSize = 0
-    tSize = 0
-    uSize = 0
-    useInputMaxValue = FALSE
-    userSetMaxValue = 1
-    autoUpdate = TRUE
-    useGreyScaleMorphology = FALSE
-    boundaryHandling = "Pad with input min value"
-    boundaryFillValue = 0
-  }
-}
 module PageToImageExtent {
   internal  {
-    frame = "1019 1028 152 56"
+    frame = "1048 1092 160 56"
     moduleGroupName = "Lung Segmentation Mask"
   }
   fields  {
@@ -1597,7 +1397,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1031 876 128 56"
+    frame = "1060 940 136 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1618,7 +1418,7 @@ module MaskToMarkers {
 }
 module RegionGrowing {
   internal  {
-    frame = "967 760 144 64"
+    frame = "1036 832 152 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1671,7 +1471,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "835 1032 136 64"
+    frame = "888 1088 144 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1728,10 +1528,13 @@ module itkImageFileReader {
   }
 }
 connections  {
+  Erosion1.input0 = Dilation1.output0
+  Dilation1.input0 = ConnectedComponents.output0
+  Dilation0.input0 = Mask.output0
   Info.input0 = itkImageFileReader.output0
-  View3D.inImage = itkImageFileReader.output0
   DicomTagViewer.input0 = itkImageFileReader.output0
   WorldVoxelConvert.input0 = itkImageFileReader.output0
+  Erosion0.input0 = LungAirFilter.output0
   PageToImageExtent2.input0 = ImagePropertyConvert2.output0
   ImagePropertyConvert2.input0 = SelectCandidates.output0
   MorphologicalGradient.imageIn = SelectCandidates.output0
@@ -1752,17 +1555,14 @@ connections  {
   RegionGrowing1.inMarkerList = MaskToMarkers2.outputXMarkerList
   RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
   MaskToMarkers1.input0 = IntervalThreshold.output0
-  ConnectedComponents.input0 = Mask.output0
-  Mask.input0 = Opening.output0
+  ConnectedComponents.input0 = Dilation0.output0
+  Mask.input0 = Erosion0.output0
   Mask.input1 = OutsideAirRemoval.output0
-  Closing.input0 = ImagePropertyConvert1.output0
-  ImagePropertyConvert1.input0 = ConnectedComponents.output0
-  ImagePropertyConvert.input0 = LungAirFilter.output0
-  Opening.input0 = ImagePropertyConvert.output0
-  PageToImageExtent.input0 = Opening.output0
+  PageToImageExtent.input0 = Erosion0.output0
   MaskToMarkers.input0 = AxisEdgeMask.output0
-  OutsideAirRemoval.input0 = Opening.output0
+  OutsideAirRemoval.input0 = Erosion0.output0
   OutsideAirRemoval.inMarkerList = MaskToMarkers.outputXMarkerList
+  LungAirFilter.input0 = Resample3D.output0
 }
 networkModel  {
   parentItems  {
