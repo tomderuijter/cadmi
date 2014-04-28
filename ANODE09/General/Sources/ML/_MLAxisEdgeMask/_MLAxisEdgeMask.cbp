@@ -3,7 +3,7 @@
   <FileVersion major="1" minor="6" />
   <Project>
     <Option title="_MLAxisEdgeMask" />
-    <Option makefile="/home/wieke/git-workplace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask" />
+    <Option makefile="/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLAxisEdgeMask/Makefile._MLAxisEdgeMask" />
     <Option makefile_is_custom="1" />
     <Option compiler="gcc" />
     <Build>

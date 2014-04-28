@@ -1,0 +1,1 @@
+/mnt/Multimedia/CADMICompetition/examples/example_annotations.txt

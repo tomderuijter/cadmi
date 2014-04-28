@@ -273,13 +273,13 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 339.052610439724
-    voxelY = 440.047005038791
-    voxelZ = 26
+    voxelX = 238.396366715431
+    voxelY = 309.4080504179
+    voxelZ = 18.1999996900558
     worldX = 238.396366715431
     worldY = 309.4080504179
     worldZ = 18.1999996900558
-    voxelPos = "339.052610439724 440.047005038791 26"
+    voxelPos = "238.396366715431 309.4080504179 18.1999996900558"
     worldPos = "238.396366715431 309.4080504179 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
@@ -672,7 +672,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = FALSE
+    ownsList = TRUE
     applySelect = FALSE
     id = -1
     name = ""
@@ -886,7 +886,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 245
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -908,7 +908,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 171.849990844727"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 256.5
@@ -964,7 +964,7 @@ module View3D {
     colorFactor = "1 1 1"
     camType = TRUE
     camPosition = "-526.060241699219 347.638488769531 340.284362792969"
-    camOrientation = "0.300592094659805 -0.752088308334351 -0.586521744728088 1.75222063064575"
+    camOrientation = "0.300592094659805 -0.752088308334351 -0.586521685123444 1.75222063064575"
     initialCameraOrientation = CAMERA_KEEP_AS_IS
     camFar = 996.85815
     camNear = 493.44376
@@ -1628,14 +1628,16 @@ module itkImageFileReader {
     fileDataType = int16
     correctSubVoxelShift = FALSE
     fileDimension = 3
-    info = "Loading okay."
-    numDims = 3
-    fileType = Binary
-    componentType = int16
-    pixelType = SCALAR
-    loaderType = MetaImageIO
-    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
-"
+    info = " Could not create IO object for file /home/wieke/git-workplace/cadmi/data/examples/example04.mhd
+The file doesn't exist. 
+Filename = /home/wieke/git-workplace/cadmi/data/examples/example04.mhd
+ Loaded data may be undefined."
+    numDims = 0
+    fileType = TypeNotApplicable
+    componentType = ""
+    pixelType = UNKNOWNPIXELTYPE
+    loaderType = ""
+    outputMetaDataStr = ""
     unresolvedFileName = $(HOME)/git-workplace/cadmi/data/examples/example04.mhd
   }
 }
