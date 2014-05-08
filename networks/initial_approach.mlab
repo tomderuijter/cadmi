@@ -2,9 +2,210 @@
 network  {
   watchlist = ""
 }
+module Scale {
+  internal  {
+    frame = "1383 -67 72 56"
+    moduleGroupName = VerticalMean2
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = -999.999
+    inputMax = 1512.998487
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Morphology {
+  internal  {
+    frame = "809 1085 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 17
+    kernelY = 17
+    kernelZ = 17
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 2553 elems, 17x17x17x1x1x1"
+    numKernelElements = 2553
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "813 1157 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 20
+    kernelY = 20
+    kernelZ = 20
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 4224 elems, 20x20x20x1x1x1"
+    numKernelElements = 4224
+    kernelElementsSum = 0
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "61 261 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 0.3
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "809 1229 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "459 366 360 347"
+        sizeHint = "360 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D1
+    keep = "Scale factor"
+    filter = Triangle/Linear
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.5 0.5 0.5"
+    imageSize = "256 256 181"
+    voxelSize = "1.242187976 1.242187976 1.399999976"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "189 557 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "68 260 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.48999983
+    lutWidth = 0.29250005
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
 module Arithmetic2 {
   internal  {
-    frame = "589 -299 104 56"
+    frame = "1367 -315 104 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -23,7 +224,7 @@ module Arithmetic2 {
 }
 module KernelEditor {
   internal  {
-    frame = "321 -163 112 56"
+    frame = "1115 -179 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -37,32 +238,28 @@ module KernelEditor {
     instanceName = KernelEditor4
     kernelX = 1
     kernelY = 1
-    kernelZ = 5
+    kernelZ = 3
     kernelC = 1
     kernelT = 1
     kernelU = 1
     fieldWidth = 10
     precision = 6
-    value = 1
-    numElements = 5
+    value = 0
+    numElements = 3
     elementSum = 1
-    status = "#Elems=5, Sum=1.000000, 4 Undos, 0 Redos"
-    kernel = "(*,0,0,0,0,0):    0.000000
+    status = "#Elems=3, Sum=1.000000, 16 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    1.000000
 
 (*,0,1,0,0,0):    0.000000
 
 (*,0,2,0,0,0):    0.000000
-
-(*,0,3,0,0,0):    0.500000
-
-(*,0,4,0,0,0):    0.500000
 
 "
   }
 }
 module Convolution {
   internal  {
-    frame = "465 -163 112 56"
+    frame = "1259 -179 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -80,30 +277,24 @@ module Convolution {
     intervalMinOfFilteredVoxels = 0
     intervalMaxOfFilteredVoxels = 1024
     useIntervalOfFilteredVoxels = FALSE
-    externalKernel = "(*,0,0,0,0,0):    0.000000
+    externalKernel = "(*,0,0,0,0,0):    1.000000
 
 (*,0,1,0,0,0):    0.000000
 
 (*,0,2,0,0,0):    0.000000
 
-(*,0,3,0,0,0):    0.500000
-
-(*,0,4,0,0,0):    0.500000
-
 "
-    kernelInfo = "5 elems, 1x1x5x1x1x1"
-    kernelOutput = "(0,0,0,0,0,0):0.000000
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):1.000000
 (0,0,1,0,0,0):0.000000
 (0,0,2,0,0,0):0.000000
-(0,0,3,0,0,0):0.500000
-(0,0,4,0,0,0):0.500000
 "
     predefKernel = "From Kernel Input"
   }
 }
 module KernelEditor {
   internal  {
-    frame = "817 -163 112 56"
+    frame = "1611 -179 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -117,32 +308,28 @@ module KernelEditor {
     instanceName = KernelEditor3
     kernelX = 1
     kernelY = 1
-    kernelZ = 5
+    kernelZ = 3
     kernelC = 1
     kernelT = 1
     kernelU = 1
     fieldWidth = 10
     precision = 6
     value = 0
-    numElements = 5
+    numElements = 3
     elementSum = 1
-    status = "#Elems=5, Sum=1.000000, 6 Undos, 0 Redos"
-    kernel = "(*,0,0,0,0,0):    0.500000
+    status = "#Elems=3, Sum=1.000000, 17 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.000000
 
-(*,0,1,0,0,0):    0.500000
+(*,0,1,0,0,0):    0.000000
 
-(*,0,2,0,0,0):    0.000000
-
-(*,0,3,0,0,0):    0.000000
-
-(*,0,4,0,0,0):    0.000000
+(*,0,2,0,0,0):    1.000000
 
 "
   }
 }
 module Convolution {
   internal  {
-    frame = "673 -163 112 56"
+    frame = "1467 -179 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -160,30 +347,24 @@ module Convolution {
     intervalMinOfFilteredVoxels = 0
     intervalMaxOfFilteredVoxels = 1024
     useIntervalOfFilteredVoxels = FALSE
-    externalKernel = "(*,0,0,0,0,0):    0.500000
+    externalKernel = "(*,0,0,0,0,0):    0.000000
 
-(*,0,1,0,0,0):    0.500000
+(*,0,1,0,0,0):    0.000000
 
-(*,0,2,0,0,0):    0.000000
-
-(*,0,3,0,0,0):    0.000000
-
-(*,0,4,0,0,0):    0.000000
+(*,0,2,0,0,0):    1.000000
 
 "
-    kernelInfo = "5 elems, 1x1x5x1x1x1"
-    kernelOutput = "(0,0,0,0,0,0):0.500000
-(0,0,1,0,0,0):0.500000
-(0,0,2,0,0,0):0.000000
-(0,0,3,0,0,0):0.000000
-(0,0,4,0,0,0):0.000000
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):1.000000
 "
     predefKernel = "From Kernel Input"
   }
 }
 module KernelEditor {
   internal  {
-    frame = "753 -11 112 56"
+    frame = "1545 1 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -216,7 +397,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "569 -11 112 56"
+    frame = "1361 1 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -255,7 +436,7 @@ module Convolution {
 }
 module MarkerToMask {
   internal  {
-    frame = "525 205 120 56"
+    frame = "45 389 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -277,11 +458,11 @@ module MarkerToMask {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "493 357 168 56"
+    frame = "5 477 168 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "684 102 401 648"
+        geometry = "850 104 401 648"
         sizeHint = "387 648"
         wasOpen = no
       }
@@ -293,28 +474,28 @@ module ImagePropertyConvert {
     cDimInfo = LUMINANCE
     tDimInfo = ""
     uDimInfo = ""
-    a00 = 0.62109399
+    a00 = 1.242188
     a01 = 0
     a02 = 0
     a03 = 0
     a10 = 0
-    a11 = 0.62109399
+    a11 = 1.242188
     a12 = 0
     a13 = 0
     a20 = 0
     a21 = 0
-    a22 = 0.69999999
+    a22 = 1.4
     a23 = 0
     a30 = 0
     a31 = 0
     a32 = 0
     a33 = 1
-    worldMatrix = "0.621093988418579 0 0 0
-0 0.621093988418579 0 0
-0 0 0.699999988079071 0
+    worldMatrix = "1.24218797683716 0 0 0
+0 1.24218797683716 0 0
+0 0 1.39999997615814 0
 0 0 0 1"
     changeDatatype = FALSE
-    datatype = int16
+    datatype = float
     changePageSize = FALSE
     pageSizeX = 128
     pageSizeY = 128
@@ -323,19 +504,19 @@ module ImagePropertyConvert {
     pageSizeT = 1
     pageSizeU = 1
     changeMinGreyvalue = FALSE
-    minGreyvalue = -1000
+    minGreyvalue = 0
     changeMaxGreyvalue = FALSE
-    maxGreyvalue = 1513
+    maxGreyvalue = 1
     changeWorldMatrix = TRUE
-    voxelSizeX = 0.62109399
-    voxelSizeY = 0.62109399
-    voxelSizeZ = 0.69999999
-    autoApply = TRUE
+    voxelSizeX = 1.242188
+    voxelSizeY = 1.242188
+    voxelSizeZ = 1.4
+    autoApply = FALSE
   }
 }
 module ConstantImage {
   internal  {
-    frame = "517 437 120 56"
+    frame = "29 557 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -347,9 +528,9 @@ module ConstantImage {
   }
   fields  {
     instanceName = ConstantImage
-    sizeX = 512
-    sizeY = 512
-    sizeZ = 361
+    sizeX = 256
+    sizeY = 256
+    sizeZ = 181
     sizeC = 1
     sizeT = 1
     sizeU = 1
@@ -360,7 +541,7 @@ module ConstantImage {
 }
 module Convolution {
   internal  {
-    frame = "1057 -51 112 56"
+    frame = "1787 -613 112 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -401,7 +582,7 @@ module Convolution {
 }
 module Convolution {
   internal  {
-    frame = "1064 43 104 56"
+    frame = "1794 -519 104 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -440,11 +621,11 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "1236 -53 112 56"
+    frame = "1966 -615 112 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
-        geometry = "0 44 640 752"
+        geometry = "388 44 640 752"
         sizeHint = "425 858"
         wasOpen = no
       }
@@ -479,7 +660,7 @@ module KernelEditor {
 }
 module KernelEditor {
   internal  {
-    frame = "1248 43 104 56"
+    frame = "1978 -519 104 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -512,7 +693,7 @@ module KernelEditor {
 }
 module ImageLoad {
   internal  {
-    frame = "953 625 96 64"
+    frame = "817 1305 96 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -622,7 +803,7 @@ module ImageSave {
 }
 module RunPythonScript {
   internal  {
-    frame = "489 813 144 56"
+    frame = "5 1165 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -733,8 +914,8 @@ module RunPythonScript {
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
-        geometry = "23 303 698 553"
-        sizeHint = "698 553"
+        geometry = "23 245 669 551"
+        sizeHint = "669 551"
         wasOpen = no
       }
     }
@@ -933,7 +1114,7 @@ module Morphology {
 }
 module Info {
   internal  {
-    frame = "277 1221 56 56"
+    frame = "317 1205 56 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -951,7 +1132,7 @@ module Info {
 }
 module DicomTagViewer {
   internal  {
-    frame = "373 1213 136 56"
+    frame = "413 1197 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -981,7 +1162,7 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "14 741 152 56"
+    frame = "-110 932 144 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -998,13 +1179,13 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 329
-    voxelY = 427
-    voxelZ = 26
+    voxelX = 164.5
+    voxelY = 213.5
+    voxelZ = 13
     worldX = 204.339922189713
     worldY = 265.207133054733
     worldZ = 18.1999996900558
-    voxelPos = "329 427 26"
+    voxelPos = "164.5 213.5 13"
     worldPos = "204.339922189713 265.207133054733 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
@@ -1014,7 +1195,7 @@ module WorldVoxelConvert {
 }
 module Comment {
   internal  {
-    frame = "-135 389 96 56"
+    frame = "301 1309 88 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1074,7 +1255,7 @@ module Morphology {
 }
 module PageToImageExtent {
   internal  {
-    frame = "-147 70 160 56"
+    frame = "1866 -200 160 56"
     moduleGroupName = Sphericity
   }
   fields  {
@@ -1089,7 +1270,7 @@ module PageToImageExtent {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "-155 134 176 56"
+    frame = "1858 -136 176 56"
     moduleGroupName = Sphericity
   }
   fields  {
@@ -1140,7 +1321,7 @@ module ImagePropertyConvert {
 }
 module ConnectedComponents {
   internal  {
-    frame = "18 247 168 64"
+    frame = "2031 -23 168 64"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1174,7 +1355,7 @@ module ConnectedComponents {
 }
 module MorphologicalGradient {
   internal  {
-    frame = "49 93 168 56"
+    frame = "2062 -177 168 56"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1195,7 +1376,7 @@ module MorphologicalGradient {
 }
 module Sphericity {
   internal  {
-    frame = "17 -2 88 56"
+    frame = "2030 -272 88 56"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1212,7 +1393,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "234 709 112 56"
+    frame = "110 900 104 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1321,7 +1502,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "211 642 184 56"
+    frame = "91 833 168 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1422,7 +1603,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "230 777 168 64"
+    frame = "110 968 152 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1439,50 +1620,13 @@ module ConstantXMarkerList {
   }
   fields  {
     instanceName = AnnotationMarkers
-    markerList = "106.20707202 251.54306531 215.599996328 0 0 0 2
-198.128982306 196.26570034 214.89999634 0 0 0 1
-240.984467506 186.949290514 211.3999964 0 0 0 1
-186.328196526 206.824298143 203.699996531 0 0 0 1
-115.523481846 248.437595367 199.499996603 0 0 0 1
-65.214868784 222.972741842 198.099996626 0 0 0 1
-189.433666468 142.851617336 187.599996805 0 0 0 2
-244.089937449 236.636809587 185.499996841 0 0 0 1
-256.511817217 168.93756485 183.399996877 0 0 0 1
-75.1523725986 159.000061035 182.699996889 0 0 0 1
-234.773527622 139.746147394 181.999996901 0 0 0 2
-116.765669823 255.890723228 181.299996912 0 0 0 1
-253.406347275 216.761801958 179.899996936 0 0 0 2
-249.679783344 223.593835831 177.099996984 0 0 0 1
-255.890723228 222.972741842 167.999997139 0 0 0 2
-262.101663113 180.117256641 163.099997222 0 0 0 1
-253.406347275 150.925839186 156.79999733 0 0 0 1
-261.480569124 202.476640224 150.499997437 0 0 0 1
-244.089937449 251.54306531 143.499997556 0 0 0 1
-58.3828349113 163.347718954 142.09999758 0 0 0 1
-70.1836206913 111.175823927 140.699997604 0 0 0 1
-85.7109704018 112.418011904 136.499997675 0 0 0 2
-46.5820491314 217.382895947 136.499997675 0 0 0 1
-75.1523725986 204.961016178 118.299997985 0 0 0 1
-52.1718950272 249.058689356 110.599998116 0 0 0 2
-44.7187671661 133.53520751 105.6999982 0 0 0 1
-130.429737568 263.964945078 102.19999826 0 0 0 1
-29.1914174557 136.019583464 101.499998271 0 0 0 1
-270.175884962 206.824298143 93.7999984026 0 0 0 2
-244.089937449 255.890723228 92.3999984264 0 0 0 2
-252.164159298 241.605561495 83.2999985814 0 0 0 2
-261.480569124 236.015715599 67.1999988556 0 0 0 2
-62.7304928303 257.132911205 56.6999990344 0 0 0 1
-37.2656393051 232.289151669 51.7999991179 0 0 0 1
-197.507888317 255.890723228 48.2999991775 0 0 0 1
-281.976670742 178.253974676 44.7999992371 0 0 0 1
-115.523481846 273.281354904 20.2999996543 0 0 0 2
-204.33992219 265.207133055 18.1999996901 0 0 0 1
+    markerList = "253.406347275 150.925839186 156.79999733 0 0 0 1
 \\"
   }
 }
 module RunPythonScript {
   internal  {
-    frame = "14 653 136 56"
+    frame = "-110 844 128 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1580,7 +1724,7 @@ def WorldVoxelConvert(x,y,z):
 	z = CTX.field("WorldVoxelConvert.worldZ").value
 	return x,y,z*"
     wakeUpCode = ""
-    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,2,1)*"
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,2,0.5)*"
     showFields = FALSE
     showInitCode = TRUE
     showWakeUpCode = FALSE
@@ -1590,7 +1734,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "141 553 120 64"
+    frame = "13 744 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -1610,7 +1754,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 180
+    startSlice = 90
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -1632,7 +1776,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.349998474121"
+    plane = "0 0 1 126.699996948242"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 256.5
@@ -1654,7 +1798,7 @@ module View2D {
 }
 module Mask {
   internal  {
-    frame = "757 369 136 64"
+    frame = "705 985 128 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1673,7 +1817,7 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "489 989 112 56"
+    frame = "621 1197 104 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2217,20 +2361,24 @@ module itkImageFileReader {
   }
 }
 connections  {
+  Scale1.input0 = Convolution2.output0
+  Morphology1.input0 = Morphology.output0
+  Morphology.input0 = Resample3D1.output0
+  ImageStatistics.input1 = MarkerToMask.output0
+  Resample3D1.input0 = MaskLoad.output0
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
   Arithmetic2.input0 = Convolution4.output0
   Arithmetic2.input1 = Convolution3.output0
-  Convolution4.input0 = Convolution2.output0
+  Convolution4.input0 = Scale1.output0
   Convolution4.externalKernel = KernelEditor4.kernel
-  Convolution3.input0 = Convolution2.output0
+  Convolution3.input0 = Scale1.output0
   Convolution3.externalKernel = KernelEditor3.kernel
-  Convolution2.input0 = ApplyLungMask.output0
   Convolution2.externalKernel = KernelEditor2.kernel
   MarkerToMask.input0 = ImagePropertyConvert.output0
   MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
   ImagePropertyConvert.input0 = ConstantImage.output0
   Convolution1.input0 = Convolution.output0
   Convolution1.externalKernel = KernelEditor1.kernel
-  Convolution.input0 = ApplyLungMask.output0
   Convolution.externalKernel = KernelEditor.kernel
   IntervalThreshold1.input0 = LSM_Erosion1.output0
   ImageSave.input0 = IntervalThreshold1.output0
@@ -2239,7 +2387,7 @@ connections  {
   LSM_Dilation0.input0 = LSM_mask.output0
   Info.input0 = itkImageFileReader.output0
   DicomTagViewer.input0 = itkImageFileReader.output0
-  WorldVoxelConvert.input0 = itkImageFileReader.output0
+  WorldVoxelConvert.input0 = Resample3D.output0
   LSM_Erosion0.input0 = LSM_LungAirFilter.output0
   PageToImageExtent2.input0 = ImagePropertyConvert2.output0
   ImagePropertyConvert2.input0 = SelectCandidates.output0
@@ -2248,10 +2396,10 @@ connections  {
   Sphericity.input1 = MorphologicalGradient.imageOut
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
-  view.inImage = itkImageFileReader.output0
+  view.inImage = Resample3D.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
-  ApplyLungMask.input0 = itkImageFileReader.output0
-  ApplyLungMask.input1 = MaskLoad.output0
+  ApplyLungMask.input0 = Resample3D.output0
+  ApplyLungMask.input1 = Morphology1.output0
   Resample3D.input0 = itkImageFileReader.output0
   ConnectedComponents1.input0 = RegionGrowing.output0
   MaskToMarkers2.input0 = AxisEdgeMask1.output0
