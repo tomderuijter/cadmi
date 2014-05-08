@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLFilterLabelByVolume module definitions.
+/*!
+// \file    _MLFilterLabelByVolume.def
+// \author     wieke
+// \date    2014-05-08
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule FilterLabelByVolume {
+  DLL                = "_MLFilterLabelByVolume"
+
+  genre              = ""
+  author             = "   wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/FilterLabelByVolume.script
+}  

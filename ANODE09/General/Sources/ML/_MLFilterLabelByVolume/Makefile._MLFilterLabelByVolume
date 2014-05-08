@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/Makefile._MLFilterLabelByVolume.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/_MLFilterLabelByVolume.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLFilterLabelByVolume
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/Makefile._MLFilterLabelByVolume.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/_MLFilterLabelByVolume.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLFilterLabelByVolume
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/Makefile._MLFilterLabelByVolume.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume
+	$(MAKE) -k -j 4 -f Makefile._MLFilterLabelByVolume.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume/Makefile._MLFilterLabelByVolume.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume 
+	$(MAKE) -k -j 4 -f Makefile._MLFilterLabelByVolume.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume && if test -e Makefile._MLFilterLabelByVolume.Release; then $(MAKE) -k -f Makefile._MLFilterLabelByVolume.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLFilterLabelByVolume && if test -e Makefile._MLFilterLabelByVolume.Debug; then $(MAKE) -k -f Makefile._MLFilterLabelByVolume.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release
