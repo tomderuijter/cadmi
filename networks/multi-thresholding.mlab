@@ -2,9 +2,615 @@
 network  {
   watchlist = ""
 }
+module Arithmetic {
+  internal  {
+    frame = "397 197 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "644 332 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic3
+    expression = "a | b | c"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "941 205 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "644 332 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic
+    expression = "a | b | c"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1061 649 184 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "7 112 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents7
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.003
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1189 833 152 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "4 705 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold6
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -500
+    threshWidth = 200
+    threshMin = -600
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1293 649 184 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "33 213 523 441"
+        sizeHint = "523 441"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents6
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.05
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
 module Threshold {
   internal  {
-    frame = "882 637 96 56"
+    frame = "1093 569 104 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold6
+    threshold = 1
+    minValue = 0
+    maxValue = 1829
+    relativeThreshold = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "1301 553 104 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold5
+    threshold = 1
+    minValue = 0
+    maxValue = 1829
+    relativeThreshold = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1209 457 112 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "829 534 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic13
+    function = Invert
+    constant = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "1145 385 80 56"
+    moduleGroupName = "Threshold 3"
+  }
+  fields  {
+    instanceName = Mask4
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "520 642 184 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "7 112 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents5
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.003
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "648 826 152 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "40 277 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold5
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -300
+    threshWidth = 200
+    threshMin = -400
+    threshMax = -200
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "752 642 184 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "33 241 523 441"
+        sizeHint = "523 441"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents4
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.03
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "552 562 104 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold4
+    threshold = 1
+    minValue = 0
+    maxValue = 1577
+    relativeThreshold = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "760 546 104 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold3
+    threshold = 1
+    minValue = 0
+    maxValue = 1577
+    relativeThreshold = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "668 450 112 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "829 534 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic12
+    function = Invert
+    constant = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "604 378 80 56"
+    moduleGroupName = "Threshold 2"
+  }
+  fields  {
+    instanceName = Mask3
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "66 379 80 56"
+    moduleGroupName = "Threshold 1"
+  }
+  fields  {
+    instanceName = Mask2
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "130 451 112 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "829 562 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic11
+    function = Invert
+    constant = 0
+  }
+}
+module Threshold {
+  internal  {
+    frame = "222 547 104 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold2
+    threshold = 1
+    minValue = 0
+    maxValue = 1605
+    relativeThreshold = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "14 563 104 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold1
+    threshold = 1
+    minValue = 0
+    maxValue = 1605
+    relativeThreshold = FALSE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "214 643 184 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "284 528 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents3
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.01
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "110 827 152 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "4 705 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold4
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -100
+    threshWidth = 200
+    threshMin = -200
+    threshMax = 0
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "-18 643 184 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "7 112 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents2
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.003
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "5097 413 96 56"
     moduleGroupName = "Multi Thresholding"
     windows  {
       window _default {
@@ -24,7 +630,7 @@ module Threshold {
 }
 module Mask {
   internal  {
-    frame = "802 461 80 56"
+    frame = "5017 237 80 56"
     moduleGroupName = "Multi Thresholding"
   }
   fields  {
@@ -36,7 +642,7 @@ module Mask {
 }
 module Arithmetic1 {
   internal  {
-    frame = "878 557 104 56"
+    frame = "5093 333 104 56"
     moduleGroupName = "Multi Thresholding"
     windows  {
       window _default {
@@ -54,7 +660,7 @@ module Arithmetic1 {
 }
 module Morphology {
   internal  {
-    frame = "846 797 120 56"
+    frame = "5061 573 120 56"
     moduleGroupName = "Multi Thresholding"
   }
   fields  {
@@ -85,11 +691,11 @@ module Morphology {
 }
 module ConnectedComponents {
   internal  {
-    frame = "842 725 176 56"
+    frame = "5057 501 176 56"
     moduleGroupName = "Multi Thresholding"
     windows  {
       window _default {
-        geometry = "1259 342 523 441"
+        geometry = "1259 426 523 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -119,7 +725,7 @@ module ConnectedComponents {
 }
 module View2D {
   internal  {
-    frame = "851 150 120 56"
+    frame = "692 60 120 56"
     moduleGroupName = SynchroView2dLabeled
     windows  {
       window _automatic {
@@ -128,9 +734,9 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "960 52 960 1028"
+        geometry = "-960 52 960 1028"
         sizeHint = "400 400"
-        wasOpen = no
+        wasOpen = yes
       }
     }
   }
@@ -139,7 +745,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 133
+    startSlice = 174
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -161,11 +767,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 186.899993896484"
+    plane = "0 0 1 244.300003051758"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0.5
-    lutWidth = 1
+    lutCenter = 109.74002
+    lutWidth = 36.580002
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -183,7 +789,7 @@ module View2D {
 }
 module IntervalThreshold {
   internal  {
-    frame = "822 869 152 56"
+    frame = "5037 645 152 56"
     moduleGroupName = "Multi Thresholding"
     windows  {
       window _default {
@@ -211,24 +817,9 @@ module IntervalThreshold {
     changedMax = 100000
   }
 }
-module PageToImageExtent {
-  internal  {
-    frame = "697 1053 160 56"
-    moduleGroupName = ""
-  }
-  fields  {
-    instanceName = PageToImageExtent
-    setX = TRUE
-    setY = TRUE
-    setZ = TRUE
-    setC = TRUE
-    setT = TRUE
-    setU = TRUE
-  }
-}
 module IntervalThreshold {
   internal  {
-    frame = "622 725 152 56"
+    frame = "4853 477 152 56"
     moduleGroupName = "Multi Thresholding"
     windows  {
       window _default {
@@ -258,13 +849,13 @@ module IntervalThreshold {
 }
 module View2D {
   internal  {
-    frame = "683 150 120 56"
+    frame = "524 60 120 56"
     moduleGroupName = SynchroView2dLabeled
     windows  {
       window _default {
-        geometry = "0 52 960 1028"
+        geometry = "1920 52 960 1028"
         sizeHint = "400 400"
-        wasOpen = no
+        wasOpen = yes
       }
       window _automatic {
         geometry = "1152 179 500 600"
@@ -278,7 +869,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 133
+    startSlice = 174
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -300,11 +891,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 186.899993896484"
+    plane = "0 0 1 244.300003051758"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0.5
-    lutWidth = 1
+    lutCenter = 109.74002
+    lutWidth = 36.580002
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -322,7 +913,7 @@ module View2D {
 }
 module Scale {
   internal  {
-    frame = "1411 -243 72 56"
+    frame = "4029 -235 72 56"
     moduleGroupName = VerticalMean2
   }
   fields  {
@@ -338,7 +929,7 @@ module Scale {
 }
 module Morphology {
   internal  {
-    frame = "813 1293 120 56"
+    frame = "709 1733 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -376,7 +967,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "817 1365 112 56"
+    frame = "713 1805 112 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -414,7 +1005,7 @@ module Morphology {
 }
 module ImageStatistics {
   internal  {
-    frame = "61 261 120 56"
+    frame = "-999 85 128 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -438,7 +1029,7 @@ module ImageStatistics {
 }
 module Resample3D {
   internal  {
-    frame = "813 1437 120 56"
+    frame = "709 1877 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -464,7 +1055,7 @@ module Resample3D {
 }
 module View2D {
   internal  {
-    frame = "189 557 120 56"
+    frame = "-867 381 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -523,7 +1114,7 @@ module View2D {
 }
 module Arithmetic2 {
   internal  {
-    frame = "1388 -485 104 56"
+    frame = "4005 -475 104 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -542,7 +1133,7 @@ module Arithmetic2 {
 }
 module KernelEditor {
   internal  {
-    frame = "1139 -355 120 56"
+    frame = "3757 -347 120 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -577,7 +1168,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "1287 -355 112 56"
+    frame = "3905 -347 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -612,7 +1203,7 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "1635 -355 120 56"
+    frame = "4253 -347 120 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -647,7 +1238,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "1495 -355 112 56"
+    frame = "4113 -347 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -682,7 +1273,7 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "1569 -175 120 56"
+    frame = "4181 -163 120 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -715,7 +1306,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "1389 -175 112 56"
+    frame = "4001 -163 112 56"
     moduleGroupName = VerticalMean2
     windows  {
       window _default {
@@ -754,7 +1345,7 @@ module Convolution {
 }
 module MarkerToMask {
   internal  {
-    frame = "45 389 120 56"
+    frame = "-1015 213 128 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -776,7 +1367,7 @@ module MarkerToMask {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "5 477 168 56"
+    frame = "-1055 301 176 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -834,7 +1425,7 @@ module ImagePropertyConvert {
 }
 module ConstantImage {
   internal  {
-    frame = "29 557 120 56"
+    frame = "-1031 381 128 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -859,7 +1450,7 @@ module ConstantImage {
 }
 module Convolution {
   internal  {
-    frame = "1787 -613 112 56"
+    frame = "4401 -603 112 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -900,7 +1491,7 @@ module Convolution {
 }
 module Convolution {
   internal  {
-    frame = "1794 -519 104 56"
+    frame = "4409 -507 112 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -939,7 +1530,7 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "1966 -615 112 56"
+    frame = "4581 -603 120 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -978,7 +1569,7 @@ module KernelEditor {
 }
 module KernelEditor {
   internal  {
-    frame = "1978 -519 104 56"
+    frame = "4593 -507 112 56"
     moduleGroupName = VerticalMean
     windows  {
       window _default {
@@ -1011,7 +1602,7 @@ module KernelEditor {
 }
 module ImageLoad {
   internal  {
-    frame = "821 1513 104 64"
+    frame = "717 1953 104 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1043,7 +1634,7 @@ module ImageLoad {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1208 393 152 56"
+    frame = "3821 405 152 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1073,7 +1664,7 @@ module IntervalThreshold {
 }
 module ImageSave {
   internal  {
-    frame = "1403 246 104 56"
+    frame = "4021 253 104 56"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1121,7 +1712,7 @@ module ImageSave {
 }
 module RunPythonScript {
   internal  {
-    frame = "5 1165 136 56"
+    frame = "-1055 989 144 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1228,7 +1819,7 @@ def prerenderMasks(path, outpath):
 }
 module RunPythonScript {
   internal  {
-    frame = "1196 533 144 64"
+    frame = "3809 545 144 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1308,7 +1899,7 @@ CTX.field("LSM_ConnectedComponents.update").touch()*"
 }
 module Morphology {
   internal  {
-    frame = "1393 384 120 64"
+    frame = "4005 393 120 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1346,7 +1937,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "1389 464 128 64"
+    frame = "4001 473 128 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -1389,7 +1980,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "1293 616 128 64"
+    frame = "3905 625 128 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _automatic {
@@ -1432,7 +2023,7 @@ module Morphology {
 }
 module Info {
   internal  {
-    frame = "325 1413 56 56"
+    frame = "221 1853 56 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1450,7 +2041,7 @@ module Info {
 }
 module DicomTagViewer {
   internal  {
-    frame = "421 1405 136 56"
+    frame = "317 1845 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1480,7 +2071,7 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "-110 932 144 56"
+    frame = "-1115 749 152 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1513,7 +2104,7 @@ module WorldVoxelConvert {
 }
 module Comment {
   internal  {
-    frame = "305 1517 96 56"
+    frame = "201 1957 96 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1530,7 +2121,7 @@ module Comment {
 }
 module Morphology {
   internal  {
-    frame = "1295 836 120 64"
+    frame = "3909 841 120 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _automatic {
@@ -1573,7 +2164,7 @@ module Morphology {
 }
 module PageToImageExtent {
   internal  {
-    frame = "1866 -200 160 56"
+    frame = "4477 -195 168 56"
     moduleGroupName = Sphericity
   }
   fields  {
@@ -1588,7 +2179,7 @@ module PageToImageExtent {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "1858 -136 176 56"
+    frame = "4469 -131 184 56"
     moduleGroupName = Sphericity
   }
   fields  {
@@ -1639,7 +2230,7 @@ module ImagePropertyConvert {
 }
 module ConnectedComponents {
   internal  {
-    frame = "2031 -23 168 64"
+    frame = "4641 -15 176 64"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1673,7 +2264,7 @@ module ConnectedComponents {
 }
 module MorphologicalGradient {
   internal  {
-    frame = "2062 -177 168 56"
+    frame = "4673 -171 176 56"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1694,7 +2285,7 @@ module MorphologicalGradient {
 }
 module Sphericity {
   internal  {
-    frame = "2030 -272 88 56"
+    frame = "4641 -267 96 56"
     moduleGroupName = Sphericity
     windows  {
       window _default {
@@ -1711,7 +2302,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "110 900 104 56"
+    frame = "-895 717 112 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1820,12 +2411,12 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "91 833 168 56"
+    frame = "-915 645 184 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "302 75 719 695"
-        sizeHint = "675 695"
+        geometry = "302 103 719 712"
+        sizeHint = "675 712"
         wasOpen = no
       }
     }
@@ -1921,11 +2512,11 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "110 968 152 64"
+    frame = "-899 785 168 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "797 264 505 625"
+        geometry = "797 376 505 625"
         sizeHint = "394 573"
         wasOpen = no
       }
@@ -1981,7 +2572,7 @@ module ConstantXMarkerList {
 }
 module RunPythonScript {
   internal  {
-    frame = "-110 844 128 56"
+    frame = "-1115 661 136 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -2089,7 +2680,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "13 744 120 64"
+    frame = "-987 561 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -2098,9 +2689,9 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "725 303 400 400"
+        geometry = "1494 654 400 400"
         sizeHint = "400 400"
-        wasOpen = no
+        wasOpen = yes
       }
     }
   }
@@ -2153,7 +2744,7 @@ module View2D {
 }
 module Mask {
   internal  {
-    frame = "709 1193 136 64"
+    frame = "605 1633 136 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2172,7 +2763,7 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "625 1405 112 56"
+    frame = "521 1845 112 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2198,7 +2789,7 @@ module Resample3D {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1853 211 184 56"
+    frame = "4469 221 184 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -2232,7 +2823,7 @@ module ConnectedComponents {
 }
 module PageToImageExtent {
   internal  {
-    frame = "1872 1037 168 56"
+    frame = "4485 1045 168 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -2254,7 +2845,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1884 853 144 56"
+    frame = "4497 861 144 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -2275,7 +2866,7 @@ module MaskToMarkers {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "1888 957 136 56"
+    frame = "4501 965 136 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -2297,7 +2888,7 @@ module AxisEdgeMask {
 }
 module Mask {
   internal  {
-    frame = "1708 1013 80 56"
+    frame = "4321 1021 80 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -2316,7 +2907,7 @@ module Mask {
 }
 module AxisEdgeMask {
   internal  {
-    frame = "1443 836 160 64"
+    frame = "4057 841 160 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2338,7 +2929,7 @@ module AxisEdgeMask {
 }
 module RegionGrowing {
   internal  {
-    frame = "1720 757 136 56"
+    frame = "4333 765 136 56"
     moduleGroupName = "Airway Segmentation Mask"
     windows  {
       window _default {
@@ -2391,7 +2982,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1874 456 144 56"
+    frame = "4489 461 144 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -2421,7 +3012,7 @@ module IntervalThreshold {
 }
 module RegionGrowing {
   internal  {
-    frame = "1810 320 128 56"
+    frame = "4425 325 128 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -2469,7 +3060,7 @@ module RegionGrowing {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1962 328 144 56"
+    frame = "4577 333 144 56"
     moduleGroupName = "Skeleton Segmentation Mask"
     windows  {
       window _default {
@@ -2495,7 +3086,7 @@ module MaskToMarkers {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1357 536 208 64"
+    frame = "3969 545 208 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2534,7 +3125,7 @@ module ConnectedComponents {
 }
 module Mask {
   internal  {
-    frame = "1305 704 104 64"
+    frame = "3917 713 104 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2553,7 +3144,7 @@ module Mask {
 }
 module PageToImageExtent {
   internal  {
-    frame = "1427 916 192 64"
+    frame = "4041 921 192 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2575,7 +3166,7 @@ module PageToImageExtent {
 }
 module MaskToMarkers {
   internal  {
-    frame = "1439 764 168 64"
+    frame = "4053 769 168 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2601,7 +3192,7 @@ module MaskToMarkers {
 }
 module RegionGrowing {
   internal  {
-    frame = "1415 660 184 64"
+    frame = "4029 665 184 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2654,7 +3245,7 @@ module RegionGrowing {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1279 916 152 64"
+    frame = "3893 921 152 64"
     moduleGroupName = "Lung Segmentation Mask"
     windows  {
       window _default {
@@ -2684,7 +3275,7 @@ module IntervalThreshold {
 }
 module itkImageFileReader {
   internal  {
-    frame = "597 1509 152 56"
+    frame = "493 1949 152 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2716,21 +3307,47 @@ module itkImageFileReader {
   }
 }
 connections  {
+  Arithmetic3.input0 = Threshold1.output0
+  Arithmetic3.input1 = Threshold4.output0
+  Arithmetic3.input2 = Threshold6.output0
+  Arithmetic.input0 = Mask2.output0
+  Arithmetic.input1 = Mask3.output0
+  Arithmetic.input2 = Mask4.output0
+  ConnectedComponents7.input0 = IntervalThreshold6.output0
+  IntervalThreshold6.input0 = ApplyLungMask.output0
+  ConnectedComponents6.input0 = IntervalThreshold6.output0
+  Threshold6.input0 = ConnectedComponents7.output0
+  Threshold5.input0 = ConnectedComponents6.output0
+  Arithmetic13.input0 = Threshold5.output0
+  Mask4.input0 = Threshold6.output0
+  Mask4.input1 = Arithmetic13.output0
+  ConnectedComponents5.input0 = IntervalThreshold5.output0
+  IntervalThreshold5.input0 = ApplyLungMask.output0
+  ConnectedComponents4.input0 = IntervalThreshold5.output0
+  Threshold4.input0 = ConnectedComponents5.output0
+  Threshold3.input0 = ConnectedComponents4.output0
+  Arithmetic12.input0 = Threshold3.output0
+  Mask3.input0 = Threshold4.output0
+  Mask3.input1 = Arithmetic12.output0
+  Mask2.input0 = Threshold1.output0
+  Mask2.input1 = Arithmetic11.output0
+  Arithmetic11.input0 = Threshold2.output0
+  Threshold2.input0 = ConnectedComponents3.output0
+  Threshold1.input0 = ConnectedComponents2.output0
+  ConnectedComponents3.input0 = IntervalThreshold4.output0
+  IntervalThreshold4.input0 = ApplyLungMask.output0
+  ConnectedComponents2.input0 = IntervalThreshold4.output0
   Threshold.input0 = ConnectedComponents.output0
-  Mask.input0 = IntervalThreshold2.output0
   Mask.input1 = Arithmetic1.output0
   Arithmetic1.input0 = Threshold.output0
   Morphology3.input0 = IntervalThreshold3.output0
   ConnectedComponents.input0 = Morphology3.output0
-  View2D2.inImage = Mask.output0
+  View2D2.inImage = Arithmetic.output0
   View2D2.inInvPostLUT = SoView2DMarkerEditor.self
   View2D2.startSlice = View2D1.startSlice
   View2D2.lutCenter = View2D1.lutCenter
   View2D2.lutWidth = View2D1.lutWidth
-  IntervalThreshold3.input0 = PageToImageExtent.output0
-  PageToImageExtent.input0 = ApplyLungMask.output0
-  IntervalThreshold2.input0 = PageToImageExtent.output0
-  View2D1.inImage = IntervalThreshold2.output0
+  View2D1.inImage = Arithmetic3.output0
   View2D1.inInvPostLUT = SoView2DMarkerEditor.self
   View2D1.startSlice = View2D2.startSlice
   View2D1.lutCenter = View2D2.lutCenter
@@ -2885,6 +3502,39 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 267
         objectName = "Multi Thresholding"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 192
+        objectName = "Threshold 1"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 307
+        objectName = "Threshold 2"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 357
+        objectName = "Threshold 3"
         parentUniqueId = 0
         color  {
           r = 45
