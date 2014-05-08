@@ -2,10 +2,542 @@
 network  {
   watchlist = ""
 }
+module Arithmetic2 {
+  internal  {
+    frame = "956 423 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "515 -522 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic21
+    function = Or
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "876 535 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "471 -742 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology4
+    borderHandling = PadSrcClamp
+    fillValue = -800
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 9 elems, 3x3x1x1x1x1"
+    numKernelElements = 9
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "876 775 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "710 -786 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology3
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
 module IntervalThreshold {
   internal  {
-    frame = "833 653 144 56"
+    frame = "860 607 144 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "927 -565 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold3
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -600
+    threshWidth = 400
+    threshMin = -800
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Mask {
+  internal  {
+    frame = "828 687 80 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "498 -536 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = -1000
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "485 221 120 56"
     moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "817 -804 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = -800
+    innerMax = -400
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "765 221 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "415 -745 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 97
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.3925001
+    lutWidth = 0.78750008
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "81 333 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "147 162 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 4 elems, 2x2x1x1x1x1"
+    numKernelElements = 4
+    kernelElementsSum = 0
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "313 181 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "70 89 694 538"
+        sizeHint = "684 538"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette0
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 0 1"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = None
+    markerType2 = None
+    markerType3 = None
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 10
+    markerSize2 = 10
+    markerSize3 = 10
+    markerSize4 = 10
+    markerSize5 = 10
+    markerSize6 = 10
+    markerSize7 = 10
+    markerSize8 = 10
+    markerSize9 = 10
+    markerSize10 = 10
+    markerSize11 = 10
+    markerSize12 = 10
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = ""
+    name3 = ""
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 1
+  }
+}
+module SoRenderArea {
+  internal  {
+    frame = "221 -35 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _viewer {
+        geometry = "372 230 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoRenderArea
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    border = FALSE
+    background = "0 0 0"
+    transparency = DELAYED_BLEND
+    antialiasing = FALSE
+    antialiasingNumPasses = 1
+    useSampleBuffers = FALSE
+    numSamples = 8
+    grabKeyFocus = TRUE
+    snapshotFormat = SNAPSHOT_RGB
+    outputAviFile = ""
+    autoRedrawWhenRecording = TRUE
+    frameRate = 7
+    frameRateAvi = 15
+    status = ready
+    outputSnapshotFile = none
+    outputSnapshotFileWritten = none
+    autoIncreaseFile = TRUE
+    showSnapshotWithShell = FALSE
+    snapCount = 0
+    inputDevicesList = ""
+  }
+}
+module SoDiagram2D {
+  internal  {
+    frame = "233 53 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "742 199 512 514"
+        sizeHint = "512 514"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoDiagram2D
+    minX = 0
+    maxX = 2
+    minY = 0
+    maxY = 1
+    scaleX = 1
+    scaleY = 1
+    autoRangeX = TRUE
+    autoRangeY = TRUE
+    axisColor = "1 1 1"
+    axisRotation = AXIS_ROTATION_LEFT_BOTTOM
+    titleFontHeight = 14
+    drawDiagramTitle = FALSE
+    diagramTitleString = ""
+    drawGrid = FALSE
+    gridColor = "0.349999994039536 0.349999994039536 0.349999994039536"
+    drawLegend = FALSE
+    legendPlacement = LEGEND_UPPER_RIGHT
+    legendFontHeight = 12
+    zoomAnimationEase = 0.5
+    zoomAnimationEpsilon = 0.0099999998
+    useZoomRestrictions = FALSE
+    minZoomFactor = 0.1
+    maxZoomFactor = 10
+    drawChildrenExtensions = TRUE
+    forwardEventsToChildrenExtensions = TRUE
+    changeLineOpacityForHighlightedCurves = FALSE
+    curveLineOpacityHighlighted = 1
+    changeLineOpacityForNotHighlightedCurves = FALSE
+    curveLineOpacityNotHighlighted = 0.30000001
+    changeLineStyleForHighlightedCurves = FALSE
+    curveLineStyleHighlighted = 1
+    changeLineStyleForNotHighlightedCurves = FALSE
+    curveLineStyleNotHighlighted = 1
+    curveIndexHighlighted = ""
+    borderH = 29
+    borderV = 25
+    autoBorderH = TRUE
+    autoBorderV = TRUE
+    drawAxisX = TRUE
+    drawAxisY = TRUE
+    drawTicksX = TRUE
+    drawTicksY = TRUE
+    drawLabelsX = TRUE
+    drawLabelsY = TRUE
+    drawAxisTitleX = FALSE
+    drawAxisTitleY = FALSE
+    axisTitleStringX = "X [dn]"
+    axisTitleStringY = "Y [dn]"
+    axisTitleFontHeightX = 12
+    axisTitleFontHeightY = 12
+    axisLabelFontHeightX = 12
+    axisLabelFontHeightY = 12
+    curveColor = "1 1 1"
+    lineStyle = LINE_STYLE_SOLID
+    markerType = MARKER_TYPE_NONE
+    markerSize = 10
+    lineWidth = 1
+    antiAlias = TRUE
+    areaOpacity = 0.5
+    lineOpacity = 1
+    stylePaletteMode = STYLE_PALETTE_INDEX
+  }
+}
+module Histogram {
+  internal  {
+    frame = "209 181 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "796 240 434 373"
+        sizeHint = "434 373"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram
+    useMask = TRUE
+    xRange = "Image Min/Max"
+    maskMode = Weights
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = Off
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = TRUE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 1
+    maxBinCount = 25000000
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "956 863 144 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "795 115 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
   }
   fields  {
     instanceName = IntervalThreshold2
@@ -13,21 +545,21 @@ module IntervalThreshold {
     innerType = UserDef
     upperType = UserDef
     centerWidthSet = FALSE
-    threshCenter = 0
-    threshWidth = 200000
-    threshMin = -100000
-    threshMax = 100000
+    threshCenter = -170
+    threshWidth = 440
+    threshMin = -390
+    threshMax = 50
     lowerUserValue = 0
     innerUserValue = 1
     upperUserValue = 0
-    changeMinMax = TRUE
+    changeMinMax = FALSE
     changedMin = -100000
     changedMax = 100000
   }
 }
 module View2D {
   internal  {
-    frame = "411 472 120 56"
+    frame = "-497 471 120 56"
     moduleGroupName = SynchroView2DLabeled
     windows  {
       window _default {
@@ -69,10 +601,10 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0.699999988079071"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0
+    lutCenter = 0.5
     lutWidth = 1
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -91,7 +623,7 @@ module View2D {
 }
 module View2D {
   internal  {
-    frame = "579 472 120 56"
+    frame = "-329 468 120 56"
     moduleGroupName = SynchroView2DLabeled
     windows  {
       window _automatic {
@@ -100,7 +632,7 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "960 52 960 1028"
+        geometry = "640 44 640 752"
         sizeHint = "400 400"
         wasOpen = no
       }
@@ -136,7 +668,7 @@ module View2D {
     plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0
+    lutCenter = 0.5
     lutWidth = 1
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -187,8 +719,8 @@ module Morphology {
     fillValue = 0
     referenceExtentMode = Overlap
     filterMode = Dilation
-    kernelX = 15
-    kernelY = 15
+    kernelX = 12
+    kernelY = 12
     kernelZ = 20
     kernelC = 1
     kernelT = 1
@@ -202,8 +734,8 @@ module Morphology {
     useIntervalOfVoxelsForFiltering = FALSE
     externalKernel = ""
     useExternalKernel = FALSE
-    kernelInfo = "circular, 2332 elems, 15x15x20x1x1x1"
-    numKernelElements = 2332
+    kernelInfo = "circular, 1528 elems, 12x12x20x1x1x1"
+    numKernelElements = 1528
     kernelElementsSum = 0
   }
 }
@@ -243,30 +775,6 @@ module Morphology {
     kernelInfo = "circular, 4224 elems, 20x20x20x1x1x1"
     numKernelElements = 4224
     kernelElementsSum = 0
-  }
-}
-module ImageStatistics {
-  internal  {
-    frame = "61 261 120 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "418 89 443 664"
-        sizeHint = "443 664"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = ImageStatistics
-    innerMin = 0
-    innerMax = 0.3
-    autoUpdate = TRUE
-    perSlice = FALSE
-    currentSlice = 0
-    lowerWidth = 0
-    upperWidth = 0
-    useMask = TRUE
   }
 }
 module Resample3D {
@@ -528,7 +1036,7 @@ module Convolution {
 }
 module MarkerToMask {
   internal  {
-    frame = "45 389 120 56"
+    frame = "45 453 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -544,13 +1052,13 @@ module MarkerToMask {
     incrementalStartValue = 1
     backgroundValue = 0
     autoUpdate = TRUE
-    writeMode = MaskValue
+    writeMode = MarkerType
     outputType = int16
   }
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "5 477 168 56"
+    frame = "5 541 168 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -608,7 +1116,7 @@ module ImagePropertyConvert {
 }
 module ConstantImage {
   internal  {
-    frame = "29 557 120 56"
+    frame = "29 621 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -1254,7 +1762,7 @@ module DicomTagViewer {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "-110 932 144 56"
+    frame = "-110 980 144 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1485,7 +1993,7 @@ module Sphericity {
 }
 module StylePalette {
   internal  {
-    frame = "110 900 104 56"
+    frame = "110 948 104 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1594,7 +2102,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "91 833 168 56"
+    frame = "91 881 168 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1695,7 +2203,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "110 968 152 64"
+    frame = "110 1016 152 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1755,7 +2263,7 @@ module ConstantXMarkerList {
 }
 module RunPythonScript {
   internal  {
-    frame = "-110 844 128 56"
+    frame = "-110 892 128 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1863,7 +2371,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "13 744 120 64"
+    frame = "13 792 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -1927,7 +2435,7 @@ module View2D {
 }
 module Mask {
   internal  {
-    frame = "705 985 128 64"
+    frame = "705 1001 128 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2490,8 +2998,24 @@ module itkImageFileReader {
   }
 }
 connections  {
+  Arithmetic21.input0 = Morphology4.output0
+  Arithmetic21.input1 = IntervalThreshold2.output0
+  Morphology4.input0 = IntervalThreshold3.output0
+  Morphology3.input0 = IntervalThreshold2.output0
+  IntervalThreshold3.input0 = Mask.output0
+  Mask.input0 = ApplyLungMask.output0
+  Mask.input1 = Morphology3.output0
+  ImageStatistics.input0 = Arithmetic21.output0
+  ImageStatistics.input1 = MarkerToMask.output0
+  View2D.inImage = Arithmetic21.output0
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
+  Morphology2.input0 = MarkerToMask.output0
+  SoRenderArea.children = SoDiagram2D.self
+  SoDiagram2D.inCurveList = Histogram.outputHistogramCurve
+  SoDiagram2D.inStylePalette = StylePalette0.outStylePalette
+  Histogram.input0 = ApplyLungMask.output0
+  Histogram.input1 = Morphology2.output0
   IntervalThreshold2.input0 = ApplyLungMask.output0
-  View2D1.inImage = ApplyLungMask.output0
   View2D1.inInvPostLUT = SoView2DMarkerEditor.self
   View2D1.startSlice = View2D2.startSlice
   View2D1.lutCenter = View2D2.lutCenter
@@ -2503,7 +3027,6 @@ connections  {
   Scale1.input0 = Convolution2.output0
   Morphology1.input0 = Morphology.output0
   Morphology.input0 = Resample3D1.output0
-  ImageStatistics.input1 = MarkerToMask.output0
   Resample3D1.input0 = MaskLoad.output0
   Arithmetic2.input0 = Convolution4.output0
   Arithmetic2.input1 = Convolution3.output0
@@ -2638,6 +3161,17 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 137
         objectName = SynchroView2DLabeled
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 185
+        objectName = "Threshold Candidate Selection"
         parentUniqueId = 0
         color  {
           r = 45
