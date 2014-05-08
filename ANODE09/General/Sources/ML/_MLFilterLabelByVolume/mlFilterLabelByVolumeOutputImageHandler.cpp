@@ -85,7 +85,6 @@ void FilterLabelByVolumeOutputImageHandler::typedCalculateOutputSubImage(TSubIma
 	std::vector<int> label((int)max - 1);
 	int lbl = 1;
 	for (int i = 0; i < max; i++){
-		std::cout << volume[i] << std::endl;
 		if (volume[i] < threshold)
 		{
 			label[i] = lbl++;
