@@ -2,6 +2,38 @@
 network  {
   watchlist = ""
 }
+module Arithmetic1 {
+  internal  {
+    frame = "1381 -103 200 64"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = CandidateFeatureConnector
+    function = Add
+    constant = 0
+  }
+}
+module MorphologicalGradient {
+  internal  {
+    frame = "1429 -483 168 56"
+    moduleGroupName = Geometrics
+    windows  {
+      window _default {
+        geometry = "530 -566 224 152"
+        sizeHint = "219 152"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MorphologicalGradient
+    dilationSize = 3
+    erosionSize = 3
+    sphericalKernel = TRUE
+    threeDimensional = TRUE
+    gradientType = Central
+  }
+}
 module Scale {
   internal  {
     frame = "1119 -806 72 56"
@@ -20,7 +52,7 @@ module Scale {
 }
 module Comment {
   internal  {
-    frame = "725 389 88 56"
+    frame = "861 -171 88 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -34,7 +66,12 @@ module Comment {
     instanceName = Comment
     comment = "- Vesselness heeft seed points nodig. Zijn nu met de hand gezet.
 
-- Mogelijk sphericity toevoegen als bug opgelost is"
+- Module maken die, op basis van candidates en morphological gradient uitrekent: nodule area, volume, diameter
+
+- Nog toe te voegen: zie murphy paper en proposal
+
+- Mogelijk sphericity toevoegen als bug opgelost is
+"
   }
 }
 module SoView2DMarkerEditor {
@@ -409,7 +446,7 @@ module Vesselness {
       window _default {
         geometry = "928 -866 244 384"
         sizeHint = "214 384"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -638,7 +675,7 @@ module Scale {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1469 -191 168 64"
+    frame = "1629 81 168 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -683,7 +720,7 @@ module Arithmetic1 {
     }
   }
   fields  {
-    instanceName = FeatureConnector
+    instanceName = ImageFeatureConnector
     function = Add
     constant = 0
   }
@@ -818,7 +855,7 @@ module View2D {
 }
 module Morphology {
   internal  {
-    frame = "1733 222 112 56"
+    frame = "1737 389 112 56"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -856,7 +893,7 @@ module Morphology {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1705 386 168 64"
+    frame = "1709 553 168 64"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -890,7 +927,7 @@ module ConnectedComponents {
 }
 module Threshold {
   internal  {
-    frame = "1737 302 104 56"
+    frame = "1741 469 104 56"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -910,7 +947,7 @@ module Threshold {
 }
 module Mask {
   internal  {
-    frame = "1501 90 128 64"
+    frame = "1505 257 128 64"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -929,7 +966,7 @@ module Mask {
 }
 module ImageLoad {
   internal  {
-    frame = "1289 1449 96 64"
+    frame = "1289 1617 96 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -961,7 +998,7 @@ module ImageLoad {
 }
 module Arithmetic2 {
   internal  {
-    frame = "1729 605 112 56"
+    frame = "1729 773 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -980,7 +1017,7 @@ module Arithmetic2 {
 }
 module Morphology {
   internal  {
-    frame = "1649 717 112 56"
+    frame = "1649 885 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1018,7 +1055,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "1633 957 112 56"
+    frame = "1633 1125 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1056,7 +1093,7 @@ module Morphology {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1637 785 136 64"
+    frame = "1637 953 136 64"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1086,7 +1123,7 @@ module IntervalThreshold {
 }
 module Mask {
   internal  {
-    frame = "1505 869 80 56"
+    frame = "1505 1037 80 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1129,7 +1166,7 @@ module ImageStatistics {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1733 1049 136 64"
+    frame = "1733 1217 136 64"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1986,7 +2023,7 @@ module View2D {
 }
 module Mask {
   internal  {
-    frame = "1209 1233 128 64"
+    frame = "1209 1401 128 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2005,7 +2042,7 @@ module Mask {
 }
 module Resample3D {
   internal  {
-    frame = "1077 1357 104 56"
+    frame = "1077 1525 104 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2031,7 +2068,7 @@ module Resample3D {
 }
 module itkImageFileReader {
   internal  {
-    frame = "1065 1445 144 56"
+    frame = "1065 1613 144 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2063,6 +2100,8 @@ module itkImageFileReader {
   }
 }
 connections  {
+  CandidateFeatureConnector.input0 = Candidates.output0
+  MorphologicalGradient.imageIn = CandidateFeatureConnector.output0
   Scale5.input0 = RegionGrowing.output0
   RegionGrowing.input0 = Vesselness.output0
   RegionGrowing.inMarkerList = SoView2DMarkerEditor1.outXMarkerList
@@ -2079,7 +2118,7 @@ connections  {
   Scale3.input0 = LoG1.output0
   Scale2.input0 = LoG2.output0
   Candidates.input0 = RemoveAirways.output0
-  FeatureConnector.input0 = ApplyLungMask.output0
+  ImageFeatureConnector.input0 = ApplyLungMask.output0
   View2D1.inInvPostLUT = SoView2DMarkerEditor.self
   View2D1.startSlice = View2D.startSlice
   View2D1.lutCenter = View2D.lutCenter
@@ -2194,6 +2233,17 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 138
         objectName = Vesselness
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 239
+        objectName = Geometrics
         parentUniqueId = 0
         color  {
           r = 45
