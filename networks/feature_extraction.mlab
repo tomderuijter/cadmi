@@ -1,0 +1,2207 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Scale {
+  internal  {
+    frame = "1119 -806 72 56"
+    moduleGroupName = Vesselness
+  }
+  fields  {
+    instanceName = Scale5
+    inputMin = 0
+    inputMax = 1513
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Comment {
+  internal  {
+    frame = "725 389 88 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "919 -546 256 208"
+        sizeHint = "256 208"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Comment
+    comment = "- Vesselness heeft seed points nodig. Zijn nu met de hand gezet.
+
+- Mogelijk sphericity toevoegen als bug opgelost is"
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "1162 -424 176 56"
+    moduleGroupName = Vesselness
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = FALSE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = PRESSED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = FALSE
+    iconIdx = 0
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = 1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = TRUE
+    applySelect = FALSE
+    id = 2
+    name = ""
+    newName = ""
+    overflowMode = None
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "116.144577026367 195.644607543945 83.2999954223633"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1110 -512 120 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "329 -804 620 628"
+        sizeHint = "620 628"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing
+    autoUpdateMode = AutoClear
+    lowerThreshold = -56.4114416922443
+    upperThreshold = 94.8885583077557
+    autoThreshold = TRUE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_2D_4_XY
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = 14Bit
+    autoUpdateUnitType = FALSE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 5
+  }
+}
+module DtfSkeletonization {
+  internal  {
+    frame = "1194 -600 144 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "679 386 355 338"
+        sizeHint = "347 338"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DtfSkeletonization
+    updateSkeletonGraph = TRUE
+    compileGraphVoxels = TRUE
+    objectMinValue = 1
+    cavityVolume = 10
+    maxDistance = 10000
+    useMaxDistance = FALSE
+    autoUpdateMode = Off
+    skeletonOnly = FALSE
+  }
+}
+module SoVascularSystem {
+  internal  {
+    frame = "1198 -672 136 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "659 317 369 461"
+        sizeHint = "369 461"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoVascularSystem
+    autoApply = TRUE
+    status = "Graph is valid"
+    complexity = 0.60000002
+    pointSize = 1
+    lineWidth = 1
+    textureScaleX = 0.5
+    textureScaleY = 0.5
+    recursionDepth = -1
+    showLines = FALSE
+    labelMode = GENERAL_LABEL
+    textureMode = SIZE_ALMOST_EQUAL
+    textureCoordinateMode = FOR_ALL_ELEMENTS
+    radiusMode = MIN_DIST
+    displayMode = DISPLAY_SURFACE
+    radiusScale = 1
+    radiusFixedSize = 1
+    visible = TRUE
+    texture = FALSE
+    numSmoothingPasses = 3
+    overallSmoothness = 0.69999999
+    smoothIndependently = FALSE
+    radiusSmoothness = 0.69999999
+    skeletonSmoothness = 0.69999999
+    endCapScaling = 1
+    useGeneralColor = TRUE
+    generalColor = "1 0 0"
+    useAlternativeTransparency = TRUE
+    alternativeTransparencyColor = "0 0 0"
+    selectedCoordinate = "0 0 0"
+    snapMode = SNAP_TO_SKELETON
+    enableSelection = TRUE
+    continuousHitCheck = FALSE
+    cursorShape = CROSS_CURSOR
+    nearestCoordinate = "0 0 0"
+    selectedEdgeId = 0
+    selectedNodeId = 0
+    nearestRadius = 0
+    nearestLabel = 0
+    nearestColor = "1 1 1"
+    enableInteractivePreviewMode = FALSE
+    interactivePreviewColor = "1 1 0"
+    interactivePreviewAlpha = 0.5
+    useSkeletonColors = FALSE
+  }
+}
+module SoExaminerViewer {
+  internal  {
+    frame = "1194 -744 144 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _viewer {
+        geometry = "193 249 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoExaminerViewer
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    border = FALSE
+    background = "0 0 0"
+    transparency = BLEND
+    antialiasing = FALSE
+    antialiasingNumPasses = 1
+    useSampleBuffers = FALSE
+    numSamples = 8
+    grabKeyFocus = TRUE
+    snapshotFormat = SNAPSHOT_RGB
+    outputAviFile = ""
+    autoRedrawWhenRecording = TRUE
+    frameRate = 7
+    frameRateAvi = 15
+    status = ready
+    outputSnapshotFile = none
+    outputSnapshotFileWritten = none
+    autoIncreaseFile = TRUE
+    showSnapshotWithShell = FALSE
+    snapCount = 0
+    inputDevicesList = ""
+    headlight = TRUE
+    decoration = TRUE
+    popupMenuEnabled = FALSE
+    viewing = TRUE
+    autoClipping = TRUE
+    drawStyle = VIEW_AS_IS
+    interactiveDrawStyle = VIEW_LOW_COMPLEXITY
+    viewAllFlag = FALSE
+    initialCameraOrientation = CAMERA_KEEP_AS_IS
+    applyCameraOrientation = CAMERA_KEEP_AS_IS
+    cameraType = CAMERA_PERSPECTIVE
+    autoApplyUserSettingOrientation = FALSE
+    userSettingOrientation = "0 0 1 0"
+    automaticViewAll = FALSE
+    storeCurrentState = TRUE
+    saveCamera = TRUE
+    cursor = TRUE
+    isCameraStored = TRUE
+    perspective = TRUE
+    stereoViewing = FALSE
+    stereoOffset = 3
+    height = 0.78539819
+    position = "425.828765869141 435.271453857422 292.834411621094"
+    orientation = "0.30069425702095 0.45362651348114 0.838931441307068 2.84755492210388"
+    nearDistance = 207.73199
+    farDistance = 595.34204
+    focalDistance = 677.38666
+    forceRedrawOnInteraction = FALSE
+    button1events = TO_VIEWER
+    button2events = TO_VIEWER
+    button3events = TO_VIEWER
+    keyEvents = TO_VIEWER
+    animationEnabled = FALSE
+    feedback = FALSE
+    feedbackSize = 32
+    mouseInteraction = ""
+    rotationAxis = "0 1 0"
+    rotationAngle = 360
+    rotationSteps = 80
+    rotationCurrentStep = 0
+    recordRotation = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "986 -336 176 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "464 -814 351 648"
+        sizeHint = "351 648"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = TRUE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Vesselness {
+  internal  {
+    frame = "1034 -424 96 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "928 -866 244 384"
+        sizeHint = "214 384"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = Vesselness
+    startSigma = 1
+    endSigma = 2
+    nbrOfScales = 1
+    unit = voxel
+    calc2D = FALSE
+    normalizedMeasure = FALSE
+    darkVessels = FALSE
+    autoUpdate = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "761 -409 120 64"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BlobnessInput
+    function = Add
+    constant = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "792 -713 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 -661 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 0.0120506379753351
+    inputMax = 1
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "389 -715 72 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "505 -661 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale4
+    inputMin = 0
+    inputMax = 0.201802685856819
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "776 -641 96 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "348 167 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic
+    expression = "max(a, b)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module LoG {
+  internal  {
+    frame = "830 -493 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "474 286 336 270"
+        sizeHint = "331 270"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LoG1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelExt = 2
+    sigma = 1.2
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    normalize = TRUE
+  }
+}
+module LoG {
+  internal  {
+    frame = "747 -493 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "474 286 336 270"
+        sizeHint = "331 270"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LoG2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelExt = 3
+    sigma = 2
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    normalize = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "828 -561 72 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 250 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale3
+    inputMin = -1.19940437022177e+20
+    inputMax = 8.54802648640499e+19
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "740 -561 72 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 250 303 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale2
+    inputMin = -1.77252280508885e+19
+    inputMax = 1.19417650029496e+19
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1469 -191 168 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "407 -711 708 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Candidates
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = Voxels
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1205 -103 136 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FeatureConnector
+    function = Add
+    constant = 0
+  }
+}
+module View2D {
+  internal  {
+    frame = "78 58 120 56"
+    moduleGroupName = SynchroView2DLabeled
+    windows  {
+      window _default {
+        geometry = "640 44 640 752"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.5
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "-66 58 120 56"
+    moduleGroupName = SynchroView2DLabeled
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "780 -772 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.5
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1733 222 112 56"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "285 292 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology5
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1705 386 168 64"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "472 341 537 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FindAirways
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.04
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_6_XYZ
+    useMask = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "1737 302 104 56"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold5
+    threshold = 1
+    minValue = 0
+    maxValue = 7192
+    relativeThreshold = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1501 90 128 64"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "822 547 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RemoveAirways
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1289 1449 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 216 323 410"
+        sizeHint = "323 410"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskLoad
+    filename = /Users/tom/Documents/workspace/cadmi/data/candidate_selection/candidates02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1729 605 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "515 -522 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic21
+    function = Or
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1649 717 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "471 -742 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology4
+    borderHandling = PadSrcClamp
+    fillValue = -800
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 9 elems, 3x3x1x1x1x1"
+    numKernelElements = 9
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1633 957 112 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "710 -786 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology3
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1637 785 136 64"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "927 -565 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LightNodule
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -600
+    threshWidth = 400
+    threshMin = -800
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Mask {
+  internal  {
+    frame = "1505 869 80 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "498 -536 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = -1000
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "-187 253 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "817 -804 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 0
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1733 1049 136 64"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "795 115 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SolidNodule
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -170
+    threshWidth = 440
+    threshMin = -390
+    threshMax = 50
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Scale {
+  internal  {
+    frame = "389 -475 72 56"
+    moduleGroupName = "Vertical Mean"
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = -999.999
+    inputMax = 1512.998487
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "373 -635 104 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "515 389 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic2
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "177 -555 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor4
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "305 -555 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution4
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):1.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):0.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "561 -555 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor3
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "433 -555 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution3
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):1.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "497 -403 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "847 44 425 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor2
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 0.999999
+    status = "#Elems=9, Sum=0.999999, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "369 -403 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "399 449 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution2
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.111111
+(1,0,0,0,0,0):0.111111
+(2,0,0,0,0,0):0.111111
+(0,1,0,0,0,0):0.111111
+(1,1,0,0,0,0):0.111111
+(2,1,0,0,0,0):0.111111
+(0,2,0,0,0,0):0.111111
+(1,2,0,0,0,0):0.111111
+(2,2,0,0,0,0):0.111111
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module MarkerToMask {
+  internal  {
+    frame = "-187 349 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "497 335 285 173"
+        sizeHint = "285 173"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MarkerToMask
+    maskValue = 1
+    incrementalStartValue = 1
+    backgroundValue = 0
+    autoUpdate = TRUE
+    writeMode = MarkerType
+    outputType = int16
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "-227 437 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "850 104 401 648"
+        sizeHint = "387 648"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = FALSE
+    cDimInfo = LUMINANCE
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1.242188
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1.242188
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1.4
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1.24218797683716 0 0 0
+0 1.24218797683716 0 0
+0 0 1.39999997615814 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = float
+    changePageSize = FALSE
+    pageSizeX = 128
+    pageSizeY = 128
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 1.242188
+    voxelSizeY = 1.242188
+    voxelSizeZ = 1.4
+    autoApply = FALSE
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "-203 517 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "588 284 259 253"
+        sizeHint = "254 253"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage
+    sizeX = 256
+    sizeY = 256
+    sizeZ = 181
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = int16
+    fillValue = -1000
+    autoApply = TRUE
+  }
+}
+module WorldVoxelConvert {
+  internal  {
+    frame = "-110 980 144 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "1156 211 460 251"
+        sizeHint = "460 251"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1354 515 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = WorldVoxelConvert
+    voxelX = 164.5
+    voxelY = 213.5
+    voxelZ = 13
+    worldX = 204.339922189713
+    worldY = 265.207133054733
+    worldZ = 18.1999996900558
+    voxelPos = "164.5 213.5 13"
+    worldPos = "204.339922189713 265.207133054733 18.1999996900558"
+    voxelMode = FALSE
+    worldMode = TRUE
+    intVoxelCoords = FALSE
+    keepConstant = World
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "110 948 104 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "555 160 694 538"
+        sizeHint = "684 538"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 1 0.290196078431373"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = Circle
+    markerType2 = Circle
+    markerType3 = Triangle
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 15
+    markerSize2 = 15
+    markerSize3 = 15
+    markerSize4 = 4
+    markerSize5 = 4
+    markerSize6 = 4
+    markerSize7 = 4
+    markerSize8 = 4
+    markerSize9 = 4
+    markerSize10 = 4
+    markerSize11 = 4
+    markerSize12 = 4
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = 1
+    name3 = 2
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "91 881 168 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "302 75 719 695"
+        sizeHint = "675 695"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 1
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = -1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = RemoveFirst
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module ConstantXMarkerList {
+  internal  {
+    frame = "110 1016 152 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "797 180 483 616"
+        sizeHint = "372 564"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "410 187 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AnnotationMarkers
+    markerList = "106.20707202 251.54306531 215.599996328 0 0 0 2
+198.128982306 196.26570034 214.89999634 0 0 0 1
+240.984467506 186.949290514 211.3999964 0 0 0 1
+186.328196526 206.824298143 203.699996531 0 0 0 1
+115.523481846 248.437595367 199.499996603 0 0 0 1
+65.214868784 222.972741842 198.099996626 0 0 0 1
+189.433666468 142.851617336 187.599996805 0 0 0 2
+244.089937449 236.636809587 185.499996841 0 0 0 1
+256.511817217 168.93756485 183.399996877 0 0 0 1
+75.1523725986 159.000061035 182.699996889 0 0 0 1
+234.773527622 139.746147394 181.999996901 0 0 0 2
+116.765669823 255.890723228 181.299996912 0 0 0 1
+253.406347275 216.761801958 179.899996936 0 0 0 2
+249.679783344 223.593835831 177.099996984 0 0 0 1
+255.890723228 222.972741842 167.999997139 0 0 0 2
+262.101663113 180.117256641 163.099997222 0 0 0 1
+253.406347275 150.925839186 156.79999733 0 0 0 1
+261.480569124 202.476640224 150.499997437 0 0 0 1
+244.089937449 251.54306531 143.499997556 0 0 0 1
+58.3828349113 163.347718954 142.09999758 0 0 0 1
+70.1836206913 111.175823927 140.699997604 0 0 0 1
+85.7109704018 112.418011904 136.499997675 0 0 0 2
+46.5820491314 217.382895947 136.499997675 0 0 0 1
+75.1523725986 204.961016178 118.299997985 0 0 0 1
+52.1718950272 249.058689356 110.599998116 0 0 0 2
+44.7187671661 133.53520751 105.6999982 0 0 0 1
+130.429737568 263.964945078 102.19999826 0 0 0 1
+29.1914174557 136.019583464 101.499998271 0 0 0 1
+270.175884962 206.824298143 93.7999984026 0 0 0 2
+244.089937449 255.890723228 92.3999984264 0 0 0 2
+252.164159298 241.605561495 83.2999985814 0 0 0 2
+261.480569124 236.015715599 67.1999988556 0 0 0 2
+62.7304928303 257.132911205 56.6999990344 0 0 0 1
+37.2656393051 232.289151669 51.7999991179 0 0 0 1
+197.507888317 255.890723228 48.2999991775 0 0 0 1
+281.976670742 178.253974676 44.7999992371 0 0 0 1
+115.523481846 273.281354904 20.2999996543 0 0 0 2
+204.33992219 265.207133055 18.1999996901 0 0 0 1
+\\"
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "-110 892 128 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "305 146 669 551"
+        sizeHint = "669 551"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_wieke = "/home/wieke/git-workplace/cadmi/data/examples/example_annotations.txt"
+
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath, "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers
+
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z*"
+    wakeUpCode = ""
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,2,0.5)*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "13 792 120 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _automatic {
+        geometry = "153 45 301 440"
+        sizeHint = "301 440"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "224 396 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = view
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 90
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = TRUE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 126.699996948242"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 256.5
+    lutWidth = 2513
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = FALSE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1209 1233 128 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "502 435 407 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ApplyLungMask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = -1000
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "1077 1357 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "459 366 360 347"
+        sizeHint = "360 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D
+    keep = "Scale factor"
+    filter = Triangle/Linear
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.5 0.5 0.5"
+    imageSize = "256 256 181"
+    voxelSize = "1.24218797683716 1.24218797683716 1.39999997615814"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module itkImageFileReader {
+  internal  {
+    frame = "1065 1445 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "504 199 337 444"
+        sizeHint = "270 444"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1009 377 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader
+    fileDataType = int16
+    correctSubVoxelShift = FALSE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = Binary
+    componentType = int16
+    pixelType = SCALAR
+    loaderType = MetaImageIO
+    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
+"
+    unresolvedFileName = $(DicomBrowserPath)/workspace/cadmi/data/examples/example02.mhd
+  }
+}
+connections  {
+  Scale5.input0 = RegionGrowing.output0
+  RegionGrowing.input0 = Vesselness.output0
+  RegionGrowing.inMarkerList = SoView2DMarkerEditor1.outXMarkerList
+  DtfSkeletonization.input0 = RegionGrowing.output0
+  SoVascularSystem.inputGraph = DtfSkeletonization.outBase1
+  SoExaminerViewer.children = SoVascularSystem.self
+  Vesselness.input0 = ImagePropertyConvert1.output0
+  Scale.input0 = Arithmetic.output0
+  Scale4.input0 = Arithmetic2.output0
+  Arithmetic.input0 = Scale2.output0
+  Arithmetic.input1 = Scale3.output0
+  LoG1.input0 = BlobnessInput.output0
+  LoG2.input0 = BlobnessInput.output0
+  Scale3.input0 = LoG1.output0
+  Scale2.input0 = LoG2.output0
+  Candidates.input0 = RemoveAirways.output0
+  FeatureConnector.input0 = ApplyLungMask.output0
+  View2D1.inInvPostLUT = SoView2DMarkerEditor.self
+  View2D1.startSlice = View2D.startSlice
+  View2D1.lutCenter = View2D.lutCenter
+  View2D1.lutWidth = View2D.lutWidth
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
+  View2D.startSlice = View2D1.startSlice
+  View2D.lutCenter = View2D1.lutCenter
+  View2D.lutWidth = View2D1.lutWidth
+  Morphology5.input0 = Threshold5.output0
+  FindAirways.input0 = Arithmetic21.output0
+  Threshold5.input0 = FindAirways.output0
+  RemoveAirways.input0 = Arithmetic21.output0
+  RemoveAirways.input1 = Morphology5.output0
+  Arithmetic21.input0 = Morphology4.output0
+  Arithmetic21.input1 = SolidNodule.output0
+  Morphology4.input0 = LightNodule.output0
+  Morphology3.input0 = SolidNodule.output0
+  LightNodule.input0 = Mask.output0
+  Mask.input0 = ApplyLungMask.output0
+  Mask.input1 = Morphology3.output0
+  ImageStatistics.input1 = MarkerToMask.output0
+  SolidNodule.input0 = ApplyLungMask.output0
+  Scale1.input0 = Convolution2.output0
+  Arithmetic2.input0 = Convolution4.output0
+  Arithmetic2.input1 = Convolution3.output0
+  Convolution4.input0 = Scale1.output0
+  Convolution4.externalKernel = KernelEditor4.kernel
+  Convolution3.input0 = Scale1.output0
+  Convolution3.externalKernel = KernelEditor3.kernel
+  Convolution2.externalKernel = KernelEditor2.kernel
+  MarkerToMask.input0 = ImagePropertyConvert.output0
+  MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
+  ImagePropertyConvert.input0 = ConstantImage.output0
+  WorldVoxelConvert.input0 = Resample3D.output0
+  SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
+  SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inImage = Resample3D.output0
+  view.inInvPostLUT = SoView2DMarkerEditor.self
+  ApplyLungMask.input0 = Resample3D.output0
+  ApplyLungMask.input1 = MaskLoad.output0
+  Resample3D.input0 = itkImageFileReader.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 168
+        objectName = "Marked View"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 157
+        objectName = "Vertical Mean"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 137
+        objectName = SynchroView2DLabeled
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 185
+        objectName = "Threshold Candidate Selection"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 308
+        objectName = "Remove Airways"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 639
+        objectName = Blobness
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 138
+        objectName = Vesselness
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
