@@ -1,0 +1,2898 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Threshold {
+  internal  {
+    frame = "882 637 96 56"
+    moduleGroupName = "Multi Thresholding"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold
+    threshold = 1
+    minValue = 0
+    maxValue = 383
+    relativeThreshold = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "802 461 80 56"
+    moduleGroupName = "Multi Thresholding"
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "878 557 104 56"
+    moduleGroupName = "Multi Thresholding"
+    windows  {
+      window _default {
+        geometry = "829 534 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic1
+    function = Invert
+    constant = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "846 797 120 56"
+    moduleGroupName = "Multi Thresholding"
+  }
+  fields  {
+    instanceName = Morphology3
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = FALSE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    numKernelElements = 9
+    kernelElementsSum = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "842 725 176 56"
+    moduleGroupName = "Multi Thresholding"
+    windows  {
+      window _default {
+        geometry = "1259 342 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 1
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "851 150 120 56"
+    moduleGroupName = SynchroView2dLabeled
+    windows  {
+      window _automatic {
+        geometry = "635 164 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "960 52 960 1028"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D2
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 133
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 186.899993896484"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.5
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "822 869 152 56"
+    moduleGroupName = "Multi Thresholding"
+    windows  {
+      window _default {
+        geometry = "201 399 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold3
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -100
+    threshWidth = 400
+    threshMin = -300
+    threshMax = 100
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "697 1053 160 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "622 725 152 56"
+    moduleGroupName = "Multi Thresholding"
+    windows  {
+      window _default {
+        geometry = "786 288 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold2
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -250
+    threshWidth = 700
+    threshMin = -600
+    threshMax = 100
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module View2D {
+  internal  {
+    frame = "683 150 120 56"
+    moduleGroupName = SynchroView2dLabeled
+    windows  {
+      window _default {
+        geometry = "0 52 960 1028"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1152 179 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 133
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 186.899993896484"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.5
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Scale {
+  internal  {
+    frame = "1411 -243 72 56"
+    moduleGroupName = VerticalMean2
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = -999.999
+    inputMax = 1512.998487
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Morphology {
+  internal  {
+    frame = "813 1293 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 17
+    kernelY = 17
+    kernelZ = 17
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 2553 elems, 17x17x17x1x1x1"
+    numKernelElements = 2553
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "817 1365 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 20
+    kernelY = 20
+    kernelZ = 20
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 4224 elems, 20x20x20x1x1x1"
+    numKernelElements = 4224
+    kernelElementsSum = 0
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "61 261 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 0.3
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "813 1437 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "459 366 360 347"
+        sizeHint = "360 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D1
+    keep = "Scale factor"
+    filter = Triangle/Linear
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.5 0.5 0.5"
+    imageSize = "256 256 181"
+    voxelSize = "1.242187976 1.242187976 1.399999976"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "189 557 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "68 260 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.48999983
+    lutWidth = 0.29250005
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1388 -485 104 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "515 389 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic2
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1139 -355 120 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor4
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1287 -355 112 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution4
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):1.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):0.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1635 -355 120 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor3
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1495 -355 112 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution3
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):1.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1569 -175 120 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "847 44 425 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor2
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 0.999999
+    status = "#Elems=9, Sum=0.999999, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1389 -175 112 56"
+    moduleGroupName = VerticalMean2
+    windows  {
+      window _default {
+        geometry = "399 449 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution2
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.111111
+(1,0,0,0,0,0):0.111111
+(2,0,0,0,0,0):0.111111
+(0,1,0,0,0,0):0.111111
+(1,1,0,0,0,0):0.111111
+(2,1,0,0,0,0):0.111111
+(0,2,0,0,0,0):0.111111
+(1,2,0,0,0,0):0.111111
+(2,2,0,0,0,0):0.111111
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module MarkerToMask {
+  internal  {
+    frame = "45 389 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "497 363 288 174"
+        sizeHint = "288 174"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MarkerToMask
+    maskValue = 1
+    incrementalStartValue = 1
+    backgroundValue = 0
+    autoUpdate = TRUE
+    writeMode = MaskValue
+    outputType = int16
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "5 477 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "850 132 404 661"
+        sizeHint = "390 661"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert
+    changeDimensionInfo = FALSE
+    cDimInfo = LUMINANCE
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1.242188
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1.242188
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1.4
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1.24218797683716 0 0 0
+0 1.24218797683716 0 0
+0 0 1.39999997615814 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = float
+    changePageSize = FALSE
+    pageSizeX = 128
+    pageSizeY = 128
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = TRUE
+    voxelSizeX = 1.242188
+    voxelSizeY = 1.242188
+    voxelSizeZ = 1.4
+    autoApply = FALSE
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "29 557 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "588 312 244 252"
+        sizeHint = "239 252"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage
+    sizeX = 256
+    sizeY = 256
+    sizeZ = 181
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = int16
+    fillValue = -1000
+    autoApply = TRUE
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1787 -613 112 56"
+    moduleGroupName = VerticalMean
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution1
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.250000
+
+(*,0,1,0,0,0):    0.250000
+
+(*,0,2,0,0,0):    0.000000
+
+(*,0,3,0,0,0):    0.250000
+
+(*,0,4,0,0,0):    0.250000
+
+"
+    kernelInfo = "5 elems, 1x1x5x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.250000
+(0,0,1,0,0,0):0.250000
+(0,0,2,0,0,0):0.000000
+(0,0,3,0,0,0):0.250000
+(0,0,4,0,0,0):0.250000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1794 -519 104 56"
+    moduleGroupName = VerticalMean
+    windows  {
+      window _default {
+        geometry = "399 449 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.111111
+(1,0,0,0,0,0):0.111111
+(2,0,0,0,0,0):0.111111
+(0,1,0,0,0,0):0.111111
+(1,1,0,0,0,0):0.111111
+(2,1,0,0,0,0):0.111111
+(0,2,0,0,0,0):0.111111
+(1,2,0,0,0,0):0.111111
+(2,2,0,0,0,0):0.111111
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1966 -615 112 56"
+    moduleGroupName = VerticalMean
+    windows  {
+      window _default {
+        geometry = "388 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor1
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 5
+    elementSum = 1
+    status = "#Elems=5, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.250000
+
+(*,0,1,0,0,0):    0.250000
+
+(*,0,2,0,0,0):    0.000000
+
+(*,0,3,0,0,0):    0.250000
+
+(*,0,4,0,0,0):    0.250000
+
+"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1978 -519 104 56"
+    moduleGroupName = VerticalMean
+    windows  {
+      window _default {
+        geometry = "847 44 425 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 0.999999
+    status = "#Elems=9, Sum=0.999999, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "821 1513 104 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 244 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskLoad
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1208 393 152 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "753 381 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50000.5
+    threshWidth = 99999
+    threshMin = 1
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1403 246 104 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1014 287 446 382"
+        sizeHint = "446 382"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 864 768"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave
+    taskVerboseLogging = FALSE
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask05.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "5 1165 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "230 339 1179 752"
+        sizeHint = "669 551"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke = "/mnt/Multimedia/CADMICompetition/"
+
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+def loadFile(file):
+	CTX.field("itkImageFileReader.fileName").value = file
+
+def createMask():
+	CTX.field("LSM_MaskToMarkers.update").touch()
+	CTX.field("LSM_OutsideAirRemoval.update").touch()
+	CTX.field("LSM_ConnectedComponents.update").touch()
+
+def prerenderMasks(path, outpath):
+	for file in getFilePaths(path):
+		print("Loading", basename(file))
+		loadFile(file)
+		print("Creating Mask")
+		createMask()
+		print("Saving Mask")
+		out = outpath + "lungmask" + basename(file).split(".")[0][-2:] + ".dcm"
+		CTX.field("ImageSave.filename").value = out
+		CTX.field("ImageSave.save").touch()*"
+    wakeUpCode = ""
+    code = ""
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "1196 533 144 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "23 245 669 551"
+        sizeHint = "669 551"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CreateLungMask
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*CTX.field("LSM_MaskToMarkers.update").touch()
+CTX.field("LSM_OutsideAirRemoval.update").touch()
+CTX.field("LSM_ConnectedComponents.update").touch()*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1393 384 120 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "492 411 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Erosion1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 7
+    kernelY = 7
+    kernelZ = 7
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 179 elems, 7x7x7x1x1x1"
+    numKernelElements = 179
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1389 464 128 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "134 451 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Dilation1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 10
+    kernelY = 10
+    kernelZ = 10
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 552 elems, 10x10x10x1x1x1"
+    numKernelElements = 552
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1293 616 128 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "796 445 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Dilation0
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
+module Info {
+  internal  {
+    frame = "325 1413 56 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "336 221 607 401"
+        sizeHint = "607 401"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = -1
+  }
+}
+module DicomTagViewer {
+  internal  {
+    frame = "421 1405 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "378 226 522 390"
+        sizeHint = "522 390"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DicomTagViewer
+    tagName0 = ""
+    tagName1 = ""
+    tagName2 = ""
+    tagName3 = ""
+    tagName4 = ""
+    tagName5 = ""
+    tagName6 = ""
+    tagName7 = ""
+    tagName8 = ""
+    maxValueLen = 80
+    showPrivateTags = FALSE
+    tagListSubset = AllTags
+    dicomFile = ""
+    trimSpaces = FALSE
+  }
+}
+module WorldVoxelConvert {
+  internal  {
+    frame = "-110 932 144 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "1156 211 460 251"
+        sizeHint = "460 251"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1354 515 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = WorldVoxelConvert
+    voxelX = 164.5
+    voxelY = 213.5
+    voxelZ = 13
+    worldX = 204.339922189713
+    worldY = 265.207133054733
+    worldZ = 18.1999996900558
+    voxelPos = "164.5 213.5 13"
+    worldPos = "204.339922189713 265.207133054733 18.1999996900558"
+    voxelMode = FALSE
+    worldMode = TRUE
+    intVoxelCoords = FALSE
+    keepConstant = World
+  }
+}
+module Comment {
+  internal  {
+    frame = "305 1517 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "49 690 256 209"
+        sizeHint = "256 209"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Comment
+    comment = ""
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1295 836 120 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "1151 426 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Erosion0
+    borderHandling = PadDstFillWithOrig
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1866 -200 160 56"
+    moduleGroupName = Sphericity
+  }
+  fields  {
+    instanceName = PageToImageExtent2
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "1858 -136 176 56"
+    moduleGroupName = Sphericity
+  }
+  fields  {
+    instanceName = ImagePropertyConvert2
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "2031 -23 168 64"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "482 339 676 433"
+        sizeHint = "523 433"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SelectCandidates
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module MorphologicalGradient {
+  internal  {
+    frame = "2062 -177 168 56"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "535 377 224 152"
+        sizeHint = "219 152"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MorphologicalGradient
+    dilationSize = 3
+    erosionSize = 3
+    sphericalKernel = TRUE
+    threeDimensional = TRUE
+    gradientType = Central
+  }
+}
+module Sphericity {
+  internal  {
+    frame = "2030 -272 88 56"
+    moduleGroupName = Sphericity
+    windows  {
+      window _default {
+        geometry = "449 469 381 84"
+        sizeHint = "381 84"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Sphericity
+    threshold = 0.050000001
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "110 900 104 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "555 160 694 538"
+        sizeHint = "684 538"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 1 0.290196078431373"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = Circle
+    markerType2 = Circle
+    markerType3 = Triangle
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 15
+    markerSize2 = 15
+    markerSize3 = 15
+    markerSize4 = 4
+    markerSize5 = 4
+    markerSize6 = 4
+    markerSize7 = 4
+    markerSize8 = 4
+    markerSize9 = 4
+    markerSize10 = 4
+    markerSize11 = 4
+    markerSize12 = 4
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = 1
+    name3 = 2
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "91 833 168 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "302 75 719 695"
+        sizeHint = "675 695"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 1
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = -1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = RemoveFirst
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module ConstantXMarkerList {
+  internal  {
+    frame = "110 968 152 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "797 264 505 625"
+        sizeHint = "394 573"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "410 187 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AnnotationMarkers
+    markerList = "106.20707202 251.54306531 215.599996328 0 0 0 2
+198.128982306 196.26570034 214.89999634 0 0 0 1
+240.984467506 186.949290514 211.3999964 0 0 0 1
+186.328196526 206.824298143 203.699996531 0 0 0 1
+115.523481846 248.437595367 199.499996603 0 0 0 1
+65.214868784 222.972741842 198.099996626 0 0 0 1
+189.433666468 142.851617336 187.599996805 0 0 0 2
+244.089937449 236.636809587 185.499996841 0 0 0 1
+256.511817217 168.93756485 183.399996877 0 0 0 1
+75.1523725986 159.000061035 182.699996889 0 0 0 1
+234.773527622 139.746147394 181.999996901 0 0 0 2
+116.765669823 255.890723228 181.299996912 0 0 0 1
+253.406347275 216.761801958 179.899996936 0 0 0 2
+249.679783344 223.593835831 177.099996984 0 0 0 1
+255.890723228 222.972741842 167.999997139 0 0 0 2
+262.101663113 180.117256641 163.099997222 0 0 0 1
+253.406347275 150.925839186 156.79999733 0 0 0 1
+261.480569124 202.476640224 150.499997437 0 0 0 1
+244.089937449 251.54306531 143.499997556 0 0 0 1
+58.3828349113 163.347718954 142.09999758 0 0 0 1
+70.1836206913 111.175823927 140.699997604 0 0 0 1
+85.7109704018 112.418011904 136.499997675 0 0 0 2
+46.5820491314 217.382895947 136.499997675 0 0 0 1
+75.1523725986 204.961016178 118.299997985 0 0 0 1
+52.1718950272 249.058689356 110.599998116 0 0 0 2
+44.7187671661 133.53520751 105.6999982 0 0 0 1
+130.429737568 263.964945078 102.19999826 0 0 0 1
+29.1914174557 136.019583464 101.499998271 0 0 0 1
+270.175884962 206.824298143 93.7999984026 0 0 0 2
+244.089937449 255.890723228 92.3999984264 0 0 0 2
+252.164159298 241.605561495 83.2999985814 0 0 0 2
+261.480569124 236.015715599 67.1999988556 0 0 0 2
+62.7304928303 257.132911205 56.6999990344 0 0 0 1
+37.2656393051 232.289151669 51.7999991179 0 0 0 1
+197.507888317 255.890723228 48.2999991775 0 0 0 1
+281.976670742 178.253974676 44.7999992371 0 0 0 1
+115.523481846 273.281354904 20.2999996543 0 0 0 2
+204.33992219 265.207133055 18.1999996901 0 0 0 1
+\\"
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "-110 844 128 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "305 174 698 553"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_wieke = "/home/wieke/git-workspace/cadmi/data/examples/example_annotations.txt"
+
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath, "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers
+
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z*"
+    wakeUpCode = ""
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_wieke,2,0.5)*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "13 744 120 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _automatic {
+        geometry = "153 45 301 440"
+        sizeHint = "301 440"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "725 303 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = view
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 90
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = TRUE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 126.699996948242"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 256.5
+    lutWidth = 2513
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = FALSE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "709 1193 136 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "502 435 407 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ApplyLungMask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = -1000
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "625 1405 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "459 366 360 347"
+        sizeHint = "360 347"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D
+    keep = "Scale factor"
+    filter = Triangle/Linear
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.5 0.5 0.5"
+    imageSize = "256 256 181"
+    voxelSize = "1.24218797683716 1.24218797683716 1.39999997615814"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1853 211 184 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "23 602 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents1
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 50
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1872 1037 168 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "921 479 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PageToImageExtent1
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1884 853 144 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "61 609 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers2
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "1888 957 136 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "769 563 381 233"
+        sizeHint = "381 233"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask1
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1708 1013 80 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "822 687 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask1
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "1443 836 160 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "983 830 381 233"
+        sizeHint = "381 233"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_AxisEdgeMask
+    front = TRUE
+    back = TRUE
+    right = TRUE
+    left = TRUE
+    top = FALSE
+    bottom = FALSE
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1720 757 136 56"
+    moduleGroupName = "Airway Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "4 193 648 607"
+        sizeHint = "648 607"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "793 159 611 923"
+        sizeHint = "400 440"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing1
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -1000
+    upperThreshold = -940
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_3D_18_XYZ
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 2
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1874 456 144 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1220 379 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50350
+    threshWidth = 99300
+    threshMin = 700
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1810 320 128 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "315 124 648 607"
+        sizeHint = "648 607"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = 120
+    upperThreshold = 10000
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_4D_8_XYZT
+    extendedNeighborhoodType = ENBH_2D_4_XY
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.100000001490116
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeHounsfieldUnits
+    internalAccuracy = Auto
+    autoUpdateUnitType = FALSE
+    stretchOutputOverTime = FALSE
+    unitLabel = HU
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 30
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1962 328 144 56"
+    moduleGroupName = "Skeleton Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1262 350 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers1
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1357 536 208 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1196 368 676 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1214 351 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_ConnectedComponents
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = TRUE
+    objectValue = 1
+    minClusterSize = 200
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1305 704 104 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "822 547 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_mask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1427 916 192 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "921 479 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1439 764 168 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1289 551 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1048 264 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_MaskToMarkers
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = Off
+    vectorMode = Zero
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1415 660 184 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1229 369 648 617"
+        sizeHint = "648 617"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "793 159 611 923"
+        sizeHint = "400 440"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_OutsideAirRemoval
+    autoUpdateMode = AutoClear
+    lowerThreshold = 0.85
+    upperThreshold = 1.15
+    autoThreshold = TRUE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_2D_4_XZ
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 15
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1279 916 152 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "1266 431 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_LungAirFilter
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -712
+    threshWidth = 624
+    threshMin = -1000
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -1100
+    changedMax = -400
+  }
+}
+module itkImageFileReader {
+  internal  {
+    frame = "597 1509 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "504 227 367 411"
+        sizeHint = "300 411"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1009 377 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader
+    fileDataType = int16
+    correctSubVoxelShift = FALSE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = Binary
+    componentType = int16
+    pixelType = SCALAR
+    loaderType = MetaImageIO
+    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
+"
+    unresolvedFileName = /mnt/Multimedia/CADMICompetition/examples/example02.mhd
+  }
+}
+connections  {
+  Threshold.input0 = ConnectedComponents.output0
+  Mask.input0 = IntervalThreshold2.output0
+  Mask.input1 = Arithmetic1.output0
+  Arithmetic1.input0 = Threshold.output0
+  Morphology3.input0 = IntervalThreshold3.output0
+  ConnectedComponents.input0 = Morphology3.output0
+  View2D2.inImage = Mask.output0
+  View2D2.inInvPostLUT = SoView2DMarkerEditor.self
+  View2D2.startSlice = View2D1.startSlice
+  View2D2.lutCenter = View2D1.lutCenter
+  View2D2.lutWidth = View2D1.lutWidth
+  IntervalThreshold3.input0 = PageToImageExtent.output0
+  PageToImageExtent.input0 = ApplyLungMask.output0
+  IntervalThreshold2.input0 = PageToImageExtent.output0
+  View2D1.inImage = IntervalThreshold2.output0
+  View2D1.inInvPostLUT = SoView2DMarkerEditor.self
+  View2D1.startSlice = View2D2.startSlice
+  View2D1.lutCenter = View2D2.lutCenter
+  View2D1.lutWidth = View2D2.lutWidth
+  Scale1.input0 = Convolution2.output0
+  Morphology1.input0 = Morphology.output0
+  Morphology.input0 = Resample3D1.output0
+  ImageStatistics.input1 = MarkerToMask.output0
+  Resample3D1.input0 = MaskLoad.output0
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
+  Arithmetic2.input0 = Convolution4.output0
+  Arithmetic2.input1 = Convolution3.output0
+  Convolution4.input0 = Scale1.output0
+  Convolution4.externalKernel = KernelEditor4.kernel
+  Convolution3.input0 = Scale1.output0
+  Convolution3.externalKernel = KernelEditor3.kernel
+  Convolution2.externalKernel = KernelEditor2.kernel
+  MarkerToMask.input0 = ImagePropertyConvert.output0
+  MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
+  ImagePropertyConvert.input0 = ConstantImage.output0
+  Convolution1.input0 = Convolution.output0
+  Convolution1.externalKernel = KernelEditor1.kernel
+  Convolution.externalKernel = KernelEditor.kernel
+  IntervalThreshold1.input0 = LSM_Erosion1.output0
+  ImageSave.input0 = IntervalThreshold1.output0
+  LSM_Erosion1.input0 = LSM_Dilation1.output0
+  LSM_Dilation1.input0 = LSM_ConnectedComponents.output0
+  LSM_Dilation0.input0 = LSM_mask.output0
+  Info.input0 = itkImageFileReader.output0
+  DicomTagViewer.input0 = itkImageFileReader.output0
+  WorldVoxelConvert.input0 = Resample3D.output0
+  LSM_Erosion0.input0 = LSM_LungAirFilter.output0
+  PageToImageExtent2.input0 = ImagePropertyConvert2.output0
+  ImagePropertyConvert2.input0 = SelectCandidates.output0
+  MorphologicalGradient.imageIn = SelectCandidates.output0
+  Sphericity.input0 = PageToImageExtent2.output0
+  Sphericity.input1 = MorphologicalGradient.imageOut
+  SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
+  SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inImage = ApplyLungMask.output0
+  view.inInvPostLUT = SoView2DMarkerEditor.self
+  ApplyLungMask.input0 = Resample3D.output0
+  ApplyLungMask.input1 = Morphology1.output0
+  Resample3D.input0 = itkImageFileReader.output0
+  ConnectedComponents1.input0 = RegionGrowing.output0
+  MaskToMarkers2.input0 = AxisEdgeMask1.output0
+  AxisEdgeMask1.input0 = PageToImageExtent1.output0
+  LSM_AxisEdgeMask.input0 = LSM_PageToImageExtent.output0
+  RegionGrowing1.input0 = Mask1.output0
+  RegionGrowing1.inMarkerList = MaskToMarkers2.outputXMarkerList
+  RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
+  MaskToMarkers1.input0 = IntervalThreshold.output0
+  LSM_ConnectedComponents.input0 = LSM_Dilation0.output0
+  LSM_mask.input0 = LSM_Erosion0.output0
+  LSM_mask.input1 = LSM_OutsideAirRemoval.output0
+  LSM_PageToImageExtent.input0 = LSM_Erosion0.output0
+  LSM_MaskToMarkers.input0 = LSM_AxisEdgeMask.output0
+  LSM_OutsideAirRemoval.input0 = LSM_Erosion0.output0
+  LSM_OutsideAirRemoval.inMarkerList = LSM_MaskToMarkers.outputXMarkerList
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 65
+        objectName = "Lung Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 54
+        objectName = "Skeleton Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 62
+        objectName = "Airway Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 168
+        objectName = "Marked View"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 114
+        objectName = Sphericity
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 113
+        objectName = VerticalMean
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 157
+        objectName = VerticalMean2
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 241
+        objectName = SynchroView2dLabeled
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 267
+        objectName = "Multi Thresholding"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
