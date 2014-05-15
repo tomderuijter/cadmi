@@ -2,9 +2,731 @@
 network  {
   watchlist = ""
 }
+module ImageStatistics {
+  internal  {
+    frame = "571 -1592 128 64"
+    moduleGroupName = "True Positive Labels"
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CandidateLabels
+    innerMin = 0
+    innerMax = 0
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "583 -1504 104 64"
+    moduleGroupName = "True Positive Labels"
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TPs
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "1019 -1472 72 56"
+    moduleGroupName = "Grey values"
+  }
+  fields  {
+    instanceName = Scale6
+    inputMin = -1000
+    inputMax = 1513
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "997 -1591 120 64"
+    moduleGroupName = "Grey values"
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 121 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GreyValues
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "2117 -1591 120 64"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Vesselness
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1333 1493 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 7
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 39 elems, 3x3x7x1x1x1"
+    numKernelElements = 39
+    kernelElementsSum = 0
+  }
+}
 module Arithmetic1 {
   internal  {
-    frame = "1381 -103 200 64"
+    frame = "1348 -807 200 64"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = LungImageFeatureConnector
+    function = Add
+    constant = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "1281 1385 128 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "497 373 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ApplyLungMask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = -1000
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "2197 -1171 136 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "482 346 314 150"
+        sizeHint = "314 150"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers1
+    lowerThreshold = 0
+    setType = VoxelValue
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1489 1469 160 56"
+    moduleGroupName = "Tranchea Seedpoint"
+  }
+  fields  {
+    instanceName = PageToImageExtent1
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "1521 1325 96 56"
+    moduleGroupName = "Tranchea Seedpoint"
+  }
+  fields  {
+    instanceName = Centroids1
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "1509 1389 120 56"
+    moduleGroupName = "Tranchea Seedpoint"
+    windows  {
+      window _default {
+        geometry = "500 311 279 221"
+        sizeHint = "279 221"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1778 -1593 120 64"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Blobness
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "929 -443 128 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "482 346 314 150"
+        sizeHint = "314 150"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers
+    lowerThreshold = 0
+    setType = VoxelValue
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "929 -515 128 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "142 69 620 628"
+        sizeHint = "620 628"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing1
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -800
+    upperThreshold = 50
+    autoThreshold = FALSE
+    basicNeighborhoodType = BNBH_4D_8_XYZT
+    extendedNeighborhoodType = ENBH_1D_2_Z
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.100000001490116
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Force
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 0.005
+    maxVolumeEnabled = TRUE
+    intervalSize = 8
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "613 -347 152 56"
+    moduleGroupName = "Candidate Merging"
+  }
+  fields  {
+    instanceName = PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "645 -419 88 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "500 396 279 51"
+        sizeHint = "279 51"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1337 1577 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 216 323 410"
+        sizeHint = "323 410"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LungMask
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/lungmask/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1081 1569 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 216 323 410"
+        sizeHint = "323 410"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "702 111 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FullImage
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/resampled/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "253 -1139 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "0 -980 669 980"
+        sizeHint = "669 551"
+        wasOpen = yes
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke = "/mnt/Multimedia/CADMICompetition/"
+path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/"
+
+featureModules = 	[
+								"GreyValues",
+								"VerticalMean",
+								"Blobness",
+								"Vesselness"
+							]
+
+imageStatistics = [
+								"totalMinVal",
+								"totalMaxVal",
+								"totalAbsMean",
+								"totalStdDev"
+							]
+
+# Returns file names of all subject '.mhd' images in the provided path
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+# Loads the resampled iamge and its lung masks
+def loadFile(path, file):
+	inFull = path + "resampled/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("FullImage.filename").value = inFull
+
+	inMask = path + "lungmask/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("LungMask.filename").value = inMask
+
+	inStrictMask = path + "strictmask/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("StrictMask.filename").value = inStrictMask
+
+# Features are written in SVM Light format
+def collectFeatures():
+	line = ""
+	featureCount = 1
+	for module in featureModules:
+		for feature in imageStatistics:
+			line += " " + str(featureCount)
+			line += ":" + str(CTX.field(module + "." + feature).value)
+			featureCount += 1
+	return line
+
+# Collects the candidate label compared with the expert annotation
+def collectLabel():
+	label = str(int(CTX.field("CandidateLabels.totalMaxVal").value))
+	return label
+
+# Load expert annotations in marker editor
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath + "example_annotations.txt", "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers
+
+# Convert annotation to world voxel coordinates
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z
+
+def calculateData(path):
+	
+	# Open Target file
+	dataFile = open(path + 'candidates.txt', 'w')
+#	locationFile = open(path + 'candidate_locations.txt', 'w')
+	# TODO - open candidates location file
+
+	# Loop over marked subjects
+	for file in getFilePaths(path):
+		
+		# Load the relevant subject masks
+		print "Loading " + basename(file)
+		loadFile(path, file)
+
+		# Load the expert annotations
+		subjectNr = int(basename(file).split(".")[0][-2:])
+		scale = 0.5
+		getMarkers(path,subjectNr,scale)
+
+		# Loop over candidate nodules
+		nrCandidates = CTX.field("Candidates.numberOfClusters").value
+		CTX.field("CandidateSelector.threshWidth").value = 0
+		for candidate in xrange(1,nrCandidates+1):
+			CTX.field("CandidateSelector.threshCenter").value = candidate
+
+			print "Processing candidate " + "(" + str(candidate) + "/" + str(nrCandidates) + ")"
+
+			label = collectLabel()
+			features = collectFeatures()
+			dataFile.write(label + features + "\\r\\n")
+
+			# TODO write candidate locations to file
+
+	dataFile.close()
+			
+
+
+*"
+    wakeUpCode = ""
+    code = calculateData(path_tom)
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1379 -1594 120 64"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "418 89 443 664"
+        sizeHint = "443 664"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = VerticalMean
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "621 -503 136 64"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "861 216 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CandidateSelector
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 23
+    threshWidth = 0
+    threshMin = 23
+    threshMax = 23
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "893 -807 200 64"
     moduleGroupName = ""
   }
   fields  {
@@ -13,36 +735,15 @@ module Arithmetic1 {
     constant = 0
   }
 }
-module MorphologicalGradient {
-  internal  {
-    frame = "1429 -483 168 56"
-    moduleGroupName = Geometrics
-    windows  {
-      window _default {
-        geometry = "530 -566 224 152"
-        sizeHint = "219 152"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = MorphologicalGradient
-    dilationSize = 3
-    erosionSize = 3
-    sphericalKernel = TRUE
-    threeDimensional = TRUE
-    gradientType = Central
-  }
-}
 module Scale {
   internal  {
-    frame = "1119 -806 72 56"
+    frame = "2149 -1499 72 56"
     moduleGroupName = Vesselness
   }
   fields  {
     instanceName = Scale5
     inputMin = 0
-    inputMax = 1513
+    inputMax = 2.77322149276733
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -52,7 +753,7 @@ module Scale {
 }
 module Comment {
   internal  {
-    frame = "861 -171 88 56"
+    frame = "-379 -403 88 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -64,113 +765,15 @@ module Comment {
   }
   fields  {
     instanceName = Comment
-    comment = "- Vesselness heeft seed points nodig. Zijn nu met de hand gezet.
-
-- Module maken die, op basis van candidates en morphological gradient uitrekent: nodule area, volume, diameter
-
-- Nog toe te voegen: zie murphy paper en proposal
+    comment = "- Nog toe te voegen: zie murphy paper en proposal
 
 - Mogelijk sphericity toevoegen als bug opgelost is
 "
   }
 }
-module SoView2DMarkerEditor {
-  internal  {
-    frame = "1162 -424 176 56"
-    moduleGroupName = Vesselness
-  }
-  fields  {
-    instanceName = SoView2DMarkerEditor1
-    drawingOn = TRUE
-    editingOn = TRUE
-    maskValid = FALSE
-    fixZOn = TRUE
-    color = "1 1 1"
-    selectionTolerance = 4
-    needsValidVoxel = TRUE
-    button1 = PRESSED
-    button2 = IGNORED
-    button3 = IGNORED
-    shift = IGNORED
-    control = IGNORED
-    alt = IGNORED
-    wantsAllEvents = FALSE
-    wantsKeyEvents = TRUE
-    wantsMouseWheelEvents = FALSE
-    setEventHandled = FALSE
-    ignoreHandledEvents = FALSE
-    createNewMode = FALSE
-    renderOnSlab = FALSE
-    clipToSlice = FALSE
-    cursorShape = UNDEFINED_CURSOR
-    depthVisibility = 1
-    snapToVoxel = TRUE
-    snapToSlice = TRUE
-    currentType = 0
-    deleteOnClick = FALSE
-    addOnClick = TRUE
-    alphaFactor = 1
-    minimumAlpha = 0.1
-    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
-    useIconFile = FALSE
-    iconIdx = 0
-    drawMarkerShapesWithLines = FALSE
-    selectingOn = TRUE
-    actOnReleaseOnly = FALSE
-    editorMode = EDIT_MARKER
-    colorMode = COLOR_BY_TYPE
-    textColorMode = COLOR_TEXT
-    textMode = TEXT_OFF
-    textPosition = TEXT_POSITION_RIGHT_BELOW
-    textColor = "1 1 1"
-    textShadow = TRUE
-    textFontSize = 12
-    showTextOnlyForSelectedMarker = FALSE
-    cutText = FALSE
-    maxNumberOfLines = 1
-    vectorArrow = VECTOR_END_ARROW
-    vectorLineWidth = 1
-    useAntiAlias = TRUE
-    useVectorLengthAsMarkerSize = FALSE
-    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
-    drawMode = DRAW_MARKER
-    highlightSelection = TRUE
-    selectiveDrawing = FALSE
-    selectionBoxesForCurrentOnly = FALSE
-    cooperative = FALSE
-    overwriteCurrentTimePoint = FALSE
-    newCurrentTimePoint = 0
-    depthVisibilityMode = DEPTH_IN_SLICES
-    listString = ""
-    index = 1
-    persistent = FALSE
-    listStringEnable = FALSE
-    ownsList = TRUE
-    applySelect = FALSE
-    id = 2
-    name = ""
-    newName = ""
-    overflowMode = None
-    maxSize = 0
-    useInsertTemplate = FALSE
-    upToDate = TRUE
-    posXYZ = "116.144577026367 195.644607543945 83.2999954223633"
-    posC = 0
-    posT = 0
-    posU = 0
-    vecXYZ = "0 0 0"
-    type = 0
-    newPosXYZ = "0 0 0"
-    newPosC = 0
-    newPosT = 0
-    newPosU = 0
-    newVecXYZ = "0 0 0"
-    newType = 0
-  }
-}
 module RegionGrowing {
   internal  {
-    frame = "1110 -512 120 56"
+    frame = "2125 -1347 120 56"
     moduleGroupName = Vesselness
     windows  {
       window _default {
@@ -182,9 +785,9 @@ module RegionGrowing {
   }
   fields  {
     instanceName = RegionGrowing
-    autoUpdateMode = AutoClear
-    lowerThreshold = -56.4114416922443
-    upperThreshold = 94.8885583077557
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -75.65
+    upperThreshold = 75.65
     autoThreshold = TRUE
     basicNeighborhoodType = BNBH_3D_6_XYZ
     extendedNeighborhoodType = ENBH_2D_4_XY
@@ -218,7 +821,7 @@ module RegionGrowing {
 }
 module DtfSkeletonization {
   internal  {
-    frame = "1194 -600 144 56"
+    frame = "2113 -1411 144 56"
     moduleGroupName = Vesselness
     windows  {
       window _default {
@@ -236,153 +839,13 @@ module DtfSkeletonization {
     cavityVolume = 10
     maxDistance = 10000
     useMaxDistance = FALSE
-    autoUpdateMode = Off
+    autoUpdateMode = AutoUpdate
     skeletonOnly = FALSE
-  }
-}
-module SoVascularSystem {
-  internal  {
-    frame = "1198 -672 136 56"
-    moduleGroupName = Vesselness
-    windows  {
-      window _default {
-        geometry = "659 317 369 461"
-        sizeHint = "369 461"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = SoVascularSystem
-    autoApply = TRUE
-    status = "Graph is valid"
-    complexity = 0.60000002
-    pointSize = 1
-    lineWidth = 1
-    textureScaleX = 0.5
-    textureScaleY = 0.5
-    recursionDepth = -1
-    showLines = FALSE
-    labelMode = GENERAL_LABEL
-    textureMode = SIZE_ALMOST_EQUAL
-    textureCoordinateMode = FOR_ALL_ELEMENTS
-    radiusMode = MIN_DIST
-    displayMode = DISPLAY_SURFACE
-    radiusScale = 1
-    radiusFixedSize = 1
-    visible = TRUE
-    texture = FALSE
-    numSmoothingPasses = 3
-    overallSmoothness = 0.69999999
-    smoothIndependently = FALSE
-    radiusSmoothness = 0.69999999
-    skeletonSmoothness = 0.69999999
-    endCapScaling = 1
-    useGeneralColor = TRUE
-    generalColor = "1 0 0"
-    useAlternativeTransparency = TRUE
-    alternativeTransparencyColor = "0 0 0"
-    selectedCoordinate = "0 0 0"
-    snapMode = SNAP_TO_SKELETON
-    enableSelection = TRUE
-    continuousHitCheck = FALSE
-    cursorShape = CROSS_CURSOR
-    nearestCoordinate = "0 0 0"
-    selectedEdgeId = 0
-    selectedNodeId = 0
-    nearestRadius = 0
-    nearestLabel = 0
-    nearestColor = "1 1 1"
-    enableInteractivePreviewMode = FALSE
-    interactivePreviewColor = "1 1 0"
-    interactivePreviewAlpha = 0.5
-    useSkeletonColors = FALSE
-  }
-}
-module SoExaminerViewer {
-  internal  {
-    frame = "1194 -744 144 56"
-    moduleGroupName = Vesselness
-    windows  {
-      window _viewer {
-        geometry = "193 249 400 400"
-        sizeHint = "400 400"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = SoExaminerViewer
-    renderCaching = AUTO
-    boundingBoxCaching = AUTO
-    renderCulling = AUTO
-    pickCulling = AUTO
-    border = FALSE
-    background = "0 0 0"
-    transparency = BLEND
-    antialiasing = FALSE
-    antialiasingNumPasses = 1
-    useSampleBuffers = FALSE
-    numSamples = 8
-    grabKeyFocus = TRUE
-    snapshotFormat = SNAPSHOT_RGB
-    outputAviFile = ""
-    autoRedrawWhenRecording = TRUE
-    frameRate = 7
-    frameRateAvi = 15
-    status = ready
-    outputSnapshotFile = none
-    outputSnapshotFileWritten = none
-    autoIncreaseFile = TRUE
-    showSnapshotWithShell = FALSE
-    snapCount = 0
-    inputDevicesList = ""
-    headlight = TRUE
-    decoration = TRUE
-    popupMenuEnabled = FALSE
-    viewing = TRUE
-    autoClipping = TRUE
-    drawStyle = VIEW_AS_IS
-    interactiveDrawStyle = VIEW_LOW_COMPLEXITY
-    viewAllFlag = FALSE
-    initialCameraOrientation = CAMERA_KEEP_AS_IS
-    applyCameraOrientation = CAMERA_KEEP_AS_IS
-    cameraType = CAMERA_PERSPECTIVE
-    autoApplyUserSettingOrientation = FALSE
-    userSettingOrientation = "0 0 1 0"
-    automaticViewAll = FALSE
-    storeCurrentState = TRUE
-    saveCamera = TRUE
-    cursor = TRUE
-    isCameraStored = TRUE
-    perspective = TRUE
-    stereoViewing = FALSE
-    stereoOffset = 3
-    height = 0.78539819
-    position = "425.828765869141 435.271453857422 292.834411621094"
-    orientation = "0.30069425702095 0.45362651348114 0.838931441307068 2.84755492210388"
-    nearDistance = 207.73199
-    farDistance = 595.34204
-    focalDistance = 677.38666
-    forceRedrawOnInteraction = FALSE
-    button1events = TO_VIEWER
-    button2events = TO_VIEWER
-    button3events = TO_VIEWER
-    keyEvents = TO_VIEWER
-    animationEnabled = FALSE
-    feedback = FALSE
-    feedbackSize = 32
-    mouseInteraction = ""
-    rotationAxis = "0 1 0"
-    rotationAngle = 360
-    rotationSteps = 80
-    rotationCurrentStep = 0
-    recordRotation = TRUE
   }
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "986 -336 176 56"
+    frame = "1997 -1171 176 56"
     moduleGroupName = Vesselness
     windows  {
       window _default {
@@ -421,9 +884,9 @@ module ImagePropertyConvert {
     changeDatatype = FALSE
     datatype = "unsigned int8"
     changePageSize = TRUE
-    pageSizeX = 32
-    pageSizeY = 32
-    pageSizeZ = 1
+    pageSizeX = 128
+    pageSizeY = 128
+    pageSizeZ = 128
     pageSizeC = 1
     pageSizeT = 1
     pageSizeU = 1
@@ -440,7 +903,7 @@ module ImagePropertyConvert {
 }
 module Vesselness {
   internal  {
-    frame = "1034 -424 96 56"
+    frame = "2017 -1263 152 64"
     moduleGroupName = Vesselness
     windows  {
       window _default {
@@ -451,7 +914,7 @@ module Vesselness {
     }
   }
   fields  {
-    instanceName = Vesselness
+    instanceName = CalculateVesselness
     startSigma = 1
     endSigma = 2
     nbrOfScales = 1
@@ -459,12 +922,12 @@ module Vesselness {
     calc2D = FALSE
     normalizedMeasure = FALSE
     darkVessels = FALSE
-    autoUpdate = FALSE
+    autoUpdate = TRUE
   }
 }
 module Arithmetic1 {
   internal  {
-    frame = "761 -409 120 64"
+    frame = "1778 -1208 120 64"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -482,7 +945,7 @@ module Arithmetic1 {
 }
 module Scale {
   internal  {
-    frame = "792 -713 64 56"
+    frame = "1809 -1512 64 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -494,7 +957,7 @@ module Scale {
   }
   fields  {
     instanceName = Scale
-    inputMin = 0.0120506379753351
+    inputMin = 0
     inputMax = 1
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
@@ -505,7 +968,7 @@ module Scale {
 }
 module Scale {
   internal  {
-    frame = "389 -715 72 56"
+    frame = "1403 -1510 72 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -518,7 +981,7 @@ module Scale {
   fields  {
     instanceName = Scale4
     inputMin = 0
-    inputMax = 0.201802685856819
+    inputMax = 0.608248114585876
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -528,7 +991,7 @@ module Scale {
 }
 module Arithmetic {
   internal  {
-    frame = "776 -641 96 56"
+    frame = "1793 -1440 96 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -579,7 +1042,7 @@ module Arithmetic {
 }
 module LoG {
   internal  {
-    frame = "830 -493 64 56"
+    frame = "1847 -1292 64 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -604,7 +1067,7 @@ module LoG {
 }
 module LoG {
   internal  {
-    frame = "747 -493 64 56"
+    frame = "1764 -1292 64 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -629,7 +1092,7 @@ module LoG {
 }
 module Scale {
   internal  {
-    frame = "828 -561 72 56"
+    frame = "1845 -1360 72 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -641,8 +1104,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale3
-    inputMin = -1.19940437022177e+20
-    inputMax = 8.54802648640499e+19
+    inputMin = -2.39894371649098e+19
+    inputMax = 1.58644706471334e+19
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -652,7 +1115,7 @@ module Scale {
 }
 module Scale {
   internal  {
-    frame = "740 -561 72 56"
+    frame = "1757 -1360 72 56"
     moduleGroupName = Blobness
     windows  {
       window _default {
@@ -664,8 +1127,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale2
-    inputMin = -1.77252280508885e+19
-    inputMax = 1.19417650029496e+19
+    inputMin = -1.47753329115655e+19
+    inputMax = 9.10614705490362e+18
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -675,19 +1138,24 @@ module Scale {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1629 81 168 64"
-    moduleGroupName = ""
+    frame = "621 -135 168 64"
+    moduleGroupName = "Candidate Merging"
     windows  {
       window _default {
         geometry = "407 -711 708 442"
         sizeHint = "465 442"
         wasOpen = no
       }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
     }
   }
   fields  {
     instanceName = Candidates
-    autoUpdate = FALSE
+    autoUpdate = TRUE
     useAdditionalSeed = FALSE
     additionalSeed = "0 0 0 0 0 0"
     additionalSeedType = 0
@@ -709,7 +1177,7 @@ module ConnectedComponents {
 }
 module Arithmetic1 {
   internal  {
-    frame = "1205 -103 136 64"
+    frame = "1117 -807 200 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -720,142 +1188,14 @@ module Arithmetic1 {
     }
   }
   fields  {
-    instanceName = ImageFeatureConnector
+    instanceName = StrictImageFeatureConnector
     function = Add
     constant = 0
   }
 }
-module View2D {
-  internal  {
-    frame = "78 58 120 56"
-    moduleGroupName = SynchroView2DLabeled
-    windows  {
-      window _default {
-        geometry = "640 44 640 752"
-        sizeHint = "400 400"
-        wasOpen = no
-      }
-      window _automatic {
-        geometry = "389 -790 500 600"
-        sizeHint = "262 217"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = View2D1
-    inventorInputOn = TRUE
-    inventorOutputOn = FALSE
-    view2DExtensionsOn = TRUE
-    startSlice = 0
-    numSlices = 1
-    numXSlices = 1
-    sliceStep = 1
-    slab = 1
-    blendMode = BLEND_REPLACE
-    timePoint = 0
-    maxTimePoint = 0
-    filterMode = FILTER_LINEAR
-    standardKeys = TRUE
-    cineMode = CINE_Z
-    cineDirection = CINE_PINGPONG
-    cineRepeat = CINE_ONCE
-    cineSpeed = 0.1
-    snapToCenter = FALSE
-    zoomMode = VIEW2D_AUTO_ZOOM
-    unzoomOnImageChange = FALSE
-    sliceZoom = 1
-    sliceZoomSynced = 1
-    baseColor = "1 1 1"
-    margin = "2 2"
-    sliceOrigin = "0 0"
-    plane = "0 0 1 0"
-    useShaders = TRUE
-    useManagedInteraction = FALSE
-    lutCenter = 0.5
-    lutWidth = 1
-    annotationOn = TRUE
-    annotationMode = ANNO_MODE_AUTO
-    annotationSizeMode = ANNO_SHOW_DETAILED
-    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
-    annotationFontSize = ANNO_SIZE_AUTO
-    annoCoords = Voxel
-    annoCTValue = AsIs
-    borderOn = FALSE
-    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
-    valueHighPrecision = TRUE
-    maxPrecision = 4
-    enableSlicing = TRUE
-    useRelativeLUTIfNoInputImage = FALSE
-  }
-}
-module View2D {
-  internal  {
-    frame = "-66 58 120 56"
-    moduleGroupName = SynchroView2DLabeled
-    windows  {
-      window _default {
-        geometry = "0 44 640 752"
-        sizeHint = "400 400"
-        wasOpen = no
-      }
-      window _automatic {
-        geometry = "780 -772 500 600"
-        sizeHint = "262 217"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = View2D
-    inventorInputOn = TRUE
-    inventorOutputOn = FALSE
-    view2DExtensionsOn = TRUE
-    startSlice = 0
-    numSlices = 1
-    numXSlices = 1
-    sliceStep = 1
-    slab = 1
-    blendMode = BLEND_REPLACE
-    timePoint = 0
-    maxTimePoint = 0
-    filterMode = FILTER_LINEAR
-    standardKeys = TRUE
-    cineMode = CINE_Z
-    cineDirection = CINE_PINGPONG
-    cineRepeat = CINE_ONCE
-    cineSpeed = 0.1
-    snapToCenter = FALSE
-    zoomMode = VIEW2D_AUTO_ZOOM
-    unzoomOnImageChange = FALSE
-    sliceZoom = 1
-    sliceZoomSynced = 1
-    baseColor = "1 1 1"
-    margin = "2 2"
-    sliceOrigin = "0 0"
-    plane = "0 0 1 0"
-    useShaders = TRUE
-    useManagedInteraction = FALSE
-    lutCenter = 0.5
-    lutWidth = 1
-    annotationOn = TRUE
-    annotationMode = ANNO_MODE_AUTO
-    annotationSizeMode = ANNO_SHOW_DETAILED
-    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
-    annotationFontSize = ANNO_SIZE_AUTO
-    annoCoords = Voxel
-    annoCTValue = AsIs
-    borderOn = FALSE
-    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
-    valueHighPrecision = TRUE
-    maxPrecision = 4
-    enableSlicing = TRUE
-    useRelativeLUTIfNoInputImage = FALSE
-  }
-}
 module Morphology {
   internal  {
-    frame = "1737 389 112 56"
+    frame = "873 203 112 56"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -893,7 +1233,7 @@ module Morphology {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1709 553 168 64"
+    frame = "845 367 168 64"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -927,7 +1267,7 @@ module ConnectedComponents {
 }
 module Threshold {
   internal  {
-    frame = "1741 469 104 56"
+    frame = "877 283 104 56"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -941,13 +1281,13 @@ module Threshold {
     instanceName = Threshold5
     threshold = 1
     minValue = 0
-    maxValue = 7192
+    maxValue = 7546
     relativeThreshold = FALSE
   }
 }
 module Mask {
   internal  {
-    frame = "1505 257 128 64"
+    frame = "641 103 128 64"
     moduleGroupName = "Remove Airways"
     windows  {
       window _default {
@@ -966,7 +1306,7 @@ module Mask {
 }
 module ImageLoad {
   internal  {
-    frame = "1289 1617 96 64"
+    frame = "1197 1569 120 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -977,8 +1317,8 @@ module ImageLoad {
     }
   }
   fields  {
-    instanceName = MaskLoad
-    filename = /Users/tom/Documents/workspace/cadmi/data/candidate_selection/candidates02.dcm
+    instanceName = StrictMask
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/strictmask/example02.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -998,7 +1338,7 @@ module ImageLoad {
 }
 module Arithmetic2 {
   internal  {
-    frame = "1729 773 112 56"
+    frame = "833 613 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1017,7 +1357,7 @@ module Arithmetic2 {
 }
 module Morphology {
   internal  {
-    frame = "1649 885 112 56"
+    frame = "753 725 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1055,7 +1395,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "1633 1125 112 56"
+    frame = "737 965 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1093,7 +1433,7 @@ module Morphology {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1637 953 136 64"
+    frame = "741 793 136 64"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1123,7 +1463,7 @@ module IntervalThreshold {
 }
 module Mask {
   internal  {
-    frame = "1505 1037 80 56"
+    frame = "641 877 80 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1140,33 +1480,9 @@ module Mask {
     background = -1000
   }
 }
-module ImageStatistics {
-  internal  {
-    frame = "-187 253 120 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "817 -804 443 664"
-        sizeHint = "443 664"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = ImageStatistics
-    innerMin = 0
-    innerMax = 0
-    autoUpdate = TRUE
-    perSlice = FALSE
-    currentSlice = 0
-    lowerWidth = 0
-    upperWidth = 0
-    useMask = TRUE
-  }
-}
 module IntervalThreshold {
   internal  {
-    frame = "1733 1217 136 64"
+    frame = "853 1057 136 64"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
@@ -1185,7 +1501,7 @@ module IntervalThreshold {
     threshCenter = -170
     threshWidth = 440
     threshMin = -390
-    threshMax = 50
+    threshMax = 1
     lowerUserValue = 0
     innerUserValue = 1
     upperUserValue = 0
@@ -1196,15 +1512,22 @@ module IntervalThreshold {
 }
 module Scale {
   internal  {
-    frame = "389 -475 72 56"
+    frame = "1403 -1278 72 56"
     moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "505 250 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
   }
   fields  {
     instanceName = Scale1
-    inputMin = -999.999
-    inputMax = 1512.998487
+    inputMin = -1000
+    inputMax = 354
     updateMode = AutoUpdateMinMaxOn
-    useTrueRange = FALSE
+    useTrueRange = TRUE
     typeSelect = Automatic
     outputMin = 0
     outputMax = 1
@@ -1212,7 +1535,7 @@ module Scale {
 }
 module Arithmetic2 {
   internal  {
-    frame = "373 -635 104 56"
+    frame = "1387 -1438 104 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1231,7 +1554,7 @@ module Arithmetic2 {
 }
 module KernelEditor {
   internal  {
-    frame = "177 -555 112 56"
+    frame = "1191 -1358 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1266,7 +1589,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "305 -555 112 56"
+    frame = "1319 -1358 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1301,7 +1624,7 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "561 -555 112 56"
+    frame = "1575 -1358 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1336,7 +1659,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "433 -555 112 56"
+    frame = "1447 -1358 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1371,7 +1694,7 @@ module Convolution {
 }
 module KernelEditor {
   internal  {
-    frame = "497 -403 112 56"
+    frame = "1511 -1206 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1404,7 +1727,7 @@ module KernelEditor {
 }
 module Convolution {
   internal  {
-    frame = "369 -403 112 56"
+    frame = "1383 -1206 112 56"
     moduleGroupName = "Vertical Mean"
     windows  {
       window _default {
@@ -1443,8 +1766,8 @@ module Convolution {
 }
 module MarkerToMask {
   internal  {
-    frame = "-187 349 120 56"
-    moduleGroupName = ""
+    frame = "575 -1420 120 56"
+    moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
         geometry = "497 335 285 173"
@@ -1465,8 +1788,8 @@ module MarkerToMask {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "-227 437 168 56"
-    moduleGroupName = ""
+    frame = "551 -1348 168 56"
+    moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
         geometry = "850 104 401 648"
@@ -1479,30 +1802,30 @@ module ImagePropertyConvert {
     instanceName = ImagePropertyConvert
     changeDimensionInfo = FALSE
     cDimInfo = LUMINANCE
-    tDimInfo = ""
+    tDimInfo = "2014-05-15 13:38:15.409"
     uDimInfo = ""
     a00 = 1.242188
     a01 = 0
     a02 = 0
-    a03 = 0
+    a03 = -1.9999999e-09
     a10 = 0
     a11 = 1.242188
     a12 = 0
-    a13 = 0
+    a13 = -1.9999999e-09
     a20 = 0
     a21 = 0
     a22 = 1.4
-    a23 = 0
+    a23 = -2.0000002e-09
     a30 = 0
     a31 = 0
     a32 = 0
     a33 = 1
-    worldMatrix = "1.24218797683716 0 0 0
-0 1.24218797683716 0 0
-0 0 1.39999997615814 0
+    worldMatrix = "1.24218798 0 0 -1.99999994343614e-09
+0 1.24218798 0 -1.99999994343614e-09
+0 0 1.39999998 -2.00000005445844e-09
 0 0 0 1"
     changeDatatype = FALSE
-    datatype = float
+    datatype = int16
     changePageSize = FALSE
     pageSizeX = 128
     pageSizeY = 128
@@ -1511,9 +1834,9 @@ module ImagePropertyConvert {
     pageSizeT = 1
     pageSizeU = 1
     changeMinGreyvalue = FALSE
-    minGreyvalue = 0
+    minGreyvalue = -1000
     changeMaxGreyvalue = FALSE
-    maxGreyvalue = 1
+    maxGreyvalue = 1513
     changeWorldMatrix = TRUE
     voxelSizeX = 1.242188
     voxelSizeY = 1.242188
@@ -1523,8 +1846,8 @@ module ImagePropertyConvert {
 }
 module ConstantImage {
   internal  {
-    frame = "-203 517 120 56"
-    moduleGroupName = ""
+    frame = "575 -1268 120 56"
+    moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
         geometry = "588 284 259 253"
@@ -1548,7 +1871,7 @@ module ConstantImage {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "-110 980 144 56"
+    frame = "97 -107 144 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1568,11 +1891,11 @@ module WorldVoxelConvert {
     voxelX = 164.5
     voxelY = 213.5
     voxelZ = 13
-    worldX = 204.339922189713
-    worldY = 265.207133054733
-    worldZ = 18.1999996900558
+    worldX = 204.339922708
+    worldY = 265.207133728
+    worldZ = 18.199999738
     voxelPos = "164.5 213.5 13"
-    worldPos = "204.339922189713 265.207133054733 18.1999996900558"
+    worldPos = "204.339922708 265.207133728 18.199999738"
     voxelMode = FALSE
     worldMode = TRUE
     intVoxelCoords = FALSE
@@ -1581,7 +1904,7 @@ module WorldVoxelConvert {
 }
 module StylePalette {
   internal  {
-    frame = "110 948 104 56"
+    frame = "317 -139 104 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1690,7 +2013,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "91 881 168 56"
+    frame = "293 -235 168 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1791,7 +2114,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "110 1016 152 64"
+    frame = "317 -71 152 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -1808,66 +2131,66 @@ module ConstantXMarkerList {
   }
   fields  {
     instanceName = AnnotationMarkers
-    markerList = "106.20707202 251.54306531 215.599996328 0 0 0 2
-198.128982306 196.26570034 214.89999634 0 0 0 1
-240.984467506 186.949290514 211.3999964 0 0 0 1
-186.328196526 206.824298143 203.699996531 0 0 0 1
-115.523481846 248.437595367 199.499996603 0 0 0 1
-65.214868784 222.972741842 198.099996626 0 0 0 1
-189.433666468 142.851617336 187.599996805 0 0 0 2
-244.089937449 236.636809587 185.499996841 0 0 0 1
-256.511817217 168.93756485 183.399996877 0 0 0 1
-75.1523725986 159.000061035 182.699996889 0 0 0 1
-234.773527622 139.746147394 181.999996901 0 0 0 2
-116.765669823 255.890723228 181.299996912 0 0 0 1
-253.406347275 216.761801958 179.899996936 0 0 0 2
-249.679783344 223.593835831 177.099996984 0 0 0 1
-255.890723228 222.972741842 167.999997139 0 0 0 2
-262.101663113 180.117256641 163.099997222 0 0 0 1
-253.406347275 150.925839186 156.79999733 0 0 0 1
-261.480569124 202.476640224 150.499997437 0 0 0 1
-244.089937449 251.54306531 143.499997556 0 0 0 1
-58.3828349113 163.347718954 142.09999758 0 0 0 1
-70.1836206913 111.175823927 140.699997604 0 0 0 1
-85.7109704018 112.418011904 136.499997675 0 0 0 2
-46.5820491314 217.382895947 136.499997675 0 0 0 1
-75.1523725986 204.961016178 118.299997985 0 0 0 1
-52.1718950272 249.058689356 110.599998116 0 0 0 2
-44.7187671661 133.53520751 105.6999982 0 0 0 1
-130.429737568 263.964945078 102.19999826 0 0 0 1
-29.1914174557 136.019583464 101.499998271 0 0 0 1
-270.175884962 206.824298143 93.7999984026 0 0 0 2
-244.089937449 255.890723228 92.3999984264 0 0 0 2
-252.164159298 241.605561495 83.2999985814 0 0 0 2
-261.480569124 236.015715599 67.1999988556 0 0 0 2
-62.7304928303 257.132911205 56.6999990344 0 0 0 1
-37.2656393051 232.289151669 51.7999991179 0 0 0 1
-197.507888317 255.890723228 48.2999991775 0 0 0 1
-281.976670742 178.253974676 44.7999992371 0 0 0 1
-115.523481846 273.281354904 20.2999996543 0 0 0 2
-204.33992219 265.207133055 18.1999996901 0 0 0 1
+    markerList = "106.207072288 251.543065948 215.599996918 0 0 0 2
+198.128982808 196.265700838 214.899996928 0 0 0 1
+240.984468118 186.949290988 211.399996978 0 0 0 1
+186.328196998 206.824298668 203.699997088 0 0 0 1
+115.523482138 248.437595998 199.499997148 0 0 0 1
+65.214868948 222.972742408 198.099997168 0 0 0 1
+189.433666948 142.851617698 187.599997318 0 0 0 2
+244.089938068 236.636810188 185.499997348 0 0 0 1
+256.511817868 168.937565278 183.399997378 0 0 0 1
+75.152372788 159.000061438 182.699997388 0 0 0 1
+234.773528218 139.746147748 181.999997398 0 0 0 2
+116.765670118 255.890723878 181.299997408 0 0 0 1
+253.406347918 216.761802508 179.899997428 0 0 0 2
+249.679783978 223.593836398 177.099997468 0 0 0 1
+255.890723878 222.972742408 167.999997598 0 0 0 2
+262.101663778 180.117257098 163.099997668 0 0 0 1
+253.406347918 150.925839568 156.799997758 0 0 0 1
+261.480569788 202.476640738 150.499997848 0 0 0 1
+244.089938068 251.543065948 143.499997948 0 0 0 1
+58.382835058 163.347719368 142.099997968 0 0 0 1
+70.183620868 111.175824208 140.699997988 0 0 0 1
+85.710970618 112.418012188 136.499998048 0 0 0 2
+46.582049248 217.382896498 136.499998048 0 0 0 1
+75.152372788 204.961016698 118.299998308 0 0 0 1
+52.171895158 249.058689988 110.599998418 0 0 0 2
+44.718767278 133.535207848 105.699998488 0 0 0 1
+130.429737898 263.964945748 102.199998538 0 0 0 1
+29.191417528 136.019583808 101.499998548 0 0 0 1
+270.175885648 206.824298668 93.799998658 0 0 0 2
+244.089938068 255.890723878 92.399998678 0 0 0 2
+252.164159938 241.605562108 83.299998808 0 0 0 2
+261.480569788 236.015716198 67.199999038 0 0 0 2
+62.730492988 257.132911858 56.699999188 0 0 0 1
+37.265639398 232.289152258 51.799999258 0 0 0 1
+197.507888818 255.890723878 48.299999308 0 0 0 1
+281.976671458 178.253975128 44.799999358 0 0 0 1
+115.523482138 273.281355598 20.299999708 0 0 0 2
+204.339922708 265.207133728 18.199999738 0 0 0 1
 \\"
   }
 }
 module RunPythonScript {
   internal  {
-    frame = "-110 892 128 56"
+    frame = "97 -195 128 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "305 146 669 551"
+        geometry = "611 -980 669 980"
         sizeHint = "669 551"
         wasOpen = no
       }
       window _automatic {
-        geometry = "379 295 500 600"
+        geometry = "379 196 500 600"
         sizeHint = "256 192"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = RunPythonScript
+    instanceName = CollectLabels
     in0 = ""
     in1 = ""
     in2 = ""
@@ -1959,7 +2282,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "13 792 120 64"
+    frame = "221 -343 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -1979,7 +2302,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 90
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -2001,11 +2324,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.699996948242"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 256.5
-    lutWidth = 2513
+    lutCenter = 0
+    lutWidth = 0
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -2023,7 +2346,7 @@ module View2D {
 }
 module Mask {
   internal  {
-    frame = "1209 1401 128 64"
+    frame = "1097 1385 128 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -2034,81 +2357,46 @@ module Mask {
     }
   }
   fields  {
-    instanceName = ApplyLungMask
+    instanceName = ApplyStrictMask
     mode = MaskedOriginal
     blending = 0.5
     background = -1000
   }
 }
-module Resample3D {
-  internal  {
-    frame = "1077 1525 104 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "459 366 360 347"
-        sizeHint = "360 347"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Resample3D
-    keep = "Scale factor"
-    filter = Triangle/Linear
-    isotropic = FALSE
-    filterAlways = FALSE
-    filterAlwaysTolerance = 0
-    zoom = "0.5 0.5 0.5"
-    imageSize = "256 256 181"
-    voxelSize = "1.24218797683716 1.24218797683716 1.39999997615814"
-    subVoxelShift = "0 0 0"
-    useReferenceImage = FALSE
-  }
-}
-module itkImageFileReader {
-  internal  {
-    frame = "1065 1613 144 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "504 199 337 444"
-        sizeHint = "270 444"
-        wasOpen = no
-      }
-      window _automatic {
-        geometry = "1009 377 500 600"
-        sizeHint = "260 223"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = itkImageFileReader
-    fileDataType = int16
-    correctSubVoxelShift = FALSE
-    fileDimension = 3
-    info = "Loading okay."
-    numDims = 3
-    fileType = Binary
-    componentType = int16
-    pixelType = SCALAR
-    loaderType = MetaImageIO
-    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
-"
-    unresolvedFileName = $(DicomBrowserPath)/workspace/cadmi/data/examples/example02.mhd
-  }
-}
 connections  {
-  CandidateFeatureConnector.input0 = Candidates.output0
-  MorphologicalGradient.imageIn = CandidateFeatureConnector.output0
-  Scale5.input0 = RegionGrowing.output0
-  RegionGrowing.input0 = Vesselness.output0
-  RegionGrowing.inMarkerList = SoView2DMarkerEditor1.outXMarkerList
+  CandidateLabels.input0 = CandidateSelector.output0
+  CandidateLabels.input1 = TPs.output0
+  TPs.input0 = MarkerToMask.output0
+  Scale6.input0 = StrictImageFeatureConnector.output0
+  GreyValues.input0 = Scale6.output0
+  GreyValues.input1 = CandidateFeatureConnector.output0
+  Vesselness.input0 = Scale5.output0
+  Vesselness.input1 = CandidateFeatureConnector.output0
+  Morphology.input0 = LungMask.output0
+  LungImageFeatureConnector.input0 = ApplyLungMask.output0
+  ApplyLungMask.input0 = FullImage.output0
+  ApplyLungMask.input1 = Morphology.output0
+  MaskToMarkers1.input0 = Centroids1.output0
+  PageToImageExtent1.input0 = LungMask.output0
+  Centroids1.input0 = AxisEdgeMask.output0
+  AxisEdgeMask.input0 = PageToImageExtent1.output0
+  Blobness.input0 = Scale.output0
+  Blobness.input1 = CandidateFeatureConnector.output0
+  RegionGrowing1.input0 = ApplyStrictMask.output0
+  RegionGrowing1.inMarkerList = MaskToMarkers.outputXMarkerList
+  PageToImageExtent.input0 = Candidates.output0
+  Centroids.input0 = PageToImageExtent.output0
+  VerticalMean.input0 = Scale4.output0
+  VerticalMean.input1 = CandidateFeatureConnector.output0
+  CandidateSelector.input0 = Centroids.output0
+  CandidateFeatureConnector.input0 = CandidateSelector.output0
+  Scale5.input0 = DtfSkeletonization.output0
+  RegionGrowing.input0 = CalculateVesselness.output0
+  RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
   DtfSkeletonization.input0 = RegionGrowing.output0
-  SoVascularSystem.inputGraph = DtfSkeletonization.outBase1
-  SoExaminerViewer.children = SoVascularSystem.self
-  Vesselness.input0 = ImagePropertyConvert1.output0
+  ImagePropertyConvert1.input0 = LungImageFeatureConnector.output0
+  CalculateVesselness.input0 = ImagePropertyConvert1.output0
+  BlobnessInput.input0 = StrictImageFeatureConnector.output0
   Scale.input0 = Arithmetic.output0
   Scale4.input0 = Arithmetic2.output0
   Arithmetic.input0 = Scale2.output0
@@ -2118,15 +2406,7 @@ connections  {
   Scale3.input0 = LoG1.output0
   Scale2.input0 = LoG2.output0
   Candidates.input0 = RemoveAirways.output0
-  ImageFeatureConnector.input0 = ApplyLungMask.output0
-  View2D1.inInvPostLUT = SoView2DMarkerEditor.self
-  View2D1.startSlice = View2D.startSlice
-  View2D1.lutCenter = View2D.lutCenter
-  View2D1.lutWidth = View2D.lutWidth
-  View2D.inInvPostLUT = SoView2DMarkerEditor.self
-  View2D.startSlice = View2D1.startSlice
-  View2D.lutCenter = View2D1.lutCenter
-  View2D.lutWidth = View2D1.lutWidth
+  StrictImageFeatureConnector.input0 = ApplyStrictMask.output0
   Morphology5.input0 = Threshold5.output0
   FindAirways.input0 = Arithmetic21.output0
   Threshold5.input0 = FindAirways.output0
@@ -2137,10 +2417,9 @@ connections  {
   Morphology4.input0 = LightNodule.output0
   Morphology3.input0 = SolidNodule.output0
   LightNodule.input0 = Mask.output0
-  Mask.input0 = ApplyLungMask.output0
+  Mask.input0 = ApplyStrictMask.output0
   Mask.input1 = Morphology3.output0
-  ImageStatistics.input1 = MarkerToMask.output0
-  SolidNodule.input0 = ApplyLungMask.output0
+  SolidNodule.input0 = ApplyStrictMask.output0
   Scale1.input0 = Convolution2.output0
   Arithmetic2.input0 = Convolution4.output0
   Arithmetic2.input1 = Convolution3.output0
@@ -2148,18 +2427,17 @@ connections  {
   Convolution4.externalKernel = KernelEditor4.kernel
   Convolution3.input0 = Scale1.output0
   Convolution3.externalKernel = KernelEditor3.kernel
+  Convolution2.input0 = StrictImageFeatureConnector.output0
   Convolution2.externalKernel = KernelEditor2.kernel
   MarkerToMask.input0 = ImagePropertyConvert.output0
   MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
   ImagePropertyConvert.input0 = ConstantImage.output0
-  WorldVoxelConvert.input0 = Resample3D.output0
+  WorldVoxelConvert.input0 = ApplyStrictMask.output0
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
-  view.inImage = Resample3D.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
-  ApplyLungMask.input0 = Resample3D.output0
-  ApplyLungMask.input1 = MaskLoad.output0
-  Resample3D.input0 = itkImageFileReader.output0
+  ApplyStrictMask.input0 = FullImage.output0
+  ApplyStrictMask.input1 = StrictMask.output0
 }
 networkModel  {
   parentItems  {
@@ -2178,17 +2456,6 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 157
         objectName = "Vertical Mean"
-        parentUniqueId = 0
-        color  {
-          r = 45
-          g = 226
-          b = 226
-          a = 40
-        }
-      }
-      MLABNetworkModelItem MLABNetworkModelItemGroup {
-        uniqueId = 137
-        objectName = SynchroView2DLabeled
         parentUniqueId = 0
         color  {
           r = 45
@@ -2242,8 +2509,41 @@ networkModel  {
         }
       }
       MLABNetworkModelItem MLABNetworkModelItemGroup {
-        uniqueId = 239
-        objectName = Geometrics
+        uniqueId = 225
+        objectName = "Tranchea Seedpoint"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 296
+        objectName = "Grey values"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 312
+        objectName = "Candidate Merging"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 357
+        objectName = "True Positive Labels"
         parentUniqueId = 0
         color  {
           r = 45
