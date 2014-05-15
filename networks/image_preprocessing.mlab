@@ -1,0 +1,955 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module View3D {
+  internal  {
+    frame = "1721 -171 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "114 79 1050 685"
+        sizeHint = "1050 685"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View3D
+    autoViewAll = TRUE
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    lutType = Ramp
+    currentTimePoint = 0
+    staticSamplingRate = 1
+    quality = 1
+    lutEditorColorPoints = "[ 0 0 0 0, 4095 1 1 1 ]"
+    lutEditorAlphaPoints = "[ 0 0, 4095 1 ]"
+    lutEditorRelativeLut = FALSE
+    lutEditorColorInterpolation = InterpolateRGB
+    lutEditorAlphaFactor = 1
+    orientationProjectionType = PERSPECTIVE
+    orientationLocation = LOWER_RIGHT
+    orientationOn = TRUE
+    orientationModel = CUBE
+    greyCenter = 0.21749976
+    greyWidth = 0.30749983
+    alphaFactor = 1
+    colorFactor = "1 1 1"
+    camType = TRUE
+    camPosition = "-42.6024169921875 -508.126403808594 15.1189727783203"
+    camOrientation = "-0.893632829189301 -0.212596207857132 0.395250767469406 4.28423070907593"
+    initialCameraOrientation = CAMERA_KEEP_AS_IS
+    camFar = 1007.0579
+    camNear = 482.11987
+    camFocal = 744.32709
+    camHeight = 0.78539801
+    decoration = FALSE
+    annotations = TRUE
+    background = TRUE
+    mode = VolumeRendering
+    interactiveQuality = Medium
+  }
+  internalFields  {
+    renderer.gradientQuality = GradientQualityAutomatic
+    renderer.enhancementAlphaMix = 0.25
+    renderer.boundaryEnhancement = FALSE
+    renderer.boundaryEnhancementFactor = 1
+    renderer.boundaryEnhancementExponent = 1
+    renderer.boundaryEnhancementGradientBias = 0
+    renderer.silhouetteEnhancement = FALSE
+    renderer.silhouetteEnhancementExponent = 1
+    renderer.silhouetteEnhancementFactor = 1
+    renderer.toneShading = FALSE
+    renderer.toneShadingWarmColor = "0.67451000213623 0.533333003520966 0.141176000237465"
+    renderer.toneShadingColdColor = "0 0 0.400000005960464"
+    renderer.toneShadingWarmDiffuse = 0.60000002
+    renderer.toneShadingColdDiffuse = 0.2
+    renderer.toneShadingAngle = 45
+    renderer.materialAmbient = 0.60000002
+    renderer.materialDiffuse = 1
+    renderer.materialSpecular = 1
+    renderer.materialSpecularity = 32
+    renderer.light1Enabled = TRUE
+    renderer.light1DiffuseIntensity = 1
+    renderer.light1SpecularIntensity = 1
+    renderer.light1Color = "1 1 1"
+    renderer.light1PolarPhi = 45
+    renderer.light1PolarRho = 0
+    renderer.light2Enabled = FALSE
+    renderer.light2DiffuseIntensity = 1
+    renderer.light2SpecularIntensity = 1
+    renderer.light2Color = "1 1 1"
+    renderer.light2PolarPhi = 0
+    renderer.light2PolarRho = 0
+    renderer.light3Enabled = FALSE
+    renderer.light3DiffuseIntensity = 1
+    renderer.light3SpecularIntensity = 1
+    renderer.light3Color = "1 1 1"
+    renderer.light3PolarPhi = -45
+    renderer.light3PolarRho = 0
+    renderer.sizeOutputX = 256
+    renderer.sizeOutputY = 256
+    renderer.sizeOutputZ = 228
+    renderer.subVolumeStartX = 0
+    renderer.subVolumeStartY = 0
+    renderer.subVolumeStartZ = 0
+    renderer.subVolumeEndX = 256
+    renderer.subVolumeEndY = 256
+    renderer.subVolumeEndZ = 228
+    clip.hideGeometry = FALSE
+    clip.on = FALSE
+    clip.left = FALSE
+    clip.right = FALSE
+    clip.top = FALSE
+    clip.bottom = FALSE
+    clip.rear = FALSE
+    clip.front = FALSE
+    clip.translation0 = "1 0 0"
+    clip.translation1 = "-1 0 0"
+    clip.translation2 = "0 1 0"
+    clip.translation3 = "0 -1 0"
+    clip.translation4 = "0 0 1"
+    clip.translation5 = "0 0 -1"
+    clip.rotation0 = "0 0 0.999999940395355 1.57079994678497"
+    clip.rotation1 = "0 0 -0.999999940395355 1.57079994678497"
+    clip.rotation2 = "0 0 -1 3.1415901184082"
+    clip.rotation3 = "0 0 1 0"
+    clip.rotation4 = "-0.999999940395355 0 0 1.57079994678497"
+    clip.rotation5 = "0.999999940395355 0 0 1.57079994678497"
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1397 -239 120 64"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = TrancheaMask
+    taskVerboseLogging = FALSE
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/strictmask/example01.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1281 -239 96 64"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = LungMask
+    taskVerboseLogging = FALSE
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/lungmask/example01.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "1169 -239 96 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "425 231 428 380"
+        sizeHint = "428 380"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample
+    taskVerboseLogging = FALSE
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/resampled/example01.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = ""
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = None
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module Resample3D {
+  internal  {
+    frame = "1173 1317 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "466 255 346 333"
+        sizeHint = "346 333"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Resample3D
+    keep = "Scale factor"
+    filter = Triangle/Linear
+    isotropic = FALSE
+    filterAlways = FALSE
+    filterAlwaysTolerance = 0
+    zoom = "0.5 0.5 0.5"
+    imageSize = "256 256 228"
+    voxelSize = "1.44921803474426 1.44921803474426 1.39999997615814"
+    subVoxelShift = "0 0 0"
+    useReferenceImage = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1427 438 144 56"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "753 381 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50000.5
+    threshWidth = 99999
+    threshMin = 1
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1664 -3 112 56"
+    moduleGroupName = TrancheaFilter
+    windows  {
+      window _default {
+        geometry = "907 183 332 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 12
+    kernelY = 12
+    kernelZ = 16
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 1184 elems, 12x12x16x1x1x1"
+    numKernelElements = 1184
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1668 69 104 56"
+    moduleGroupName = TrancheaFilter
+    windows  {
+      window _default {
+        geometry = "471 197 332 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 20
+    kernelY = 20
+    kernelZ = 20
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 4224 elems, 20x20x20x1x1x1"
+    numKernelElements = 4224
+    kernelElementsSum = 0
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "1317 197 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "184 -897 950 601"
+        sizeHint = "669 551"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke = "/mnt/Multimedia/CADMICompetition/"
+path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/"
+
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+def loadFile(file):
+	CTX.field("itkImageFileReader.fileName").value = file
+
+def saveFiles(outpath, file):
+	# Store resampled image
+	outResample = outpath + "resampled/" + basename(file).split(".")[0] + ".dcm"
+	CTX.field("Resample.filename").value = outResample
+	CTX.field("Resample.save").touch()
+
+	# Store resampled image
+	outMask = outpath + "lungmask/" + basename(file).split(".")[0] + ".dcm"
+	CTX.field("LungMask.filename").value = outMask
+	CTX.field("LungMask.save").touch()
+
+	# Store mask without tranchea
+	outStrictMask = outpath + "strictmask/" + basename(file).split(".")[0] + ".dcm"
+	CTX.field("TrancheaMask.filename").value = outStrictMask
+	CTX.field("TrancheaMask.save").touch()
+
+def createMasks():
+	CTX.field("LSM_MaskToMarkers.update").touch()
+	CTX.field("LSM_OutsideAirRemoval.update").touch()
+	CTX.field("LSM_ConnectedComponents.update").touch()
+
+def prerenderMasks(path, outpath):
+	for file in getFilePaths(path):
+		print("Loading", basename(file))
+		loadFile(file)
+
+		print("Creating Mask")
+		createMasks()
+
+		print("Saving Masks")
+		saveFiles(outpath, file)
+*"
+    wakeUpCode = ""
+    code = "prerenderMasks(path_tom, path_tom)"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1443 554 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "492 411 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Erosion1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 7
+    kernelY = 7
+    kernelZ = 7
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 179 elems, 7x7x7x1x1x1"
+    numKernelElements = 179
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1439 682 120 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "134 451 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Dilation1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 10
+    kernelY = 10
+    kernelZ = 10
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 552 elems, 10x10x10x1x1x1"
+    numKernelElements = 552
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1439 922 120 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "796 445 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Dilation0
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1787 962 112 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _automatic {
+        geometry = "191 273 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_Erosion0
+    borderHandling = PadDstFillWithOrig
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 5
+    kernelY = 5
+    kernelZ = 5
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 81 elems, 5x5x5x1x1x1"
+    numKernelElements = 81
+    kernelElementsSum = 0
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "1875 714 144 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "500 311 279 221"
+        sizeHint = "279 221"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_AxisEdgeMask
+    front = TRUE
+    back = TRUE
+    right = TRUE
+    left = TRUE
+    top = FALSE
+    bottom = FALSE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1399 802 200 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "407 200 537 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1214 351 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_ConnectedComponents
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = TRUE
+    objectValue = 1
+    minClusterSize = 200
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1451 1050 96 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "822 547 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_mask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1859 834 176 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "921 479 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1871 594 152 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "482 346 314 150"
+        sizeHint = "314 150"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1048 264 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_MaskToMarkers
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = Off
+    vectorMode = Zero
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1755 466 176 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "329 107 620 628"
+        sizeHint = "620 628"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "793 159 611 923"
+        sizeHint = "400 440"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_OutsideAirRemoval
+    autoUpdateMode = AutoClear
+    lowerThreshold = 0.85
+    upperThreshold = 1.15
+    autoThreshold = TRUE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_2D_4_XZ
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 15
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1775 1082 136 64"
+    moduleGroupName = "Lung Segmentation Mask"
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LSM_LungAirFilter
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -712
+    threshWidth = 624
+    threshMin = -1000
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -1100
+    changedMax = -400
+  }
+}
+module itkImageFileReader {
+  internal  {
+    frame = "1153 1429 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "504 227 367 411"
+        sizeHint = "300 411"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1009 377 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = itkImageFileReader
+    fileDataType = int16
+    correctSubVoxelShift = FALSE
+    fileDimension = 3
+    info = "Loading okay."
+    numDims = 3
+    fileType = Binary
+    componentType = int16
+    pixelType = SCALAR
+    loaderType = MetaImageIO
+    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
+"
+    unresolvedFileName = $(DicomBrowserPath)/workspace/cadmi/data/examples/example01.mhd
+  }
+}
+connections  {
+  View3D.inImage = Morphology1.output0
+  TrancheaMask.input0 = Morphology1.output0
+  LungMask.input0 = IntervalThreshold1.output0
+  Resample.input0 = Resample3D.output0
+  Resample3D.input0 = itkImageFileReader.output0
+  IntervalThreshold1.input0 = LSM_Erosion1.output0
+  Morphology1.input0 = Morphology.output0
+  Morphology.input0 = IntervalThreshold1.output0
+  LSM_Erosion1.input0 = LSM_Dilation1.output0
+  LSM_Dilation1.input0 = LSM_ConnectedComponents.output0
+  LSM_Dilation0.input0 = LSM_mask.output0
+  LSM_Erosion0.input0 = LSM_LungAirFilter.output0
+  LSM_AxisEdgeMask.input0 = LSM_PageToImageExtent.output0
+  LSM_ConnectedComponents.input0 = LSM_Dilation0.output0
+  LSM_mask.input0 = LSM_Erosion0.output0
+  LSM_mask.input1 = LSM_OutsideAirRemoval.output0
+  LSM_PageToImageExtent.input0 = LSM_Erosion0.output0
+  LSM_MaskToMarkers.input0 = LSM_AxisEdgeMask.output0
+  LSM_OutsideAirRemoval.input0 = LSM_Erosion0.output0
+  LSM_OutsideAirRemoval.inMarkerList = LSM_MaskToMarkers.outputXMarkerList
+  LSM_LungAirFilter.input0 = Resample3D.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 65
+        objectName = "Lung Segmentation Mask"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 205
+        objectName = TrancheaFilter
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
