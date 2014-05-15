@@ -1,0 +1,1264 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Arithmetic {
+  internal  {
+    frame = "913 -627 96 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "755 215 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Compactness1_calculation
+    expression = "i1 / (a * b * c)"
+    i1 = 136
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1133 -627 88 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "735 189 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Compactness2_calculation
+    expression = "i1 / pow(a, 3)"
+    i1 = 136
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "713 -631 144 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "324 166 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Ratio2_calculation
+    expression = "a / b"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "529 -631 144 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "324 166 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Ratio1_calculation
+    expression = "a / b"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "973 -519 152 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "585 260 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_medDim_calculation
+    expression = "a + b + c - max(a,max(b,c)) - min(a,min(b,c))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "741 -719 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 147 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Ratio2
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "557 -727 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 119 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Ratio1
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1113 -735 128 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 119 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Compactness2
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "897 -727 128 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 147 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Compactness1
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = FALSE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1269 -815 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 119 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_maxDim
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1269 -735 104 64"
+    moduleGroupName = "Geometric Features"
+  }
+  fields  {
+    instanceName = GF_minDim
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = FALSE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1301 -511 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "400 147 479 617"
+        sizeHint = "479 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Sphericity
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1133 -519 152 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "324 166 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_maxDim_calculation
+    expression = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "813 -519 152 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "324 166 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_minDim_calculation
+    expression = ""
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "1289 -323 112 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "520 303 239 248"
+        sizeHint = "239 248"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage4
+    sizeX = 1
+    sizeY = 1
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 0
+    autoApply = TRUE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1265 -423 160 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "499 268 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 127 500 600"
+        sizeHint = "260 286"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Sphericity_calculation
+    expression = "a +pow(pi, 1/3) * pow(6* i1, 2/3 ) / i2"
+    i1 = 104
+    i2 = 136
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "789 -177 168 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "324 194 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_INPUT_CONNECTOR
+    expression = a
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1139 -422 88 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "704 173 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 127 500 600"
+        sizeHint = "260 286"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Zdim
+    expression = "a + i2 - i1"
+    i1 = 54
+    i2 = 59
+    i3 = 55
+    i4 = 60
+    i5 = 54
+    i6 = 59
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "1127 -322 112 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "520 303 239 248"
+        sizeHint = "239 248"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage3
+    sizeX = 1
+    sizeY = 1
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 0
+    autoApply = TRUE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1003 -422 88 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "711 183 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 127 500 600"
+        sizeHint = "260 286"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Ydim
+    expression = "a + i2 - i1"
+    i1 = 55
+    i2 = 60
+    i3 = 55
+    i4 = 60
+    i5 = 54
+    i6 = 59
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "991 -322 112 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "520 303 239 248"
+        sizeHint = "239 248"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage2
+    sizeX = 1
+    sizeY = 1
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 0
+    autoApply = TRUE
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "839 -322 112 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "520 303 239 248"
+        sizeHint = "239 248"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage1
+    sizeX = 1
+    sizeY = 1
+    sizeZ = 1
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 0
+    autoApply = TRUE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "851 -422 88 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "563 143 631 523"
+        sizeHint = "631 523"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 127 500 600"
+        sizeHint = "260 286"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Xdim
+    expression = "a + i2 - i1"
+    i1 = 45
+    i2 = 50
+    i3 = 55
+    i4 = 60
+    i5 = 54
+    i6 = 59
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module MorphologicalGradient {
+  internal  {
+    frame = "639 -343 144 56"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "948 384 208 157"
+        sizeHint = "208 157"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MorphologicalGradient
+    dilationSize = 1
+    erosionSize = 3
+    sphericalKernel = TRUE
+    threeDimensional = TRUE
+    gradientType = Central
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "515 -342 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "27 176 494 617"
+        sizeHint = "494 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Volume
+    innerMin = 1
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "667 -454 104 64"
+    moduleGroupName = "Geometric Features"
+    windows  {
+      window _default {
+        geometry = "154 165 494 617"
+        sizeHint = "494 617"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 127 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GF_Area
+    innerMin = 1
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1141 181 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "433 272 412 366"
+        sizeHint = "412 366"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 5
+    threshWidth = 0
+    threshMin = 5
+    threshMax = 5
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "673 77 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "601 339 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "729 213 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "378 323 523 433"
+        sizeHint = "523 433"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module SynchroView2D {
+  internal  {
+    frame = "321 -19 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "201 305 804 400"
+        sizeHint = "804 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SynchroView2D
+    leftInventorInputOn = FALSE
+    rightInventorInputOn = FALSE
+    synchSlicing = TRUE
+    synchZooming = TRUE
+    synchTiming = TRUE
+    synchLUTs = FALSE
+    disconnectOnHide = TRUE
+    snapToCenter1 = FALSE
+    snapToCenter2 = FALSE
+    slice1 = 0
+    timepoint1 = 0
+    filterMode = FILTER_LINEAR
+    slice2 = 0
+    timepoint2 = 0
+    lut1w = 24
+    lut1c = 12
+    lut2w = 24
+    lut2c = 12
+    annotationColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    borderOn = FALSE
+    drawCurrentPos = FALSE
+    showCurrentPos = FALSE
+    worldPosition = "51.3939361572266 47.5151481628418 63.5"
+    background = "0 0 0"
+  }
+}
+module Centroids {
+  internal  {
+    frame = "681 -27 80 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module Morphology {
+  internal  {
+    frame = "665 285 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "476 225 327 517"
+        sizeHint = "327 517"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 6
+    kernelY = 6
+    kernelZ = 6
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 136 elems, 6x6x6x1x1x1"
+    numKernelElements = 136
+    kernelElementsSum = 0
+  }
+}
+module AddNoise {
+  internal  {
+    frame = "553 421 80 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "440 424 431 230"
+        sizeHint = "398 230"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AddNoise
+    amplitude = 100
+    addInput = TRUE
+    randSeed = -1
+    noiseType = SaltPepper
+    mean = 0
+    sigma = 1
+    sigmaIn = 0
+    sigmaOut = 0
+    amplitude2 = 100
+    density = 9.9999997e-05
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "525 565 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "520 331 239 248"
+        sizeHint = "239 248"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage
+    sizeX = 64
+    sizeY = 64
+    sizeZ = 64
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 0
+    autoApply = FALSE
+  }
+}
+connections  {
+  GF_Compactness1_calculation.input0 = GF_Xdim.output0
+  GF_Compactness1_calculation.input1 = GF_Ydim.output0
+  GF_Compactness1_calculation.input2 = GF_Zdim.output0
+  GF_Compactness1_calculation.i1 = GF_Volume.innerVoxels
+  GF_Compactness2_calculation.input0 = GF_maxDim_calculation.output0
+  GF_Compactness2_calculation.i1 = GF_Volume.innerVoxels
+  GF_Ratio2_calculation.input0 = GF_maxDim_calculation.output0
+  GF_Ratio2_calculation.input1 = GF_medDim_calculation.output0
+  GF_Ratio1_calculation.input0 = GF_maxDim_calculation.output0
+  GF_Ratio1_calculation.input1 = GF_minDim_calculation.output0
+  GF_medDim_calculation.input0 = GF_Xdim.output0
+  GF_medDim_calculation.input1 = GF_Ydim.output0
+  GF_medDim_calculation.input2 = GF_Zdim.output0
+  GF_Ratio2.input0 = GF_Ratio2_calculation.output0
+  GF_Ratio1.input0 = GF_Ratio1_calculation.output0
+  GF_Compactness2.input0 = GF_Compactness2_calculation.output0
+  GF_Compactness1.input0 = GF_Compactness1_calculation.output0
+  GF_maxDim.input0 = GF_maxDim_calculation.output0
+  GF_minDim.input0 = GF_minDim_calculation.output0
+  GF_Sphericity.input0 = GF_Sphericity_calculation.output0
+  GF_maxDim_calculation.input0 = GF_Xdim.output0
+  GF_maxDim_calculation.input1 = GF_Ydim.output0
+  GF_maxDim_calculation.input2 = GF_Zdim.output0
+  GF_minDim_calculation.input0 = GF_Xdim.output0
+  GF_minDim_calculation.input1 = GF_Ydim.output0
+  GF_minDim_calculation.input2 = GF_Zdim.output0
+  GF_Sphericity_calculation.input0 = ConstantImage4.output0
+  GF_Sphericity_calculation.i1 = GF_Area.innerVoxels
+  GF_Sphericity_calculation.i2 = GF_Volume.innerVoxels
+  GF_INPUT_CONNECTOR.input0 = IntervalThreshold.output0
+  GF_Zdim.input0 = ConstantImage3.output0
+  GF_Zdim.i1 = GF_Area.bBoxInZ1
+  GF_Zdim.i2 = GF_Area.bBoxInZ2
+  GF_Ydim.input0 = ConstantImage2.output0
+  GF_Ydim.i1 = GF_Area.bBoxInY1
+  GF_Ydim.i2 = GF_Area.bBoxInY2
+  GF_Xdim.input0 = ConstantImage1.output0
+  GF_Xdim.i1 = GF_Area.bBoxInX1
+  GF_Xdim.i2 = GF_Area.bBoxInX2
+  MorphologicalGradient.imageIn = GF_INPUT_CONNECTOR.output0
+  GF_Volume.input0 = GF_INPUT_CONNECTOR.output0
+  GF_Area.input0 = MorphologicalGradient.imageOut
+  IntervalThreshold.input0 = ConnectedComponents.output0
+  PageToImageExtent.input0 = ConnectedComponents.output0
+  ConnectedComponents.input0 = Morphology.output0
+  SynchroView2D.inImage1 = ConnectedComponents.output0
+  SynchroView2D.inImage2 = Centroids.output0
+  Centroids.input0 = PageToImageExtent.output0
+  Morphology.input0 = AddNoise.output0
+  AddNoise.input0 = ConstantImage.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 71
+        objectName = "Geometric Features"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
