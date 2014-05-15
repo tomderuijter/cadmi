@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/Makefile._MLCentroids.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/_MLCentroids.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLCentroids
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/Makefile._MLCentroids.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/_MLCentroids.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLCentroids
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/Makefile._MLCentroids.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids
+	$(MAKE) -k -j 4 -f Makefile._MLCentroids.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids/Makefile._MLCentroids.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids 
+	$(MAKE) -k -j 4 -f Makefile._MLCentroids.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids && if test -e Makefile._MLCentroids.Release; then $(MAKE) -k -f Makefile._MLCentroids.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids && if test -e Makefile._MLCentroids.Debug; then $(MAKE) -k -f Makefile._MLCentroids.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

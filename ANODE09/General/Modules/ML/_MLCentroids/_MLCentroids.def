@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLCentroids module definitions.
+/*!
+// \file    _MLCentroids.def
+// \author  Wieke
+// \date    2014-05-15
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule Centroids {
+  DLL                = "_MLCentroids"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/Centroids.script
+}  
