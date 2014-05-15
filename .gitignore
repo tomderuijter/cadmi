@@ -2,8 +2,12 @@
 *.raw
 *.mhd
 
+# Temp files
+&~
+
 # File system
 *.DS_Store
 
 ## MeVisLab files
 *.mlab.auto
+*.mlab.cache
