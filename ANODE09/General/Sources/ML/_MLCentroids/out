@@ -1,0 +1,21 @@
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids
+make -k -j 4 -f Makefile._MLCentroids.Release
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids'
+compiling mlCentroidsOutputImageHandler.cpp
+rm -f lib_MLCentroids.so
+linking tmp/lib_MLCentroids.so
+mv -f lib_MLCentroids.so tmp/
+creating tmp/lib_MLCentroids.so.pdb
+strip -sv tmp/lib_MLCentroids.so && if [ -f ../../../lib/lib_MLCentroids.so ]; then rm -f ../../../lib/lib_MLCentroids.so; fi && cp -f tmp/lib_MLCentroids.so ../../../lib && if [ -f ../../../lib/lib_MLCentroids.so.pdb ]; then rm -f ../../../lib/lib_MLCentroids.so.pdb; fi && cp -f tmp/lib_MLCentroids.so.pdb ../../../lib
+copy from `tmp/lib_MLCentroids.so' [elf64-x86-64] to `tmp/stX9aSqZ' [elf64-x86-64]
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids'
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids 
+make -k -j 4 -f Makefile._MLCentroids.Debug
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids'
+compiling mlCentroidsOutputImageHandler.cpp
+rm -f lib_MLCentroids_d.so
+linking tmp/lib_MLCentroids_d.so
+mv -f lib_MLCentroids_d.so tmp/
+creating tmp/lib_MLCentroids_d.so.pdb
+if [ -f ../../../lib/lib_MLCentroids_d.so ]; then rm -f ../../../lib/lib_MLCentroids_d.so; fi && cp -f tmp/lib_MLCentroids_d.so ../../../lib && if [ -f ../../../lib/lib_MLCentroids_d.so.pdb ]; then rm -f ../../../lib/lib_MLCentroids_d.so.pdb; fi && cp -f tmp/lib_MLCentroids_d.so.pdb ../../../lib
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLCentroids'
