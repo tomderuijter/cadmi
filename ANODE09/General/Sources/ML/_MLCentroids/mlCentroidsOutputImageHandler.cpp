@@ -49,11 +49,12 @@ void CentroidsOutputImageHandler::typedCalculateOutputSubImage(TSubImage<OUTTYPE
   
   inputSubImage0.calculateMinMax(min, max, NULL);
   
-  std::vector<int> x((int)max + 1);
-  std::vector<int> y((int)max + 1);
-  std::vector<int> z((int)max + 1);
-  std::vector<int> n((int)max + 1);
-
+  std::vector<MLint> x((int)max + 1);
+  std::vector<MLint> y((int)max + 1);
+  std::vector<MLint> z((int)max + 1);
+  std::vector<MLint> n((int)max + 1);
+  std::vector<OUTTYPE> labels((int)max + 1);
+  
   // Process all voxels of the valid region of the output page.
   ImageVector p;
 	for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -65,7 +66,7 @@ void CentroidsOutputImageHandler::typedCalculateOutputSubImage(TSubImage<OUTTYPE
 	          p.x = validOutBox.v1.x;
 	          // Get pointers to row starts of input and output sub-images.
 	          const OUTTYPE* inVoxel0 = inputSubImage0.getImagePointer(p);
-	          const OUTTYPE*  outVoxel = outputSubImage.getImagePointer(p);
+	          OUTTYPE*  outVoxel = outputSubImage.getImagePointer(p);
 	          
 	          const MLint rowEnd   = validOutBox.v2.x;
 
@@ -74,9 +75,10 @@ void CentroidsOutputImageHandler::typedCalculateOutputSubImage(TSubImage<OUTTYPE
 	          {
 							x[*inVoxel0]+=p.x;
 							y[*inVoxel0]+=p.y;
-							x[*inVoxel0]+=p.z;
+							z[*inVoxel0]+=p.z;
+							labels[*inVoxel0] = *inVoxel0;
 							n[*inVoxel0]++;		
-							++outVoxel = 0;
+							*outVoxel = 0;
 	          }
 	        }
 	      }
@@ -85,28 +87,25 @@ void CentroidsOutputImageHandler::typedCalculateOutputSubImage(TSubImage<OUTTYPE
 	}
 	
 
-	for (int i = 0; i < max; i++){
+	for (int i = 0; i < max + 1; i++){
 		if (n[i] > 0)
 		{
 			x[i] = x[i] / n[i];
 			y[i] = y[i] / n[i];
 			z[i] = z[i] / n[i];
 		}
-		else
-		{
-			x[i] = -1;
-			y[i] = -1;
-			z[i] = -1;
-		}
 	}
 	
-  for (int i = 1; i < max; i++)
+  for (int i = 1; i < max + 1; i++)
   {  
+    p.c = 0;
+    p.t = 0;
+    p.u = 0;
     p.x = x[i];
     p.y = y[i];
     p.z = z[i];
     OUTTYPE*  outVoxel = outputSubImage.getImagePointer(p);
-		*outVoxel = i;
+		*outVoxel = labels[i];
   }
 	
 }
