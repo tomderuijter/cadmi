@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/_MLLabelledStatistics.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/_MLLabelledStatistics.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics
+	$(MAKE) -k -j 4 -f Makefile._MLLabelledStatistics.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics 
+	$(MAKE) -k -j 4 -f Makefile._MLLabelledStatistics.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && if test -e Makefile._MLLabelledStatistics.Release; then $(MAKE) -k -f Makefile._MLLabelledStatistics.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && if test -e Makefile._MLLabelledStatistics.Debug; then $(MAKE) -k -f Makefile._MLLabelledStatistics.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

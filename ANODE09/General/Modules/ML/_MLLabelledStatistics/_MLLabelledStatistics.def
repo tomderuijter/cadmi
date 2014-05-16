@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLLabelledStatistics module definitions.
+/*!
+// \file    _MLLabelledStatistics.def
+// \author  Wieke
+// \date    2014-05-16
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule LabelledStatistics {
+  DLL                = "_MLLabelledStatistics"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/LabelledStatistics.script
+}  
