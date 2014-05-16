@@ -2,6 +2,118 @@
 network  {
   watchlist = ""
 }
+module Comment {
+  internal  {
+    frame = "1721 -235 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "107 300 256 208"
+        sizeHint = "256 208"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Comment1
+    comment = "Berekenen:
+- Curvature = -Lxy^2 + (Lxx * Lyy)
+- Mean Curvature = (Lxx + Lyy) / 2
+- Shape Index = (2/pi) * arctan((Lxx + Lyy) / Lxx - Lyy)
+- Curvedness Values = sqrt(Lxx^2 + Lyy^2)"
+  }
+}
+module Info {
+  internal  {
+    frame = "965 -299 56 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "336 221 607 401"
+        sizeHint = "607 401"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = -1
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "789 -499 136 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "608 151 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 400
+    threshWidth = 0
+    threshMin = 400
+    threshMax = 400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Morphology {
+  internal  {
+    frame = "801 -347 112 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
 module ImageStatistics {
   internal  {
     frame = "571 -1592 128 64"
@@ -297,75 +409,6 @@ module ImageStatistics {
     useMask = TRUE
   }
 }
-module MaskToMarkers {
-  internal  {
-    frame = "929 -443 128 56"
-    moduleGroupName = "Candidate Merging"
-    windows  {
-      window _default {
-        geometry = "482 346 314 150"
-        sizeHint = "314 150"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = MaskToMarkers
-    lowerThreshold = 0
-    setType = VoxelValue
-    type = 0
-    updateMode = AutoUpdate
-    vectorMode = Zero
-  }
-}
-module RegionGrowing {
-  internal  {
-    frame = "929 -515 128 56"
-    moduleGroupName = "Candidate Merging"
-    windows  {
-      window _default {
-        geometry = "142 69 620 628"
-        sizeHint = "620 628"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = RegionGrowing1
-    autoUpdateMode = AutoUpdate
-    lowerThreshold = -800
-    upperThreshold = 50
-    autoThreshold = FALSE
-    basicNeighborhoodType = BNBH_4D_8_XYZT
-    extendedNeighborhoodType = ENBH_1D_2_Z
-    useAdditionalSeed = FALSE
-    additionalSeed = "0 0 0 0 0 0"
-    additionalSeedType = 0
-    additionalSeedCoordSystem = VoxelCoordinates
-    initStackSizeTweak = 0.100000001490116
-    prohibitInputScalingTweak = FALSE
-    incrementalUpdateMode = Force
-    useExtendedNBH = FALSE
-    calcBoundaryOverlap = FALSE
-    unitType = UnitTypeGrayValue
-    internalAccuracy = Auto
-    autoUpdateUnitType = TRUE
-    stretchOutputOverTime = FALSE
-    unitLabel = ""
-    showPartialResults = FALSE
-    acceptedMarkerType = -1
-    autoSelectHigherCoords = TRUE
-    cCoord = 0
-    uCoord = 0
-    posFillValue = -1
-    negFillValue = 0
-    invertResult = FALSE
-    showOuterBoundariesOnly = FALSE
-    maxVolume = 0.005
-    maxVolumeEnabled = TRUE
-    intervalSize = 8
-  }
-}
 module PageToImageExtent {
   internal  {
     frame = "613 -347 152 56"
@@ -399,7 +442,7 @@ module Centroids {
 }
 module ImageLoad {
   internal  {
-    frame = "1337 1577 96 64"
+    frame = "1321 1577 96 64"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -472,9 +515,9 @@ module RunPythonScript {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "0 -980 669 980"
+        geometry = "304 44 914 752"
         sizeHint = "669 551"
-        wasOpen = yes
+        wasOpen = no
       }
       window _automatic {
         geometry = "379 295 500 600"
@@ -695,12 +738,12 @@ module IntervalThreshold {
     moduleGroupName = "Candidate Merging"
     windows  {
       window _default {
-        geometry = "861 216 413 362"
+        geometry = "29 115 413 362"
         sizeHint = "413 362"
         wasOpen = no
       }
       window _automatic {
-        geometry = "389 -790 500 600"
+        geometry = "86 152 500 600"
         sizeHint = "262 217"
         wasOpen = no
       }
@@ -712,10 +755,10 @@ module IntervalThreshold {
     innerType = UserDef
     upperType = UserDef
     centerWidthSet = TRUE
-    threshCenter = 23
+    threshCenter = 400
     threshWidth = 0
-    threshMin = 23
-    threshMax = 23
+    threshMin = 400
+    threshMax = 400
     lowerUserValue = 0
     innerUserValue = 1
     upperUserValue = 0
@@ -1142,7 +1185,7 @@ module ConnectedComponents {
     moduleGroupName = "Candidate Merging"
     windows  {
       window _default {
-        geometry = "407 -711 708 442"
+        geometry = "407 200 564 442"
         sizeHint = "465 442"
         wasOpen = no
       }
@@ -1167,7 +1210,7 @@ module ConnectedComponents {
     fillValue = 0
     originalObject = FALSE
     objectValue = 255
-    minClusterSize = 0
+    minClusterSize = 1
     clusterSizeInterpretation = Voxels
     invertClusterSelection = FALSE
     inputIgnoreValue = 0
@@ -1357,11 +1400,11 @@ module Arithmetic2 {
 }
 module Morphology {
   internal  {
-    frame = "753 725 112 56"
+    frame = "753 709 112 56"
     moduleGroupName = "Threshold Candidate Selection"
     windows  {
       window _default {
-        geometry = "471 -742 342 504"
+        geometry = "471 169 342 504"
         sizeHint = "337 504"
         wasOpen = no
       }
@@ -2178,7 +2221,7 @@ module RunPythonScript {
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "611 -980 669 980"
+        geometry = "305 146 669 551"
         sizeHint = "669 551"
         wasOpen = no
       }
@@ -2291,7 +2334,7 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "224 396 400 400"
+        geometry = "312 44 400 400"
         sizeHint = "400 400"
         wasOpen = no
       }
@@ -2302,7 +2345,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 0
+    startSlice = 154
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -2324,10 +2367,10 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 216.300003051758"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0
+    lutCenter = 471.87003
     lutWidth = 0
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
@@ -2364,6 +2407,11 @@ module Mask {
   }
 }
 connections  {
+  Info.input0 = Candidates.output0
+  IntervalThreshold.input0 = Morphology1.output0
+  IntervalThreshold.threshCenter = CandidateSelector.threshCenter
+  IntervalThreshold.threshWidth = CandidateSelector.threshWidth
+  Morphology1.input0 = Candidates.output0
   CandidateLabels.input0 = CandidateSelector.output0
   CandidateLabels.input1 = TPs.output0
   TPs.input0 = MarkerToMask.output0
@@ -2382,14 +2430,12 @@ connections  {
   AxisEdgeMask.input0 = PageToImageExtent1.output0
   Blobness.input0 = Scale.output0
   Blobness.input1 = CandidateFeatureConnector.output0
-  RegionGrowing1.input0 = ApplyStrictMask.output0
-  RegionGrowing1.inMarkerList = MaskToMarkers.outputXMarkerList
   PageToImageExtent.input0 = Candidates.output0
   Centroids.input0 = PageToImageExtent.output0
   VerticalMean.input0 = Scale4.output0
   VerticalMean.input1 = CandidateFeatureConnector.output0
   CandidateSelector.input0 = Centroids.output0
-  CandidateFeatureConnector.input0 = CandidateSelector.output0
+  CandidateFeatureConnector.input0 = IntervalThreshold.output0
   Scale5.input0 = DtfSkeletonization.output0
   RegionGrowing.input0 = CalculateVesselness.output0
   RegionGrowing.inMarkerList = MaskToMarkers1.outputXMarkerList
@@ -2435,6 +2481,7 @@ connections  {
   WorldVoxelConvert.input0 = ApplyStrictMask.output0
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inImage = Morphology1.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
   ApplyStrictMask.input0 = FullImage.output0
   ApplyStrictMask.input1 = StrictMask.output0
