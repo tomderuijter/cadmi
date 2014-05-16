@@ -1,0 +1,21 @@
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids
+make -k -j 4 -f Makefile._MLWeightedCentroids.Release
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids'
+compiling mlWeightedCentroidsOutputImageHandler.cpp
+rm -f lib_MLWeightedCentroids.so
+linking tmp/lib_MLWeightedCentroids.so
+mv -f lib_MLWeightedCentroids.so tmp/
+creating tmp/lib_MLWeightedCentroids.so.pdb
+strip -sv tmp/lib_MLWeightedCentroids.so && if [ -f ../../../lib/lib_MLWeightedCentroids.so ]; then rm -f ../../../lib/lib_MLWeightedCentroids.so; fi && cp -f tmp/lib_MLWeightedCentroids.so ../../../lib && if [ -f ../../../lib/lib_MLWeightedCentroids.so.pdb ]; then rm -f ../../../lib/lib_MLWeightedCentroids.so.pdb; fi && cp -f tmp/lib_MLWeightedCentroids.so.pdb ../../../lib
+copy from `tmp/lib_MLWeightedCentroids.so' [elf64-x86-64] to `tmp/stdco2jl' [elf64-x86-64]
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids'
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids 
+make -k -j 4 -f Makefile._MLWeightedCentroids.Debug
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids'
+compiling mlWeightedCentroidsOutputImageHandler.cpp
+rm -f lib_MLWeightedCentroids_d.so
+linking tmp/lib_MLWeightedCentroids_d.so
+mv -f lib_MLWeightedCentroids_d.so tmp/
+creating tmp/lib_MLWeightedCentroids_d.so.pdb
+if [ -f ../../../lib/lib_MLWeightedCentroids_d.so ]; then rm -f ../../../lib/lib_MLWeightedCentroids_d.so; fi && cp -f tmp/lib_MLWeightedCentroids_d.so ../../../lib && if [ -f ../../../lib/lib_MLWeightedCentroids_d.so.pdb ]; then rm -f ../../../lib/lib_MLWeightedCentroids_d.so.pdb; fi && cp -f tmp/lib_MLWeightedCentroids_d.so.pdb ../../../lib
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids'

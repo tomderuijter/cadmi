@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLWeightedCentroids module definitions.
+/*!
+// \file    _MLWeightedCentroids.def
+// \author  Wieke
+// \date    2014-05-15
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule WeightedCentroids {
+  DLL                = "_MLWeightedCentroids"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/WeightedCentroids.script
+}  
