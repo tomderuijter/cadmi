@@ -1,0 +1,16 @@
+Interface  {
+  Inputs  {
+    Field input0 {
+      internalName = IntervalThreshold4.input0
+    }
+  }
+  Outputs  {
+    Field output0 {
+      internalName = Mask2.output0
+    }
+    Field output1 {
+      internalName = Threshold1.output0
+    }
+  }
+  Parameters {}
+}

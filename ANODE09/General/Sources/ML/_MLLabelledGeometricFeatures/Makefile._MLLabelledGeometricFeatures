@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/Makefile._MLLabelledGeometricFeatures.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/_MLLabelledGeometricFeatures.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledGeometricFeatures
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/Makefile._MLLabelledGeometricFeatures.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/_MLLabelledGeometricFeatures.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledGeometricFeatures
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/Makefile._MLLabelledGeometricFeatures.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures
+	$(MAKE) -k -j 4 -f Makefile._MLLabelledGeometricFeatures.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures/Makefile._MLLabelledGeometricFeatures.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures 
+	$(MAKE) -k -j 4 -f Makefile._MLLabelledGeometricFeatures.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures && if test -e Makefile._MLLabelledGeometricFeatures.Release; then $(MAKE) -k -f Makefile._MLLabelledGeometricFeatures.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures && if test -e Makefile._MLLabelledGeometricFeatures.Debug; then $(MAKE) -k -f Makefile._MLLabelledGeometricFeatures.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

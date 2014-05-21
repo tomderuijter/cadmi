@@ -2,13 +2,530 @@
 network  {
   watchlist = ""
 }
-module Arithmetic {
+module Arithmetic1 {
   internal  {
-    frame = "397 197 104 56"
+    frame = "1057 309 112 56"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "829 534 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_null
+    function = Multiply
+    constant = 0
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1213 129 104 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "982 323 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_math
+    function = Multiply
+    constant = 35
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "1193 310 128 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "1265 294 524 621"
+        sizeHint = "524 621"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1338 264 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_stats
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = FALSE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1273 45 112 56"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "841 611 241 66"
+        sizeHint = "237 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic21
+    function = Or
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module ImageBuffer {
+  internal  {
+    frame = "1273 -31 112 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "273 282 400 415"
+        sizeHint = "400 415"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_buff
+    useFileCache = FALSE
+    path = /tmp/
+    useCompression = TRUE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = 1
+    index = 2
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "1417 10 144 56"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "610 291 698 553"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript2
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()"
+    wakeUpCode = ""
+    code = "*
+CTX.field("ITR_stats.update").touch()
+max = CTX.field("ITR_stats.totalMaxVal").value
+
+for i in range(1,int(100)):
+	CTX.field("ITR_thershold.threshMin").value = i
+	CTX.field("ITR_thershold.threshMax").value = i
+	CTX.field("ITR_marker.update").touch()
+	CTX.field("ITR_region.update").touch()
+	CTX.field("ITR_math.constant").value = i
+	CTX.field("ITR_buff.push").touch()
+	print str(i) + "/" + str(max) + " grown"*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1389 190 136 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "802 556 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_marker
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = Off
+    vectorMode = Zero
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1401 270 144 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "190 670 412 382"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_thershold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 35
+    threshWidth = 0
+    threshMin = 35
+    threshMax = 35
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "1193 206 128 64"
+    moduleGroupName = "Iterative Region Growing"
+    windows  {
+      window _default {
+        geometry = "70 431 648 617"
+        sizeHint = "648 617"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "793 159 611 923"
+        sizeHint = "400 440"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ITR_region
+    autoUpdateMode = AutoClear
+    lowerThreshold = -740.8
+    upperThreshold = -238.2
+    autoThreshold = TRUE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_2D_4_XZ
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = Auto
+    autoUpdateUnitType = TRUE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = 1
+    negFillValue = 0
+    invertResult = FALSE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 1
+    maxVolumeEnabled = TRUE
+    intervalSize = 10
+  }
+}
+module View2D {
+  internal  {
+    frame = "1349 -259 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "644 332 631 527"
+        geometry = "759 367 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D4
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1293 701 120 56"
+    moduleGroupName = "Threshold 3"
+    windows  {
+      window _default {
+        geometry = "285 333 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology5
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "741 677 120 56"
+    moduleGroupName = "Threshold 2"
+    windows  {
+      window _default {
+        geometry = "285 333 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology4
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "221 693 120 56"
+    moduleGroupName = "Threshold 1"
+    windows  {
+      window _default {
+        geometry = "285 333 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1289 441 176 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "698 484 676 500"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "41 302 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PythonComponents
+    autoUpdate = FALSE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "405 357 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "644 360 631 527"
         sizeHint = "631 527"
         wasOpen = no
       }
@@ -48,18 +565,18 @@ module Arithmetic {
     applyMode = AutoApply
     domainErrorHandling = Nothing
     domainErrorReplacementValue = Zeroes
-    numberOfInputs = 3
+    numberOfInputs = 4
     expressionComment = ""
     scalarVariablesComment = ""
   }
 }
 module Arithmetic {
   internal  {
-    frame = "941 205 104 56"
+    frame = "869 373 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "644 332 631 527"
+        geometry = "644 360 631 527"
         sizeHint = "631 527"
         wasOpen = no
       }
@@ -99,18 +616,18 @@ module Arithmetic {
     applyMode = AutoApply
     domainErrorHandling = Nothing
     domainErrorReplacementValue = Zeroes
-    numberOfInputs = 3
+    numberOfInputs = 4
     expressionComment = ""
     scalarVariablesComment = ""
   }
 }
 module ConnectedComponents {
   internal  {
-    frame = "1061 649 184 56"
+    frame = "1069 813 184 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
-        geometry = "7 112 523 441"
+        geometry = "7 196 523 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -130,7 +647,7 @@ module ConnectedComponents {
     fillValue = 0
     originalObject = FALSE
     objectValue = 255
-    minClusterSize = 0.003
+    minClusterSize = 0.002
     clusterSizeInterpretation = ml
     invertClusterSelection = FALSE
     inputIgnoreValue = 0
@@ -140,7 +657,7 @@ module ConnectedComponents {
 }
 module IntervalThreshold {
   internal  {
-    frame = "1189 833 152 56"
+    frame = "1197 997 152 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
@@ -170,13 +687,13 @@ module IntervalThreshold {
 }
 module ConnectedComponents {
   internal  {
-    frame = "1293 649 184 56"
+    frame = "1301 877 184 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
-        geometry = "33 213 523 441"
+        geometry = "33 269 523 441"
         sizeHint = "523 441"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -194,17 +711,17 @@ module ConnectedComponents {
     fillValue = 0
     originalObject = FALSE
     objectValue = 255
-    minClusterSize = 0.05
+    minClusterSize = 0.0025
     clusterSizeInterpretation = ml
     invertClusterSelection = FALSE
     inputIgnoreValue = 0
-    neighborhoodType = NBH_3D_18_XYZ
+    neighborhoodType = NBH_3D_6_XYZ
     useMask = FALSE
   }
 }
 module Threshold {
   internal  {
-    frame = "1093 569 104 56"
+    frame = "1101 733 104 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
@@ -224,7 +741,7 @@ module Threshold {
 }
 module Threshold {
   internal  {
-    frame = "1301 553 104 56"
+    frame = "1309 781 104 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
@@ -238,47 +755,36 @@ module Threshold {
     instanceName = Threshold5
     threshold = 1
     minValue = 0
-    maxValue = 1829
+    maxValue = 17919
     relativeThreshold = FALSE
   }
 }
-module Arithmetic1 {
+module Mask {
   internal  {
-    frame = "1209 457 112 56"
+    frame = "1209 629 80 56"
     moduleGroupName = "Threshold 3"
     windows  {
       window _default {
-        geometry = "829 534 264 66"
-        sizeHint = "260 66"
+        geometry = "822 547 406 97"
+        sizeHint = "274 97"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Arithmetic13
-    function = Invert
-    constant = 0
-  }
-}
-module Mask {
-  internal  {
-    frame = "1145 385 80 56"
-    moduleGroupName = "Threshold 3"
-  }
-  fields  {
     instanceName = Mask4
-    mode = MaskedOriginal
+    mode = MaskedOriginalInv
     blending = 0.5
     background = 0
   }
 }
 module ConnectedComponents {
   internal  {
-    frame = "520 642 184 56"
+    frame = "525 797 184 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
-        geometry = "7 112 523 441"
+        geometry = "7 140 523 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -308,7 +814,7 @@ module ConnectedComponents {
 }
 module IntervalThreshold {
   internal  {
-    frame = "648 826 152 56"
+    frame = "653 981 152 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
@@ -338,13 +844,13 @@ module IntervalThreshold {
 }
 module ConnectedComponents {
   internal  {
-    frame = "752 642 184 56"
+    frame = "749 877 184 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
-        geometry = "33 241 523 441"
+        geometry = "33 269 523 441"
         sizeHint = "523 441"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -372,7 +878,7 @@ module ConnectedComponents {
 }
 module Threshold {
   internal  {
-    frame = "552 562 104 56"
+    frame = "557 717 104 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
@@ -392,7 +898,7 @@ module Threshold {
 }
 module Threshold {
   internal  {
-    frame = "760 546 104 56"
+    frame = "757 781 104 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
@@ -410,69 +916,47 @@ module Threshold {
     relativeThreshold = FALSE
   }
 }
-module Arithmetic1 {
+module Mask {
   internal  {
-    frame = "668 450 112 56"
+    frame = "665 605 80 56"
     moduleGroupName = "Threshold 2"
     windows  {
       window _default {
-        geometry = "829 534 264 66"
-        sizeHint = "260 66"
+        geometry = "822 519 406 97"
+        sizeHint = "274 97"
         wasOpen = no
       }
     }
-  }
-  fields  {
-    instanceName = Arithmetic12
-    function = Invert
-    constant = 0
-  }
-}
-module Mask {
-  internal  {
-    frame = "604 378 80 56"
-    moduleGroupName = "Threshold 2"
   }
   fields  {
     instanceName = Mask3
-    mode = MaskedOriginal
+    mode = MaskedOriginalInv
     blending = 0.5
     background = 0
   }
 }
 module Mask {
   internal  {
-    frame = "66 379 80 56"
-    moduleGroupName = "Threshold 1"
-  }
-  fields  {
-    instanceName = Mask2
-    mode = MaskedOriginal
-    blending = 0.5
-    background = 0
-  }
-}
-module Arithmetic1 {
-  internal  {
-    frame = "130 451 112 56"
+    frame = "145 629 80 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
-        geometry = "829 562 264 66"
-        sizeHint = "260 66"
+        geometry = "822 519 406 97"
+        sizeHint = "274 97"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Arithmetic11
-    function = Invert
-    constant = 0
+    instanceName = Mask2
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
   }
 }
 module Threshold {
   internal  {
-    frame = "222 547 104 56"
+    frame = "221 773 104 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
@@ -492,7 +976,7 @@ module Threshold {
 }
 module Threshold {
   internal  {
-    frame = "14 563 104 56"
+    frame = "21 725 104 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
@@ -512,11 +996,11 @@ module Threshold {
 }
 module ConnectedComponents {
   internal  {
-    frame = "214 643 184 56"
+    frame = "213 869 184 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
-        geometry = "284 528 523 441"
+        geometry = "284 556 523 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -546,7 +1030,7 @@ module ConnectedComponents {
 }
 module IntervalThreshold {
   internal  {
-    frame = "110 827 152 56"
+    frame = "117 989 152 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
@@ -576,11 +1060,11 @@ module IntervalThreshold {
 }
 module ConnectedComponents {
   internal  {
-    frame = "-18 643 184 56"
+    frame = "-11 805 184 56"
     moduleGroupName = "Threshold 1"
     windows  {
       window _default {
-        geometry = "7 112 523 441"
+        geometry = "7 140 523 441"
         sizeHint = "523 441"
         wasOpen = no
       }
@@ -734,9 +1218,9 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "-960 52 960 1028"
+        geometry = "516 52 960 1028"
         sizeHint = "400 400"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -745,7 +1229,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 174
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -767,11 +1251,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 244.300003051758"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 109.74002
-    lutWidth = 36.580002
+    lutCenter = 0
+    lutWidth = 0
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -853,9 +1337,9 @@ module View2D {
     moduleGroupName = SynchroView2dLabeled
     windows  {
       window _default {
-        geometry = "1920 52 960 1028"
+        geometry = "0 52 960 1028"
         sizeHint = "400 400"
-        wasOpen = yes
+        wasOpen = no
       }
       window _automatic {
         geometry = "1152 179 500 600"
@@ -869,7 +1353,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 174
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -891,11 +1375,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 244.300003051758"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 109.74002
-    lutWidth = 36.580002
+    lutCenter = 0
+    lutWidth = 0
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -2487,7 +2971,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = FALSE
+    ownsList = TRUE
     applySelect = FALSE
     id = -1
     name = ""
@@ -2516,7 +3000,7 @@ module ConstantXMarkerList {
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "797 376 505 625"
+        geometry = "797 404 505 625"
         sizeHint = "394 573"
         wasOpen = no
       }
@@ -2689,9 +3173,9 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "1494 654 400 400"
+        geometry = "977 587 400 400"
         sizeHint = "400 400"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -3307,6 +3791,22 @@ module itkImageFileReader {
   }
 }
 connections  {
+  ITR_null.input0 = PythonComponents.output0
+  ITR_math.input0 = ITR_region.output0
+  ITR_stats.input0 = PythonComponents.output0
+  Arithmetic21.input0 = ITR_math.output0
+  Arithmetic21.input1 = ITR_buff.outImage
+  ITR_buff.inImage = Arithmetic21.output0
+  ITR_marker.input0 = ITR_thershold.output0
+  ITR_thershold.input0 = PythonComponents.output0
+  ITR_region.input0 = ApplyLungMask.output0
+  ITR_region.inMarkerList = ITR_marker.outputXMarkerList
+  View2D4.inImage = ITR_buff.outImage
+  View2D4.inInvPostLUT = SoView2DMarkerEditor.self
+  Morphology5.input0 = Threshold5.output0
+  Morphology4.input0 = Threshold3.output0
+  Morphology2.input0 = Threshold2.output0
+  PythonComponents.input0 = Arithmetic.output0
   Arithmetic3.input0 = Threshold1.output0
   Arithmetic3.input1 = Threshold4.output0
   Arithmetic3.input2 = Threshold6.output0
@@ -3318,20 +3818,17 @@ connections  {
   ConnectedComponents6.input0 = IntervalThreshold6.output0
   Threshold6.input0 = ConnectedComponents7.output0
   Threshold5.input0 = ConnectedComponents6.output0
-  Arithmetic13.input0 = Threshold5.output0
   Mask4.input0 = Threshold6.output0
-  Mask4.input1 = Arithmetic13.output0
+  Mask4.input1 = Morphology5.output0
   ConnectedComponents5.input0 = IntervalThreshold5.output0
   IntervalThreshold5.input0 = ApplyLungMask.output0
   ConnectedComponents4.input0 = IntervalThreshold5.output0
   Threshold4.input0 = ConnectedComponents5.output0
   Threshold3.input0 = ConnectedComponents4.output0
-  Arithmetic12.input0 = Threshold3.output0
   Mask3.input0 = Threshold4.output0
-  Mask3.input1 = Arithmetic12.output0
+  Mask3.input1 = Morphology4.output0
   Mask2.input0 = Threshold1.output0
-  Mask2.input1 = Arithmetic11.output0
-  Arithmetic11.input0 = Threshold2.output0
+  Mask2.input1 = Morphology2.output0
   Threshold2.input0 = ConnectedComponents3.output0
   Threshold1.input0 = ConnectedComponents2.output0
   ConnectedComponents3.input0 = IntervalThreshold4.output0
@@ -3535,6 +4032,17 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 357
         objectName = "Threshold 3"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 290
+        objectName = "Iterative Region Growing"
         parentUniqueId = 0
         color  {
           r = 45

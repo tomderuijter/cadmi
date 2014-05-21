@@ -12,7 +12,7 @@ Window {
   Vertical {
     margin = 3
     TextView Output {
-      title     = "Output (Volume, Area, minDim, maxDim, Ratio1, Ratio2, Compactness1, Compactness2)"
+      title     = "Output (Volume, Surface, minDim, maxDim, Ratio1, Ratio2, Compactness1, Compactness2, Sphericity)"
       edit      = No
       console = Yes
       wrap = Off
