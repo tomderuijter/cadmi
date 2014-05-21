@@ -52,7 +52,7 @@ void FilterLabelByVolumeOutputImageHandler::typedCalculateOutputSubImage(TSubIma
   
   inputSubImage0.calculateMinMax(min, max, NULL);
   
-  std::vector<float> volume((int)max - 1);
+  std::vector<int> volume((int)max - 1);
   
   // Process all voxels of the valid region of the output page.
   ImageVector p;
@@ -71,10 +71,8 @@ void FilterLabelByVolumeOutputImageHandler::typedCalculateOutputSubImage(TSubIma
 	          // Process all row voxels.
 	          for (; p.x <= rowEnd;  ++p.x, ++inVoxel0)
 	          {
-	          	for(int label = 1; label <= max; label++)
-	          	{
-          	    volume[label - 1] += *inVoxel0 == label;
-	            }
+	          
+	          	volume[(int)*inVoxel0 - 1] += 1;
 	          }
 	        }
 	      }

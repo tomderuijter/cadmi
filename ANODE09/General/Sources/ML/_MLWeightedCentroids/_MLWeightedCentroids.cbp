@@ -8,7 +8,7 @@
     <Option compiler="gcc" />
     <Build>
       <Target title="all">
-        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
+        <Option extension_auto="1" output="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
         <Option type="0" />
         <Option compiler="gcc" />
         <MakeCommands>
@@ -18,7 +18,7 @@
           <DistClean command="$make -k -f $makefile distclean$target" />
         </MakeCommands>
       </Target><Target title="release">
-        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
+        <Option extension_auto="1" output="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
         <Option type="0" />
         <Option compiler="gcc" />
         <MakeCommands>
@@ -28,7 +28,7 @@
           <DistClean command="$make -k -f $makefile distclean$target" />
         </MakeCommands>
       </Target><Target title="debug">
-        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab_d" prefix_auto="1" />
+        <Option extension_auto="1" output="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVisLab/IDE/bin/MeVisLab_d" prefix_auto="1" />
         <Option type="0" />
         <Option compiler="gcc" />
         <Compiler>
@@ -57,14 +57,14 @@
       <Option target="All" />
     </Unit><Extensions>
       <code_completion>
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/SharedIncludes" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/deprecated" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLLinearAlgebra/deprecated" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLLinearAlgebra" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLProfilingManager/Include" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities" />
-        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLMemoryManager/Include" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/SharedIncludes" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/deprecated" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLLinearAlgebra/deprecated" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLLinearAlgebra" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLProfilingManager/Include" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLUtilities" />
+        <search_path add="/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLMemoryManager/Include" />
       </code_completion><debugger />
     </Extensions>
   </Project>

@@ -1,0 +1,24 @@
+//----------------------------------------------------------------------------------
+//! _MLLabelledMax module definitions.
+/*!
+// \file    LabelledMax.script
+// \author     wieke
+// \date    2014-05-21
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    margin = 3
+    TextView Output {
+      title     = "Output (Maximum)"
+      edit      = No
+      console = Yes
+      wrap = Off
+      showLineNumbers = Yes
+      vscroller = On
+      hscroller = On
+    }
+  }
+}

@@ -1,9 +1,9 @@
 all: release debug
 
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids/Makefile._MLWeightedCentroids.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids/_MLWeightedCentroids.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLWeightedCentroids
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLWeightedCentroids
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids/Makefile._MLWeightedCentroids.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids/_MLWeightedCentroids.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLWeightedCentroids
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLWeightedCentroids
 
 release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids/Makefile._MLWeightedCentroids.Release
 	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLWeightedCentroids

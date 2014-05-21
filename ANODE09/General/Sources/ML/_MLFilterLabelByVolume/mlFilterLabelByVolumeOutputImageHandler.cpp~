@@ -71,10 +71,8 @@ void FilterLabelByVolumeOutputImageHandler::typedCalculateOutputSubImage(TSubIma
 	          // Process all row voxels.
 	          for (; p.x <= rowEnd;  ++p.x, ++inVoxel0)
 	          {
-	          	for(int label = 1; label <= max; label++)
-	          	{
-          	    volume[label - 1] += *inVoxel0 == label;
-	            }
+	          
+	          	volume[(int)*inVoxel0 - 1] += 1;
 	          }
 	        }
 	      }
@@ -85,7 +83,6 @@ void FilterLabelByVolumeOutputImageHandler::typedCalculateOutputSubImage(TSubIma
 	std::vector<int> label((int)max - 1);
 	int lbl = 1;
 	for (int i = 0; i < max; i++){
-		std::cout << volume[1] << std::endl;
 		if (volume[i] < threshold)
 		{
 			label[i] = lbl++;

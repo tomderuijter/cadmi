@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLLabelledGeometricFeatures module definitions.
+/*!
+// \file    _MLLabelledGeometricFeatures.def
+// \author     wieke
+// \date    2014-05-21
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule LabelledGeometricFeatures {
+  DLL                = "_MLLabelledGeometricFeatures"
+
+  genre              = ""
+  author             = "   wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/LabelledGeometricFeatures.script
+}  

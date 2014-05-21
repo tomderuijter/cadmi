@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLLabelledMax module definitions.
+/*!
+// \file    _MLLabelledMax.def
+// \author     wieke
+// \date    2014-05-21
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule LabelledMax {
+  DLL                = "_MLLabelledMax"
+
+  genre              = ""
+  author             = "   wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/LabelledMax.script
+}  

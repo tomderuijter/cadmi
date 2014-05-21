@@ -1,0 +1,24 @@
+//----------------------------------------------------------------------------------
+//! _MLLabelledGeometricFeatures module definitions.
+/*!
+// \file    LabelledGeometricFeatures.script
+// \author     wieke
+// \date    2014-05-21
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    margin = 3
+    TextView Output {
+      title     = "Output (Volume, Area, minDim, maxDim, Ratio1, Ratio2, Compactness1, Compactness2)"
+      edit      = No
+      console = Yes
+      wrap = Off
+      showLineNumbers = Yes
+      vscroller = On
+      hscroller = On
+    }
+  }
+}

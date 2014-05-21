@@ -1,9 +1,9 @@
 all: release debug
 
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/_MLLabelledStatistics.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/_MLLabelledStatistics.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledStatistics
 
 release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics/Makefile._MLLabelledStatistics.Release
 	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledStatistics
