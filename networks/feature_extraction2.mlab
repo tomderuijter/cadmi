@@ -2,6 +2,488 @@
 network  {
   watchlist = ""
 }
+module Arithmetic1 {
+  internal  {
+    frame = "2777 -1123 112 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic11
+    function = Add
+    constant = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "2863 -1474 80 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale10
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2772 -1474 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale9
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2681 -1474 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale8
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2590 -1474 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale7
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "2935 -1704 144 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Curvedness
+    Output = ""
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "2772 -1704 144 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = ShapeIndex
+    Output = ""
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "2609 -1704 144 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = MeanCurvature
+    Output = ""
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2959 -1589 168 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = PageToImageExtent12
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2772 -1589 168 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = PageToImageExtent11
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2581 -1587 168 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = PageToImageExtent10
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2406 -1589 160 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = PageToImageExtent9
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2931 -1359 128 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "119 243 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CurvednessArith
+    expression = "sqr(a*a+b*b)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "2454 -1704 136 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Curvature
+    Output = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2784 -1359 128 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ShapeIndexArith
+    expression = "(2/pi) * atan((a+b) / (a - b))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2613 -1359 152 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MeanCurvatureArith
+    expression = "(a + b) / 2.0"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2474 -1359 120 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CurvatureArith
+    expression = "-(b*b) + (a * c)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module TypeDecomposer {
+  internal  {
+    frame = "2683 -1236 168 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "593 -498 93 16"
+        sizeHint = "93 16"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TypeDecomposer
+  }
+}
+module GaussHessian {
+  internal  {
+    frame = "2649 -1123 112 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "534 -625 210 271"
+        sizeHint = "210 271"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GaussHessian
+    sigma = 2
+    unit = voxel
+    calc2D = FALSE
+    calcLaplacian = FALSE
+    applyScaleNormalization = FALSE
+    autoUpdate = TRUE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "383 -1582 176 56"
+    moduleGroupName = "True Positive Labels"
+    windows  {
+      window _default {
+        geometry = "464 -814 351 648"
+        sizeHint = "351 648"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = TRUE
+    datatype = float
+    changePageSize = FALSE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
 module LabelledStatistics {
   internal  {
     frame = "2106 -1687 136 64"
@@ -4543,12 +5025,12 @@ module ImageBuffer {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "677 -571 152 56"
+    frame = "665 -571 176 56"
     moduleGroupName = "Candidate Merging"
     windows  {
       window _default {
-        geometry = "463 560 352 651"
-        sizeHint = "352 651"
+        geometry = "464 -814 351 648"
+        sizeHint = "351 648"
         wasOpen = no
       }
     }
@@ -18241,7 +18723,7 @@ module Arithmetic {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "348 -744 582 509"
+        geometry = "336 -606 582 509"
         sizeHint = "582 509"
         wasOpen = no
       }
@@ -18303,7 +18785,7 @@ module PageToImageExtent {
 }
 module LabelledStatistics {
   internal  {
-    frame = "926 -1695 136 64"
+    frame = "957 -1687 136 64"
     moduleGroupName = "Grey values"
     windows  {
       window _default {
@@ -22814,8 +23296,15 @@ module LabelledStatistics {
 }
 module PageToImageExtent {
   internal  {
-    frame = "398 -1611 160 56"
+    frame = "391 -1502 160 56"
     moduleGroupName = "True Positive Labels"
+    windows  {
+      window _default {
+        geometry = "603 -575 73 170"
+        sizeHint = "73 170"
+        wasOpen = no
+      }
+    }
   }
   fields  {
     instanceName = PageToImageExtent4
@@ -22859,12 +23348,12 @@ module PageToImageExtent {
 }
 module LabelledMax {
   internal  {
-    frame = "398 -1695 128 64"
+    frame = "399 -1690 128 64"
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
-        geometry = "383 645 312 215"
-        sizeHint = "312 215"
+        geometry = "383 537 319 259"
+        sizeHint = "319 259"
         wasOpen = no
       }
     }
@@ -23012,6 +23501,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23028,6 +23518,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23058,6 +23549,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23075,7 +23567,9 @@ module LabelledMax {
 0
 0
 0
+1
 0
+1
 0
 0
 0
@@ -23123,6 +23617,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23153,6 +23648,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23181,6 +23677,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23232,9 +23729,11 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
+1
 0
 0
 0
@@ -23325,6 +23824,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23384,6 +23884,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23426,11 +23927,13 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
 0
 0
+1
 0
 0
 0
@@ -23456,6 +23959,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23484,6 +23988,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23566,6 +24071,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23684,6 +24190,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23719,6 +24226,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -23774,7 +24282,9 @@ module LabelledMax {
 0
 0
 0
+1
 0
+1
 0
 0
 0
@@ -23904,6 +24414,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -24119,6 +24630,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -24276,6 +24788,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -24590,6 +25103,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -24933,6 +25447,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -24955,6 +25470,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -25321,6 +25837,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -25596,6 +26113,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -25704,6 +26222,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -25930,6 +26449,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -26087,6 +26607,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -26430,6 +26951,7 @@ module LabelledMax {
 0
 0
 0
+1
 0
 0
 0
@@ -26794,40 +27316,7 @@ module LabelledMax {
 0
 0
 0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
+1
 0
 0
 0
@@ -27374,7 +27863,7 @@ module Comment {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "107 300 256 208"
+        geometry = "640 44 640 752"
         sizeHint = "256 208"
         wasOpen = no
       }
@@ -27429,7 +27918,7 @@ module Morphology {
 }
 module Morphology {
   internal  {
-    frame = "426 -1519 104 64"
+    frame = "419 -1442 104 64"
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
@@ -27467,7 +27956,7 @@ module Morphology {
 }
 module Scale {
   internal  {
-    frame = "1038 -1531 72 56"
+    frame = "989 -1523 72 56"
     moduleGroupName = "Grey values"
     windows  {
       window _default {
@@ -27725,7 +28214,7 @@ module ImageLoad {
 }
 module RunPythonScript {
   internal  {
-    frame = "253 -1139 136 56"
+    frame = "-83 -955 136 56"
     moduleGroupName = ""
     windows  {
       window _default {
@@ -27808,7 +28297,11 @@ featureModules = 	[
 								"VerticalMean",
 								"Blobness",
 								"Vesselness",
-								"GeometricFeatures"
+								"GeometricFeatures",
+#								"Curvature",
+#								"MeanCurvature",
+#								"ShapeIndex",
+#								"Curvedness"
 							]
 
 # Returns file names of all subject '.mhd' images in the provided path
@@ -27871,7 +28364,6 @@ def calculateData(path):
 	# Open Target file
 	dataFile = open(path + 'data.txt', 'w')
 #	locationFile = open(path + 'candidate_locations.txt', 'w')
-	# TODO - open candidates location file
 
 	# Loop over marked subjects
 	for file in getFilePaths(path):
@@ -27884,9 +28376,11 @@ def calculateData(path):
 		subjectNr = int(basename(file).split(".")[0][-2:])
 		scale = 0.5
 		getMarkers(path,subjectNr,scale)
-
+		
+		dataFile.write("# File " + basename(file) + "\\r\\n")
 		output = collectOutputs()
 		dataFile.write(output)
+		dataFile.flush()
 
 	dataFile.close()
 			
@@ -27927,26 +28421,6 @@ module Scale {
     typeSelect = Automatic
     outputMin = 0
     outputMax = 1
-  }
-}
-module Comment {
-  internal  {
-    frame = "-379 -403 88 56"
-    moduleGroupName = ""
-    windows  {
-      window _default {
-        geometry = "919 -546 256 208"
-        sizeHint = "256 208"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = Comment
-    comment = "- Nog toe te voegen: zie murphy paper en proposal
-
-- Mogelijk sphericity toevoegen als bug opgelost is
-"
   }
 }
 module RegionGrowing {
@@ -28944,7 +29418,7 @@ module Convolution {
 }
 module MarkerToMask {
   internal  {
-    frame = "404 -1436 120 56"
+    frame = "394 -1359 120 56"
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
@@ -28966,7 +29440,7 @@ module MarkerToMask {
 }
 module ImagePropertyConvert {
   internal  {
-    frame = "380 -1364 168 56"
+    frame = "370 -1287 168 56"
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
@@ -29024,7 +29498,7 @@ module ImagePropertyConvert {
 }
 module ConstantImage {
   internal  {
-    frame = "404 -1284 120 56"
+    frame = "394 -1207 120 56"
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
@@ -29502,7 +29976,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 126.699996948242"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 2247
@@ -29542,6 +30016,33 @@ module Mask {
   }
 }
 connections  {
+  Scale10.input0 = CurvednessArith.output0
+  Scale9.input0 = ShapeIndexArith.output0
+  Scale8.input0 = MeanCurvatureArith.output0
+  Scale7.input0 = CurvatureArith.output0
+  Curvedness.input0 = Arithmetic11.output0
+  Curvedness.input1 = PageToImageExtent12.output0
+  ShapeIndex.input0 = Arithmetic11.output0
+  ShapeIndex.input1 = PageToImageExtent11.output0
+  MeanCurvature.input0 = Arithmetic11.output0
+  MeanCurvature.input1 = PageToImageExtent10.output0
+  PageToImageExtent12.input0 = Scale10.output0
+  PageToImageExtent11.input0 = Scale9.output0
+  PageToImageExtent10.input0 = Scale8.output0
+  PageToImageExtent9.input0 = Scale7.output0
+  CurvednessArith.input0 = TypeDecomposer.output0
+  CurvednessArith.input1 = TypeDecomposer.output3
+  Curvature.input0 = Arithmetic11.output0
+  Curvature.input1 = PageToImageExtent9.output0
+  ShapeIndexArith.input0 = TypeDecomposer.output0
+  ShapeIndexArith.input1 = TypeDecomposer.output3
+  MeanCurvatureArith.input0 = TypeDecomposer.output0
+  MeanCurvatureArith.input1 = TypeDecomposer.output3
+  CurvatureArith.input0 = TypeDecomposer.output0
+  CurvatureArith.input1 = TypeDecomposer.output1
+  CurvatureArith.input2 = TypeDecomposer.output3
+  TypeDecomposer.input0 = GaussHessian.output0
+  ImagePropertyConvert1.input0 = PageToImageExtent4.output0
   Vesselness.input0 = CandidateFeatureConnector.output0
   Vesselness.input1 = PageToImageExtent8.output0
   ImageBuffer.inImage = Arithmetic1.output0
@@ -29568,7 +30069,7 @@ connections  {
   PageToImageExtent3.input0 = Centroids.output0
   PageToImageExtent2.input0 = Morphology1.output0
   CandidateLabels.input0 = ImagePropertyConvert3.output0
-  CandidateLabels.input1 = PageToImageExtent4.output0
+  CandidateLabels.input1 = ImagePropertyConvert1.output0
   Morphology1.input0 = Candidates.output0
   TPs.input0 = MarkerToMask.output0
   Scale6.input0 = StrictImageFeatureConnector.output0
@@ -29738,6 +30239,17 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 357
         objectName = "True Positive Labels"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 274
+        objectName = HessianFeatures
         parentUniqueId = 0
         color  {
           r = 45
