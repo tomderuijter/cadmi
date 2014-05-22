@@ -23501,7 +23501,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23518,7 +23517,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23549,7 +23547,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23567,9 +23564,7 @@ module LabelledMax {
 0
 0
 0
-1
 0
-1
 0
 0
 0
@@ -23617,7 +23612,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23648,7 +23642,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23677,7 +23670,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23729,11 +23721,9 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
-1
 0
 0
 0
@@ -23824,7 +23814,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23884,7 +23873,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23927,13 +23915,11 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
 0
 0
-1
 0
 0
 0
@@ -23959,7 +23945,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -23988,7 +23973,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24071,7 +24055,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24190,7 +24173,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24226,7 +24208,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24282,9 +24263,7 @@ module LabelledMax {
 0
 0
 0
-1
 0
-1
 0
 0
 0
@@ -24414,7 +24393,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24630,7 +24608,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -24788,7 +24765,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -25103,7 +25079,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -25447,7 +25422,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -25470,7 +25444,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -25837,7 +25810,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -26113,7 +26085,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -26222,7 +26193,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -26449,7 +26419,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -26607,7 +26576,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -26951,7 +26919,6 @@ module LabelledMax {
 0
 0
 0
-1
 0
 0
 0
@@ -27316,7 +27283,40 @@ module LabelledMax {
 0
 0
 0
-1
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
 0
 0
 0
@@ -28382,6 +28382,7 @@ def calculateData(path):
 		dataFile.write(output)
 		dataFile.flush()
 
+	dataFile.write("Done processing.")
 	dataFile.close()
 			
 
@@ -29976,11 +29977,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.699996948242"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 2247
-    lutWidth = 4494
+    lutCenter = 1076
+    lutWidth = 1076
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
