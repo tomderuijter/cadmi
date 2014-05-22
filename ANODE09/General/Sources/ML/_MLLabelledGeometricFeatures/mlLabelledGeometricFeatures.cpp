@@ -134,7 +134,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
             // Process all row voxels.
             for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0)
             {
-            	if (isSurfaceVoxel(inputSubImage0, p)){
+            	if (isSurfaceVoxel(inputSubImage0, p, *inVoxel0)){
 	              *outVoxel = *inVoxel0;
 	              
 	              if ((int)(*inVoxel0) > 0)
@@ -208,38 +208,38 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
 }
 
 template <typename T>
-bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p){
+bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label){
 	
 	p.x = p.x + 1;
 	T* inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 		
 	p.x = p.x - 2;
 	inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 	p.x = p.x + 1;
 	
 	p.y = p.y + 1;
 	inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 		
 	p.y = p.y - 2;
 	inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 	p.y = p.y + 1;
 
 	p.z = p.z + 1;
 	inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 		
 	p.z = p.z - 2;
 	inVoxel0 = inputSubImage0->getImagePointer(p);
-	if ((int)(*inVoxel0) == 0)
+	if ((int)(*inVoxel0) != label)
 		return true;
 	p.z = p.z + 1;
 	

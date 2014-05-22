@@ -134,7 +134,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
             // Process all row voxels.
             for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0)
             {
-            	if (isSurfaceVoxel(inputSubImage0, p)){
+            	if (isSurfaceVoxel(inputSubImage0, p, *inVoxel0)){
 	              *outVoxel = *inVoxel0;
 	              
 	              if ((int)(*inVoxel0) > 0)
@@ -176,14 +176,11 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
   for (int i = 0; i < (int)max; i++){
     float vol = volume[i];
     float sur = surface[i];
+    
 		float x = maxX[i] - minX[i];
  		float y = maxY[i] - minY[i];
   	float z = maxZ[i] - minZ[i];
-  	
-  	std::cout << "x(" << i << ")=" << x << std::endl;
-  	std::cout << "y(" << i << ")=" << y << std::endl;
-  	std::cout << "z(" << i << ")=" << z << std::endl;
-  	
+  	  	
 		float minDim = std::min(x,std::min(y,z));
 		float maxDim = std::max(x,std::max(y,z));
 		float medDim = x + y + z - minDim - maxDim;
@@ -211,7 +208,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
 }
 
 template <typename T>
-bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p){
+bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label){
 	
 	p.x = p.x + 1;
 	T* inVoxel0 = inputSubImage0->getImagePointer(p);

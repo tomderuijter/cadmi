@@ -82,6 +82,7 @@ private:
   // Implements interface for the runtime type system of the ML.
   ML_MODULE_CLASS_HEADER(LabelledGeometricFeatures)
   
+  template <typename T>  
   bool isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p);
   
 };
