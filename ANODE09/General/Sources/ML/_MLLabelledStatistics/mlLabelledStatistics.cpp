@@ -149,6 +149,7 @@ void LabelledStatistics::calculateOutputSubImage(TSubImage<T>* outputSubImage, i
     float median = (float) values[i][(int)(values[i].size()/2)];
     
     for (int k = 0; k < values[i].size(); k++){
+
       if (values[i][k] < min){
         min = values[i][k];
       }
@@ -167,11 +168,11 @@ void LabelledStatistics::calculateOutputSubImage(TSubImage<T>* outputSubImage, i
     }   
     stdev = std::pow(stdev/values[i].size(),0.5);
     
-    output << average << " ";
-    output << median << " ";
-    output << stdev << " "; 
-    output << min << " "; 
-    output << max << " "; 
+    output << average << ",";
+    output << median << ",";
+    output << stdev << ","; 
+    output << min << ","; 
+    output << max << ","; 
     output << std::endl;
   }
   _OutputFld -> setStringValue(output.str());

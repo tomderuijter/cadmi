@@ -2,72 +2,72 @@ cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometr
 make -k -j 4 -f Makefile._MLLabelledGeometricFeatures.Release
 make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures'
 compiling mlLabelledGeometricFeatures.cpp
-In file included from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlModule.h:61:0,
-                 from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:88,
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModule.h:61:0,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:88,
                  from mlLabelledGeometricFeatures.h:21,
                  from mlLabelledGeometricFeatures.cpp:13:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:465:66: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:465:66: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
    ML_DEPRECATED ToggleField* addDeprecatedToggle(const char* name);
                                                                   ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:468:76: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:468:76: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
    ML_DEPRECATED ToggleField* addDeprecatedToggle(const char* name, int *var);
                                                                             ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVec2f(const char*, ml::Vector2*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:396:131: warning: ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVector2(const char*, ml::Vector2*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:483) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVec2f(const char*, ml::Vector2*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:396:131: warning: ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVector2(const char*, ml::Vector2*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:483) [-Wdeprecated-declarations]
    inline ML_DEPRECATED Vector2Field* addDeprecatedVec2f(const char*  name, Vector2 *var0) { return addDeprecatedVector2(name, var0); }  
                                                                                                                                    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVec3f(const char*, ml::Vector3*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:400:131: warning: ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVector3(const char*, ml::Vector3*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:486) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVec3f(const char*, ml::Vector3*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:400:131: warning: ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVector3(const char*, ml::Vector3*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:486) [-Wdeprecated-declarations]
    inline ML_DEPRECATED Vector3Field* addDeprecatedVec3f(const char*  name, Vector3 *var0) { return addDeprecatedVector3(name, var0); }  
                                                                                                                                    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVec4f(const char*, ml::Vector4*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:404:131: warning: ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVector4(const char*, ml::Vector4*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:489) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVec4f(const char*, ml::Vector4*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:404:131: warning: ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVector4(const char*, ml::Vector4*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:489) [-Wdeprecated-declarations]
    inline ML_DEPRECATED Vector4Field* addDeprecatedVec4f(const char*  name, Vector4 *var0) { return addDeprecatedVector4(name, var0); }  
                                                                                                                                    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVec6f(const char*, ml::Vector6*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:411:131: warning: ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVector6(const char*, ml::Vector6*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:492) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVec6f(const char*, ml::Vector6*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:411:131: warning: ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVector6(const char*, ml::Vector6*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:492) [-Wdeprecated-declarations]
    inline ML_DEPRECATED Vector6Field* addDeprecatedVec6f(const char*  name, Vector6 *var0) { return addDeprecatedVector6(name, var0); }  
                                                                                                                                    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedVector(const char*, ml::ImageVector*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:418:144: warning: ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedImageVector(const char*, ml::ImageVector*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:495) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedVector(const char*, ml::ImageVector*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:418:144: warning: ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedImageVector(const char*, ml::ImageVector*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:495) [-Wdeprecated-declarations]
    inline ML_DEPRECATED ImageVectorField* addDeprecatedVector(const char*  name, ImageVector *var0) { return addDeprecatedImageVector(name, var0); }   
                                                                                                                                                 ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImgBox(const char*, ml::SubImageBox*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:422:147: warning: ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImageBox(const char*, ml::SubImageBox*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:498) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImgBox(const char*, ml::SubImageBox*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:422:147: warning: ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImageBox(const char*, ml::SubImageBox*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:498) [-Wdeprecated-declarations]
    inline ML_DEPRECATED SubImageBoxField* addDeprecatedSubImgBox(const char*  name, SubImageBox *var0) { return addDeprecatedSubImageBox(name, var0); }   
                                                                                                                                                    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImgBoxf(const char*, ml::SubImageBoxd*)’:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:426:151: warning: ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImageBoxd(const char*, ml::SubImageBoxd*)’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:501) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImgBoxf(const char*, ml::SubImageBoxd*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:426:151: warning: ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImageBoxd(const char*, ml::SubImageBoxd*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:501) [-Wdeprecated-declarations]
    inline ML_DEPRECATED SubImageBoxdField* addDeprecatedSubImgBoxf(const char*  name, SubImageBoxd *var0) { return addDeprecatedSubImageBoxd(name, var0); }  
                                                                                                                                                        ^
-In file included from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:107:0,
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:107:0,
                  from mlLabelledGeometricFeatures.h:21,
                  from mlLabelledGeometricFeatures.cpp:13:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h: At global scope:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:90:37: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h: At global scope:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:90:37: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
    static DummyOp& getGlobalInstance();
                                      ^
-In file included from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLUtilities/mlUtils.h:79:0,
-                 from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlBasics.h:42,
-                 from /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:48,
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlUtils.h:79:0,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlBasics.h:42,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:48,
                  from mlLabelledGeometricFeatures.h:21,
                  from mlLabelledGeometricFeatures.cpp:13:
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:385:38: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:385:38: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
    private: className(const className&);                           \
                                       ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
    ML_MODULE_CLASS_HEADER(DummyOp)
    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
    private: className& operator=(const className&);                \
                                                  ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
    ML_MODULE_CLASS_HEADER(DummyOp)
    ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
    private: className& operator=(const className&);                \
                                                  ^
-/opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
    ML_MODULE_CLASS_HEADER(DummyOp)
    ^
 mlLabelledGeometricFeatures.cpp:72:6: warning: unused parameter ‘outputImage’ [-Wunused-parameter]
@@ -77,16 +77,6 @@ mlLabelledGeometricFeatures.cpp:80:13: warning: unused parameter ‘inputIndex�
  SubImageBox LabelledGeometricFeatures::calculateInputSubImageBox(int inputIndex, const SubImageBox& outputSubImageBox, int outputIndex)
              ^
 mlLabelledGeometricFeatures.cpp:80:13: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
-mlLabelledGeometricFeatures.cpp: In member function ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*)’:
-mlLabelledGeometricFeatures.cpp:183:22: error: expected ‘;’ before ‘i’
-    std::cout << "x(" i << ")=" << x;
-                      ^
-mlLabelledGeometricFeatures.cpp:184:22: error: expected ‘;’ before ‘i’
-    std::cout << "y(" i << ")=" << y;
-                      ^
-mlLabelledGeometricFeatures.cpp:185:22: error: expected ‘;’ before ‘i’
-    std::cout << "z(" i << ")=" << z;
-                      ^
 mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = char]’:
 mlLabelledGeometricFeatures.cpp:90:1:   required from here
 mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
@@ -119,7 +109,127 @@ mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex�
 mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = double]’:
 mlLabelledGeometricFeatures.cpp:90:1:   required from here
 mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
-make[1]: *** [tmp/release/obj/mlLabelledGeometricFeatures.o] Error 1
-make[1]: Target `first' not remade because of errors.
+rm -f lib_MLLabelledGeometricFeatures.so
+linking tmp/lib_MLLabelledGeometricFeatures.so
+mv -f lib_MLLabelledGeometricFeatures.so tmp/
+creating tmp/lib_MLLabelledGeometricFeatures.so.pdb
+strip -sv tmp/lib_MLLabelledGeometricFeatures.so && if [ -f ../../../lib/lib_MLLabelledGeometricFeatures.so ]; then rm -f ../../../lib/lib_MLLabelledGeometricFeatures.so; fi && cp -f tmp/lib_MLLabelledGeometricFeatures.so ../../../lib && if [ -f ../../../lib/lib_MLLabelledGeometricFeatures.so.pdb ]; then rm -f ../../../lib/lib_MLLabelledGeometricFeatures.so.pdb; fi && cp -f tmp/lib_MLLabelledGeometricFeatures.so.pdb ../../../lib
+copy from `tmp/lib_MLLabelledGeometricFeatures.so' [elf64-x86-64] to `tmp/stX2cUvb' [elf64-x86-64]
 make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures'
-make: *** [release] Error 2
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures 
+make -k -j 4 -f Makefile._MLLabelledGeometricFeatures.Debug
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures'
+compiling mlLabelledGeometricFeatures.cpp
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModule.h:61:0,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:88,
+                 from mlLabelledGeometricFeatures.h:21,
+                 from mlLabelledGeometricFeatures.cpp:13:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:465:66: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
+   ML_DEPRECATED ToggleField* addDeprecatedToggle(const char* name);
+                                                                  ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:468:76: warning: ‘ToggleField’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFields.h:281) [-Wdeprecated-declarations]
+   ML_DEPRECATED ToggleField* addDeprecatedToggle(const char* name, int *var);
+                                                                            ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVec2f(const char*, ml::Vector2*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:396:131: warning: ‘ml::Vector2Field* ml::FieldContainer::addDeprecatedVector2(const char*, ml::Vector2*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:483) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED Vector2Field* addDeprecatedVec2f(const char*  name, Vector2 *var0) { return addDeprecatedVector2(name, var0); }  
+                                                                                                                                   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVec3f(const char*, ml::Vector3*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:400:131: warning: ‘ml::Vector3Field* ml::FieldContainer::addDeprecatedVector3(const char*, ml::Vector3*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:486) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED Vector3Field* addDeprecatedVec3f(const char*  name, Vector3 *var0) { return addDeprecatedVector3(name, var0); }  
+                                                                                                                                   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVec4f(const char*, ml::Vector4*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:404:131: warning: ‘ml::Vector4Field* ml::FieldContainer::addDeprecatedVector4(const char*, ml::Vector4*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:489) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED Vector4Field* addDeprecatedVec4f(const char*  name, Vector4 *var0) { return addDeprecatedVector4(name, var0); }  
+                                                                                                                                   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVec6f(const char*, ml::Vector6*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:411:131: warning: ‘ml::Vector6Field* ml::FieldContainer::addDeprecatedVector6(const char*, ml::Vector6*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:492) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED Vector6Field* addDeprecatedVec6f(const char*  name, Vector6 *var0) { return addDeprecatedVector6(name, var0); }  
+                                                                                                                                   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedVector(const char*, ml::ImageVector*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:418:144: warning: ‘ml::ImageVectorField* ml::FieldContainer::addDeprecatedImageVector(const char*, ml::ImageVector*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:495) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED ImageVectorField* addDeprecatedVector(const char*  name, ImageVector *var0) { return addDeprecatedImageVector(name, var0); }   
+                                                                                                                                                ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImgBox(const char*, ml::SubImageBox*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:422:147: warning: ‘ml::SubImageBoxField* ml::FieldContainer::addDeprecatedSubImageBox(const char*, ml::SubImageBox*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:498) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED SubImageBoxField* addDeprecatedSubImgBox(const char*  name, SubImageBox *var0) { return addDeprecatedSubImageBox(name, var0); }   
+                                                                                                                                                   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h: In member function ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImgBoxf(const char*, ml::SubImageBoxd*)’:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:426:151: warning: ‘ml::SubImageBoxdField* ml::FieldContainer::addDeprecatedSubImageBoxd(const char*, ml::SubImageBoxd*)’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlFieldContainer.h:501) [-Wdeprecated-declarations]
+   inline ML_DEPRECATED SubImageBoxdField* addDeprecatedSubImgBoxf(const char*  name, SubImageBoxd *var0) { return addDeprecatedSubImageBoxd(name, var0); }  
+                                                                                                                                                       ^
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:107:0,
+                 from mlLabelledGeometricFeatures.h:21,
+                 from mlLabelledGeometricFeatures.cpp:13:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h: At global scope:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:90:37: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
+   static DummyOp& getGlobalInstance();
+                                     ^
+In file included from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlUtils.h:79:0,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlBasics.h:42,
+                 from /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlModuleIncludes.h:48,
+                 from mlLabelledGeometricFeatures.h:21,
+                 from mlLabelledGeometricFeatures.cpp:13:
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:385:38: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
+   private: className(const className&);                           \
+                                      ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+   ML_MODULE_CLASS_HEADER(DummyOp)
+   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated (declared at /opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:79) [-Wdeprecated-declarations]
+   private: className& operator=(const className&);                \
+                                                 ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+   ML_MODULE_CLASS_HEADER(DummyOp)
+   ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities/mlRuntimeSubClass.h:388:49: warning: ‘DummyOp’ is deprecated [-Wdeprecated-declarations]
+   private: className& operator=(const className&);                \
+                                                 ^
+/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/mlDummyOp.h:124:3: note: in expansion of macro ‘ML_MODULE_CLASS_HEADER’
+   ML_MODULE_CLASS_HEADER(DummyOp)
+   ^
+mlLabelledGeometricFeatures.cpp:72:6: warning: unused parameter ‘outputImage’ [-Wunused-parameter]
+ void LabelledGeometricFeatures::calculateOutputImageProperties(int /*outputIndex*/, PagedImage* outputImage)
+      ^
+mlLabelledGeometricFeatures.cpp:80:13: warning: unused parameter ‘inputIndex’ [-Wunused-parameter]
+ SubImageBox LabelledGeometricFeatures::calculateInputSubImageBox(int inputIndex, const SubImageBox& outputSubImageBox, int outputIndex)
+             ^
+mlLabelledGeometricFeatures.cpp:80:13: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = char]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outputIndex
+      ^
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = unsigned char]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = short int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = short unsigned int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = unsigned int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = long long int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = long long unsigned int]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = float]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+mlLabelledGeometricFeatures.cpp: In instantiation of ‘void ml::LabelledGeometricFeatures::calculateOutputSubImage(ml::TSubImage<DATATYPE>*, int, ml::TSubImage<DATATYPE>*) [with T = double]’:
+mlLabelledGeometricFeatures.cpp:90:1:   required from here
+mlLabelledGeometricFeatures.cpp:93:6: warning: unused parameter ‘outputIndex’ [-Wunused-parameter]
+rm -f lib_MLLabelledGeometricFeatures_d.so
+linking tmp/lib_MLLabelledGeometricFeatures_d.so
+mv -f lib_MLLabelledGeometricFeatures_d.so tmp/
+creating tmp/lib_MLLabelledGeometricFeatures_d.so.pdb
+if [ -f ../../../lib/lib_MLLabelledGeometricFeatures_d.so ]; then rm -f ../../../lib/lib_MLLabelledGeometricFeatures_d.so; fi && cp -f tmp/lib_MLLabelledGeometricFeatures_d.so ../../../lib && if [ -f ../../../lib/lib_MLLabelledGeometricFeatures_d.so.pdb ]; then rm -f ../../../lib/lib_MLLabelledGeometricFeatures_d.so.pdb; fi && cp -f tmp/lib_MLLabelledGeometricFeatures_d.so.pdb ../../../lib
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledGeometricFeatures'

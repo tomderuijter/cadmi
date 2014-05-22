@@ -1,9 +1,9 @@
 all: release debug
 
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax/Makefile._MLLabelledMax.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax/_MLLabelledMax.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledMax
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledMax
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax/Makefile._MLLabelledMax.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax/_MLLabelledMax.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledMax
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLLabelledMax
 
 release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax/Makefile._MLLabelledMax.Release
 	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLLabelledMax

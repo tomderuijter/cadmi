@@ -95,7 +95,6 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
                                      )
 {
   // Compute sub-image of output image outputIndex from input sub-images.
-
   // Clamp box of output image against image extent to avoid that unused areas are processed.
   const SubImageBox validOutBox = outputSubImage->getValidRegion();
 
@@ -115,6 +114,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
   
   std::vector<int> minZ((int)max,std::numeric_limits<int>::max());
   std::vector<int> maxZ((int)max,std::numeric_limits<int>::max()*-1);
+  
   // Process all voxels of the valid region of the output page.
   ImageVector p;
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -134,6 +134,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
             // Process all row voxels.
             for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0)
             {
+              
             	if (isSurfaceVoxel(inputSubImage0, p, *inVoxel0)){
 	              *outVoxel = *inVoxel0;
 	              
@@ -146,23 +147,23 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
 	            if ((int)(*inVoxel0) > 0){
 		            volume[(int)(*inVoxel0)-1] += 1.0;
 		            
-		            if (p.x < minX[(int)(*inVoxel0)])
-		            	minX[(int)(*inVoxel0)] = p.x;
+		            if (p.x < minX[(int)(*inVoxel0) -1])
+		            	minX[(int)(*inVoxel0) -1] = p.x;
 		            	
-		            if (p.x > maxX[(int)(*inVoxel0)])
-		            	maxX[(int)(*inVoxel0)] = p.x;
+		            if (p.x > maxX[(int)(*inVoxel0) -1])
+		            	maxX[(int)(*inVoxel0) -1] = p.x;
 		            	
-		            if (p.y < minY[(int)(*inVoxel0)])
-		            	minY[(int)(*inVoxel0)] = p.y;
+		            if (p.y < minY[(int)(*inVoxel0) -1])
+		            	minY[(int)(*inVoxel0) -1] = p.y;
 		            	
-		            if (p.y > maxY[(int)(*inVoxel0)])
-		            	maxY[(int)(*inVoxel0)] = p.y;
+		            if (p.y > maxY[(int)(*inVoxel0) -1])
+		            	maxY[(int)(*inVoxel0) -1] = p.y;
 		            	
-		            if (p.z < minZ[(int)(*inVoxel0)])
-		            	minZ[(int)(*inVoxel0)] = p.z;
+		            if (p.z < minZ[(int)(*inVoxel0) -1])
+		            	minZ[(int)(*inVoxel0) -1] = p.z;
 		            	
-		            if (p.z > maxZ[(int)(*inVoxel0)])
-		            	maxZ[(int)(*inVoxel0)] = p.z;		            			           
+		            if (p.z > maxZ[(int)(*inVoxel0) -1])
+		            	maxZ[(int)(*inVoxel0) -1] = p.z;		            			           
 		          }
             }
           }
@@ -170,20 +171,21 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
       }
     }
   }
-  
+ 
 	std::stringstream output;
-  
+
   for (int i = 0; i < (int)max; i++){
     float vol = volume[i];
     float sur = surface[i];
     
-		float x = maxX[i] - minX[i];
- 		float y = maxY[i] - minY[i];
-  	float z = maxZ[i] - minZ[i];
-  	  	
+		float x = maxX[i] - minX[i] + 1;
+ 		float y = maxY[i] - minY[i] + 1;
+  	float z = maxZ[i] - minZ[i] + 1;
+  	
 		float minDim = std::min(x,std::min(y,z));
 		float maxDim = std::max(x,std::max(y,z));
 		float medDim = x + y + z - minDim - maxDim;
+		
 		
 		float ratio1 = maxDim/minDim;
 		float ratio2 = maxDim/medDim;
@@ -191,17 +193,18 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
   	float compactness1 = vol / (x*y*z);
   	float compactness2 = vol / std::pow(maxDim,3);
   	
-  	float sphericity = std::pow(M_PI,1/6)* std::pow(6*vol, 2/3) / sur;
+  	// Stiekem is dit sphericity.
+  	float compactness3 = std::pow(M_PI,1.0/6.0)* std::pow(6*vol, 2.0/3.0) / sur;
 
-    output << vol << " ";
-    output << sur << " ";
-    output << minDim << " ";
-    output << maxDim << " ";
-    output << ratio1 << " ";
-    output << ratio2 << " ";
-    output << compactness1 << " ";
-    output << compactness2 << " ";
-    output << sphericity;
+    output << vol << ",";
+    output << sur << ",";
+    output << minDim << ",";
+    output << maxDim << ",";
+    output << ratio1 << ",";
+    output << ratio2 << ",";
+    output << compactness1 << ",";
+    output << compactness2 << ",";
+    output << compactness3 << ",";
     output << std::endl;
   }
   _OutputFld -> setStringValue(output.str());

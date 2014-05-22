@@ -2,6 +2,64 @@
 network  {
   watchlist = ""
 }
+module ImagePropertyConvert {
+  internal  {
+    frame = "1221 765 152 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "463 130 352 651"
+        sizeHint = "352 651"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImagePropertyConvert1
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = TRUE
+    pageSizeX = 32
+    pageSizeY = 32
+    pageSizeZ = 1
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
 module Mask {
   internal  {
     frame = "849 13 80 56"
@@ -610,9 +668,9 @@ module View2D {
     moduleGroupName = SynchroView2DLabeled
     windows  {
       window _default {
-        geometry = "759 -713 400 400"
+        geometry = "785 178 400 400"
         sizeHint = "400 400"
-        wasOpen = yes
+        wasOpen = no
       }
       window _automatic {
         geometry = "1152 179 500 600"
@@ -648,7 +706,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0.699999988079071"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 0
@@ -679,9 +737,9 @@ module View2D {
         wasOpen = no
       }
       window _default {
-        geometry = "759 -713 400 400"
+        geometry = "439 227 400 400"
         sizeHint = "400 400"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
@@ -1826,13 +1884,13 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 164.5
-    voxelY = 213.5
-    voxelZ = 13
+    voxelX = 204.339922189713
+    voxelY = 265.207133054733
+    voxelZ = 18.1999996900558
     worldX = 204.339922189713
     worldY = 265.207133054733
     worldZ = 18.1999996900558
-    voxelPos = "164.5 213.5 13"
+    voxelPos = "204.339922189713 265.207133054733 18.1999996900558"
     worldPos = "204.339922189713 265.207133054733 18.1999996900558"
     voxelMode = FALSE
     worldMode = TRUE
@@ -1868,8 +1926,8 @@ module Morphology {
         wasOpen = no
       }
       window _default {
-        geometry = "1151 426 327 525"
-        sizeHint = "327 525"
+        geometry = "476 169 327 517"
+        sizeHint = "327 517"
         wasOpen = no
       }
     }
@@ -2438,7 +2496,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 90
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -2460,11 +2518,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 126.699996948242"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 256.5
-    lutWidth = 2513
+    lutCenter = 0
+    lutWidth = 0
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -3033,14 +3091,16 @@ module itkImageFileReader {
     fileDataType = int16
     correctSubVoxelShift = FALSE
     fileDimension = 3
-    info = "Loading okay."
-    numDims = 3
-    fileType = Binary
-    componentType = int16
-    pixelType = SCALAR
-    loaderType = MetaImageIO
-    outputMetaDataStr = "ITK_InputFilterName : MetaImageIO
-"
+    info = " Could not create IO object for file /mnt/Multimedia/CADMICompetition/examples/example02.mhd
+The file doesn't exist. 
+Filename = /mnt/Multimedia/CADMICompetition/examples/example02.mhd
+ Loaded data may be undefined."
+    numDims = 0
+    fileType = TypeNotApplicable
+    componentType = ""
+    pixelType = UNKNOWNPIXELTYPE
+    loaderType = ""
+    outputMetaDataStr = ""
     unresolvedFileName = /mnt/Multimedia/CADMICompetition/examples/example02.mhd
   }
 }
