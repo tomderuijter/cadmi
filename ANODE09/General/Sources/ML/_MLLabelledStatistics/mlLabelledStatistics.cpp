@@ -104,8 +104,8 @@ void LabelledStatistics::calculateOutputSubImage(TSubImage<T>* outputSubImage, i
   T max;
   
   inputSubImage0 -> calculateMinMax(min, max, NULL);
-  
-  std::vector<float> values [(int)max];
+  const int nrCandidates = (int) max;
+  std::vector<std::vector<float> > values(nrCandidates);
   
   // Process all voxels of the valid region of the output page.
   ImageVector p;
@@ -166,7 +166,7 @@ void LabelledStatistics::calculateOutputSubImage(TSubImage<T>* outputSubImage, i
     for (int k = 0; k < values[i].size(); k++){
       stdev += std::pow(values[i][k] - average, 2);
     }   
-    stdev = std::pow(stdev/values[i].size(),0.5);
+    stdev = std::pow(stdev/values[i].size(),0.5f);
     
     output << average << ",";
     output << median << ",";

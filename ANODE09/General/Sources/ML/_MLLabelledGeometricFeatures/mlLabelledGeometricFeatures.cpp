@@ -194,7 +194,7 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
   	float compactness2 = vol / std::pow(maxDim,3);
   	
   	// Stiekem is dit sphericity.
-  	float compactness3 = std::pow(M_PI,1.0/6.0)* std::pow(6*vol, 2.0/3.0) / sur;
+  	float compactness3 = std::pow(M_PI,1.0/6.0)* std::pow(6.0*vol, 2.0/3.0f) / sur;
 
     output << vol << ",";
     output << sur << ",";
