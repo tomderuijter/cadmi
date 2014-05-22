@@ -83,7 +83,7 @@ private:
   ML_MODULE_CLASS_HEADER(LabelledGeometricFeatures)
   
   template <typename T>  
-  bool isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label);
+  bool isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label, const SubImageBox validOutBox);
   
 };
 

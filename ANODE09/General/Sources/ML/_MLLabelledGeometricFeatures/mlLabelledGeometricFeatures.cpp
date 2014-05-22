@@ -134,16 +134,13 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
             // Process all row voxels.
             for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0)
             {
-              
-            	if (isSurfaceVoxel(inputSubImage0, p, *inVoxel0)){
-	              *outVoxel = *inVoxel0;
-	              
-	              if ((int)(*inVoxel0) > 0)
-		              surface[(int)(*inVoxel0)-1] += 1.0;
-		              
-            	} else
-	            	*outVoxel = 0;
-	            
+                *outVoxel = 0;
+                // Calculate surface voxels
+                if ((int)(*inVoxel0) > 0 && isSurfaceVoxel(inputSubImage0, p, *inVoxel0, validOutBox)) {
+                    *outVoxel = *inVoxel0;
+                    surface[(int)(*inVoxel0)-1] += 1.0;
+                }
+                
 	            if ((int)(*inVoxel0) > 0){
 		            volume[(int)(*inVoxel0)-1] += 1.0;
 		            
@@ -208,11 +205,19 @@ void LabelledGeometricFeatures::calculateOutputSubImage(TSubImage<T>* outputSubI
     output << std::endl;
   }
   _OutputFld -> setStringValue(output.str());
+  
 }
 
+// Assumption: label != 0
+// Assumption: p points to voxel for label
 template <typename T>
-bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label){
+bool LabelledGeometricFeatures::isSurfaceVoxel(TSubImage<T>* inputSubImage0, ImageVector p, int label, const SubImageBox validOutBox){
 	
+    if (p.x == validOutBox.v1.x || p.x == validOutBox.v2.x ||
+        p.y == validOutBox.v1.y || p.y == validOutBox.v2.y ||
+        p.z == validOutBox.v1.z || p.z == validOutBox.v2.z)
+        return true;
+    
 	p.x = p.x + 1;
 	T* inVoxel0 = inputSubImage0->getImagePointer(p);
 	if ((int)(*inVoxel0) != label)
