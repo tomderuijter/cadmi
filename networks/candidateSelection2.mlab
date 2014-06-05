@@ -1,0 +1,3548 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Morphology {
+  internal  {
+    frame = "2390 -4074 120 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "796 389 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "2354 -3978 112 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "796 389 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2302 -3890 104 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "644 388 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic9
+    expression = a+b
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Mask {
+  internal  {
+    frame = "2290 -4554 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "822 519 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask7
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "2130 -4874 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "201 593 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask6
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "2206 -4786 184 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "87 613 676 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents2
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.1
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "2150 -4706 152 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "14 708 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold4
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.7875
+    threshWidth = 0.425
+    threshMin = 0.575
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1910 -4362 152 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "14 708 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold3
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.795
+    threshWidth = 0.41
+    threshMin = 0.59
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1966 -4442 184 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "0 627 676 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents1
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.1
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1890 -4530 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "822 547 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask5
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "2050 -4210 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "822 519 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask4
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module View2D {
+  internal  {
+    frame = "845 -5259 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "960 52 960 1028"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 51
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.31999999
+    lutWidth = 0
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "1722 -4114 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "822 519 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask3
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module ImageBuffer {
+  internal  {
+    frame = "1434 -3354 112 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "759 360 400 415"
+        sizeHint = "400 415"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageBuffer
+    useFileCache = FALSE
+    path = /tmp/
+    useCompression = FALSE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = 1
+    index = 1
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "1802 -4026 176 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "87 613 676 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.08
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1742 -3946 152 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "11 625 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold2
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.81
+    threshWidth = 0.38
+    threshMin = 0.62
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1814 -3546 120 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "143 544 327 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 4
+    kernelY = 4
+    kernelZ = 4
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 32 elems, 4x4x4x1x1x1"
+    numKernelElements = 32
+    kernelElementsSum = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "1594 -3394 80 56"
+    moduleGroupName = "Phased Thresholding"
+  }
+  fields  {
+    instanceName = Mask2
+    mode = MaskedOriginal
+    blending = 0.5
+    background = 0
+  }
+}
+module Mask {
+  internal  {
+    frame = "1834 -3658 80 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "335 408 406 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask1
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "1386 -3250 80 56"
+    moduleGroupName = "Phased Thresholding"
+  }
+  fields  {
+    instanceName = Scale11
+    inputMin = -29.055779832779
+    inputMax = 24.5476333088647
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1798 -3434 152 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "33 371 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.84
+    threshWidth = 0.32
+    threshMin = 0.68
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2957 -2452 112 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 534 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_b_h1
+    function = Multiply
+    constant = 0.617555718741
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1842 -2452 112 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 590 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_b_h0
+    function = Multiply
+    constant = 0.570641607541
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2251 -2698 112 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 590 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_b_o1
+    function = Multiply
+    constant = -0.325571072936
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2112 -2698 120 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 590 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_h1_o1
+    function = Multiply
+    constant = 5.83228190425
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1973 -2698 120 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 590 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_h0_o1
+    function = Multiply
+    constant = -0.0887835249079
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1842 -2698 112 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 618 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_b_o0
+    function = Multiply
+    constant = 0.570446264702
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1703 -2698 120 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 646 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_h1_o0
+    function = Multiply
+    constant = -0.377815182971
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1564 -2698 120 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 646 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight_h0_o0
+    function = Multiply
+    constant = 0.715437606524
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1973 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "440 668 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_0
+    function = Multiply
+    constant = 4.2089243476
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2096 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 730 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_1
+    function = Multiply
+    constant = 0.474866146587
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2219 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 702 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_2
+    function = Multiply
+    constant = -4.98188878895
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2342 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "563 758 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_3
+    function = Multiply
+    constant = 0.257430965878
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2465 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "692 722 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_4
+    function = Multiply
+    constant = 1.84753542721
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2588 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "616 676 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_5
+    function = Multiply
+    constant = -1.69424271022
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2711 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "526 675 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_6
+    function = Multiply
+    constant = -1.88717434293
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2834 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "451 679 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight1_7
+    function = Multiply
+    constant = 2.22183382024
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1973 -2575 232 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "90 553 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = hidden_sigma_1
+    expression = "1 / (1 + exp(-1*(a+b+c+d+e+f+g+h+i)))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 9
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1912 -2936 104 56"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "357 429 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic1
+    expression = "b / a"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1973 -2821 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "1054 350 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = output1
+    expression = a+b+c
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1850 -2821 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "1054 406 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = output0
+    expression = a+b+c
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1916 -2329 96 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "644 444 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = bias
+    expression = "1+a*0"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1722 -2575 232 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "90 553 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = hidden_sigma_0
+    expression = "1 / (1 + exp(-1*(a+b+c+d+e+f+g+h+i)))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 9
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1719 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "451 679 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_7
+    function = Multiply
+    constant = 0.776317090037
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1596 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "526 675 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_6
+    function = Multiply
+    constant = 0.0269637909602
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1473 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "616 676 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_5
+    function = Multiply
+    constant = -0.314004889652
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1350 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "692 722 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_4
+    function = Multiply
+    constant = -0.436863176783
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1227 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "563 758 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_3
+    function = Multiply
+    constant = -0.0412669013238
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1104 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 730 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_2
+    function = Multiply
+    constant = -0.386072319974
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "981 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "829 758 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_1
+    function = Multiply
+    constant = 0.823734302431
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "858 -2452 104 64"
+    moduleGroupName = "Neural Network Gauss"
+    windows  {
+      window _default {
+        geometry = "440 752 264 66"
+        sizeHint = "260 66"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = weight0_0
+    function = Multiply
+    constant = -0.690250162213
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1589 -343 104 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "793 411 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StrictMask
+    filename = /mnt/Multimedia/CADMICompetition/examples/strictmask/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1513 -995 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "796 528 327 190"
+        sizeHint = "327 190"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = ""
+    kernelInfo = "Invalid input, 25 elems, 5x5x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.003906
+(1,0,0,0,0,0):0.015625
+(2,0,0,0,0,0):0.023438
+(3,0,0,0,0,0):0.015625
+(4,0,0,0,0,0):0.003906
+(0,1,0,0,0,0):0.015625
+(1,1,0,0,0,0):0.062500
+(2,1,0,0,0,0):0.093750
+(3,1,0,0,0,0):0.062500
+(4,1,0,0,0,0):0.015625
+(0,2,0,0,0,0):0.023438
+(1,2,0,0,0,0):0.093750
+(2,2,0,0,0,0):0.140625
+(3,2,0,0,0,0):0.093750
+(4,2,0,0,0,0):0.023438
+(0,3,0,0,0,0):0.015625
+(1,3,0,0,0,0):0.062500
+(2,3,0,0,0,0):0.093750
+(3,3,0,0,0,0):0.062500
+(4,3,0,0,0,0):0.015625
+(0,4,0,0,0,0):0.003906
+(1,4,0,0,0,0):0.015625
+(2,4,0,0,0,0):0.023438
+(3,4,0,0,0,0):0.015625
+(4,4,0,0,0,0):0.003906
+"
+    predefKernel = "5x5 Gauss Kernel"
+  }
+}
+module Centroids {
+  internal  {
+    frame = "2101 -729 104 56"
+    moduleGroupName = "Trachea Seedpoint"
+  }
+  fields  {
+    instanceName = Centroids1
+  }
+}
+module ImageBuffer {
+  internal  {
+    frame = "2713 -1487 112 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "1438 545 400 415"
+        sizeHint = "400 415"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = HessianBuffer
+    useFileCache = FALSE
+    path = /tmp/
+    useCompression = FALSE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = 1
+    index = 1
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "2801 -1355 112 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic11
+    function = Add
+    constant = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "2881 -1843 80 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale10
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2789 -1843 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale9
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2701 -1843 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale8
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "2605 -1843 72 56"
+    moduleGroupName = HessianFeatures
+  }
+  fields  {
+    instanceName = Scale7
+    inputMin = -628.25
+    inputMax = 628.25
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2945 -1727 128 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "119 243 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CurvednessArith
+    expression = "sqr(a*a+b*b)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2801 -1727 128 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ShapeIndexArith
+    expression = "(2/pi) * atan((a+b) / (a - b))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2629 -1727 152 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MeanCurvatureArith
+    expression = "(a + b) / 2.0"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2493 -1727 120 64"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CurvatureArith
+    expression = "-(b*b) + (a * c)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 3
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module TypeDecomposer {
+  internal  {
+    frame = "2701 -1603 168 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "593 -498 93 16"
+        sizeHint = "93 16"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TypeDecomposer
+  }
+}
+module GaussHessian {
+  internal  {
+    frame = "2673 -1355 112 56"
+    moduleGroupName = HessianFeatures
+    windows  {
+      window _default {
+        geometry = "534 -625 210 271"
+        sizeHint = "210 271"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GaussHessian
+    sigma = 2
+    unit = voxel
+    calc2D = FALSE
+    calcLaplacian = FALSE
+    applyScaleNormalization = FALSE
+    autoUpdate = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "973 -1763 72 56"
+    moduleGroupName = "Grey values"
+    windows  {
+      window _default {
+        geometry = "511 710 256 350"
+        sizeHint = "256 350"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale6
+    inputMin = -1000
+    inputMax = 1132
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1689 -867 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 225 332 525"
+        sizeHint = "327 525"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "2201 -1583 128 64"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "482 374 312 136"
+        sizeHint = "312 136"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TracheaMarker
+    lowerThreshold = 0
+    setType = VoxelValue
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2061 -569 168 56"
+    moduleGroupName = "Trachea Seedpoint"
+  }
+  fields  {
+    instanceName = PageToImageExtent1
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "2081 -641 128 56"
+    moduleGroupName = "Trachea Seedpoint"
+    windows  {
+      window _default {
+        geometry = "500 311 279 221"
+        sizeHint = "279 221"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1733 -303 104 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "84 280 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LungMask
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "1389 -327 104 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 524 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "702 111 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FullImage
+    filename = /mnt/Multimedia/CADMICompetition/examples/resampled/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "-83 -955 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "14 421 698 599"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke = "/mnt/Multimedia/CADMICompetition/examples/"
+path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/"
+path_wieke_annotations = "/home/wieke/Dropbox/uniwerk/ComputerAidedDiagnosisInMedicalImaging/Annotations/"
+
+featureModules = 	[
+								"Annotations",
+								"GreyValues",
+								"VerticalMean",
+								"Blobness",
+								"Vesselness",
+								"Curvature",
+								"MeanCurvature",
+								"ShapeIndex",
+								"Curvedness"
+							]
+
+# Returns file names of all subject '.mhd' images in the provided path
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+# Loads the resampled iamge and its lung masks
+def loadFile(path, file):
+	inFull = path + "resampled/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("FullImage.filename").value = inFull
+
+	inMask = path + "lungmask/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("LungMask.filename").value = inMask
+
+	inAnnotations = path_wieke_annotations + basename(file).split(".")[0] + ".dcm"
+	CTX.field("AnnotationsInput.filename").value = inAnnotations
+
+# Load expert annotations in marker editor
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath + "example_annotations.txt", "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	CTX.field("AnnotationMarkers.markerList").value = markers
+
+
+def collectOutputs():
+	CTX.field('ImageBuffer.push').touch()
+	output = map(lambda x: CTX.field(x + ".Output").value.splitlines(), featureModules)
+	output = zip(*output)
+	output = map(lambda x: ",".join(x), output)
+	#output = map(lambda x: x[:-1], output)
+	output = "\\r\\n".join(output)
+	CTX.field('ImageBuffer.clear').touch()
+	return output + "\\r\\n"
+
+# Convert annotation to world voxel coordinates
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z
+
+def calculateData(path):
+	
+	# Open Target file
+	dataFile = open(path + 'per_pixel_annotations_data_gauss.csv', 'w')
+#	locationFile = open(path + 'candidate_locations.txt', 'w')
+
+	# Loop over marked subjects
+	for file in getFilePaths(path):
+		
+		# Load the relevant subject masks
+		print "Loading " + basename(file)
+		loadFile(path, file)
+
+		# Calculate the Hessian
+		CTX.field("HessianBuffer.clear").touch()
+		CTX.field("HessianBuffer.push").touch()
+
+		# Load the expert annotations
+		subjectNr = int(basename(file).split(".")[0][-2:])
+		scale = 0.5
+		
+		dataFile.write("# File " + basename(file) + "\\r\\n")
+		output = collectOutputs()
+		dataFile.write(output)
+		dataFile.flush()
+
+	print "Done processing."
+	dataFile.close()
+			
+
+
+*"
+    wakeUpCode = ""
+    code = calculateData(path_wieke)
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "2149 -1907 72 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "831 390 261 354"
+        sizeHint = "256 354"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale5
+    inputMin = 0
+    inputMax = 1.89083290100098
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module RegionGrowing {
+  internal  {
+    frame = "2125 -1747 120 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "635 259 648 617"
+        sizeHint = "648 617"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RegionGrowing
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -75.65
+    upperThreshold = 75.65
+    autoThreshold = TRUE
+    basicNeighborhoodType = BNBH_3D_6_XYZ
+    extendedNeighborhoodType = ENBH_2D_4_XY
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    initStackSizeTweak = 0.1000000015
+    prohibitInputScalingTweak = FALSE
+    incrementalUpdateMode = Smart
+    useExtendedNBH = FALSE
+    calcBoundaryOverlap = FALSE
+    unitType = UnitTypeGrayValue
+    internalAccuracy = 14Bit
+    autoUpdateUnitType = FALSE
+    stretchOutputOverTime = FALSE
+    unitLabel = ""
+    showPartialResults = FALSE
+    acceptedMarkerType = -1
+    autoSelectHigherCoords = TRUE
+    cCoord = 0
+    uCoord = 0
+    posFillValue = -1
+    negFillValue = 0
+    invertResult = TRUE
+    showOuterBoundariesOnly = FALSE
+    maxVolume = 100
+    maxVolumeEnabled = FALSE
+    intervalSize = 5
+  }
+}
+module DtfSkeletonization {
+  internal  {
+    frame = "2113 -1819 144 56"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "679 386 355 338"
+        sizeHint = "347 338"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = DtfSkeletonization
+    updateSkeletonGraph = TRUE
+    compileGraphVoxels = TRUE
+    objectMinValue = 1
+    cavityVolume = 10
+    maxDistance = 10000
+    useMaxDistance = FALSE
+    autoUpdateMode = AutoUpdate
+    skeletonOnly = FALSE
+  }
+}
+module ImagePropertyConvert {
+  internal  {
+    frame = "1997 -1583 168 64"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "464 -814 351 648"
+        sizeHint = "351 648"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LungMaskConnector
+    changeDimensionInfo = FALSE
+    cDimInfo = ""
+    tDimInfo = ""
+    uDimInfo = ""
+    a00 = 1
+    a01 = 0
+    a02 = 0
+    a03 = 0
+    a10 = 0
+    a11 = 1
+    a12 = 0
+    a13 = 0
+    a20 = 0
+    a21 = 0
+    a22 = 1
+    a23 = 0
+    a30 = 0
+    a31 = 0
+    a32 = 0
+    a33 = 1
+    worldMatrix = "1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1"
+    changeDatatype = FALSE
+    datatype = "unsigned int8"
+    changePageSize = TRUE
+    pageSizeX = 128
+    pageSizeY = 128
+    pageSizeZ = 128
+    pageSizeC = 1
+    pageSizeT = 1
+    pageSizeU = 1
+    changeMinGreyvalue = FALSE
+    minGreyvalue = 0
+    changeMaxGreyvalue = FALSE
+    maxGreyvalue = 1
+    changeWorldMatrix = FALSE
+    voxelSizeX = 1
+    voxelSizeY = 1
+    voxelSizeZ = 1
+    autoApply = TRUE
+  }
+}
+module Vesselness {
+  internal  {
+    frame = "2013 -1671 152 64"
+    moduleGroupName = Vesselness
+    windows  {
+      window _default {
+        geometry = "928 -866 244 384"
+        sizeHint = "214 384"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CalculateVesselness
+    startSigma = 1
+    endSigma = 2
+    nbrOfScales = 1
+    unit = voxel
+    calc2D = FALSE
+    normalizedMeasure = FALSE
+    darkVessels = FALSE
+    autoUpdate = TRUE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1781 -1591 120 64"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = BlobnessInput
+    function = Add
+    constant = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "1809 -1899 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 -661 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 0
+    inputMax = 1
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "1405 -1891 72 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "505 -661 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale4
+    inputMin = 0
+    inputMax = 0.931227147579193
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1793 -1827 96 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "348 167 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic
+    expression = "max(a, b)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module LoG {
+  internal  {
+    frame = "1849 -1675 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "474 286 336 270"
+        sizeHint = "331 270"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LoG1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelExt = 2
+    sigma = 1.2
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    normalize = TRUE
+  }
+}
+module LoG {
+  internal  {
+    frame = "1761 -1675 64 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "474 286 336 270"
+        sizeHint = "331 270"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LoG2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    kernelExt = 3
+    sigma = 2
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    normalize = TRUE
+  }
+}
+module Scale {
+  internal  {
+    frame = "1845 -1747 72 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 250 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale3
+    inputMin = -9.44298299182862e+18
+    inputMax = 5.96546135939403e+18
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "1757 -1747 72 56"
+    moduleGroupName = Blobness
+    windows  {
+      window _default {
+        geometry = "505 250 303 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale2
+    inputMin = -9.3810398052546e+18
+    inputMax = 6.27167644724127e+18
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "1413 -871 216 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "503 -522 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StrictImageFeatureConnector
+    function = Add
+    constant = 0
+  }
+}
+module Scale {
+  internal  {
+    frame = "1405 -1659 72 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "505 250 274 343"
+        sizeHint = "269 343"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = -1000
+    inputMax = 1101
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = TRUE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1389 -1819 104 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "515 389 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic2
+    function = Multiply
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1193 -1739 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor4
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1321 -1739 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution4
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    1.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    0.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):1.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):0.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1577 -1739 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "0 44 640 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor3
+    kernelX = 1
+    kernelY = 1
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 0
+    numElements = 3
+    elementSum = 1
+    status = "#Elems=3, Sum=1.000000, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1449 -1739 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "51 124 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution3
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.000000
+
+(*,0,1,0,0,0):    0.000000
+
+(*,0,2,0,0,0):    1.000000
+
+"
+    kernelInfo = "3 elems, 1x1x3x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.000000
+(0,0,1,0,0,0):0.000000
+(0,0,2,0,0,0):1.000000
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module KernelEditor {
+  internal  {
+    frame = "1513 -1587 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "847 44 425 752"
+        sizeHint = "425 858"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = KernelEditor2
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    fieldWidth = 10
+    precision = 6
+    value = 1
+    numElements = 9
+    elementSum = 0.999999
+    status = "#Elems=9, Sum=0.999999, 2 Undos, 0 Redos"
+    kernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+  }
+}
+module Convolution {
+  internal  {
+    frame = "1385 -1587 112 56"
+    moduleGroupName = "Vertical Mean"
+    windows  {
+      window _default {
+        geometry = "399 449 342 177"
+        sizeHint = "337 177"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Convolution2
+    borderHandling = PadSrcClamp
+    fillValue = -1000
+    referenceExtentMode = Overlap
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    externalKernel = "(*,0,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,1,0,0,0,0):    0.111111,  0.111111,  0.111111
+(*,2,0,0,0,0):    0.111111,  0.111111,  0.111111
+
+"
+    kernelInfo = "9 elems, 3x3x1x1x1x1"
+    kernelOutput = "(0,0,0,0,0,0):0.111111
+(1,0,0,0,0,0):0.111111
+(2,0,0,0,0,0):0.111111
+(0,1,0,0,0,0):0.111111
+(1,1,0,0,0,0):0.111111
+(2,1,0,0,0,0):0.111111
+(0,2,0,0,0,0):0.111111
+(1,2,0,0,0,0):0.111111
+(2,2,0,0,0,0):0.111111
+"
+    predefKernel = "From Kernel Input"
+  }
+}
+module WorldVoxelConvert {
+  internal  {
+    frame = "858 -971 152 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "434 299 410 245"
+        sizeHint = "410 245"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1354 515 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = WorldVoxelConvert
+    voxelX = 164.5
+    voxelY = 213.5
+    voxelZ = 13
+    worldX = 204.339922708
+    worldY = 265.207133728
+    worldZ = 18.199999738
+    voxelPos = "164.5 213.5 13"
+    worldPos = "204.339922708 265.207133728 18.199999738"
+    voxelMode = FALSE
+    worldMode = TRUE
+    intVoxelCoords = FALSE
+    keepConstant = World
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "1078 -1003 112 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "555 160 694 538"
+        sizeHint = "684 538"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 1 0.290196078431373"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = Circle
+    markerType2 = Circle
+    markerType3 = Triangle
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 15
+    markerSize2 = 15
+    markerSize3 = 15
+    markerSize4 = 4
+    markerSize5 = 4
+    markerSize6 = 4
+    markerSize7 = 4
+    markerSize8 = 4
+    markerSize9 = 4
+    markerSize10 = 4
+    markerSize11 = 4
+    markerSize12 = 4
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = 1
+    name3 = 2
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 0
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "1050 -1099 184 56"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "319 64 719 695"
+        sizeHint = "675 695"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 1
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = -1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = RemoveFirst
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module ConstantXMarkerList {
+  internal  {
+    frame = "1074 -935 168 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "797 236 505 625"
+        sizeHint = "394 573"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "410 187 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AnnotationMarkers
+    markerList = "106.207072288 251.543065948 215.599996918 0 0 0 2
+198.128982808 196.265700838 214.899996928 0 0 0 1
+240.984468118 186.949290988 211.399996978 0 0 0 1
+186.328196998 206.824298668 203.699997088 0 0 0 1
+115.523482138 248.437595998 199.499997148 0 0 0 1
+65.214868948 222.972742408 198.099997168 0 0 0 1
+189.433666948 142.851617698 187.599997318 0 0 0 2
+244.089938068 236.636810188 185.499997348 0 0 0 1
+256.511817868 168.937565278 183.399997378 0 0 0 1
+75.152372788 159.000061438 182.699997388 0 0 0 1
+234.773528218 139.746147748 181.999997398 0 0 0 2
+116.765670118 255.890723878 181.299997408 0 0 0 1
+253.406347918 216.761802508 179.899997428 0 0 0 2
+249.679783978 223.593836398 177.099997468 0 0 0 1
+255.890723878 222.972742408 167.999997598 0 0 0 2
+262.101663778 180.117257098 163.099997668 0 0 0 1
+253.406347918 150.925839568 156.799997758 0 0 0 1
+261.480569788 202.476640738 150.499997848 0 0 0 1
+244.089938068 251.543065948 143.499997948 0 0 0 1
+58.382835058 163.347719368 142.099997968 0 0 0 1
+70.183620868 111.175824208 140.699997988 0 0 0 1
+85.710970618 112.418012188 136.499998048 0 0 0 2
+46.582049248 217.382896498 136.499998048 0 0 0 1
+75.152372788 204.961016698 118.299998308 0 0 0 1
+52.171895158 249.058689988 110.599998418 0 0 0 2
+44.718767278 133.535207848 105.699998488 0 0 0 1
+130.429737898 263.964945748 102.199998538 0 0 0 1
+29.191417528 136.019583808 101.499998548 0 0 0 1
+270.175885648 206.824298668 93.799998658 0 0 0 2
+244.089938068 255.890723878 92.399998678 0 0 0 2
+252.164159938 241.605562108 83.299998808 0 0 0 2
+261.480569788 236.015716198 67.199999038 0 0 0 2
+62.730492988 257.132911858 56.699999188 0 0 0 1
+37.265639398 232.289152258 51.799999258 0 0 0 1
+197.507888818 255.890723878 48.299999308 0 0 0 1
+281.976671458 178.253975128 44.799999358 0 0 0 1
+115.523482138 273.281355598 20.299999708 0 0 0 2
+204.339922708 265.207133728 18.199999738 0 0 0 1
+\\"
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "858 -1063 136 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _default {
+        geometry = "52 487 698 553"
+        sizeHint = "698 553"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 196 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = CollectLabels
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_wieke = "/mnt/Multimedia/CADMICompetition/examples/example_annotations.txt"
+
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath, "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers
+
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z*"
+    wakeUpCode = ""
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_wieke,2,0.5)*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "986 -1207 120 64"
+    moduleGroupName = "Marked View"
+    windows  {
+      window _automatic {
+        geometry = "153 45 301 440"
+        sizeHint = "301 440"
+        wasOpen = no
+      }
+      window _default {
+        geometry = "544 230 400 400"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = view
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = TRUE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 1
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = TRUE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = FALSE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+connections  {
+  Morphology1.input0 = Morphology.output0
+  Morphology.input0 = Arithmetic9.output0
+  Arithmetic9.input0 = Mask3.output0
+  Arithmetic9.input1 = Mask5.output0
+  Arithmetic9.input2 = Mask6.output0
+  Mask7.input0 = Mask4.output0
+  Mask7.input1 = ConnectedComponents1.output0
+  Mask6.input0 = IntervalThreshold4.output0
+  Mask6.input1 = ConnectedComponents2.output0
+  ConnectedComponents2.input0 = IntervalThreshold4.output0
+  IntervalThreshold4.input0 = Mask7.output0
+  IntervalThreshold3.input0 = Mask4.output0
+  ConnectedComponents1.input0 = IntervalThreshold3.output0
+  Mask5.input0 = IntervalThreshold3.output0
+  Mask5.input1 = ConnectedComponents1.output0
+  Mask4.input0 = Mask1.output0
+  Mask4.input1 = IntervalThreshold2.output0
+  View2D.inImage = Morphology1.output0
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
+  Mask3.input0 = IntervalThreshold2.output0
+  Mask3.input1 = ConnectedComponents.output0
+  ImageBuffer.inImage = Scale11.output0
+  ConnectedComponents.input0 = IntervalThreshold2.output0
+  IntervalThreshold2.input0 = Mask1.output0
+  Morphology2.input0 = IntervalThreshold1.output0
+  Mask2.input0 = ImageBuffer.outImage
+  Mask2.input1 = LungMask.output0
+  Mask1.input0 = Mask2.output0
+  Mask1.input1 = Morphology2.output0
+  Scale11.input0 = Arithmetic1.output0
+  IntervalThreshold1.input0 = Mask2.output0
+  weight_b_h1.input0 = bias.output0
+  weight_b_h0.input0 = bias.output0
+  weight_b_o1.input0 = bias.output0
+  weight_h1_o1.input0 = hidden_sigma_1.output0
+  weight_h0_o1.input0 = hidden_sigma_0.output0
+  weight_b_o0.input0 = bias.output0
+  weight_h1_o0.input0 = hidden_sigma_1.output0
+  weight_h0_o0.input0 = hidden_sigma_0.output0
+  weight1_0.input0 = Scale6.output0
+  weight1_1.input0 = Scale4.output0
+  weight1_2.input0 = Scale.output0
+  weight1_3.input0 = Scale5.output0
+  weight1_4.input0 = Scale7.output0
+  weight1_5.input0 = Scale8.output0
+  weight1_6.input0 = Scale9.output0
+  weight1_7.input0 = Scale10.output0
+  hidden_sigma_1.input0 = weight1_0.output0
+  hidden_sigma_1.input1 = weight1_1.output0
+  hidden_sigma_1.input2 = weight1_2.output0
+  hidden_sigma_1.input3 = weight1_3.output0
+  hidden_sigma_1.input4 = weight1_4.output0
+  hidden_sigma_1.input5 = weight1_5.output0
+  hidden_sigma_1.input6 = weight1_6.output0
+  hidden_sigma_1.input7 = weight1_7.output0
+  hidden_sigma_1.input8 = weight_b_h1.output0
+  Arithmetic1.input0 = output0.output0
+  Arithmetic1.input1 = output1.output0
+  output1.input0 = weight_h0_o1.output0
+  output1.input1 = weight_h1_o1.output0
+  output1.input2 = weight_b_o1.output0
+  output0.input0 = weight_h0_o0.output0
+  output0.input1 = weight_h1_o0.output0
+  output0.input2 = weight_b_o0.output0
+  bias.input0 = Scale6.output0
+  hidden_sigma_0.input0 = weight0_0.output0
+  hidden_sigma_0.input1 = weight0_1.output0
+  hidden_sigma_0.input2 = weight0_2.output0
+  hidden_sigma_0.input3 = weight0_3.output0
+  hidden_sigma_0.input4 = weight0_4.output0
+  hidden_sigma_0.input5 = weight0_5.output0
+  hidden_sigma_0.input6 = weight0_6.output0
+  hidden_sigma_0.input7 = weight0_7.output0
+  hidden_sigma_0.input8 = weight_b_h0.output0
+  weight0_7.input0 = Scale10.output0
+  weight0_6.input0 = Scale9.output0
+  weight0_5.input0 = Scale8.output0
+  weight0_4.input0 = Scale7.output0
+  weight0_3.input0 = Scale5.output0
+  weight0_2.input0 = Scale.output0
+  weight0_1.input0 = Scale4.output0
+  weight0_0.input0 = Scale6.output0
+  Convolution1.input0 = StrictImageFeatureConnector.output0
+  Centroids1.input0 = AxisEdgeMask.output0
+  HessianBuffer.inImage = GaussHessian.output0
+  Scale10.input0 = CurvednessArith.output0
+  Scale9.input0 = ShapeIndexArith.output0
+  Scale8.input0 = MeanCurvatureArith.output0
+  Scale7.input0 = CurvatureArith.output0
+  CurvednessArith.input0 = TypeDecomposer.output0
+  CurvednessArith.input1 = TypeDecomposer.output3
+  ShapeIndexArith.input0 = TypeDecomposer.output0
+  ShapeIndexArith.input1 = TypeDecomposer.output3
+  MeanCurvatureArith.input0 = TypeDecomposer.output0
+  MeanCurvatureArith.input1 = TypeDecomposer.output3
+  CurvatureArith.input0 = TypeDecomposer.output0
+  CurvatureArith.input1 = TypeDecomposer.output1
+  CurvatureArith.input2 = TypeDecomposer.output3
+  TypeDecomposer.input0 = HessianBuffer.outImage
+  GaussHessian.input0 = Convolution1.output0
+  Scale6.input0 = Convolution1.output0
+  Mask.input0 = StrictMask.output0
+  TracheaMarker.input0 = Centroids1.output0
+  PageToImageExtent1.input0 = LungMask.output0
+  AxisEdgeMask.input0 = PageToImageExtent1.output0
+  Scale5.input0 = DtfSkeletonization.output0
+  RegionGrowing.input0 = CalculateVesselness.output0
+  RegionGrowing.inMarkerList = TracheaMarker.outputXMarkerList
+  DtfSkeletonization.input0 = RegionGrowing.output0
+  LungMaskConnector.input0 = Convolution1.output0
+  CalculateVesselness.input0 = LungMaskConnector.output0
+  BlobnessInput.input0 = Convolution1.output0
+  Scale.input0 = Arithmetic.output0
+  Scale4.input0 = Arithmetic2.output0
+  Arithmetic.input0 = Scale2.output0
+  Arithmetic.input1 = Scale3.output0
+  LoG1.input0 = BlobnessInput.output0
+  LoG2.input0 = BlobnessInput.output0
+  Scale3.input0 = LoG1.output0
+  Scale2.input0 = LoG2.output0
+  StrictImageFeatureConnector.input0 = FullImage.output0
+  Scale1.input0 = Convolution2.output0
+  Arithmetic2.input0 = Convolution4.output0
+  Arithmetic2.input1 = Convolution3.output0
+  Convolution4.input0 = Scale1.output0
+  Convolution4.externalKernel = KernelEditor4.kernel
+  Convolution3.input0 = Scale1.output0
+  Convolution3.externalKernel = KernelEditor3.kernel
+  Convolution2.input0 = Convolution1.output0
+  Convolution2.externalKernel = KernelEditor2.kernel
+  WorldVoxelConvert.input0 = FullImage.output0
+  SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
+  SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inInvPostLUT = SoView2DMarkerEditor.self
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 168
+        objectName = "Marked View"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 157
+        objectName = "Vertical Mean"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 639
+        objectName = Blobness
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 138
+        objectName = Vesselness
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 225
+        objectName = "Trachea Seedpoint"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 296
+        objectName = "Grey values"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 274
+        objectName = HessianFeatures
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 254
+        objectName = "Neural Network Gauss"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 495
+        objectName = "Phased Thresholding"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}

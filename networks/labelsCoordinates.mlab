@@ -1,0 +1,2312 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module ImageBuffer {
+  internal  {
+    frame = "674 -724 120 64"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = coordinatesbuffer
+    useFileCache = FALSE
+    path = /tmp/
+    useCompression = FALSE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = -1
+    index = 1
+  }
+}
+module PixelCoordinates {
+  internal  {
+    frame = "678 -620 112 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "486 323 306 209"
+        sizeHint = "306 209"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = coordinates
+    Output = "76 163 23
+85 164 25
+92 162 26
+72 160 28
+75 163 28
+187 166 28
+64 156 29
+197 164 29
+73 159 30
+65 154 31
+90 166 31
+171 167 31
+82 161 32
+68 154 33
+72 161 33
+59 158 34
+174 163 34
+163 165 34
+183 160 35
+97 152 36
+69 151 37
+74 155 37
+66 161 37
+81 157 38
+164 158 38
+74 160 38
+54 145 39
+86 151 39
+96 153 39
+85 165 39
+46 143 40
+60 164 40
+80 163 41
+183 165 41
+101 148 42
+166 155 42
+207 148 43
+77 162 43
+183 164 43
+70 167 43
+43 135 44
+221 139 44
+97 148 44
+90 151 44
+51 152 44
+198 155 44
+75 163 44
+179 165 44
+85 166 44
+57 142 45
+47 144 45
+166 154 45
+160 156 45
+86 164 45
+90 169 45
+216 143 46
+227 143 46
+51 148 46
+204 148 46
+197 153 46
+77 158 46
+87 160 46
+61 161 46
+182 163 46
+92 147 47
+202 149 47
+60 160 47
+195 163 47
+208 164 47
+180 176 47
+91 146 48
+200 149 48
+59 156 48
+215 142 49
+166 151 49
+163 155 49
+190 160 49
+102 166 49
+204 169 49
+200 173 49
+195 174 49
+47 135 50
+95 145 50
+210 161 50
+103 164 50
+81 166 50
+71 167 50
+186 167 50
+46 126 51
+108 137 51
+59 139 51
+164 154 51
+187 159 51
+214 162 51
+83 163 51
+204 167 51
+221 133 52
+50 136 52
+213 142 52
+166 149 52
+207 159 52
+183 161 52
+171 166 52
+169 167 52
+209 167 52
+200 173 52
+49 152 53
+217 152 53
+197 170 53
+54 132 54
+104 140 54
+210 141 54
+55 152 54
+159 154 54
+215 158 54
+76 161 54
+75 163 54
+171 163 54
+56 136 55
+167 148 55
+222 153 55
+101 166 55
+87 171 55
+219 134 56
+171 160 56
+62 162 56
+51 132 57
+207 141 57
+63 158 57
+68 165 57
+96 137 58
+169 146 58
+61 155 58
+206 165 58
+212 165 58
+191 173 58
+109 130 59
+44 135 59
+41 142 59
+50 151 59
+202 154 59
+56 158 59
+174 160 59
+194 160 59
+176 171 59
+44 112 60
+40 120 60
+49 136 60
+72 146 60
+200 146 60
+53 147 60
+97 153 60
+92 157 60
+217 159 60
+160 160 60
+70 162 60
+213 163 60
+49 154 61
+198 163 61
+210 169 61
+196 170 61
+202 139 62
+73 160 62
+206 160 62
+79 162 62
+202 164 62
+82 121 63
+72 128 63
+75 133 63
+171 146 63
+45 148 63
+223 149 63
+93 154 63
+160 159 63
+48 119 64
+88 146 64
+76 158 64
+94 160 64
+86 164 64
+179 169 64
+196 176 64
+47 103 65
+223 118 65
+50 119 65
+206 158 65
+57 162 65
+58 83 66
+51 99 66
+113 120 66
+217 122 66
+85 127 66
+74 132 66
+120 138 66
+216 141 66
+62 152 66
+220 157 66
+58 158 66
+66 163 66
+62 169 66
+53 100 67
+99 117 67
+86 129 67
+221 133 67
+116 142 67
+211 147 67
+64 151 67
+204 157 67
+66 161 67
+80 165 67
+179 168 67
+83 76 68
+54 101 68
+186 126 68
+118 138 68
+197 138 68
+205 144 68
+51 152 68
+69 152 68
+217 156 68
+61 163 68
+205 169 68
+189 171 68
+171 174 68
+182 174 68
+56 102 69
+170 123 69
+75 131 69
+122 134 69
+117 140 69
+197 143 69
+201 143 69
+51 144 69
+44 148 69
+89 154 69
+65 157 69
+86 158 69
+85 162 69
+68 167 69
+187 167 69
+180 173 69
+172 125 70
+167 128 70
+120 137 70
+116 141 70
+221 148 70
+179 166 70
+189 166 70
+197 175 70
+50 90 71
+58 104 71
+43 131 71
+115 142 71
+58 146 71
+104 147 71
+200 154 71
+165 161 71
+184 166 71
+101 167 71
+204 170 71
+177 173 71
+47 102 72
+43 103 72
+60 105 72
+76 132 72
+186 132 72
+48 145 72
+61 152 72
+216 162 72
+102 166 72
+62 168 72
+77 173 72
+194 176 72
+185 179 72
+207 100 73
+50 101 73
+61 106 73
+195 138 73
+195 142 73
+58 153 73
+55 155 73
+104 164 73
+61 165 73
+175 170 73
+166 171 73
+186 177 73
+206 106 74
+194 140 74
+110 150 74
+161 155 74
+179 164 74
+174 168 74
+185 179 74
+75 98 75
+104 117 75
+48 127 75
+187 134 75
+193 137 75
+221 140 75
+69 142 75
+104 144 75
+171 145 75
+198 151 75
+212 152 75
+70 162 75
+75 166 75
+176 174 75
+197 174 75
+179 179 75
+91 77 76
+76 100 76
+205 108 76
+51 125 76
+217 135 76
+193 141 76
+207 152 76
+99 160 76
+66 163 76
+172 163 76
+190 171 76
+75 173 76
+90 103 77
+39 121 77
+204 127 77
+191 138 77
+191 140 77
+95 156 77
+60 166 77
+78 169 77
+183 179 77
+78 103 78
+59 120 78
+43 121 78
+222 124 78
+104 140 78
+225 146 78
+197 149 78
+200 149 78
+221 149 78
+177 163 78
+188 164 78
+74 169 78
+99 116 79
+47 122 79
+54 123 79
+206 125 79
+216 126 79
+196 148 79
+226 149 79
+95 152 79
+162 163 79
+217 163 79
+69 166 79
+213 167 79
+75 73 80
+91 108 80
+213 114 80
+210 128 80
+195 147 80
+55 154 80
+218 156 80
+215 165 80
+199 168 80
+205 107 81
+92 112 81
+207 134 81
+183 137 81
+220 140 81
+193 146 81
+96 149 81
+197 149 81
+221 153 81
+163 160 81
+175 161 81
+70 165 81
+207 105 82
+215 115 82
+114 128 82
+205 130 82
+116 140 82
+46 142 82
+224 143 82
+218 144 82
+59 152 82
+217 152 82
+215 156 82
+207 158 82
+161 171 82
+202 172 82
+209 102 83
+48 105 83
+216 140 83
+190 143 83
+217 143 83
+45 145 83
+103 149 83
+213 155 83
+218 155 83
+168 160 83
+213 165 83
+209 169 83
+45 102 84
+197 118 84
+120 138 84
+109 139 84
+62 148 84
+102 153 84
+68 159 84
+174 160 84
+217 160 84
+64 162 84
+209 166 84
+195 170 84
+175 175 84
+214 106 85
+85 115 85
+196 122 85
+217 131 85
+121 137 85
+105 144 85
+219 147 85
+208 154 85
+52 156 85
+100 157 85
+215 158 85
+215 162 85
+210 164 85
+207 169 85
+197 170 85
+189 171 85
+200 171 85
+204 171 85
+211 100 86
+210 106 86
+117 139 86
+217 148 86
+219 152 86
+73 158 86
+219 158 86
+199 161 86
+82 163 86
+205 163 86
+212 165 86
+177 166 86
+200 173 86
+193 176 86
+100 81 87
+112 106 87
+46 128 87
+222 131 87
+210 132 87
+47 136 87
+211 137 87
+116 142 87
+170 151 87
+202 152 87
+52 153 87
+81 158 87
+218 159 87
+198 173 87
+212 99 88
+192 128 88
+55 136 88
+106 139 88
+94 153 88
+213 154 88
+220 156 88
+183 160 88
+217 160 88
+56 162 88
+211 164 88
+82 167 88
+220 135 89
+217 157 89
+92 159 89
+215 162 89
+68 164 89
+82 170 89
+200 171 89
+208 108 90
+214 139 90
+179 140 90
+86 142 90
+213 146 90
+210 147 90
+64 153 90
+194 158 90
+64 166 90
+211 166 90
+67 81 91
+87 82 91
+110 97 91
+111 131 91
+216 134 91
+215 139 91
+165 146 91
+56 147 91
+62 156 91
+204 160 91
+205 165 91
+185 166 91
+74 113 92
+46 140 92
+164 148 92
+192 157 92
+108 160 92
+103 165 92
+209 165 92
+202 171 92
+184 179 92
+215 132 93
+57 143 93
+56 148 93
+55 151 93
+189 155 93
+61 159 93
+193 160 93
+105 162 93
+195 162 93
+212 162 93
+100 167 93
+187 171 93
+205 171 93
+197 174 93
+191 177 93
+87 83 94
+54 109 94
+53 118 94
+83 126 94
+221 132 94
+52 154 94
+61 164 94
+197 170 94
+199 172 94
+96 74 95
+77 85 95
+57 110 95
+212 117 95
+44 119 95
+219 138 95
+204 141 95
+169 145 95
+165 147 95
+208 151 95
+187 153 95
+169 158 95
+201 164 95
+210 164 95
+72 167 95
+205 167 95
+166 168 95
+108 81 96
+106 84 96
+82 116 96
+118 138 96
+48 145 96
+211 153 96
+168 162 96
+102 165 96
+98 168 96
+207 169 96
+180 180 96
+105 85 97
+106 87 97
+191 128 97
+114 135 97
+201 139 97
+207 156 97
+103 164 97
+73 165 97
+203 169 97
+201 171 97
+70 85 98
+88 86 98
+79 87 98
+63 88 98
+203 115 98
+118 139 98
+183 154 98
+193 175 98
+188 178 98
+181 180 98
+64 89 99
+213 110 99
+55 113 99
+63 131 99
+226 140 99
+114 142 99
+218 143 99
+113 82 100
+71 86 100
+105 88 100
+52 129 100
+60 130 100
+116 131 100
+205 134 100
+119 136 100
+225 143 100
+203 170 100
+159 171 100
+189 176 100
+106 84 101
+72 87 101
+108 87 101
+202 134 101
+210 135 101
+117 139 101
+225 140 101
+108 143 101
+81 144 101
+112 146 101
+224 146 101
+204 152 101
+84 164 101
+196 174 101
+191 176 101
+52 113 102
+212 138 102
+115 142 102
+224 142 102
+86 160 102
+194 166 102
+167 175 102
+56 86 103
+63 91 103
+194 104 103
+48 114 103
+214 134 103
+109 139 103
+222 146 103
+222 149 103
+205 150 103
+209 152 103
+66 161 103
+214 163 103
+183 174 103
+79 84 104
+56 91 104
+42 115 104
+211 119 104
+87 139 104
+201 149 104
+221 149 104
+220 152 104
+194 163 104
+212 165 104
+187 169 104
+168 172 104
+178 173 104
+78 82 105
+62 87 105
+193 92 105
+190 95 105
+92 96 105
+109 136 105
+101 149 105
+89 158 105
+217 158 105
+165 169 105
+196 170 105
+185 135 106
+200 147 106
+220 150 106
+202 154 106
+216 159 106
+76 160 106
+91 161 106
+190 161 106
+84 80 107
+65 91 107
+214 116 107
+169 145 107
+219 151 107
+56 153 107
+218 153 107
+90 156 107
+67 158 107
+212 164 107
+200 165 107
+163 167 107
+191 169 107
+83 83 108
+188 97 108
+190 104 108
+71 121 108
+198 143 108
+68 152 108
+217 154 108
+77 159 108
+162 165 108
+189 168 108
+206 169 108
+168 175 108
+108 80 109
+82 87 109
+102 96 109
+198 98 109
+101 102 109
+70 130 109
+100 146 109
+216 155 109
+215 157 109
+212 163 109
+66 165 109
+194 96 110
+58 143 110
+214 159 110
+106 161 110
+209 165 110
+203 172 110
+100 106 111
+43 121 111
+41 124 111
+64 130 111
+63 142 111
+213 160 111
+161 162 111
+206 169 111
+173 170 111
+195 175 111
+115 139 112
+67 142 112
+103 153 112
+88 158 112
+208 164 112
+115 82 113
+187 100 113
+192 100 113
+98 105 113
+213 133 113
+203 143 113
+204 152 113
+193 169 113
+99 106 114
+210 123 114
+206 133 114
+207 143 114
+62 149 114
+199 152 114
+208 161 114
+86 162 114
+183 164 114
+185 101 115
+191 102 115
+59 110 115
+193 149 115
+171 168 115
+204 169 115
+189 103 116
+184 109 116
+97 130 116
+201 139 116
+114 141 116
+187 147 116
+200 172 116
+89 125 117
+88 132 117
+101 151 117
+209 163 117
+207 165 117
+166 169 117
+203 169 117
+203 96 118
+183 103 118
+187 106 118
+103 146 118
+190 158 118
+199 172 118
+190 175 118
+100 129 119
+112 135 119
+83 155 119
+185 156 119
+188 157 119
+196 172 119
+201 96 120
+182 104 120
+185 108 120
+116 133 120
+115 141 120
+159 148 120
+175 152 120
+183 156 120
+198 170 120
+201 92 121
+182 111 121
+58 137 121
+86 158 121
+190 169 121
+166 74 122
+178 85 122
+64 137 122
+207 148 122
+187 168 122
+105 72 123
+168 75 123
+64 143 123
+111 148 123
+69 156 123
+158 161 123
+114 140 124
+102 146 124
+109 146 124
+59 152 124
+70 155 124
+173 169 124
+170 77 125
+107 91 125
+178 111 125
+174 114 125
+212 127 125
+96 154 125
+196 164 125
+85 76 126
+101 76 126
+173 77 126
+191 87 126
+102 97 126
+203 103 126
+43 109 126
+200 110 126
+194 111 126
+91 166 126
+96 167 126
+180 171 126
+121 67 127
+196 95 127
+58 107 127
+111 126 127
+200 142 127
+60 144 127
+97 166 127
+77 78 128
+178 82 128
+69 88 128
+50 106 128
+53 112 128
+222 141 128
+202 142 128
+57 145 128
+221 146 128
+185 147 128
+66 150 128
+106 160 128
+98 165 128
+98 76 129
+190 87 129
+72 91 129
+68 104 129
+189 110 129
+174 118 129
+109 127 129
+115 140 129
+221 144 129
+171 154 129
+117 67 130
+111 77 130
+98 82 130
+179 85 130
+65 87 130
+199 94 130
+186 110 130
+62 111 130
+185 116 130
+220 146 130
+219 148 130
+172 155 130
+115 68 131
+85 76 131
+101 77 131
+64 96 131
+205 98 131
+170 118 131
+207 142 131
+218 149 131
+199 150 131
+63 151 131
+162 152 131
+70 154 131
+173 156 131
+103 72 132
+79 82 132
+77 84 132
+56 106 132
+84 110 132
+181 110 132
+59 115 132
+51 116 132
+166 121 132
+113 126 132
+161 146 132
+92 149 132
+60 152 132
+217 152 132
+174 157 132
+113 69 133
+103 78 133
+100 79 133
+110 80 133
+108 82 133
+118 87 133
+204 116 133
+190 146 133
+216 152 133
+215 154 133
+194 162 133
+165 167 133
+205 168 133
+111 71 134
+63 94 134
+68 100 134
+195 108 134
+197 117 134
+114 126 134
+100 145 134
+90 154 134
+213 156 134
+188 158 134
+212 158 134
+178 160 134
+108 72 135
+83 87 135
+53 107 135
+160 154 135
+187 156 135
+208 163 135
+165 166 135
+106 103 136
+188 110 136
+113 127 136
+114 143 136
+101 147 136
+213 156 136
+78 160 136
+171 78 137
+99 92 137
+202 103 137
+81 108 137
+106 123 137
+110 133 137
+116 139 137
+107 149 137
+182 162 137
+204 165 137
+92 85 138
+75 94 138
+174 101 138
+171 109 138
+170 116 138
+50 125 138
+94 136 138
+201 144 138
+157 147 138
+194 173 138
+192 174 138
+177 177 138
+121 67 139
+98 102 139
+55 125 139
+115 140 139
+174 167 139
+194 168 139
+131 69 140
+119 83 140
+89 84 140
+113 93 140
+94 100 140
+169 112 140
+204 113 140
+106 122 140
+110 126 140
+115 126 140
+210 159 140
+201 168 140
+189 175 140
+176 177 140
+118 70 141
+100 71 141
+49 100 141
+183 105 141
+102 154 141
+156 157 141
+176 168 141
+192 171 141
+185 175 141
+128 70 142
+129 77 142
+87 82 142
+194 109 142
+113 139 142
+187 154 142
+188 164 142
+91 70 143
+159 74 143
+86 90 143
+93 110 143
+101 117 143
+209 120 143
+110 123 143
+116 127 143
+54 131 143
+108 157 143
+200 165 143
+192 115 144
+196 116 144
+198 117 144
+201 118 144
+206 119 144
+106 158 144
+181 84 145
+166 87 145
+83 88 145
+119 126 145
+195 127 145
+50 137 145
+194 155 145
+196 156 145
+178 170 145
+72 83 146
+76 85 146
+212 156 146
+208 161 146
+109 68 147
+79 86 147
+175 98 147
+190 111 147
+196 116 147
+119 126 147
+221 129 147
+179 131 147
+114 136 147
+108 156 147
+211 157 147
+205 163 147
+120 71 148
+68 89 148
+176 97 148
+59 98 148
+191 109 148
+89 122 148
+56 137 148
+105 158 148
+210 158 148
+203 166 148
+148 69 149
+159 73 149
+95 80 149
+164 95 149
+62 97 149
+64 98 149
+68 99 149
+54 107 149
+114 124 149
+197 125 149
+64 131 149
+220 133 149
+58 136 149
+188 157 149
+207 160 149
+60 93 150
+197 102 150
+219 129 150
+108 155 150
+176 161 150
+206 162 150
+160 164 150
+124 69 151
+127 69 151
+155 69 151
+119 74 151
+178 92 151
+193 107 151
+200 117 151
+112 120 151
+205 124 151
+199 132 151
+82 138 151
+109 153 151
+107 156 151
+105 158 151
+202 165 151
+118 75 152
+94 77 152
+75 104 152
+53 107 152
+202 117 152
+93 127 152
+121 133 152
+97 136 152
+117 138 152
+77 145 152
+110 151 152
+100 161 152
+94 164 152
+91 165 152
+88 166 152
+84 167 152
+194 172 152
+117 76 153
+72 104 153
+53 117 153
+92 131 153
+217 138 153
+59 139 153
+82 142 153
+213 151 153
+164 161 153
+195 171 153
+57 119 154
+66 123 154
+175 134 154
+217 136 154
+117 137 154
+87 140 154
+215 144 154
+201 166 154
+196 170 154
+95 72 155
+116 78 155
+70 104 155
+61 120 155
+176 131 155
+193 131 155
+213 148 155
+94 69 156
+151 74 156
+69 103 156
+195 105 156
+212 150 156
+199 166 156
+188 173 156
+186 174 156
+178 86 157
+97 114 157
+199 129 157
+189 132 157
+70 139 157
+181 139 157
+154 140 157
+214 143 157
+213 146 157
+109 151 157
+209 153 157
+190 171 157
+154 78 158
+66 102 158
+82 102 158
+165 117 158
+176 135 158
+200 163 158
+191 170 158
+172 173 158
+138 68 159
+168 79 159
+65 101 159
+157 137 159
+178 137 159
+171 139 159
+67 142 159
+107 154 159
+187 172 159
+179 173 159
+117 77 160
+178 83 160
+101 86 160
+176 139 160
+209 152 160
+105 155 160
+205 158 160
+169 165 160
+63 102 161
+161 111 161
+58 126 161
+96 135 161
+174 139 161
+208 153 161
+101 159 161
+119 75 162
+80 82 162
+101 99 162
+172 140 162
+159 144 162
+205 157 162
+102 158 162
+99 160 162
+137 69 163
+129 77 163
+84 83 163
+95 112 163
+71 113 163
+198 124 163
+97 137 163
+181 140 163
+185 146 163
+196 166 163
+132 74 164
+109 91 164
+168 91 164
+200 124 164
+105 140 164
+178 142 164
+165 144 164
+161 146 164
+107 153 164
+93 102 165
+192 106 165
+173 119 165
+205 129 165
+204 157 165
+199 163 165
+165 111 166
+94 115 166
+214 124 166
+190 132 166
+97 139 166
+174 145 166
+180 153 166
+134 72 167
+110 100 167
+194 107 167
+65 110 167
+109 148 167
+174 149 167
+86 92 168
+62 109 168
+87 112 168
+104 133 168
+183 144 168
+169 153 168
+102 154 168
+171 157 168
+98 158 168
+96 159 168
+94 160 168
+92 161 168
+200 161 168
+89 162 168
+84 163 168
+133 73 169
+155 79 169
+83 83 169
+99 85 169
+84 87 169
+173 90 169
+110 98 169
+194 117 169
+117 135 169
+79 143 169
+96 143 169
+164 154 169
+132 74 170
+82 95 170
+187 117 170
+211 128 170
+95 146 170
+206 153 170
+199 160 170
+107 80 171
+173 103 171
+171 105 171
+111 107 171
+163 121 171
+211 133 171
+80 137 171
+212 139 171
+68 142 171
+204 154 171
+175 89 172
+110 94 172
+98 119 172
+120 129 172
+153 129 172
+117 134 172
+78 138 172
+211 141 172
+121 71 173
+132 72 173
+112 75 173
+92 90 173
+168 107 173
+188 113 173
+116 135 173
+109 146 173
+186 151 173
+200 159 173
+188 168 173
+187 169 173
+179 172 173
+102 80 174
+88 89 174
+115 91 174
+73 95 174
+189 112 174
+69 129 174
+161 146 174
+69 148 174
+184 170 174
+181 171 174
+100 86 175
+114 92 175
+69 133 175
+69 150 175
+176 172 175
+154 77 176
+151 82 176
+97 83 176
+119 87 176
+84 88 176
+105 130 176
+207 141 176
+110 144 176
+205 148 176
+104 151 176
+104 78 177
+120 86 177
+155 87 177
+111 93 177
+103 121 177
+106 129 177
+105 149 177
+101 154 177
+200 155 177
+93 159 177
+197 159 177
+180 169 177
+175 171 177
+148 79 178
+162 84 178
+162 87 178
+114 90 178
+106 102 178
+112 142 178
+170 144 178
+171 149 178
+202 151 178
+95 156 178
+85 161 178
+177 170 178
+89 100 179
+67 115 179
+75 116 179
+78 117 179
+81 118 179
+108 128 179
+86 133 179
+169 141 179
+110 143 179
+204 145 179
+171 154 179
+194 159 179
+87 160 179
+188 164 179
+187 165 179
+106 103 180
+122 119 180
+192 121 180
+102 124 180
+104 149 180
+85 160 180
+122 83 181
+114 89 181
+86 98 181
+74 105 181
+100 107 181
+110 127 181
+161 153 181
+97 154 181
+96 155 181
+171 158 181
+84 116 182
+114 135 182
+179 144 182
+108 145 182
+181 147 182
+186 148 182
+98 153 182
+160 154 182
+91 157 182
+115 87 183
+104 121 183
+101 127 183
+114 127 183
+109 143 183
+106 147 183
+99 151 183
+190 162 183
+107 82 184
+119 83 184
+84 93 184
+160 95 184
+166 104 184
+122 116 184
+102 149 184
+90 156 184
+196 156 184
+85 158 184
+191 161 184
+176 100 185
+166 102 185
+82 116 185
+100 129 185
+87 157 185
+193 158 185
+99 107 186
+75 127 186
+166 132 186
+112 137 186
+178 141 186
+109 143 186
+106 145 186
+101 150 186
+114 87 187
+159 95 187
+183 107 187
+122 115 187
+205 124 187
+198 152 187
+195 156 187
+191 160 187
+110 105 188
+177 108 188
+183 139 188
+193 158 188
+82 118 189
+204 123 189
+205 126 189
+84 128 189
+186 139 189
+109 140 189
+106 144 189
+194 155 189
+190 160 189
+113 85 190
+92 99 190
+104 146 190
+170 148 190
+192 157 190
+177 167 190
+113 75 191
+112 88 191
+153 103 191
+81 119 191
+171 119 191
+108 142 191
+180 151 191
+72 154 191
+112 86 192
+111 90 192
+77 119 192
+109 122 192
+89 126 192
+153 128 192
+202 137 192
+106 144 192
+76 154 192
+193 156 192
+178 166 192
+174 167 192
+110 78 193
+110 88 193
+110 92 193
+150 93 193
+176 119 193
+103 146 193
+182 164 193
+179 165 193
+176 166 193
+171 167 193
+108 81 194
+173 109 194
+181 116 194
+159 118 194
+202 132 194
+108 140 194
+174 166 194
+109 92 195
+122 129 195
+201 134 195
+110 138 195
+105 143 195
+166 165 195
+106 81 196
+200 137 196
+189 155 196
+100 79 197
+158 118 197
+176 163 197
+92 81 198
+100 81 198
+145 81 198
+102 82 198
+104 85 198
+107 93 198
+95 106 198
+75 129 198
+92 129 198
+116 131 198
+108 139 198
+197 143 198
+102 85 199
+107 96 199
+96 104 199
+198 115 199
+155 118 199
+100 145 199
+91 150 199
+99 85 200
+88 86 200
+101 86 200
+102 91 200
+200 130 200
+110 137 200
+102 144 200
+186 155 200
+84 90 201
+198 119 201
+118 129 201
+199 133 201
+107 139 201
+98 89 202
+83 93 202
+111 133 202
+102 144 202
+97 147 202
+181 159 202
+161 164 202
+100 93 203
+102 97 203
+196 120 203
+196 133 203
+88 150 203
+160 163 203
+100 96 204
+194 121 204
+115 130 204
+90 149 204
+159 162 204
+98 96 205
+122 124 205
+111 132 205
+100 144 205
+97 97 206
+116 128 206
+191 120 207
+118 127 207
+172 160 207
+166 161 207
+161 116 208
+119 125 208
+81 147 208
+173 157 208
+107 109 209
+109 131 209
+191 132 209
+188 141 209
+185 147 209
+180 101 210
+184 109 210
+185 111 210
+187 113 210
+188 122 210
+186 144 210
+160 97 211
+179 102 211
+182 106 211
+185 114 211
+186 116 211
+83 143 211
+183 148 211
+179 152 211
+104 110 212
+183 110 212
+184 112 212
+181 149 212
+170 99 213
+172 99 213
+175 102 213
+181 109 213
+182 111 213
+183 113 213
+184 115 213
+115 119 213
+169 102 214
+174 103 214
+101 110 214
+180 110 214
+102 112 214
+181 112 214
+182 114 214
+183 116 214
+91 137 214
+174 107 215
+99 112 215
+180 113 215
+181 115 215
+182 117 215
+114 120 215
+84 136 215
+168 107 216
+181 118 216
+111 121 216
+83 128 216
+84 134 216
+169 109 217
+96 113 217
+164 110 218
+177 139 218
+163 112 219
+175 140 219
+164 115 220
+94 123 220
+174 139 220
+170 143 220
+161 116 221
+159 116 222
+162 120 222
+152 144 222
+158 117 223
+159 119 223
+161 122 223
+157 118 224
+159 122 224
+160 124 224
+161 127 224
+"
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "805 -259 152 56"
+    moduleGroupName = "Candidate Merging"
+  }
+  fields  {
+    instanceName = PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "629 -339 88 56"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "500 396 279 51"
+        sizeHint = "279 51"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "693 1577 88 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 272 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "702 111 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FullImage
+    filename = /home/wieke/git-workspace/cadmi/data/examples/resampled/example05.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "818 -680 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "582 24 698 748"
+        sizeHint = "698 553"
+        wasOpen = yes
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript1
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+from os import listdir
+from os.path import basename
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+path_wieke1 = "/mnt/Multimedia/CADMICompetition/examples/"
+path_wieke2 = "/home/wieke/git-workspace/cadmi/data/examples/"
+path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/"
+
+# Returns file names of all subject '.mhd' images in the provided path
+def getFilePaths(path):
+	files = []
+	for f in filter(lambda x: x.endswith(".mhd"),listdir(path)):
+		files.append(path + f)
+	return sorted(files)
+
+# Loads the resampled iamge and its lung masks
+def loadFile(path, file):
+	inFull = path + "resampled/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("FullImage.filename").value = inFull
+
+	inMask = path + "strictmask/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("StrictMask.filename").value = inMask
+
+def collectCoordinates(label):
+	CTX.field('coordinatesbuffer.push').touch()
+	output = CTX.field("coordinates.Output").value.splitlines()
+	output = map(lambda x: label + " " + x , output)
+	output = "\\r\\n".join(output)
+	CTX.field('coordinatesbuffer.clear').touch()
+	return output + "\\r\\n"
+
+def calculateLabelsCoordinates(path):
+	
+	# Open Target file
+	dataFile = open(path + 'labelsCoordinates', 'w')
+#	locationFile = open(path + 'candidate_locations.txt', 'w')
+
+	# Loop over marked subjects
+	for file in getFilePaths(path):
+		
+		# Load the relevant subject masks
+		print "Loading " + basename(file)
+		loadFile(path, file)
+		
+		dataFile.write("# File " + basename(file) + "\\r\\n")
+		output = collectCoordinates(basename(file).split(".")[0])
+		dataFile.write(output)
+		dataFile.flush()
+
+	print "Done processing."
+	dataFile.close()
+			
+
+
+*"
+    wakeUpCode = ""
+    code = calculateLabelsCoordinates(path_wieke2)
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = TRUE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "813 -47 168 64"
+    moduleGroupName = "Candidate Merging"
+    windows  {
+      window _default {
+        geometry = "407 200 564 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "389 -790 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Candidates
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 1
+    clusterSizeInterpretation = Voxels
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "834 310 96 56"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "285 292 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology5
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "810 474 144 64"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "472 341 537 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = FindAirways
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.04
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_6_XYZ
+    useMask = FALSE
+  }
+}
+module Threshold {
+  internal  {
+    frame = "838 390 88 56"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "822 535 274 65"
+        sizeHint = "274 65"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Threshold5
+    threshold = 1
+    minValue = 0
+    maxValue = 3197
+    relativeThreshold = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "602 210 112 64"
+    moduleGroupName = "Remove Airways"
+    windows  {
+      window _default {
+        geometry = "822 547 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RemoveAirways
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = 0
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "821 1577 88 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "84 254 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StrictMask
+    filename = /home/wieke/git-workspace/cadmi/data/examples/strictmask/example05.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "835 736 96 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "515 -522 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic21
+    function = Or
+    constant = 0
+    autoReplicate = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "755 832 96 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology4
+    borderHandling = PadSrcClamp
+    fillValue = -800
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 1
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 9 elems, 3x3x1x1x1x1"
+    numKernelElements = 9
+    kernelElementsSum = 0
+  }
+}
+module Morphology {
+  internal  {
+    frame = "739 1088 96 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "710 -786 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology3
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "743 916 120 64"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "927 -565 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = LightNodule
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -600
+    threshWidth = 400
+    threshMin = -800
+    threshMax = -400
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Mask {
+  internal  {
+    frame = "635 1000 80 56"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "498 -536 417 97"
+        sizeHint = "284 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    mode = MaskedOriginalInv
+    blending = 0.5
+    background = -1000
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "855 1180 120 64"
+    moduleGroupName = "Threshold Candidate Selection"
+    windows  {
+      window _default {
+        geometry = "795 115 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SolidNodule
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = -170
+    threshWidth = 440
+    threshMin = -390
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Mask {
+  internal  {
+    frame = "713 1393 112 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "502 435 407 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ApplyStrictMask
+    mode = MaskedOriginal
+    blending = 0.5
+    background = -1000
+  }
+}
+connections  {
+  coordinatesbuffer.inImage = coordinates.output0
+  coordinates.input0 = Centroids.output0
+  PageToImageExtent.input0 = Candidates.output0
+  Centroids.input0 = PageToImageExtent.output0
+  Candidates.input0 = RemoveAirways.output0
+  Morphology5.input0 = Threshold5.output0
+  FindAirways.input0 = Arithmetic21.output0
+  Threshold5.input0 = FindAirways.output0
+  RemoveAirways.input0 = Arithmetic21.output0
+  RemoveAirways.input1 = Morphology5.output0
+  Arithmetic21.input0 = Morphology4.output0
+  Arithmetic21.input1 = SolidNodule.output0
+  Morphology4.input0 = LightNodule.output0
+  Morphology3.input0 = SolidNodule.output0
+  LightNodule.input0 = Mask.output0
+  Mask.input0 = ApplyStrictMask.output0
+  Mask.input1 = Morphology3.output0
+  SolidNodule.input0 = ApplyStrictMask.output0
+  ApplyStrictMask.input0 = FullImage.output0
+  ApplyStrictMask.input1 = StrictMask.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 185
+        objectName = "Threshold Candidate Selection"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 308
+        objectName = "Remove Airways"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 312
+        objectName = "Candidate Merging"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 559
+        objectName = Coordinates
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
