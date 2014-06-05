@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! DIAGBoundedRegionGrowing module definitions.
+/*!
+// \file    DIAGBoundedRegionGrowing.def
+// \author  Wieke
+// \date    2014-05-23
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule BoundedRegionGrowing {
+  DLL                = "DIAGBoundedRegionGrowing"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/BoundedRegionGrowing.script
+}  

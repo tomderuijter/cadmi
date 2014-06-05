@@ -1,0 +1,23 @@
+//----------------------------------------------------------------------------------
+//! DIAGPixelCoordinates module definitions.
+/*!
+// \file    PixelCoordinates.script
+// \author  Wieke
+// \date    2014-06-05
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    TextView Output {
+      title     = "Output (X,Y,Z)"
+      edit      = No
+      console = Yes
+      wrap = Off
+      showLineNumbers = Yes
+      vscroller = On
+      hscroller = On
+    }
+  }
+}

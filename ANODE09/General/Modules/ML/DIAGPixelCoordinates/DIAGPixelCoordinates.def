@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! DIAGPixelCoordinates module definitions.
+/*!
+// \file    DIAGPixelCoordinates.def
+// \author  Wieke
+// \date    2014-06-05
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule PixelCoordinates {
+  DLL                = "DIAGPixelCoordinates"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/PixelCoordinates.script
+}  
