@@ -2,45 +2,359 @@
 network  {
   watchlist = ""
 }
-module MaskToMarkers {
+module ImageBuffer {
   internal  {
-    frame = "1265 -427 128 56"
+    frame = "1601 949 112 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "482 346 314 150"
-        sizeHint = "314 150"
+        geometry = "439 223 400 409"
+        sizeHint = "400 409"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "709 267 500 600"
+        sizeHint = "260 223"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = MaskToMarkers
-    lowerThreshold = 0
-    setType = User
-    type = 0
-    updateMode = Off
-    vectorMode = Zero
+    instanceName = ImageBuffer1
+    useFileCache = FALSE
+    path = /tmp/
+    useCompression = FALSE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = 1
+    index = 1
+  }
+}
+module TypeDecomposer {
+  internal  {
+    frame = "1573 829 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "593 413 93 16"
+        sizeHint = "93 16"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = TypeDecomposer1
+  }
+}
+module GaussHessian {
+  internal  {
+    frame = "1597 1069 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "534 286 210 271"
+        sizeHint = "210 271"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = GaussHessian1
+    sigma = 2
+    unit = voxel
+    calc2D = FALSE
+    calcLaplacian = FALSE
+    applyScaleNormalization = FALSE
+    autoUpdate = TRUE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "2397 1581 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "478 244 332 368"
+        sizeHint = "332 368"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "702 111 500 600"
+        sizeHint = "262 217"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageLoad2
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/resampled/example03.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "2517 1581 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "84 226 332 368"
+        sizeHint = "332 368"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageLoad1
+    filename = /Users/tom/Documents/workspace/cadmi/data/examples/strictmask/example03.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+module Mask {
+  internal  {
+    frame = "2473 1461 80 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "502 435 407 97"
+        sizeHint = "274 97"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask1
+    mode = MaskedOriginal
+    blending = 0.5
+    background = -1000
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1525 709 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "119 243 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic5
+    expression = "sqr(a*a+b*b)"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "1677 709 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "84 -539 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic4
+    expression = "(2/pi) * atan((a+b) / (a - b))"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1497 589 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold2
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.65
+    threshWidth = 0.7
+    threshMin = 0.3
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1657 589 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.9
+    threshWidth = 0.2
+    threshMin = 0.8
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = FALSE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Arithmetic2 {
+  internal  {
+    frame = "1601 477 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "515 389 256 64"
+        sizeHint = "249 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic22
+    function = And
+    constant = 0
+    autoReplicate = FALSE
   }
 }
 module View2D {
   internal  {
-    frame = "725 -659 120 56"
+    frame = "1621 381 120 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "439 221 400 400"
+        geometry = "384 212 400 400"
         sizeHint = "400 400"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = View2D1
+    instanceName = View2D3
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 83
+    startSlice = 85
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -62,11 +376,339 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 116.900001525879"
+    plane = "0 0 1 119.699996948242"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 837.48004
-    lutWidth = 1994
+    lutCenter = 0.5
+    lutWidth = 1
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module View2D {
+  internal  {
+    frame = "1757 -891 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 460 640 752"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D2
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.699999988079071"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 273.5
+    lutWidth = 2547
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1545 -867 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "403 224 473 395"
+        sizeHint = "473 395"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay1
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.78799999
+    baseColor = "1 0.0392156876623631 0.121568627655506"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module SoView2DOverlay {
+  internal  {
+    frame = "1421 -763 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "231 573 473 395"
+        sizeHint = "473 395"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DOverlay
+    drawingOn = TRUE
+    editingOn = TRUE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = TRUE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = TRUE
+    clipToSlice = TRUE
+    cursorShape = UNDEFINED_CURSOR
+    cacheTextures = TRUE
+    blendMode = BLEND_BLEND
+    overwriteCurrentTimePoint = FALSE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    inheritFilterMode = TRUE
+    lutPrecision = VIEW2D_LUT_AUTO
+    alphaFactor = 0.63599998
+    baseColor = "1 0.113725490868092 0.196078434586525"
+    useWorldCoords = FALSE
+    applyLut = TRUE
+    isCheckerTiling = FALSE
+    checkerTileSize = 2
+    areCheckerTilesInverted = FALSE
+  }
+}
+module Morphology {
+  internal  {
+    frame = "1457 -627 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology2
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "1397 -395 168 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = PageToImageExtent13
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1365 -491 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = TRUE
+    threshCenter = 43
+    threshWidth = 10
+    threshMin = 38
+    threshMax = 48
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module MaskToMarkers {
+  internal  {
+    frame = "1297 -611 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "482 346 314 150"
+        sizeHint = "314 150"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MaskToMarkers
+    lowerThreshold = 0
+    setType = User
+    type = 0
+    updateMode = AutoUpdate
+    vectorMode = Zero
+  }
+}
+module View2D {
+  internal  {
+    frame = "1333 -859 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "105 183 640 752"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D1
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 0
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 0.699999988079071"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 773.5
+    lutWidth = 1547
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -84,22 +726,22 @@ module View2D {
 }
 module RegionGrowing {
   internal  {
-    frame = "1201 -659 128 56"
+    frame = "1217 -723 128 56"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "329 107 620 628"
+        geometry = "562 138 620 628"
         sizeHint = "620 628"
-        wasOpen = yes
+        wasOpen = no
       }
     }
   }
   fields  {
     instanceName = RegionGrowing1
-    autoUpdateMode = AutoClear
-    lowerThreshold = 0
-    upperThreshold = 600
-    autoThreshold = FALSE
+    autoUpdateMode = AutoUpdate
+    lowerThreshold = -627.228181818182
+    upperThreshold = -474.408181818182
+    autoThreshold = TRUE
     basicNeighborhoodType = BNBH_3D_6_XYZ
     extendedNeighborhoodType = ENBH_2D_4_XY
     useAdditionalSeed = FALSE
@@ -125,9 +767,9 @@ module RegionGrowing {
     negFillValue = 0
     invertResult = FALSE
     showOuterBoundariesOnly = FALSE
-    maxVolume = 100
+    maxVolume = 0.05
     maxVolumeEnabled = FALSE
-    intervalSize = 5
+    intervalSize = 3
   }
 }
 module View2D {
@@ -147,7 +789,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 26
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -169,11 +811,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 0.699999988079071"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 273.5
-    lutWidth = 2513
+    lutWidth = 2547
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -19158,7 +19800,7 @@ module LabelledMax {
     moduleGroupName = "True Positive Labels"
     windows  {
       window _default {
-        geometry = "661 44 319 259"
+        geometry = "799 67 319 259"
         sizeHint = "319 259"
         wasOpen = no
       }
@@ -21405,7 +22047,7 @@ module PageToImageExtent {
 }
 module Centroids {
   internal  {
-    frame = "629 -339 88 56"
+    frame = "581 -307 88 56"
     moduleGroupName = "Candidate Merging"
     windows  {
       window _default {
@@ -21495,7 +22137,7 @@ module RunPythonScript {
     windows  {
       window _default {
         geometry = "611 44 669 752"
-        sizeHint = "669 304"
+        sizeHint = "669 551"
         wasOpen = no
       }
       window _automatic {
@@ -22814,7 +23456,7 @@ module ConstantImage {
 }
 module WorldVoxelConvert {
   internal  {
-    frame = "289 -619 144 56"
+    frame = "-7 -379 144 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -22847,7 +23489,7 @@ module WorldVoxelConvert {
 }
 module StylePalette {
   internal  {
-    frame = "509 -651 104 56"
+    frame = "151 -444 104 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -22956,7 +23598,7 @@ module StylePalette {
 }
 module SoView2DMarkerEditor {
   internal  {
-    frame = "485 -747 168 56"
+    frame = "127 -540 168 56"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -23057,7 +23699,7 @@ module SoView2DMarkerEditor {
 }
 module ConstantXMarkerList {
   internal  {
-    frame = "509 -583 152 64"
+    frame = "149 -375 152 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -23095,7 +23737,7 @@ module ConstantXMarkerList {
 }
 module RunPythonScript {
   internal  {
-    frame = "289 -711 128 64"
+    frame = "9 -447 128 64"
     moduleGroupName = "Marked View"
     windows  {
       window _default {
@@ -23203,7 +23845,7 @@ def WorldVoxelConvert(x,y,z):
 }
 module View2D {
   internal  {
-    frame = "413 -855 120 64"
+    frame = "55 -648 120 64"
     moduleGroupName = "Marked View"
     windows  {
       window _automatic {
@@ -23285,8 +23927,30 @@ module Mask {
   }
 }
 connections  {
-  MaskToMarkers.input0 = Centroids.output0
-  View2D1.inImage = Centroids.output0
+  ImageBuffer1.inImage = GaussHessian1.output0
+  TypeDecomposer1.input0 = ImageBuffer1.outImage
+  GaussHessian1.input0 = ApplyStrictMask.output0
+  Mask1.input0 = ImageLoad2.output0
+  Mask1.input1 = ImageLoad1.output0
+  Arithmetic5.input0 = TypeDecomposer1.output0
+  Arithmetic5.input1 = TypeDecomposer1.output3
+  Arithmetic4.input0 = TypeDecomposer1.output0
+  Arithmetic4.input1 = TypeDecomposer1.output3
+  IntervalThreshold2.input0 = Arithmetic5.output0
+  IntervalThreshold1.input0 = Arithmetic4.output0
+  Arithmetic22.input0 = IntervalThreshold2.output0
+  Arithmetic22.input1 = IntervalThreshold1.output0
+  View2D3.inImage = Arithmetic22.output0
+  View2D3.inInvPostLUT = SoView2DMarkerEditor.self
+  View2D2.inImage = ApplyStrictMask.output0
+  View2D2.inInvPreLUT = SoView2DOverlay1.self
+  SoView2DOverlay1.image = RegionGrowing1.output0
+  SoView2DOverlay.image = Morphology2.output0
+  Morphology2.input0 = IntervalThreshold.output0
+  IntervalThreshold.input0 = Centroids.output0
+  MaskToMarkers.input0 = IntervalThreshold.output0
+  View2D1.inImage = RegionGrowing1.output0
+  View2D1.inInvPreLUT = SoView2DOverlay.self
   RegionGrowing1.input0 = ApplyStrictMask.output0
   RegionGrowing1.inMarkerList = MaskToMarkers.outputXMarkerList
   View2D.inImage = ApplyStrictMask.output0

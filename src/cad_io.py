@@ -10,6 +10,35 @@ def load_data (path):
     labels = data[:,0]
     
     return features, labels
+    
+def load_locations (path):
+    
+    # with open(path) as f:
+    #     content = f.readlines()
+    #     
+    #     return content
+    # return False
+    
+    return np.genfromtxt(path, dtype=None, delimiter=",",comments="#")
+    
+def write_predictions (locations, predictions, path):
+    assert len(locations) == len(predictions)
+    
+    with open(path,'w') as f:
+        for i in xrange(len(locations)) :
+            f.write(locations[i] + " " + str(predictions[i]) + "\n")
+        f.close()
+        return True
+    return False
+    
+def undo_permutation(data, permutation):
+    inv_permutation = [-1] * len(permutation)
+    for i in xrange(len(permutation)):
+        inv_permutation[ permutation[i] ] = i
+    
+    data = np.array([data[i] for i in inv_permutation])
+    
+    return data
 
 def split_data (features, labels, test_size):
     '''
@@ -26,11 +55,9 @@ def split_data (features, labels, test_size):
     train_X = np.array([features[i] for i in train_perm])
     test_X = np.array([features[i] for i in test_perm])
     train_y = np.array([labels[i] for i in train_perm])
-    test_y = [labels[i] for i in test_perm]
+    test_y = np.array([labels[i] for i in test_perm])
     
-    return train_X, test_X, train_y, test_y
-    
-    # return cross_validation.train_test_split(features, labels, test_size=test_size, random_state=1234123412341234)
+    return train_X, test_X, train_y, test_y, train_perm, test_perm
 
 def count_positives (labels) :
     nr_positives = np.count_nonzero(labels)

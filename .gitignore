@@ -11,3 +11,8 @@
 ## MeVisLab files
 *.mlab.auto
 *.mlab.cache
+
+## MeVisLab modules
+*.xcodeproj
+*.dylib
+*.build/

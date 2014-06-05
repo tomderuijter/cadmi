@@ -4,16 +4,12 @@ import logging
 import numpy as np
 from sklearn import metrics as sklmetrics
 
-
 # HOMEBREW MODULES
 import cad_io
 import cad_classifier
 import grid_search
 
-####################### General setup
-# does the temp-dir exist?
-
-def main(path):
+def main(data_path, location_path, out_path):
     
     tmpPath='/Users/tom/tmp'
     test_size = 1000
@@ -43,11 +39,11 @@ def main(path):
     
     ##### Read Data
     logger.info("Reading data")
-    data_X, data_y = cad_io.load_data(path)
+    data_X, data_y = cad_io.load_data(data_path)
     
     ##### Split data
     logger.info("Splitting data")
-    train_X, test_X, train_y, test_y = cad_io.split_data(data_X, data_y, test_size)
+    train_X, test_X, train_y, test_y, train_perm, test_perm = cad_io.split_data(data_X, data_y, test_size)
     
     ##### Initialising classifier
     logger.info("Initialising classifier")
@@ -68,39 +64,44 @@ def main(path):
     
     ##### Evaluate on testset
     logger.info("Classifying test data")
-    predicted_y = classifier.predict_proba(test_X)
+    predicted_y = classifier.predict_proba(data_X)      # Predict on whole set
     predicted_y = predicted_y[:,1]
-
-    # import code
-    # code.interact(local=locals())
         
     ##### Compute ROC and FROC
     logger.info("Evaluating performance")
     # Zero prediction
-    fpr,tpr, thresholds = sklmetrics.roc_curve(test_y,np.zeros(test_size), pos_label=1)
+    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.zeros(len(data_X)), pos_label=1)     # Evaluate on whole set
     zero_auc_score = sklmetrics.auc(fpr,tpr)
     
     # Random prediction
-    fpr,tpr, thresholds = sklmetrics.roc_curve(test_y,np.random.sample(size=test_size), pos_label=1)
+    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.random.sample(size=len(data_X)), pos_label=1)    # Evaluate on whole set
     rand_auc_score = sklmetrics.auc(fpr,tpr)
     
-    fpr,tpr, thresholds = sklmetrics.roc_curve(test_y, predicted_y, pos_label=1)
+    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y, predicted_y, pos_label=1)    # Evaluate on whole set
     auc_score = sklmetrics.auc(fpr,tpr)
     logger.info("AUC score: " + str(auc_score))
     logger.info("Zero baseline: " + str(zero_auc_score))
     logger.info("Random baseline: " + str(rand_auc_score))
-    
-    cm = sklmetrics.confusion_matrix(test_y, predicted_y>0.5)
-    print cm
+
+    logger.info("Confusion matrix: ")    
+    cm = sklmetrics.confusion_matrix(data_y, predicted_y>0.5)       # Evaluate on whole set
+    logger.info(cm)
+
     # TODO: Calculate FROC
         
     ##### Write predictions
     logger.info("Writing predictions to file")
-    # TODO: Write predictions
+    locations = cad_io.load_locations(location_path)
+    if(not cad_io.write_predictions(locations,predicted_y,out_path)):
+        sys.exit(-1)
     
+    # import code
+    # code.interact(local=locals())
 
 if __name__ == "__main__":
-    # path = sys.argv[1]
-    path = '/Users/tom/Documents/workspace/cadmi/data/examples/features.csv'
-    main(path)
+    # data_path = sys.argv[1]
+    data_path = '/Users/tom/Documents/workspace/cadmi/data/examples/features.csv'
+    location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/labelsCoordinates.txt'
+    out_path = '/Users/tom/Documents/workspace/cadmi/data/examples/predictions.txt'
+    main(data_path, location_path, out_path)
     sys.exit()
