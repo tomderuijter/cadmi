@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/Makefile.DIAGPixelCoordinates.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/DIAGPixelCoordinates.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGPixelCoordinates
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/Makefile.DIAGPixelCoordinates.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/DIAGPixelCoordinates.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGPixelCoordinates
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/Makefile.DIAGPixelCoordinates.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates
+	$(MAKE) -k -j 4 -f Makefile.DIAGPixelCoordinates.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates/Makefile.DIAGPixelCoordinates.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates 
+	$(MAKE) -k -j 4 -f Makefile.DIAGPixelCoordinates.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates && if test -e Makefile.DIAGPixelCoordinates.Release; then $(MAKE) -k -f Makefile.DIAGPixelCoordinates.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGPixelCoordinates && if test -e Makefile.DIAGPixelCoordinates.Debug; then $(MAKE) -k -f Makefile.DIAGPixelCoordinates.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

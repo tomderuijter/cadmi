@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/Makefile.DIAGBoundedRegionGrowing.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/DIAGBoundedRegionGrowing.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGBoundedRegionGrowing
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/Makefile.DIAGBoundedRegionGrowing.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/DIAGBoundedRegionGrowing.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGBoundedRegionGrowing
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/Makefile.DIAGBoundedRegionGrowing.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing
+	$(MAKE) -k -j 4 -f Makefile.DIAGBoundedRegionGrowing.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing/Makefile.DIAGBoundedRegionGrowing.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing 
+	$(MAKE) -k -j 4 -f Makefile.DIAGBoundedRegionGrowing.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing && if test -e Makefile.DIAGBoundedRegionGrowing.Release; then $(MAKE) -k -f Makefile.DIAGBoundedRegionGrowing.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGBoundedRegionGrowing && if test -e Makefile.DIAGBoundedRegionGrowing.Debug; then $(MAKE) -k -f Makefile.DIAGBoundedRegionGrowing.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

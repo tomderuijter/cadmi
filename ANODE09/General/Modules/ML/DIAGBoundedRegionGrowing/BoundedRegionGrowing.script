@@ -1,0 +1,27 @@
+//----------------------------------------------------------------------------------
+//! DIAGBoundedRegionGrowing module definitions.
+/*!
+// \file    BoundedRegionGrowing.script
+// \author  Wieke
+// \date    2014-05-23
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    margin = 3
+    Field lowerBound {
+      tooltip = "Lower Bound"
+    }
+    Field upperBound {
+      tooltip = "Upper Bound"
+    }
+    Field relUpperThreshold {
+      tooltip = "Relative Upper Threshold"
+    }
+    Field relLowerThreshold {
+      tooltip = "Relative Lower Threshold"
+    }
+  }
+}
