@@ -27,4 +27,4 @@ def grid_search(classifier, train_X, train_y):
     for params, mean_score, scores in clf.grid_scores_:
             print "\t%0.3f (+/-%0.03f) for %r" % (mean_score, scores.std() / 2, params)
 
-    return clf.best_params_
+    return clf.best_params_, clf.best_score_

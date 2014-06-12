@@ -40,6 +40,8 @@ def add_subjects (data_y, subjects):
     return y
     
 def write_predictions (locations, predictions, path):
+    print len(locations)
+    print len(predictions)
     assert len(locations) == len(predictions)
     
     with open(path,'w') as f:

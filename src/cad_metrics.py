@@ -62,8 +62,6 @@ def fp_mean(xy_arr):
     
     for m in measuring_points:
         
-        print m
-
         xy_prev = [0.0, 0.0]
         exact = False
         for xy in xy_arr:
@@ -78,7 +76,6 @@ def fp_mean(xy_arr):
                 else:
                     total += ((xy_prev[1] - xy[1])/(xy[0] - xy_prev[0])) * (m-xy_prev[0]) + xy_prev[1]              
 
-                print 'woop'
                 break
 
             else:
