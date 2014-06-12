@@ -40,6 +40,8 @@ def main(data_path, location_path, out_path):
     ##### Read Data
     logger.info("Reading data")
     data_X, data_y = cad_io.load_data(data_path)
+    locations = cad_io.load_locations(location_path)
+    subjects = get_subjects(locations)
     
     ##### Split data
     logger.info("Splitting data")
@@ -83,20 +85,19 @@ def main(data_path, location_path, out_path):
     logger.info("Zero baseline: " + str(zero_auc_score))
     logger.info("Random baseline: " + str(rand_auc_score))
 
-    logger.info("Confusion matrix: ")    
-    cm = sklmetrics.confusion_matrix(data_y, predicted_y>0.5)       # Evaluate on whole set
+    logger.info("Confusion matrix (> 0.5): ")    
+    cm = sklmetrics.confusion_matrix(data_y, predicted_y > 0.5)       # Evaluate on whole set
     logger.info(cm)
 
     # TODO: Calculate FROC
         
     ##### Write predictions
     logger.info("Writing predictions to file")
-    locations = cad_io.load_locations(location_path)
     if(not cad_io.write_predictions(locations,predicted_y,out_path)):
         sys.exit(-1)
     
-    # import code
-    # code.interact(local=locals())
+    import code
+    code.interact(local=locals())
 
 if __name__ == "__main__":
     # data_path = sys.argv[1]

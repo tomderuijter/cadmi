@@ -1,10 +1,13 @@
 from sklearn import grid_search as skl_grid_search
 
+# HOMEBREW MODULES
+import metrics
+
 def grid_search(classifier, train_X, train_y): 
 
     tuned_parameters = [{
-        'n_estimators': [3,5,7,9,11,13,15,17,19,21,23,25,30,35,40],
-        'max_depth': [None,3,5,7,9,11,13,15,17,19]
+        'n_estimators': [3,5],#[3,5,7,9,11,13,15,17,19,21,23,25,30,35,40],
+        'max_depth': [None]#[None,3,5,7,9,11,13,15,17,19]
     }]
 
     score = ('AUC', None) # Ugly hack so SKLearn supports AUC. See above.

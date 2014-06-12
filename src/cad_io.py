@@ -21,6 +21,16 @@ def load_locations (path):
     
     return np.genfromtxt(path, dtype=None, delimiter=",",comments="#")
     
+def get_subject (locations):
+    
+    subjects = []
+    
+    for i in xrange(len(locations)):
+        parts = locations[i].split()
+        subjects.append(int(parts[0][-2:]) - 1)
+        
+    return subjects
+    
 def write_predictions (locations, predictions, path):
     assert len(locations) == len(predictions)
     
@@ -67,8 +77,4 @@ def count_positives (labels) :
 if __name__ == "__main__":
     # path_wieke = "/home/wieke/git-workspace/cadmi/data/features.csv"
     path = "/Users/tom/Documents/workspace/cadmi/data/examples/features.csv"
-    labels,features = load_data(path)
-
-    train_perm, test_perm = split_data(labels,features,1000)
-    count_positives(labels,train_perm)
-    count_positives(labels,test_perm)
+    features,labels = load_data(path)
