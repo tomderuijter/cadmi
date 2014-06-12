@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/Makefile._MLMaskedPixelValues.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/_MLMaskedPixelValues.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLMaskedPixelValues
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/Makefile._MLMaskedPixelValues.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/_MLMaskedPixelValues.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py _MLMaskedPixelValues
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/Makefile._MLMaskedPixelValues.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues
+	$(MAKE) -k -j 4 -f Makefile._MLMaskedPixelValues.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues/Makefile._MLMaskedPixelValues.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues 
+	$(MAKE) -k -j 4 -f Makefile._MLMaskedPixelValues.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues && if test -e Makefile._MLMaskedPixelValues.Release; then $(MAKE) -k -f Makefile._MLMaskedPixelValues.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/_MLMaskedPixelValues && if test -e Makefile._MLMaskedPixelValues.Debug; then $(MAKE) -k -f Makefile._MLMaskedPixelValues.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release

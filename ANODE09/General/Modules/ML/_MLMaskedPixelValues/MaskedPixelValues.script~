@@ -1,0 +1,23 @@
+//----------------------------------------------------------------------------------
+//! _MLMaskedPixelValues module definitions.
+/*!
+// \file    MaskedPixelValues.script
+// \author     wieke
+// \date    2014-05-27
+*/
+//----------------------------------------------------------------------------------
+
+
+Window {
+  Vertical {
+    TextView Output {
+      title     = "Output (Average, Median, Standard Deviation, Minimum, Maximum)"
+      edit      = No
+      console = Yes
+      wrap = Off
+      showLineNumbers = Yes
+      vscroller = On
+      hscroller = On
+    }
+  }
+}

@@ -1,29 +1,27 @@
 //----------------------------------------------------------------------------------
-//! The ML module class LabelledMax.
+//! The ML module class MaskedPixelValues.
 /*!
 // \file   
 // \author     wieke
-// \date    2014-05-21
+// \date    2014-05-27
 //
 // 
 */
 //----------------------------------------------------------------------------------
 
 // Local includes
-#include "mlLabelledMax.h"
+#include "mlMaskedPixelValues.h"
 #include <sstream>
 #include <string>
-#include <limits>
-#include <math.h>
 
 ML_START_NAMESPACE
 
 //! Implements code for the runtime type system of the ML
-ML_MODULE_CLASS_SOURCE(LabelledMax, Module);
+ML_MODULE_CLASS_SOURCE(MaskedPixelValues, Module);
 
 //----------------------------------------------------------------------------------
 
-LabelledMax::LabelledMax() : Module(2, 1)
+MaskedPixelValues::MaskedPixelValues() : Module(2, 1)
 {
   // Suppress calls of handleNotification on field changes to
   // avoid side effects during initialization phase.
@@ -47,7 +45,7 @@ LabelledMax::LabelledMax() : Module(2, 1)
 
 //----------------------------------------------------------------------------------
 
-void LabelledMax::handleNotification(Field* field)
+void MaskedPixelValues::handleNotification(Field* field)
 {
   // Handle changes of module parameters and input image fields here.
   bool touchOutputs = false;
@@ -69,7 +67,7 @@ void LabelledMax::handleNotification(Field* field)
 
 //----------------------------------------------------------------------------------
 
-void LabelledMax::calculateOutputImageProperties(int /*outputIndex*/, PagedImage* outputImage)
+void MaskedPixelValues::calculateOutputImageProperties(int /*outputIndex*/, PagedImage* outputImage)
 {
   // Change properties of output image outputImage here whose
   // defaults are inherited from the input image 0 (if there is one).
@@ -77,7 +75,7 @@ void LabelledMax::calculateOutputImageProperties(int /*outputIndex*/, PagedImage
 
 //----------------------------------------------------------------------------------
 
-SubImageBox LabelledMax::calculateInputSubImageBox(int inputIndex, const SubImageBox& outputSubImageBox, int outputIndex)
+SubImageBox MaskedPixelValues::calculateInputSubImageBox(int inputIndex, const SubImageBox& outputSubImageBox, int outputIndex)
 {
   // Return region of input image inputIndex needed to compute region
   // outSubImgBox of output image outputIndex.
@@ -87,10 +85,10 @@ SubImageBox LabelledMax::calculateInputSubImageBox(int inputIndex, const SubImag
 
 //----------------------------------------------------------------------------------
 
-ML_CALCULATEOUTPUTSUBIMAGE_NUM_INPUTS_2_CPP(LabelledMax);
+ML_CALCULATEOUTPUTSUBIMAGE_NUM_INPUTS_2_CPP(MaskedPixelValues);
 
 template <typename T>
-void LabelledMax::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outputIndex
+void MaskedPixelValues::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outputIndex
                                      , TSubImage<T>* inputSubImage0
                                      , TSubImage<T>* inputSubImage1
                                      )
@@ -99,15 +97,7 @@ void LabelledMax::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outp
 
   // Clamp box of output image against image extent to avoid that unused areas are processed.
   const SubImageBox validOutBox = outputSubImage->getValidRegion();
-
-  T min;
-  T max;
-  
-  inputSubImage0 -> calculateMinMax(min, max, NULL);
-  
-  std::vector<int> positive((int)max, 0);
-  
-  
+  std::stringstream output;
   // Process all voxels of the valid region of the output page.
   ImageVector p;
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -120,22 +110,18 @@ void LabelledMax::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outp
             // Get pointers to row starts of input and output sub-images.
             const T* inVoxel0 = inputSubImage0->getImagePointer(p);
             const T* inVoxel1 = inputSubImage1->getImagePointer(p);
-
+            
             T*  outVoxel = outputSubImage->getImagePointer(p);
 
             const MLint rowEnd   = validOutBox.v2.x;
 
             // Process all row voxels.
-            for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0, ++inVoxel1)
+            for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0,++inVoxel1)
             {
               *outVoxel = *inVoxel0;
-              if ((int)(*inVoxel0) > 0){
-              	if ((int)(*inVoxel1) > 0){
-              		positive[(int)(*inVoxel0) - 1] = 1;
-              	}
+              if (*inVoxel1 > 0){
+                output << (float)(*inVoxel0) << std::endl;
               }
-              if ((int)*inVoxel0 == 4)
-              	std::cout << (int) (*inVoxel1) << std::endl;
             }
           }
         }
@@ -143,11 +129,6 @@ void LabelledMax::calculateOutputSubImage(TSubImage<T>* outputSubImage, int outp
     }
   }
   
-  std::stringstream output;
-  
-  for (int i = 0; i < (int)max; i++){
-		output << positive[i] << std::endl;
-  }
   _OutputFld -> setStringValue(output.str());
 }
 

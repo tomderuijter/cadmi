@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! _MLMaskedPixelValues module definitions.
+/*!
+// \file    _MLMaskedPixelValues.def
+// \author     wieke
+// \date    2014-05-27
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule MaskedPixelValues {
+  DLL                = "_MLMaskedPixelValues"
+
+  genre              = ""
+  author             = "   wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/MaskedPixelValues.script
+}  

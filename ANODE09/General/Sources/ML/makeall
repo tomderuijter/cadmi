@@ -1,0 +1,9 @@
+rm */tmp -r
+
+for i in $(find . -type d -name "_ML*")
+	do
+		    cd $i
+			sh *.sh
+			find . -name "Makefile*" -not -name "*Debug" -not -name "*Release" | xargs make -f			
+			cd ..
+	done
