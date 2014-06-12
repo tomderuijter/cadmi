@@ -15,7 +15,7 @@ def grid_search(classifier, train_X, train_y):
     print "# Tuning hyper-parameters for %s" % score[0]
     print
 
-    clf = skl_grid_search.GridSearchCV(classifier, tuned_parameters, cv=5, n_jobs=4, verbose=10)#, score_func=score[1])
+    clf = skl_grid_search.GridSearchCV(classifier, tuned_parameters, cv=5, n_jobs=1, verbose=10)#, score_func=score[1])
     clf.fit(train_X, train_y)
 
     print "Best parameters set found on development set:"

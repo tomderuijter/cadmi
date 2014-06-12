@@ -5,6 +5,7 @@
 # een normale float zal zijn. (Dus 1 + 1, in PerImageFloats, resulteerd in 2 als 
 # een normale float)
 class PerImageFloat(float):
+    
     def __new__(self, value, image):
         return float.__new__(self, value)
         

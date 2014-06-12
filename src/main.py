@@ -3,11 +3,14 @@ import sys
 import logging
 import numpy as np
 from sklearn import metrics as sklmetrics
+from sklearn import ensemble as sklensemble
 
 # HOMEBREW MODULES
 import cad_io
 import cad_classifier
+import cad_metrics
 import grid_search
+
 
 def main(data_path, location_path, out_path):
     
@@ -41,7 +44,8 @@ def main(data_path, location_path, out_path):
     logger.info("Reading data")
     data_X, data_y = cad_io.load_data(data_path)
     locations = cad_io.load_locations(location_path)
-    subjects = get_subjects(locations)
+    subjects = cad_io.get_subjects(locations)
+    data_y = cad_io.add_subjects(data_y, subjects)
     
     ##### Split data
     logger.info("Splitting data")
@@ -59,7 +63,7 @@ def main(data_path, location_path, out_path):
     
     ##### Train classifier
     logger.info("Training classifier with found parameters")
-    params['n_jobs'] = 4
+    params['n_jobs'] = 1
     params['verbose'] = 10
     classifier.set_params(**params)
     classifier.fit(train_X,train_y)
@@ -71,33 +75,49 @@ def main(data_path, location_path, out_path):
         
     ##### Compute ROC and FROC
     logger.info("Evaluating performance")
+
     # Zero prediction
-    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.zeros(len(data_X)), pos_label=1)     # Evaluate on whole set
-    zero_auc_score = sklmetrics.auc(fpr,tpr)
+    curve = cad_metrics.froc(data_y, np.zeros(len(data_X)), subjects, pos_label=1)
+    zero_score = cad_metrics.auc(curve)
     
     # Random prediction
-    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.random.sample(size=len(data_X)), pos_label=1)    # Evaluate on whole set
-    rand_auc_score = sklmetrics.auc(fpr,tpr)
+    curve = cad_metrics.froc(data_y, np.random.sample(size=len(data_X)), subjects, pos_label=1)
+    rand_score = cad_metrics.fp_mean(curve)
     
-    fpr,tpr, thresholds = sklmetrics.roc_curve(data_y, predicted_y, pos_label=1)    # Evaluate on whole set
-    auc_score = sklmetrics.auc(fpr,tpr)
-    logger.info("AUC score: " + str(auc_score))
-    logger.info("Zero baseline: " + str(zero_auc_score))
-    logger.info("Random baseline: " + str(rand_auc_score))
+    curve = cad_metrics.froc(data_y, predicted_y, subjects, pos_label=1)
+    score = cad_metrics.fp_mean(curve)
+    
+#     # Zero prediction
+#     fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.zeros(len(data_X)), pos_label=1)     # Evaluate on whole set
+#     zero_auc_score = sklmetrics.auc(fpr,tpr)
+#     
+#     # Random prediction
+#     fpr,tpr, thresholds = sklmetrics.roc_curve(data_y,np.random.sample(size=len(data_X)), pos_label=1)    # Evaluate on whole set
+#     rand_auc_score = sklmetrics.auc(fpr,tpr)
+#     
+#     fpr,tpr, thresholds = sklmetrics.roc_curve(data_y, predicted_y, pos_label=1)    # Evaluate on whole set
+#     auc_score = sklmetrics.auc(fpr,tpr)
+
+    logger.info("Score: " + str(score))
+    logger.info("Zero baseline: " + str(zero_score))
+    logger.info("Random baseline: " + str(rand_score))
 
     logger.info("Confusion matrix (> 0.5): ")    
     cm = sklmetrics.confusion_matrix(data_y, predicted_y > 0.5)       # Evaluate on whole set
     logger.info(cm)
 
-    # TODO: Calculate FROC
-        
     ##### Write predictions
     logger.info("Writing predictions to file")
     if(not cad_io.write_predictions(locations,predicted_y,out_path)):
         sys.exit(-1)
-    
-    import code
-    code.interact(local=locals())
+        
+    import matplotlib.pyplot as plt
+    curve = np.array(curve)
+    line, = plt.plot(curve[0:100,0],curve[0:100,1], linewidth=2)
+    plt.show()
+        
+    # import code
+    # code.interact(local=locals())
 
 if __name__ == "__main__":
     # data_path = sys.argv[1]

@@ -2,6 +2,9 @@ import random
 import numpy as np
 from sklearn import cross_validation
 
+# HOMEBREW MODULES
+from PerImageFloat import PerImageFloat
+
 
 def load_data (path):
     
@@ -13,15 +16,9 @@ def load_data (path):
     
 def load_locations (path):
     
-    # with open(path) as f:
-    #     content = f.readlines()
-    #     
-    #     return content
-    # return False
-    
     return np.genfromtxt(path, dtype=None, delimiter=",",comments="#")
     
-def get_subject (locations):
+def get_subjects (locations):
     
     subjects = []
     
@@ -30,6 +27,17 @@ def get_subject (locations):
         subjects.append(int(parts[0][-2:]) - 1)
         
     return subjects
+    
+def add_subjects (data_y, subjects):
+    
+    assert len(subjects) == len(data_y)
+    
+    y = []
+    for i in xrange(len(data_y)):
+        y.append(PerImageFloat(data_y[i], subjects[i]))
+    
+    y = np.array(y, dtype=PerImageFloat)        # Necessary
+    return y
     
 def write_predictions (locations, predictions, path):
     assert len(locations) == len(predictions)
@@ -62,10 +70,10 @@ def split_data (features, labels, test_size):
     train_perm = permutation[:-test_size]
     test_perm = permutation[-test_size:]
     
-    train_X = np.array([features[i] for i in train_perm])
-    test_X = np.array([features[i] for i in test_perm])
-    train_y = np.array([labels[i] for i in train_perm])
-    test_y = np.array([labels[i] for i in test_perm])
+    train_X = np.array([features[i] for i in train_perm], dtype=PerImageFloat)
+    test_X = np.array([features[i] for i in test_perm], dtype=PerImageFloat)
+    train_y = np.array([labels[i] for i in train_perm], dtype=PerImageFloat)
+    test_y = np.array([labels[i] for i in test_perm], dtype=PerImageFloat)
     
     return train_X, test_X, train_y, test_y, train_perm, test_perm
 
