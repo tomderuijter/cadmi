@@ -94,8 +94,18 @@ void PixelCoordinates::calculateOutputSubImage(TSubImage<T>* outputSubImage, int
                                      )
 {
   const SubImageBox validOutBox = outputSubImage->getValidRegion();
-  std::stringstream output;
+
   // Process all voxels of the valid region of the output page.
+  
+  T min;
+  T max;
+  
+  inputSubImage0 -> calculateMinMax(min, max, NULL);
+  
+  std::vector<int> X((int)max, 0);
+  std::vector<int> Y((int)max, 0);
+  std::vector<int> Z((int)max, 0);
+  
   ImageVector p;
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
     for (p.t=validOutBox.v1.t;  p.t<=validOutBox.v2.t;  ++p.t) {
@@ -115,8 +125,10 @@ void PixelCoordinates::calculateOutputSubImage(TSubImage<T>* outputSubImage, int
             for (; p.x <= rowEnd;  ++p.x, ++outVoxel, ++inVoxel0)
             {
               *outVoxel = *inVoxel0;
-              if (*inVoxel0> 0){
-                output << round(p.x) << " " << round(p.y) << " " << round(p.z) << std::endl;
+              if (*inVoxel0 > 0){
+                X[*inVoxel0 -1] = p.x;
+                Y[*inVoxel0 -1] = p.y;
+                Z[*inVoxel0 -1] = p.z;
               }
             }
           }
@@ -124,9 +136,13 @@ void PixelCoordinates::calculateOutputSubImage(TSubImage<T>* outputSubImage, int
       }
     }
   }
-  
-  _OutputFld -> setStringValue(output.str());
 
+  std::stringstream output;
+  
+  for (int i = 0; i < (int)max; i++){
+		output << round(X[i]) << " " << round(Y[i]) << " " << round(Z[i]) << std::endl;
+  }
+  _OutputFld -> setStringValue(output.str());
 }
 
 ML_END_NAMESPACE
