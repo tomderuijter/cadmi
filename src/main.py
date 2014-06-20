@@ -6,19 +6,19 @@ import datetime
 import numpy as np
 from sklearn import metrics as sklmetrics
 from sklearn import ensemble as sklensemble
+from sklearn import cross_validation as skl_cross_validation
 
 # HOMEBREW MODULES
 import cad_io
-import cad_classifier
 import cad_metrics
-import grid_search
+import cad_evaluation
+import cad_classifier
 
 
-def main(train_data_path, train_location_path, test_data_path=None, test_location_path=None, out_folder=None):
+def main(train_data_path, train_location_path, annotation_location_path, test_data_path=None, test_location_path=None, out_folder=None):
     
     tmpPath='/Users/tom/tmp'
-    test_size = 1000
-    
+
     if(not os.path.isdir(tmpPath)):
         os.makedirs(tmpPath)
 
@@ -49,91 +49,80 @@ def main(train_data_path, train_location_path, test_data_path=None, test_locatio
     subjects = cad_io.get_subjects(locations)
     data_y = cad_io.add_subjects(data_y, subjects)
     
-    ##### Split data
-    logger.info("Splitting data")
-    if test_data_path is None:
-        train_X, test_X, train_y, test_y, train_perm, test_perm = cad_io.split_data(data_X, data_y, test_size)
-    else:
-        train_X = data_X
-        train_y = data_y
+    logger.info("Analysing data")
+    hits,misses = cad_metrics.analyse_candidates(data_y, train_location_path, annotation_location_path)
     
     ##### Initialising classifier
     logger.info("Initialising classifier")
-    params = {'n_jobs': 1, 'verbose': 1}
+    params = {'n_jobs': 1, 'verbose': 1, 'n_estimators': 100, 'max_depth': 15}
     classifier = cad_classifier.create_tree_classifier(**params)
+    # classifier = cad_classifier.create_logistic_regressor()
     
     ##### Grid search
-    logger.info("Starting grid search")
-    params, best_score = grid_search.grid_search(classifier, train_X, train_y)
-    logger.info("Found parameters: " + str(params))
-    logger.info("Parameter confidence: " + str(best_score))
+    # logger.info("Starting grid search")
+    # params, best_score = cad_evaluation.grid_search(classifier, data_X, data_y, subjects)
+    # logger.info("Found parameters: " + str(params))
+    # logger.info("Parameter confidence: " + str(best_score))
     
-    ##### Train classifier
+    ##### Define classifier
     logger.info("Training classifier with found parameters")
     params['n_jobs'] = 1
-    params['verbose'] = 10
     classifier.set_params(**params)
-    classifier.fit(train_X, train_y)
     
-    ##### Load test data
-    if (test_data_path is not None) and (test_location_path is not None):
+    ##### Load and evaluate test data
+    if (test_data_path is not None) and (test_location_path is not None) and (out_folder is not None):
+        logger.info("Loading test data")
         test_X, _ = cad_io.load_data(test_data_path)
         test_locations = cad_io.load_locations(test_location_path)
-    else:
-        test_locations = locations
-    
-    ##### Evaluate on test set
-    logger.info("Classifying test data")
-    predicted_y = classifier.predict_proba(test_X)      # Predict on whole set
-    predicted_y = predicted_y[:,1]
-        
-    ##### Compute ROC and FROC
-    if 'test_y' in locals():
-        logger.info("Evaluating performance")
-        
-        # Zero prediction
-        curve = cad_metrics.froc(test_y, np.zeros(len(data_X)), subjects, pos_label=1)
-        zero_score = cad_metrics.fp_mean(curve)
-    
-        # Random prediction
-        curve = cad_metrics.froc(test_y, np.random.sample(size=len(test_X)), subjects, pos_label=1)
-        rand_score = cad_metrics.fp_mean(curve)
-    
-        # Actual prediction
-        curve = cad_metrics.froc(test_y, predicted_y, subjects, pos_label=1)
-        score = cad_metrics.fp_mean(curve)
-
-        logger.info("Score: " + str(score))
-        logger.info("Zero baseline: " + str(zero_score))
-        logger.info("Random baseline: " + str(rand_score))
-
-        logger.info("Confusion matrix (> 0.5): ")    
-        cm = sklmetrics.confusion_matrix(data_y, predicted_y > 0.5)       # Evaluate on whole set
-        logger.info(cm)
-
-    ##### Write predictions
-    if out_folder is not None:
+        logger.info("Training classifier")
+        classifier.fit(data_X, data_y)
+        logger.inf("Predicting scores on test data")
+        predicted_y = classifier.predict_proba(test_X)      # Predict on whole set
+        predicted_y = predicted_y[:,1]
         logger.info("Writing predictions to file")
         ts = time.time()
         st = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d_%H:%M:%S')
         out_path = out_folder+'predictions_'+st+'.txt'
         if not cad_io.write_predictions(test_locations,predicted_y,out_path):
             sys.exit(-1)   # IOError
+                
+    ##### Evaluate on cross validation
+    if test_data_path is None:
+        logger.info("Evaluating performance")
         
-    import matplotlib.pyplot as plt
-    curve = np.array(curve)
-    line, = plt.plot(curve[0:100,0],curve[0:100,1], linewidth=2)
-    plt.show()
+        predicted_y = cad_evaluation.cross_validation(classifier, data_X, data_y, subjects)
+
+        # train_X, test_X, train_y, test_y, train_perm, test_perm = cad_io.split_data(data_X, data_y, 3000)    
+#         classifier.fit(train_X, train_y)
+#         predicted_y = classifier.predict_proba(test_X)      # Predict on whole set
+#         predicted_y = predicted_y[:,1]
+                
+        fpr, tpr, thresholds = sklmetrics.roc_curve(data_y, predicted_y, pos_label=1)
+        print("AUC Score: "+ str(sklmetrics.auc(fpr, tpr)))
         
-    # import code
-    # code.interact(local=locals())
+        curve, thresh = cad_metrics.froc(data_y, predicted_y, subjects, pos_label=1, misses=misses)
+        score = cad_metrics.fp_mean(curve)
+        logger.info("Score: " + str(score))
+        
+        thresh = cad_metrics.cut_curve(curve, thresh, 200)
+        out_path = out_folder+'evaluation_locations.txt'
+        if not cad_io.write_predictions(locations, np.array(predicted_y >= thresh ,dtype=int),out_path):
+            sys.exit(-1)   # IOError
+        
+        import matplotlib.pyplot as plt
+        curve = np.array(curve)
+        plt.plot(curve[:,0],curve[:,1], linewidth=2)
+        plt.axis([0,1000,0,1])
+        plt.show()
 
 if __name__ == "__main__":
     # data_path = sys.argv[1]
-    train_data_path = '/Users/tom/Documents/workspace/cadmi/data/examples/features.csv'
-    train_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/coordinates.txt'
-    test_data_path = '/Users/tom/Documents/workspace/cadmi/data/test/features.csv'
-    test_location_path = '/Users/tom/Documents/workspace/cadmi/data/test/coordinates.txt'
+   
+    train_data_path = '/Users/tom/Documents/workspace/cadmi/data/examples/features_solid.csv'
+    train_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/coordinates_solid.txt'
+    annotation_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt'
+    # test_data_path = '/Users/tom/Documents/workspace/cadmi/data/test/features.csv'
+    # test_location_path = '/Users/tom/Documents/workspace/cadmi/data/test/coordinates.txt'
     out_folder = '/Users/tom/Documents/workspace/cadmi/data/predictions/'
-    main(train_data_path, train_location_path, test_data_path=test_data_path, test_location_path=test_location_path, out_folder=out_folder)
+    main(train_data_path, train_location_path, annotation_location_path, out_folder=out_folder) #test_data_path=test_data_path, test_location_path=test_location_path, out_folder=out_folder)
     sys.exit()

@@ -18,6 +18,16 @@ def load_locations (path):
     
     return np.genfromtxt(path, dtype=None, delimiter=",",comments="#")
     
+def parse_locations (path):
+
+    data = np.genfromtxt(path, dtype=np.float32, delimiter=" ",comments="#")
+
+    x = data[:,1]
+    y = data[:,2]
+    z = data[:,3]
+    
+    return x,y,z
+    
 def get_subjects (locations):
     
     subjects = []
@@ -26,7 +36,7 @@ def get_subjects (locations):
         parts = locations[i].split()
         subjects.append(int(parts[0][-2:]) - 1)
         
-    return subjects
+    return np.array(subjects, dtype=int)
     
 def add_subjects (data_y, subjects):
     
@@ -50,6 +60,7 @@ def write_predictions (locations, predictions, path):
         f.close()
         return True
     return False
+    
     
 def undo_permutation(data, permutation):
     inv_permutation = [-1] * len(permutation)
