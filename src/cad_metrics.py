@@ -99,11 +99,18 @@ def dist(x,y,z, x_,y_,z_):
     return ((x - x_)**2 + (y - y_)**2 + (z - z_)**2) ** 0.5
     
     
-def analyse_candidates(data_y, train_location_path, annotation_location_path):
+def analyse_candidates(data_y, train_location_path, annotation_location_path, sub_perm=None):
     
     ##### Read Data
     cand_x,cand_y,cand_z = cad_io.parse_locations(train_location_path)
     cand_locations = cad_io.load_locations(train_location_path)
+    
+    if sub_perm is not None:
+        cand_x = cand_x[sub_perm]
+        cand_y = cand_y[sub_perm]
+        cand_z = cand_z[sub_perm]
+        cand_locations = cand_locations[sub_perm]
+
     cand_subjects = cad_io.get_subjects(cand_locations)
     
     ann_x,ann_y,ann_z = cad_io.parse_locations(annotation_location_path)
@@ -115,7 +122,7 @@ def analyse_candidates(data_y, train_location_path, annotation_location_path):
     fn = 0
     
     dist_lim = 10
-    for s in xrange(5):
+    for s in xrange(max(ann_subjects)+1):
         print "Subject %d" % (s+1)
         ann_subs = ann_subjects == s
         cand_subs = cand_subjects == s
@@ -136,25 +143,12 @@ def analyse_candidates(data_y, train_location_path, annotation_location_path):
         for i in xrange(p_count):
                     
             sub_tp = 0
-            sub_j = 0
-            sub_d = dist_lim
-            
-            # print 'Ground truth'
-            # print "(%d,%d,%d)" % (ann_x_sub[i], ann_y_sub[i], ann_z_sub[i])
-            
             for j in xrange(nr_samples):
-                # if cand_x_sub[j] == 227 and cand_y_sub[j] == 143 and cand_z_sub[j] == 46:
-                #     print "Found candidate"
                 d = dist(ann_x_sub[i], ann_y_sub[i], ann_z_sub[i], cand_x_sub[j], cand_y_sub[j], cand_z_sub[j])
                 
-                if d <= dist_lim: # and cand_labels[j] == 1:
-                # if d and cand_labels[j] == 1:
+                if d <= dist_lim and cand_labels[j] == 1:
                     sub_tp += 1
-                    # print "Accepted candidate"
-                    if d < sub_d:
-                        sub_d = d
-                        sub_j = j
-                        
+
             if sub_tp > 0:
                 tp += 1
                 duplicates += sub_tp - 1
@@ -166,7 +160,6 @@ def analyse_candidates(data_y, train_location_path, annotation_location_path):
     
     print "Analysis done."
     print "True Positives / False Negatives: %d / %d" % (tp, fn)
-    # print "True Negatives / False Positives: %d / %d" % (tn, fp)
     
     print "Duplicate True Positives: %d" % duplicates
 

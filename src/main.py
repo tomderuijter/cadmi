@@ -46,17 +46,31 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
     logger.info("Reading training data")
     data_X, data_y = cad_io.load_data(train_data_path)
     locations = cad_io.load_locations(train_location_path)
+
+    sub_perm = None
+    # Subsample negatives
+    sub_perm = cad_io.resample_negatives(data_y, .1)
+    data_X = data_X[sub_perm]
+    data_y = data_y[sub_perm]
+    locations = locations[sub_perm]
+
+    # Piggyback subjects to labels
     subjects = cad_io.get_subjects(locations)
     data_y = cad_io.add_subjects(data_y, subjects)
+
+    # import code
+    # code.interact(local=locals())
     
+    # Analyse candidate samples
     logger.info("Analysing data")
-    hits,misses = cad_metrics.analyse_candidates(data_y, train_location_path, annotation_location_path)
+    hits,misses = cad_metrics.analyse_candidates(data_y, train_location_path, annotation_location_path, sub_perm)
     
     ##### Initialising classifier
     logger.info("Initialising classifier")
-    params = {'n_jobs': 1, 'verbose': 1, 'n_estimators': 100, 'max_depth': 15}
-    classifier = cad_classifier.create_tree_classifier(**params)
-    # classifier = cad_classifier.create_logistic_regressor()
+    # params = {}
+    # params = {'n_jobs': 1, 'verbose': 1, 'n_estimators': 100, 'max_depth': 15}
+    # classifier = cad_classifier.create_tree_classifier(**params)
+    classifier = cad_classifier.create_logistic_regressor()
     
     ##### Grid search
     # logger.info("Starting grid search")
@@ -66,8 +80,8 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
     
     ##### Define classifier
     logger.info("Training classifier with found parameters")
-    params['n_jobs'] = 1
-    classifier.set_params(**params)
+    # params['n_jobs'] = 1
+    # classifier.set_params(**params)
     
     ##### Load and evaluate test data
     if (test_data_path is not None) and (test_location_path is not None) and (out_folder is not None):

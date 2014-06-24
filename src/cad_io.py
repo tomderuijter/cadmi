@@ -71,6 +71,7 @@ def undo_permutation(data, permutation):
     
     return data
 
+
 def split_data (features, labels, test_size):
     '''
     Splits a full dataset into a train and a testing dataset.
@@ -94,8 +95,25 @@ def count_positives (labels) :
     nr_positives = np.count_nonzero(labels)
     return nr_positives
 
+def indices(a, func):
+    return [i for (i, val) in enumerate(a) if func(val)]
 
-if __name__ == "__main__":
+def resample_negatives (data_y, factor):
+    '''Downsamples without replacement from the negative set. Keeps <factor> percent of negatives.'''
+    
+    negs = indices(data_y, lambda x: x == 0)
+    np.random.shuffle(negs)
+    pos = indices(data_y, lambda x: x != 0)
+
+    perm = pos + negs   # Python arrays
+    end_index = int(len(negs)*factor + len(pos))
+    sub_perm = perm[:end_index]
+
+    np.random.shuffle(sub_perm)
+    return sub_perm
+    
+
+# if __name__ == "__main__":
     # path_wieke = "/home/wieke/git-workspace/cadmi/data/features.csv"
-    path = "/Users/tom/Documents/workspace/cadmi/data/examples/features.csv"
-    features,labels = load_data(path)
+    # path = "/Users/tom/Documents/workspace/cadmi/data/examples/features.csv"
+    # features,labels = load_data(path)
