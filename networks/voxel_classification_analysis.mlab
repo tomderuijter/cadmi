@@ -1,0 +1,1101 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Morphology {
+  internal  {
+    frame = "359 -82 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology1
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Erosion
+    kernelX = 2
+    kernelY = 2
+    kernelZ = 2
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
+    numKernelElements = 8
+    kernelElementsSum = 0
+  }
+}
+module Centroids {
+  internal  {
+    frame = "61 -315 88 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "331 -197 168 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "407 200 537 442"
+        sizeHint = "465 442"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "343 33 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "433 240 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold1
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.85
+    threshWidth = 0.3
+    threshMin = 0.7
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "117 237 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "613 450 413 362"
+        sizeHint = "413 362"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = ImgOrig
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 0.5
+    threshWidth = 1
+    threshMin = 0
+    threshMax = 1
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module Histogram {
+  internal  {
+    frame = "33 109 96 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "822 167 434 373"
+        sizeHint = "434 373"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Histogram
+    useMask = FALSE
+    xRange = "Dynamic Min/Max"
+    maskMode = Labels
+    curveType = Line
+    curveStyle = 0
+    curveTitle = ""
+    updateMode = AutoUpdate
+    useStepFunction = FALSE
+    useBinSizeOneRepresentation = FALSE
+    useBackgroundValue = TRUE
+    backgroundValue = 0
+    binSize = 0.0049999999
+    maxBinCount = 25000000
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "129 109 112 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "70 89 632 433"
+        sizeHint = "632 433"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette0
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 0 1"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = None
+    markerType2 = None
+    markerType3 = None
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 10
+    markerSize2 = 10
+    markerSize3 = 10
+    markerSize4 = 10
+    markerSize5 = 10
+    markerSize6 = 10
+    markerSize7 = 10
+    markerSize8 = 10
+    markerSize9 = 10
+    markerSize10 = 10
+    markerSize11 = 10
+    markerSize12 = 10
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = ""
+    name3 = ""
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 1
+  }
+}
+module SoRenderArea {
+  internal  {
+    frame = "37 -107 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _viewer {
+        geometry = "311 197 859 276"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoRenderArea
+    renderCaching = AUTO
+    boundingBoxCaching = AUTO
+    renderCulling = AUTO
+    pickCulling = AUTO
+    border = FALSE
+    background = "0 0 0"
+    transparency = DELAYED_BLEND
+    antialiasing = FALSE
+    antialiasingNumPasses = 1
+    useSampleBuffers = FALSE
+    numSamples = 8
+    grabKeyFocus = TRUE
+    snapshotFormat = SNAPSHOT_RGB
+    outputAviFile = ""
+    autoRedrawWhenRecording = TRUE
+    frameRate = 7
+    frameRateAvi = 15
+    status = ready
+    outputSnapshotFile = none
+    outputSnapshotFileWritten = none
+    autoIncreaseFile = TRUE
+    showSnapshotWithShell = FALSE
+    snapCount = 0
+    inputDevicesList = ""
+  }
+}
+module SoDiagram2D {
+  internal  {
+    frame = "49 -19 112 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = SoDiagram2D
+    minX = 0
+    maxX = 2
+    minY = 0
+    maxY = 1
+    scaleX = 1
+    scaleY = 1
+    autoRangeX = TRUE
+    autoRangeY = TRUE
+    axisColor = "1 1 1"
+    axisRotation = AXIS_ROTATION_LEFT_BOTTOM
+    titleFontHeight = 14
+    drawDiagramTitle = FALSE
+    diagramTitleString = ""
+    drawGrid = FALSE
+    gridColor = "0.349999994039536 0.349999994039536 0.349999994039536"
+    drawLegend = FALSE
+    legendPlacement = LEGEND_UPPER_RIGHT
+    legendFontHeight = 12
+    zoomAnimationEase = 0.5
+    zoomAnimationEpsilon = 0.0099999998
+    useZoomRestrictions = FALSE
+    minZoomFactor = 0.1
+    maxZoomFactor = 10
+    drawChildrenExtensions = TRUE
+    forwardEventsToChildrenExtensions = TRUE
+    changeLineOpacityForHighlightedCurves = FALSE
+    curveLineOpacityHighlighted = 1
+    changeLineOpacityForNotHighlightedCurves = FALSE
+    curveLineOpacityNotHighlighted = 0.30000001
+    changeLineStyleForHighlightedCurves = FALSE
+    curveLineStyleHighlighted = 1
+    changeLineStyleForNotHighlightedCurves = FALSE
+    curveLineStyleNotHighlighted = 1
+    curveIndexHighlighted = ""
+    borderH = 53
+    borderV = 25
+    autoBorderH = TRUE
+    autoBorderV = TRUE
+    drawAxisX = TRUE
+    drawAxisY = TRUE
+    drawTicksX = TRUE
+    drawTicksY = TRUE
+    drawLabelsX = TRUE
+    drawLabelsY = TRUE
+    drawAxisTitleX = FALSE
+    drawAxisTitleY = FALSE
+    axisTitleStringX = "X [dn]"
+    axisTitleStringY = "Y [dn]"
+    axisTitleFontHeightX = 12
+    axisTitleFontHeightY = 12
+    axisLabelFontHeightX = 12
+    axisLabelFontHeightY = 12
+    curveColor = "1 1 1"
+    lineStyle = LINE_STYLE_SOLID
+    markerType = MARKER_TYPE_NONE
+    markerSize = 10
+    lineWidth = 1
+    antiAlias = TRUE
+    areaOpacity = 0.5
+    lineOpacity = 1
+    stylePaletteMode = STYLE_PALETTE_INDEX
+  }
+}
+module Morphology {
+  internal  {
+    frame = "701 -355 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "471 169 342 504"
+        sizeHint = "337 504"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Morphology
+    borderHandling = PadSrcClamp
+    fillValue = 0
+    referenceExtentMode = Overlap
+    filterMode = Dilation
+    kernelX = 3
+    kernelY = 3
+    kernelZ = 3
+    kernelC = 1
+    kernelT = 1
+    kernelU = 1
+    makeSpherical = TRUE
+    intervalMinOfFilteredVoxels = 0
+    intervalMaxOfFilteredVoxels = 1024
+    useIntervalOfFilteredVoxels = FALSE
+    intervalMinOfVoxelsForFiltering = 0
+    intervalMaxOfVoxelsForFiltering = 1024
+    useIntervalOfVoxelsForFiltering = FALSE
+    externalKernel = ""
+    useExternalKernel = FALSE
+    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
+    numKernelElements = 19
+    kernelElementsSum = 0
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "589 -475 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "604 -786 491 664"
+        sizeHint = "491 664"
+        wasOpen = yes
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = TRUE
+  }
+}
+module Arithmetic1 {
+  internal  {
+    frame = "629 -195 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "503 389 280 64"
+        sizeHint = "273 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic1
+    function = Multiply
+    constant = 0
+  }
+}
+module MarkerToMask {
+  internal  {
+    frame = "693 -283 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "497 335 285 173"
+        sizeHint = "285 173"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MarkerToMask
+    maskValue = 1
+    incrementalStartValue = 1
+    backgroundValue = 0
+    autoUpdate = TRUE
+    writeMode = MaskValue
+    outputType = int16
+  }
+}
+module RunPythonScript {
+  internal  {
+    frame = "710 -15 128 56"
+    moduleGroupName = "Annotation View"
+    windows  {
+      window _default {
+        geometry = "305 146 669 551"
+        sizeHint = "669 551"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "379 295 500 600"
+        sizeHint = "256 192"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = RunPythonScript
+    in0 = ""
+    in1 = ""
+    in2 = ""
+    in3 = ""
+    in4 = ""
+    in5 = ""
+    in6 = ""
+    in7 = ""
+    in8 = ""
+    in9 = ""
+    editComments = FALSE
+    inComment0 = in0
+    inComment1 = in1
+    inComment2 = in2
+    inComment3 = in3
+    inComment4 = in4
+    inComment5 = in5
+    inComment6 = in6
+    inComment7 = in7
+    inComment8 = in8
+    inComment9 = in9
+    autoApply0 = TRUE
+    autoApply1 = TRUE
+    autoApply2 = TRUE
+    autoApply3 = TRUE
+    autoApply4 = TRUE
+    autoApply5 = TRUE
+    autoApply6 = TRUE
+    autoApply7 = TRUE
+    autoApply8 = TRUE
+    autoApply9 = TRUE
+    out0 = ""
+    out1 = ""
+    out2 = ""
+    out3 = ""
+    out4 = ""
+    out5 = ""
+    out6 = ""
+    out7 = ""
+    out8 = ""
+    out9 = ""
+    outComment0 = out0
+    outComment1 = out1
+    outComment2 = out2
+    outComment3 = out3
+    outComment4 = out4
+    outComment5 = out5
+    outComment6 = out6
+    outComment7 = out7
+    outComment8 = out8
+    outComment9 = out9
+    initCode = "*# Initialize global variables and functions
+global CTX
+# Use this to access the network context
+CTX=ctx.owner().owner()
+
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
+example_path_wieke = "/home/wieke/git-workplace/cadmi/data/examples/example_annotations.txt"
+
+def getMarkers(filepath, subjectNr, scale):
+	markers = "";
+	with open(filepath, "r") as file:
+		for line in file:
+			fields = line.strip('\\n').strip('\\r').split(' ')
+			if int(fields[0][-2:]) == subjectNr:
+				x, y, z = WorldVoxelConvert(int(fields[1])*scale,int(fields[2])*scale,int(fields[3])*scale)
+				markers += str(x) + " " + str(y) + " " + str(z) + " "
+				markers += "0 0 0 " + fields[4]
+				markers += "\\n"	
+	markers += "\\\\"
+	return markers
+
+def WorldVoxelConvert(x,y,z):
+	CTX.field("WorldVoxelConvert.voxelX").value = x
+	CTX.field("WorldVoxelConvert.voxelY").value = y
+	CTX.field("WorldVoxelConvert.voxelZ").value = z
+	x = CTX.field("WorldVoxelConvert.worldX").value
+	y = CTX.field("WorldVoxelConvert.worldY").value
+	z = CTX.field("WorldVoxelConvert.worldZ").value
+	return x,y,z*"
+    wakeUpCode = ""
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,2,0.5)*"
+    showFields = FALSE
+    showInitCode = TRUE
+    showWakeUpCode = FALSE
+    showCode = TRUE
+    showConsole = FALSE
+  }
+}
+module ConstantXMarkerList {
+  internal  {
+    frame = "938 109 152 64"
+    moduleGroupName = "Annotation View"
+    windows  {
+      window _default {
+        geometry = "797 180 483 616"
+        sizeHint = "372 564"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "410 187 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AnnotationMarkers
+    markerList = "106.207072288 251.543065948 215.599996918 0 0 0 2
+198.128982808 196.265700838 214.899996928 0 0 0 1
+240.984468118 186.949290988 211.399996978 0 0 0 1
+186.328196998 206.824298668 203.699997088 0 0 0 1
+115.523482138 248.437595998 199.499997148 0 0 0 1
+65.214868948 222.972742408 198.099997168 0 0 0 1
+189.433666948 142.851617698 187.599997318 0 0 0 2
+244.089938068 236.636810188 185.499997348 0 0 0 1
+256.511817868 168.937565278 183.399997378 0 0 0 1
+75.152372788 159.000061438 182.699997388 0 0 0 1
+234.773528218 139.746147748 181.999997398 0 0 0 2
+116.765670118 255.890723878 181.299997408 0 0 0 1
+253.406347918 216.761802508 179.899997428 0 0 0 2
+249.679783978 223.593836398 177.099997468 0 0 0 1
+255.890723878 222.972742408 167.999997598 0 0 0 2
+262.101663778 180.117257098 163.099997668 0 0 0 1
+253.406347918 150.925839568 156.799997758 0 0 0 1
+261.480569788 202.476640738 150.499997848 0 0 0 1
+244.089938068 251.543065948 143.499997948 0 0 0 1
+58.382835058 163.347719368 142.099997968 0 0 0 1
+70.183620868 111.175824208 140.699997988 0 0 0 1
+85.710970618 112.418012188 136.499998048 0 0 0 2
+46.582049248 217.382896498 136.499998048 0 0 0 1
+75.152372788 204.961016698 118.299998308 0 0 0 1
+52.171895158 249.058689988 110.599998418 0 0 0 2
+44.718767278 133.535207848 105.699998488 0 0 0 1
+130.429737898 263.964945748 102.199998538 0 0 0 1
+29.191417528 136.019583808 101.499998548 0 0 0 1
+270.175885648 206.824298668 93.799998658 0 0 0 2
+244.089938068 255.890723878 92.399998678 0 0 0 2
+252.164159938 241.605562108 83.299998808 0 0 0 2
+261.480569788 236.015716198 67.199999038 0 0 0 2
+62.730492988 257.132911858 56.699999188 0 0 0 1
+37.265639398 232.289152258 51.799999258 0 0 0 1
+197.507888818 255.890723878 48.299999308 0 0 0 1
+281.976671458 178.253975128 44.799999358 0 0 0 1
+115.523482138 273.281355598 20.299999708 0 0 0 2
+204.339922708 265.207133728 18.199999738 0 0 0 1
+\\"
+  }
+}
+module SoView2DMarkerEditor {
+  internal  {
+    frame = "914 -31 168 56"
+    moduleGroupName = "Annotation View"
+    windows  {
+      window _default {
+        geometry = "302 75 719 695"
+        sizeHint = "675 695"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = SoView2DMarkerEditor
+    drawingOn = TRUE
+    editingOn = FALSE
+    maskValid = TRUE
+    fixZOn = TRUE
+    color = "1 1 1"
+    selectionTolerance = 4
+    needsValidVoxel = TRUE
+    button1 = IGNORED
+    button2 = IGNORED
+    button3 = IGNORED
+    shift = IGNORED
+    control = IGNORED
+    alt = IGNORED
+    wantsAllEvents = FALSE
+    wantsKeyEvents = TRUE
+    wantsMouseWheelEvents = FALSE
+    setEventHandled = FALSE
+    ignoreHandledEvents = FALSE
+    createNewMode = FALSE
+    renderOnSlab = FALSE
+    clipToSlice = FALSE
+    cursorShape = UNDEFINED_CURSOR
+    depthVisibility = 1
+    snapToVoxel = TRUE
+    snapToSlice = TRUE
+    currentType = 0
+    deleteOnClick = FALSE
+    addOnClick = TRUE
+    alphaFactor = 1
+    minimumAlpha = 0.1
+    iconFile = $(MLAB_MeVisLab_Standard)/Modules/Resources/Images/markerIcons.tif
+    useIconFile = TRUE
+    iconIdx = 1
+    drawMarkerShapesWithLines = FALSE
+    selectingOn = TRUE
+    actOnReleaseOnly = FALSE
+    editorMode = EDIT_MARKER
+    colorMode = COLOR_BY_TYPE
+    textColorMode = COLOR_TEXT
+    textMode = TEXT_OFF
+    textPosition = TEXT_POSITION_RIGHT_BELOW
+    textColor = "1 1 1"
+    textShadow = TRUE
+    textFontSize = 12
+    showTextOnlyForSelectedMarker = FALSE
+    cutText = FALSE
+    maxNumberOfLines = 1
+    vectorArrow = VECTOR_END_ARROW
+    vectorLineWidth = 1
+    useAntiAlias = TRUE
+    useVectorLengthAsMarkerSize = FALSE
+    depthVectorDrawMode = DRAW_HIGHLIGHT_SLICE_SEGMENT
+    drawMode = DRAW_MARKER
+    highlightSelection = TRUE
+    selectiveDrawing = FALSE
+    selectionBoxesForCurrentOnly = FALSE
+    cooperative = FALSE
+    overwriteCurrentTimePoint = FALSE
+    newCurrentTimePoint = 0
+    depthVisibilityMode = DEPTH_IN_SLICES
+    listString = ""
+    index = -1
+    persistent = FALSE
+    listStringEnable = FALSE
+    ownsList = FALSE
+    applySelect = FALSE
+    id = -1
+    name = ""
+    newName = ""
+    overflowMode = RemoveFirst
+    maxSize = 0
+    useInsertTemplate = FALSE
+    upToDate = TRUE
+    posXYZ = "0 0 0"
+    posC = 0
+    posT = 0
+    posU = 0
+    vecXYZ = "0 0 0"
+    type = 0
+    newPosXYZ = "0 0 0"
+    newPosC = 0
+    newPosT = 0
+    newPosU = 0
+    newVecXYZ = "0 0 0"
+    newType = 0
+  }
+}
+module StylePalette {
+  internal  {
+    frame = "938 41 104 56"
+    moduleGroupName = "Annotation View"
+    windows  {
+      window _default {
+        geometry = "555 160 694 538"
+        sizeHint = "684 538"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = StylePalette
+    color1 = "1 1 0"
+    color2 = "1 0 0"
+    color3 = "0 1 0.290196078431373"
+    color4 = "0 1 0"
+    color5 = "1 0.5 0"
+    color6 = "1 0 1"
+    color7 = "0 1 1"
+    color8 = "0.5 1 0.5"
+    color9 = "1 0 0.5"
+    color10 = "0.5 1 0"
+    color11 = "0.5 0 1"
+    color12 = "0 1 0.5"
+    lineStyle1 = Solid
+    lineStyle2 = Solid
+    lineStyle3 = Solid
+    lineStyle4 = Solid
+    lineStyle5 = Solid
+    lineStyle6 = Solid
+    lineStyle7 = Solid
+    lineStyle8 = Solid
+    lineStyle9 = Solid
+    lineStyle10 = Solid
+    lineStyle11 = Solid
+    lineStyle12 = Solid
+    lineWidth1 = 1
+    lineWidth2 = 1
+    lineWidth3 = 1
+    lineWidth4 = 1
+    lineWidth5 = 1
+    lineWidth6 = 1
+    lineWidth7 = 1
+    lineWidth8 = 1
+    lineWidth9 = 1
+    lineWidth10 = 1
+    lineWidth11 = 1
+    lineWidth12 = 1
+    markerType1 = Circle
+    markerType2 = Circle
+    markerType3 = Triangle
+    markerType4 = None
+    markerType5 = None
+    markerType6 = None
+    markerType7 = None
+    markerType8 = None
+    markerType9 = None
+    markerType10 = None
+    markerType11 = None
+    markerType12 = None
+    markerSize1 = 15
+    markerSize2 = 15
+    markerSize3 = 15
+    markerSize4 = 4
+    markerSize5 = 4
+    markerSize6 = 4
+    markerSize7 = 4
+    markerSize8 = 4
+    markerSize9 = 4
+    markerSize10 = 4
+    markerSize11 = 4
+    markerSize12 = 4
+    antiAlias1 = FALSE
+    antiAlias2 = FALSE
+    antiAlias3 = FALSE
+    antiAlias4 = FALSE
+    antiAlias5 = FALSE
+    antiAlias6 = FALSE
+    antiAlias7 = FALSE
+    antiAlias8 = FALSE
+    antiAlias9 = FALSE
+    antiAlias10 = FALSE
+    antiAlias11 = FALSE
+    antiAlias12 = FALSE
+    name1 = ""
+    name2 = 1
+    name3 = 2
+    name4 = ""
+    name5 = ""
+    name6 = ""
+    name7 = ""
+    name8 = ""
+    name9 = ""
+    name10 = ""
+    name11 = ""
+    name12 = ""
+    currentStyle = 0
+    currentColor = "1 1 1"
+    currentLineStyle = None
+    currentLineWidth = 1
+    currentMarkerType = None
+    currentMarkerSize = 4
+    currentAntiAlias = FALSE
+    currentName = ""
+    reservedEntries = 0
+  }
+}
+module WorldVoxelConvert {
+  internal  {
+    frame = "718 73 144 56"
+    moduleGroupName = "Annotation View"
+    windows  {
+      window _default {
+        geometry = "1156 211 460 251"
+        sizeHint = "460 251"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1354 515 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = WorldVoxelConvert
+    voxelX = 204.339922708
+    voxelY = 265.207133728
+    voxelZ = 18.199999738
+    worldX = 204.339922708
+    worldY = 265.207133728
+    worldZ = 18.199999738
+    voxelPos = "204.339922708 265.207133728 18.199999738"
+    worldPos = "204.339922708 265.207133728 18.199999738"
+    voxelMode = FALSE
+    worldMode = TRUE
+    intVoxelCoords = FALSE
+    keepConstant = World
+  }
+}
+module MinMaxScan {
+  internal  {
+    frame = "363 -312 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "398 279 502 284"
+        sizeHint = "483 284"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MinMaxScan
+    updateMode = AutoUpdate
+    typeSelect = "Proposed Data Type"
+    preferUnsigned = TRUE
+  }
+}
+module View2D {
+  internal  {
+    frame = "373 -523 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "0 44 32 32"
+        sizeHint = "400 400"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View2D
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    view2DExtensionsOn = TRUE
+    startSlice = 176
+    numSlices = 1
+    numXSlices = 1
+    sliceStep = 1
+    slab = 1
+    blendMode = BLEND_REPLACE
+    timePoint = 0
+    maxTimePoint = 0
+    filterMode = FILTER_LINEAR
+    standardKeys = TRUE
+    cineMode = CINE_Z
+    cineDirection = CINE_PINGPONG
+    cineRepeat = CINE_ONCE
+    cineSpeed = 0.1
+    snapToCenter = FALSE
+    zoomMode = VIEW2D_AUTO_ZOOM
+    unzoomOnImageChange = FALSE
+    sliceZoom = 1
+    sliceZoomSynced = 1
+    baseColor = "1 1 1"
+    margin = "2 2"
+    sliceOrigin = "0 0"
+    plane = "0 0 1 247.099990844727"
+    useShaders = TRUE
+    useManagedInteraction = FALSE
+    lutCenter = 0.33893681
+    lutWidth = 0.69534403
+    annotationOn = TRUE
+    annotationMode = ANNO_MODE_AUTO
+    annotationSizeMode = ANNO_SHOW_DETAILED
+    annotationCol = "0.899999976158142 0.899999976158142 0.899999976158142"
+    annotationFontSize = ANNO_SIZE_AUTO
+    annoCoords = Voxel
+    annoCTValue = AsIs
+    borderOn = FALSE
+    borderColor = "0.899999976158142 0.899999976158142 0.899999976158142"
+    valueHighPrecision = TRUE
+    maxPrecision = 4
+    enableSlicing = TRUE
+    useRelativeLUTIfNoInputImage = FALSE
+  }
+}
+module ImageLoadMulti {
+  internal  {
+    frame = "369 325 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "345 87 711 647"
+        sizeHint = "587 647"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageLoadMulti
+    rootPath = ""
+    filename = /Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example02_Blurred1_9.dcm
+    fileListFileName = /Users/tom/Documents/workspace/cadmi/data/voxel_candidates
+    processingPossible = TRUE
+    autoReadFileList = TRUE
+    autoParseFileList = TRUE
+    doNotParse = FALSE
+    autoLoadFiles = TRUE
+    autoSelectFirst = TRUE
+    keepInvalidListEntries = FALSE
+    relativeListBaseDirMode = RelativeToListPath
+    treatAllPathsAsRelative = FALSE
+    fileList = "/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example01_1_1.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example01_1_9.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example02_1_1.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example02_1_9.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example02_Blurred1_1.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example02_Blurred1_9.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example03_1_1.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example04_1_1.dcm
+/Users/tom/Documents/workspace/cadmi/data/voxel_candidates/example05_1_1.dcm"
+    setCurrentFileByIndex = 6
+    recursive = TRUE
+    maxRecursionDepth = 0
+    joinImagePairs = TRUE
+    include = ".*\\.di?co?m .*\\.dic .*\\.tiff? .*\\.hdr .*\\.img .*\\.ima .*\\.raw .*\\.p[gpn]m .*\\.mlimage"
+    includeRegExp = TRUE
+    exclude = "result* *slices"
+    excludeRegExp = FALSE
+    ignoreCase = TRUE
+    loop = FALSE
+    sizeX = 256
+    sizeY = 256
+    sizeZ = 181
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = float
+    minValue = 0
+    maxValue = 44
+    format = DICOM/TIFF
+    comment = MeVisLab
+    status = "File open"
+    readRaw = FALSE
+    rawX = 512
+    rawY = 512
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    iterationDelay = 1
+    startSlice = 90
+    autoSetPreviewAnnotationUnitType = TRUE
+    previewAnnotationUnitType = AsIs
+    rescalingOn = FALSE
+    rescalingOffset = 0
+    rescalingFactor = 1
+    rescalingDataType = Automatic
+    rescalingUseUserMin = FALSE
+    rescalingUserMin = 0
+    rescalingUseUserMax = FALSE
+    rescalingUserMax = 255
+  }
+}
+connections  {
+  Morphology1.input0 = IntervalThreshold1.output0
+  ConnectedComponents.input0 = Morphology1.output0
+  IntervalThreshold1.input0 = ImageLoadMulti.output0
+  Histogram.input0 = IntervalThreshold.output0
+  SoRenderArea.children = SoDiagram2D.self
+  SoDiagram2D.inCurveList = Histogram.outputHistogramCurve
+  SoDiagram2D.inStylePalette = StylePalette0.outStylePalette
+  Morphology.input0 = MarkerToMask.output0
+  ImageStatistics.input1 = Morphology.output0
+  MarkerToMask.input0 = Arithmetic1.output0
+  MarkerToMask.inputXMarkerList = SoView2DMarkerEditor.outXMarkerList
+  SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
+  SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  MinMaxScan.input0 = ConnectedComponents.output0
+  View2D.inImage = MinMaxScan.output0
+  View2D.inInvPostLUT = SoView2DMarkerEditor.self
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 20
+        objectName = "Annotation View"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
