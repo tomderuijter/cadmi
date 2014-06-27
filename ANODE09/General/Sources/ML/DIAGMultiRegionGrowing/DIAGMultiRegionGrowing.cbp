@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf8'?>
+<CodeBlocks_project_file>
+  <FileVersion major="1" minor="6" />
+  <Project>
+    <Option title="DIAGMultiRegionGrowing" />
+    <Option makefile="/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing" />
+    <Option makefile_is_custom="1" />
+    <Option compiler="gcc" />
+    <Build>
+      <Target title="all">
+        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
+        <Option type="0" />
+        <Option compiler="gcc" />
+        <MakeCommands>
+          <Build command="$make -k -f $makefile $target" />
+          <CompileFile command="$make -k -f $makefile $file" />
+          <Clean command="$make -k -f $makefile clean$target" />
+          <DistClean command="$make -k -f $makefile distclean$target" />
+        </MakeCommands>
+      </Target><Target title="release">
+        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab" prefix_auto="1" />
+        <Option type="0" />
+        <Option compiler="gcc" />
+        <MakeCommands>
+          <Build command="$make -k -f $makefile -j 4 $target" />
+          <CompileFile command="$make -k -f $makefile $file" />
+          <Clean command="$make -k -f $makefile clean$target" />
+          <DistClean command="$make -k -f $makefile distclean$target" />
+        </MakeCommands>
+      </Target><Target title="debug">
+        <Option extension_auto="1" output="/opt/MeVisLab/Packages/MeVisLab/IDE/bin/MeVisLab_d" prefix_auto="1" />
+        <Option type="0" />
+        <Option compiler="gcc" />
+        <Compiler>
+          <Add option="-g" />
+        </Compiler><MakeCommands>
+          <Build command="$make -k -f $makefile -j 4 $target" />
+          <CompileFile command="$make -k -f $makefile $file" />
+          <Clean command="$make -k -f $makefile clean$target" />
+          <DistClean command="$make -k -f $makefile distclean$target" />
+        </MakeCommands>
+      </Target>
+    </Build><Unit filename="DIAGMultiRegionGrowingInit.h" />
+    <Unit filename="DIAGMultiRegionGrowingSystem.h" />
+    <Unit filename="mlMultiRegionGrowingOutputImageHandler.h" />
+    <Unit filename="mlMultiRegionGrowing.h" />
+    <Unit filename="DIAGMultiRegionGrowingInit.cpp" />
+    <Unit filename="mlMultiRegionGrowingOutputImageHandler.cpp" />
+    <Unit filename="mlMultiRegionGrowing.cpp" />
+    <Unit filename="message(__CBP_MARKER_HEADERS__" />
+    <Unit filename="DIAGMultiRegionGrowingInit.h" />
+    <Unit filename="DIAGMultiRegionGrowingSystem.h" />
+    <Unit filename="mlMultiRegionGrowingOutputImageHandler.h" />
+    <Unit filename="mlMultiRegionGrowing.h" />
+    <Unit filename="__CBP_MARKER_HEADERS__)" />
+    <Unit filename="DIAGMultiRegionGrowing.pro">
+      <Option target="All" />
+    </Unit><Extensions>
+      <code_completion>
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/SharedIncludes" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include/deprecated" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/ML/include" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLLinearAlgebra/deprecated" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLLinearAlgebra" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLProfilingManager/Include" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLUtilities" />
+        <search_path add="/opt/MeVisLab/Packages/MeVis/Foundation/Sources/MLMemoryManager/Include" />
+      </code_completion><debugger />
+    </Extensions>
+  </Project>
+</CodeBlocks_project_file>

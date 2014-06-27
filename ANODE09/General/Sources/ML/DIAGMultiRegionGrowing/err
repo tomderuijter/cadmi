@@ -1,0 +1,37 @@
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing
+make -k -j 4 -f Makefile.DIAGMultiRegionGrowing.Release
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing'
+compiling mlMultiRegionGrowingOutputImageHandler.cpp
+mlMultiRegionGrowingOutputImageHandler.cpp: In member function ‘void ml::MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(ml::TSubImage<unsigned int>&, const ml::TSubImage<float>&, const ml::TSubImage<unsigned int>&, ml::UserThreadData*)’:
+mlMultiRegionGrowingOutputImageHandler.cpp:57:7: warning: variable ‘output’ set but not used [-Wunused-but-set-variable]
+   int output[validOutBox.v2.x + 1][validOutBox.v2.y + 1][validOutBox.v2.z + 1]; 
+       ^
+mlMultiRegionGrowingOutputImageHandler.cpp: At global scope:
+mlMultiRegionGrowingOutputImageHandler.cpp:38:6: warning: unused parameter ‘inputSubImage0’ [-Wunused-parameter]
+ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImage<MLuint32>& outputSubImage,
+      ^
+rm -f libDIAGMultiRegionGrowing.so
+linking tmp/libDIAGMultiRegionGrowing.so
+mv -f libDIAGMultiRegionGrowing.so tmp/
+creating tmp/libDIAGMultiRegionGrowing.so.pdb
+strip -sv tmp/libDIAGMultiRegionGrowing.so && if [ -f ../../../lib/libDIAGMultiRegionGrowing.so ]; then rm -f ../../../lib/libDIAGMultiRegionGrowing.so; fi && cp -f tmp/libDIAGMultiRegionGrowing.so ../../../lib && if [ -f ../../../lib/libDIAGMultiRegionGrowing.so.pdb ]; then rm -f ../../../lib/libDIAGMultiRegionGrowing.so.pdb; fi && cp -f tmp/libDIAGMultiRegionGrowing.so.pdb ../../../lib
+copy from `tmp/libDIAGMultiRegionGrowing.so' [elf64-x86-64] to `tmp/stwMwlPD' [elf64-x86-64]
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing'
+cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing 
+make -k -j 4 -f Makefile.DIAGMultiRegionGrowing.Debug
+make[1]: Entering directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing'
+compiling mlMultiRegionGrowingOutputImageHandler.cpp
+mlMultiRegionGrowingOutputImageHandler.cpp: In member function ‘void ml::MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(ml::TSubImage<unsigned int>&, const ml::TSubImage<float>&, const ml::TSubImage<unsigned int>&, ml::UserThreadData*)’:
+mlMultiRegionGrowingOutputImageHandler.cpp:57:7: warning: variable ‘output’ set but not used [-Wunused-but-set-variable]
+   int output[validOutBox.v2.x + 1][validOutBox.v2.y + 1][validOutBox.v2.z + 1]; 
+       ^
+mlMultiRegionGrowingOutputImageHandler.cpp: At global scope:
+mlMultiRegionGrowingOutputImageHandler.cpp:38:6: warning: unused parameter ‘inputSubImage0’ [-Wunused-parameter]
+ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImage<MLuint32>& outputSubImage,
+      ^
+rm -f libDIAGMultiRegionGrowing_d.so
+linking tmp/libDIAGMultiRegionGrowing_d.so
+mv -f libDIAGMultiRegionGrowing_d.so tmp/
+creating tmp/libDIAGMultiRegionGrowing_d.so.pdb
+if [ -f ../../../lib/libDIAGMultiRegionGrowing_d.so ]; then rm -f ../../../lib/libDIAGMultiRegionGrowing_d.so; fi && cp -f tmp/libDIAGMultiRegionGrowing_d.so ../../../lib && if [ -f ../../../lib/libDIAGMultiRegionGrowing_d.so.pdb ]; then rm -f ../../../lib/libDIAGMultiRegionGrowing_d.so.pdb; fi && cp -f tmp/libDIAGMultiRegionGrowing_d.so.pdb ../../../lib
+make[1]: Leaving directory `/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing'

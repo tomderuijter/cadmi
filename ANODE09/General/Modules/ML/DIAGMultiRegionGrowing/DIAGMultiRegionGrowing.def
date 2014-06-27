@@ -1,0 +1,20 @@
+//----------------------------------------------------------------------------------
+//! DIAGMultiRegionGrowing module definitions.
+/*!
+// \file    DIAGMultiRegionGrowing.def
+// \author  Wieke
+// \date    2014-06-27
+*/
+//----------------------------------------------------------------------------------
+
+
+MLModule MultiRegionGrowing {
+  DLL                = "DIAGMultiRegionGrowing"
+
+  genre              = ""
+  author             = "Wieke"
+  comment            = ""
+  keywords           = ""
+  seeAlso            = ""
+  externalDefinition = $(LOCAL)/MultiRegionGrowing.script
+}  

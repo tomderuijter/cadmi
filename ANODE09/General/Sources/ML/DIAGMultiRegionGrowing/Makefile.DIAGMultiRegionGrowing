@@ -1,0 +1,24 @@
+all: release debug
+
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/DIAGMultiRegionGrowing.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
+#/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/DIAGMultiRegionGrowing.pro
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
+
+release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Release
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing
+	$(MAKE) -k -j 4 -f Makefile.DIAGMultiRegionGrowing.Release
+debug: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Debug 
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing 
+	$(MAKE) -k -j 4 -f Makefile.DIAGMultiRegionGrowing.Debug
+cleanall: clean
+cleanrelease:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && if test -e Makefile.DIAGMultiRegionGrowing.Release; then $(MAKE) -k -f Makefile.DIAGMultiRegionGrowing.Release clean; fi
+cleandebug:
+	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && if test -e Makefile.DIAGMultiRegionGrowing.Debug; then $(MAKE) -k -f Makefile.DIAGMultiRegionGrowing.Debug clean; fi
+
+clean: cleanrelease cleandebug
+
+rebuilddebug: cleandebug debug
+
+rebuildrelease: cleanrelease release
