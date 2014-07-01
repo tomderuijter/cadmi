@@ -2,17 +2,14 @@
 //! The ML module output image handle class MultiRegionGrowingOutputImageHandler.
 /*!
 // \file    
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 //
 // 
 */
 //----------------------------------------------------------------------------------
 
 #include "mlMultiRegionGrowingOutputImageHandler.h"
-#include <iostream>
-#include <vector>
-#include <cmath>
 
 ML_START_NAMESPACE
 
@@ -20,6 +17,7 @@ ML_START_NAMESPACE
 MultiRegionGrowingOutputImageHandler::Parameters::Parameters() 
 {
   this->tolerance = 0.1;  
+  this->size = 30;  
 }
 
 MultiRegionGrowingOutputImageHandler::MultiRegionGrowingOutputImageHandler(MLint outputIndex, const Parameters& parameters)      
@@ -46,6 +44,7 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   // Clamp box of output image against image extent to avoid that unused areas are processed.
   const SubImageBox validOutBox = outputSubImage.getValidRegion();
   float tolerance = this -> _parameters.tolerance; 
+  int limit = this -> _parameters.size;
   
   MLuint32 min;
   MLuint32 max;
@@ -56,7 +55,6 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   std::vector<float> startvalue(nrCandidates);
   std::vector<int> size(nrCandidates, 1);
 
-  int limit = 30;
   
   int width = validOutBox.v2.x + 1;
   int depth = validOutBox.v2.y + 1;
@@ -65,14 +63,14 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   std::vector<std::vector<std::vector<int> > > output;
 
   output.resize(width);
-	for(int i=0;i<width;i++)
-	{
-		output[i].resize(depth);
-		for(int j=0;j<depth;j++)
-		{
-		   output[i][j].resize(height, 0);
-		}
-	}
+  for(int i=0;i<width;i++)
+  {
+    output[i].resize(depth);
+    for(int j=0;j<depth;j++)
+    {
+       output[i][j].resize(height, 0);
+    }
+  }
 
   ImageVector p;
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -81,10 +79,10 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
         for (p.z=validOutBox.v1.z;  p.z<=validOutBox.v2.z;  ++p.z) {
           for (p.y=validOutBox.v1.y;  p.y<=validOutBox.v2.y;  ++p.y) {
 
-	        	p.x = validOutBox.v1.x;
+            p.x = validOutBox.v1.x;
             const MLint rowEnd   = validOutBox.v2.x;
-			
-						const MLuint32* inVoxel1 = inputSubImage1.getImagePointer(p);
+      
+            const MLuint32* inVoxel1 = inputSubImage1.getImagePointer(p);
             const MLfloat* inVoxel0 = inputSubImage0.getImagePointer(p);
             
             // Process all row voxels.
@@ -248,4 +246,5 @@ bool MultiRegionGrowingOutputImageHandler::grow(std::vector<std::vector<std::vec
     return false;
 
 }
+
 ML_END_NAMESPACE

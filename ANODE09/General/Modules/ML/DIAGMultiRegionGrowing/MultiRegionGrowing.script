@@ -2,8 +2,8 @@
 //! DIAGMultiRegionGrowing module definitions.
 /*!
 // \file    MultiRegionGrowing.script
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 */
 //----------------------------------------------------------------------------------
 
@@ -13,6 +13,9 @@ Window {
     margin = 3
     Field tolerance {
       tooltip = "Tolerance"
+    }
+    Field size {
+      tooltip = "Size"
     }
   }
 }

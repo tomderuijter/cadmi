@@ -2,8 +2,8 @@
 //! The ML module class MultiRegionGrowing.
 /*!
 // \file   
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 //
 // 
 */
@@ -29,6 +29,7 @@ MultiRegionGrowing::MultiRegionGrowing() : Module(2, 1)
 
   // Add fields to the module and set their values.
   _toleranceFld = addFloat("tolerance", 0.1);
+  _sizeFld = addInt("size", 30);
 
   // Reactivate calls of handleNotification on field changes.
   handleNotificationOn();
@@ -54,6 +55,10 @@ void MultiRegionGrowing::handleNotification(Field* field)
     touchOutputs = true;
   }
   else if (field == _toleranceFld)
+  {
+    touchOutputs = true;
+  }
+  else if (field == _sizeFld)
   {
     touchOutputs = true;
   }
@@ -86,6 +91,7 @@ CalculateOutputImageHandler* MultiRegionGrowing::createCalculateOutputImageHandl
 {
   MultiRegionGrowingOutputImageHandler::Parameters processingParameters;
   processingParameters.tolerance = this->_toleranceFld->getFloatValue();
+  processingParameters.size = this->_sizeFld->getIntValue();
   return new MultiRegionGrowingOutputImageHandler(outputImage->getOutputIndex(), processingParameters);  
 }
 

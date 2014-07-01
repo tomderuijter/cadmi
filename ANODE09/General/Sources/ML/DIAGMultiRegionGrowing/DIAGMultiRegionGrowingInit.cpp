@@ -2,8 +2,8 @@
 //! Dynamic library and runtime type system initialization.
 /*!
 // \file    
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 */
 //----------------------------------------------------------------------------------
 
