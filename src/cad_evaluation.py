@@ -30,8 +30,7 @@ def cross_validation(classifier, data_X, data_y, subjects):
         estimator = clone(classifier)
         estimator.fit(train_X, train_y)
         
-        predicted_y = estimator.predict_proba(test_X)      # Predict on whole set
-        predicted_y = predicted_y[:,1]
+        predicted_y = estimator.do_predict(test_X)
         predictions = np.concatenate((predictions,predicted_y),axis=0)
     
     predictions = cad_io.undo_permutation(predictions, sort_perm)

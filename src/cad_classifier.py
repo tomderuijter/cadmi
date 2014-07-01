@@ -1,4 +1,4 @@
-from sklearn import linear_model,ensemble, metrics
+from sklearn import linear_model,ensemble,metrics
 
 # HOMEBREW MODULES
 import cad_metrics    
@@ -17,18 +17,25 @@ class AUCTreeClassifier(ensemble.RandomForestClassifier):
         # fpr, tpr, thresholds = metrics.roc_curve(y, probas)
         # return metrics.auc(fpr, tpr)
 
+    def do_predict(self, X):
+        probas = self.predict_proba(X)
+        probas = probas[:,1]
+        return probas
+
 def create_tree_classifier(**params):
     return AUCTreeClassifier(**params)
 
 
-class AUCLogisticRegression(linear_model.LogisticRegression):
+class AUCRidgeClassifier(linear_model.RidgeClassifier):
     
     def score(self, X, y):
-        probas = self.predict_proba(X)
-        probas = probas[:,1]
+        probas = self.decision_function(X)
         subjects = [x.image for x in y]
         curve, _ = cad_metrics.froc(y, probas, subjects, pos_label=1)
         return cad_metrics.fp_mean(curve)
         
-def create_logistic_regressor(**params):
-    return AUCLogisticRegression(**params)
+    def do_predict(self, X):
+        return self.decision_function(X)
+        
+def create_ridge_classifier(**params):
+    return AUCRidgeClassifier(**params)

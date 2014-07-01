@@ -1,0 +1,36 @@
+    fp = np.zeros((data_X.shape[0]),dtype=bool)
+
+    grey_av = labels['GreyValues_average']
+    grey_med = labels['GreyValues_median']
+    grey_sd = labels['GreyValues_sd']
+    
+    vmean_max = labels['VerticalMean_max']
+    
+    blob1_av = labels['Blobness1_average']
+    blob1_med = labels['Blobness1_median']
+    blob2_av = labels['Blobness2_average']
+    blob2_min = labels['Blobness2_min']
+    blob2_sd = labels['Blobness2_sd']
+    
+    # Best and singular rules first
+    
+    # fp += data_X[:,grey_av] < 0.1
+    # fp += data_X[:,grey_med] < 0.1
+    # fp += data_X[:,grey_med] > 0.25
+    # fp += data_X[:,grey_sd] < 0.05
+    #
+    # fp += data_X[:,vmean_max] > 0.4
+    #
+    # fp += data_X[:,blob1_av] < 0.35
+    # fp += data_X[:,blob1_av] > 0.6
+    # fp += np.logical_and(data_X[:,blob1_av] > 0.45, data_X[:,blob1_av] < 0.51)
+    #
+    # fp += data_X[:,blob1_med] < 0.35
+    # fp += data_X[:,blob1_med] > 0.57
+    # fp += np.logical_and(data_X[:,blob1_med] > 0.44, data_X[:,blob1_med] < 0.51)
+    #
+    # fp += data_X[:,blob2_av] < 0.35
+    # fp += data_X[:,blob2_av] > 0.6
+    # fp += np.logical_and(data_X[:,blob2_av] > 0.37, data_X[:,blob2_av] < 0.4)
+    # fp += data_X[:,blob2_sd] < 0.025
+    # fp += data_X[:,blob2_min] > 0.55

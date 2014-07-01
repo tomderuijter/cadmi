@@ -14,6 +14,21 @@ def load_data (path):
     
     return features, labels
     
+def load_feature_names (path):
+
+    with open(path, 'r') as f:
+        first_line = f.readline()
+     
+    first_line = first_line[2:] # Remove '# '
+    name_list = first_line.split(",")
+    name_list = name_list[1:]   # Remove 'labels'
+    
+    name_dict = {}
+    for i in xrange(len(name_list)):
+        name_dict[name_list[i]] = i
+    
+    return name_dict
+    
 def load_locations (path):
     
     return np.genfromtxt(path, dtype=None, delimiter=",",comments="#")
@@ -70,6 +85,14 @@ def undo_permutation(data, permutation):
     data = np.array([data[i] for i in inv_permutation])
     
     return data
+    
+    
+def apply_permutation(data_X, data_y, locations, perm):
+
+    data_X = data_X[perm]
+    data_y = data_y[perm]
+    locations = locations[perm]
+    return data_X,data_y,locations
 
 
 def split_data (features, labels, test_size):
