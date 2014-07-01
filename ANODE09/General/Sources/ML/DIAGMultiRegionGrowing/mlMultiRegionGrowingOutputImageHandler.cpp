@@ -2,17 +2,14 @@
 //! The ML module output image handle class MultiRegionGrowingOutputImageHandler.
 /*!
 // \file    
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 //
 // 
 */
 //----------------------------------------------------------------------------------
 
 #include "mlMultiRegionGrowingOutputImageHandler.h"
-#include <iostream>
-#include <vector>
-#include <cmath>
 
 ML_START_NAMESPACE
 
@@ -20,6 +17,7 @@ ML_START_NAMESPACE
 MultiRegionGrowingOutputImageHandler::Parameters::Parameters() 
 {
   this->tolerance = 0.1;  
+  this->size = 30;  
 }
 
 MultiRegionGrowingOutputImageHandler::MultiRegionGrowingOutputImageHandler(MLint outputIndex, const Parameters& parameters)      
@@ -46,14 +44,22 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   // Clamp box of output image against image extent to avoid that unused areas are processed.
   const SubImageBox validOutBox = outputSubImage.getValidRegion();
   float tolerance = this -> _parameters.tolerance; 
+  int limit = this -> _parameters.size;
   
   MLuint32 min;
   MLuint32 max;
   
   inputSubImage1.calculateMinMax(min, max, NULL);
 
+  MLfloat minValue;
+  MLfloat maxValue;
+  
+  inputSubImage0.calculateMinMax(minValue, maxValue, NULL);
+
   const int nrCandidates = (int) max;
   std::vector<float> startvalue(nrCandidates);
+  std::vector<int> size(nrCandidates, 1);
+
   
   int width = validOutBox.v2.x + 1;
   int depth = validOutBox.v2.y + 1;
@@ -62,14 +68,14 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   std::vector<std::vector<std::vector<int> > > output;
 
   output.resize(width);
-	for(int i=0;i<width;i++)
-	{
-		output[i].resize(depth);
-		for(int j=0;j<depth;j++)
-		{
-		   output[i][j].resize(height, 0);
-		}
-	}
+  for(int i=0;i<width;i++)
+  {
+    output[i].resize(depth);
+    for(int j=0;j<depth;j++)
+    {
+       output[i][j].resize(height, 0);
+    }
+  }
 
   ImageVector p;
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -78,14 +84,14 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
         for (p.z=validOutBox.v1.z;  p.z<=validOutBox.v2.z;  ++p.z) {
           for (p.y=validOutBox.v1.y;  p.y<=validOutBox.v2.y;  ++p.y) {
 
-	        	p.x = validOutBox.v1.x;
+            p.x = validOutBox.v1.x;
             const MLint rowEnd   = validOutBox.v2.x;
-			
-						const MLuint32* inVoxel1 = inputSubImage1.getImagePointer(p);
+      
+            const MLuint32* inVoxel1 = inputSubImage1.getImagePointer(p);
             const MLfloat* inVoxel0 = inputSubImage0.getImagePointer(p);
             
             // Process all row voxels.
-            for (; p.x <= rowEnd;  ++p.x, ++inVoxel1)
+            for (; p.x <= rowEnd;  ++p.x, ++inVoxel1, ++inVoxel0)
             {
               output[p.x][p.y][p.z] = *inVoxel1;
               if (*inVoxel1 > 0)
@@ -100,20 +106,23 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   }
 
   //check(output, inputSubImage0, width, depth, height, x, y, z, tolerance, startvalue);
-
-  bool change = false;
-
-  for (int x = 0; x < width; x++)
-    for (int y = 0; y < depth; y++)
-      for (int z = 0; z < height; z++)
-      {
-
-        if (check(output, inputSubImage0, width, depth, height, x, y, z, tolerance, startvalue))
-          change = true;
-      }
   
-
-  std::cout << change << std::endl;
+  bool change = true;
+  while (change){
+    change = false;
+    std::vector<std::vector<std::vector<int> > > outputold = output;
+    
+    for (int x = 0; x < width; x++)
+      for (int y = 0; y < depth; y++)
+        for (int z = 0; z < height; z++)
+        {
+          if (outputold[x][y][z] > 0)
+            if (size[outputold[x][y][z]-1] < limit)
+              if (check(output, inputSubImage0, width, depth, height, x, y, z, tolerance, startvalue, size, minValue, maxValue))
+                change = true;
+        }
+    
+  }
 
   // Process all voxels of the valid region of the output page.
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
@@ -149,42 +158,62 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   int y,
   int z,
   float tolerance,
-  std::vector<float> startValue)
+  std::vector<float> startValue,
+  std::vector<int> & size,
+  float min,
+  float max)
 {
 
   // Figure out neighbor bounds
   bool change = false;
   int label = image[x][y][z];
-
   if (x > 0)
   {
-    if (grow(image, inputSubImage0, x -1, y, z, tolerance, label, startValue))
-      change = true;
+      if (grow(image, inputSubImage0, x -1, y, z, tolerance, label, startValue, min, max))
+      {
+        change = true;
+        size[label-1] = size[label-1] + 1;
+      }
   }
   if (x < (width -1))
   {
-    if (grow(image, inputSubImage0, x +1, y, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x +1, y, z, tolerance, label, startValue, min, max))
+    {
       change = true;
+      size[label-1] = size[label-1] + 1;
+    }
   }
   if (y > 0)
   {
-    if (grow(image, inputSubImage0, x, y -1, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y -1, z, tolerance, label, startValue, min, max))
+    {
       change = true;
+      size[label-1] = size[label-1] + 1;
+    }
   }
   if (y < (depth -1))
   {
-    if (grow(image, inputSubImage0, x, y +1, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y +1, z, tolerance, label, startValue, min, max))
+    {
       change = true;
+      size[label-1] = size[label-1] + 1;
+    }
   }
   if (z > 0)
   {
-    if (grow(image, inputSubImage0, x, y, z -1, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y, z -1, tolerance, label, startValue, min, max))
+    {
       change = true;
+      size[label-1] = size[label-1] + 1;
+    }
   }
   if (z < (height -1))
   {
-    if (grow(image, inputSubImage0, x, y, z +1, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y, z +1, tolerance, label, startValue, min, max))
+    {
       change = true;
+      size[label-1] = size[label-1] + 1;
+    }
   }
   return change;
 }
@@ -196,18 +225,24 @@ bool MultiRegionGrowingOutputImageHandler::grow(std::vector<std::vector<std::vec
   int z,
   float tolerance,
   int label,
-  std::vector<float> startValue)
+  std::vector<float> startValue,
+  float min,
+  float max)
 {
+  if(image[x][y][z] > 0)
+    return false;
+
   ImageVector p;
   p.u = 0;
   p.t = 0;
   p.c = 0;
-  p.z = x;
+  p.z = z;
   p.y = y;
-  p.x = z;
+  p.x = x;
 
   const MLfloat* inVoxel = inputSubImage0.getImagePointer(p);
-  float diff = std::abs(1 - *inVoxel / startValue[label - 1]);
+
+  float diff = std::abs(*inVoxel - startValue[label - 1]) / (max - min);
 
   if (diff < tolerance)
   {
@@ -218,4 +253,5 @@ bool MultiRegionGrowingOutputImageHandler::grow(std::vector<std::vector<std::vec
     return false;
 
 }
+
 ML_END_NAMESPACE

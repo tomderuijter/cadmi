@@ -2,8 +2,8 @@
 //! The ML module output image handle class MultiRegionGrowingOutputImageHandler.
 /*!
 // \file    
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 //
 // 
 */
@@ -30,6 +30,7 @@ public:
   struct Parameters 
   {
     MLfloat tolerance; //!< Tolerance
+    MLint size; //!< Size
   
     //! Default constructor ensuring that all variables are initialized.
     Parameters();
@@ -72,7 +73,6 @@ void typedCalculateOutputSubImage(TSubImage<MLuint32>& outputSubImage,
     const TSubImage<MLuint32>& inputSubImage1,
     UserThreadData* /*userThreadData*/);
 
-
 bool check(std::vector<std::vector<std::vector<int> > > & image,
   const TSubImage<MLfloat>& inputSubImage0,
   int width,
@@ -82,7 +82,8 @@ bool check(std::vector<std::vector<std::vector<int> > > & image,
   int y,
   int z,
   float tolerance,
-  std::vector<float> startValue);
+  std::vector<float> startValue,
+  std::vector<int> & size);
 
 bool grow(std::vector<std::vector<std::vector<int> > > & image,
   const TSubImage<MLfloat>& inputSubImage0,
@@ -93,7 +94,6 @@ bool grow(std::vector<std::vector<std::vector<int> > > & image,
   int label,
   std::vector<float> startValue);
 };
-
 
 ML_END_NAMESPACE
 

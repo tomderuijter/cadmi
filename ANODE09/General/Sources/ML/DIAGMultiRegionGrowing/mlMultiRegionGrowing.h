@@ -2,8 +2,8 @@
 //! The ML module class MultiRegionGrowing.
 /*!
 // \file    
-// \author  Wieke
-// \date    2014-06-27
+// \author     wieke
+// \date    2014-07-01
 //
 // 
 */
@@ -55,6 +55,8 @@ private:
 
   //! Tolerance
   FloatField* _toleranceFld;
+  //! Size
+  IntField* _sizeFld;
   //@}
 
   // Implements interface for the runtime type system of the ML.
