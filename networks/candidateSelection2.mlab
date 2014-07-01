@@ -2,85 +2,536 @@
 network  {
   watchlist = ""
 }
-module Morphology {
+module AxisEdgeMask {
   internal  {
-    frame = "2390 -4074 120 56"
-    moduleGroupName = "Phased Thresholding"
+    frame = "2101 -515 136 56"
+    moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "796 389 327 525"
-        sizeHint = "327 525"
+        geometry = "500 311 279 221"
+        sizeHint = "279 221"
         wasOpen = no
       }
     }
   }
   fields  {
-    instanceName = Morphology1
-    borderHandling = PadSrcClamp
-    fillValue = 0
-    referenceExtentMode = Overlap
-    filterMode = Dilation
-    kernelX = 3
-    kernelY = 3
-    kernelZ = 3
-    kernelC = 1
-    kernelT = 1
-    kernelU = 1
-    makeSpherical = TRUE
-    intervalMinOfFilteredVoxels = 0
-    intervalMaxOfFilteredVoxels = 1024
-    useIntervalOfFilteredVoxels = FALSE
-    intervalMinOfVoxelsForFiltering = 0
-    intervalMaxOfVoxelsForFiltering = 1024
-    useIntervalOfVoxelsForFiltering = FALSE
-    externalKernel = ""
-    useExternalKernel = FALSE
-    kernelInfo = "circular, 19 elems, 3x3x3x1x1x1"
-    numKernelElements = 19
-    kernelElementsSum = 0
+    instanceName = AxisEdgeMask2
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
   }
 }
-module Morphology {
+module PageToImageExtent {
   internal  {
-    frame = "2354 -3978 112 56"
-    moduleGroupName = "Phased Thresholding"
-    windows  {
-      window _default {
-        geometry = "796 389 327 525"
-        sizeHint = "327 525"
-        wasOpen = no
-      }
-    }
+    frame = "2085 -443 168 56"
+    moduleGroupName = ""
   }
   fields  {
-    instanceName = Morphology
-    borderHandling = PadSrcClamp
-    fillValue = 0
-    referenceExtentMode = Overlap
-    filterMode = Erosion
-    kernelX = 2
-    kernelY = 2
-    kernelZ = 2
-    kernelC = 1
-    kernelT = 1
-    kernelU = 1
-    makeSpherical = TRUE
-    intervalMinOfFilteredVoxels = 0
-    intervalMaxOfFilteredVoxels = 1024
-    useIntervalOfFilteredVoxels = FALSE
-    intervalMinOfVoxelsForFiltering = 0
-    intervalMaxOfVoxelsForFiltering = 1024
-    useIntervalOfVoxelsForFiltering = FALSE
-    externalKernel = ""
-    useExternalKernel = FALSE
-    kernelInfo = "circular, 8 elems, 2x2x2x1x1x1"
-    numKernelElements = 8
-    kernelElementsSum = 0
+    instanceName = PageToImageExtent2
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "2133 -603 104 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = Centroids3
   }
 }
 module Arithmetic {
   internal  {
-    frame = "2302 -3890 104 56"
+    frame = "2261 -795 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "679 167 582 509"
+        sizeHint = "582 509"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic5
+    expression = "a+(1-i1)*b"
+    i1 = 1
+    i2 = 1
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 2
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ImageStatistics {
+  internal  {
+    frame = "2081 -795 128 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "720 132 491 664"
+        sizeHint = "491 664"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "1157 343 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageStatistics
+    innerMin = 0
+    innerMax = 1
+    autoUpdate = TRUE
+    perSlice = FALSE
+    currentSlice = 0
+    lowerWidth = 0
+    upperWidth = 0
+    useMask = FALSE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2417 -499 176 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = PageToImageExtent13
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "2469 -667 104 56"
+    moduleGroupName = ""
+  }
+  fields  {
+    instanceName = Centroids2
+  }
+}
+module AxisEdgeMask {
+  internal  {
+    frame = "2453 -579 136 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "912 476 95 182"
+        sizeHint = "95 182"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = AxisEdgeMask1
+    front = FALSE
+    back = FALSE
+    right = FALSE
+    left = FALSE
+    top = TRUE
+    bottom = FALSE
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2445 -427 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "644 332 631 527"
+        sizeHint = "631 527"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Arithmetic4
+    expression = "1+a*0"
+    i1 = 0
+    i2 = 0
+    i3 = 0
+    i4 = 0
+    i5 = 0
+    i6 = 0
+    d1 = 0
+    d2 = 0
+    d3 = 0
+    d4 = 0
+    d5 = 0
+    d6 = 0
+    d7 = 0
+    d8 = 0
+    d9 = 0
+    d10 = 0
+    d11 = 0
+    d12 = 0
+    minValue = 0
+    maxValue = 1
+    setMinMaxValues = FALSE
+    dataType = int8
+    setDataType = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    extent = "1 1 1 1 1 1"
+    setExtent = FALSE
+    updateMode = AutoUpdate
+    applyMode = AutoApply
+    domainErrorHandling = Nothing
+    domainErrorReplacementValue = Zeroes
+    numberOfInputs = 1
+    expressionComment = ""
+    scalarVariablesComment = ""
+  }
+}
+module ImageBuffer {
+  internal  {
+    frame = "2109 -5267 120 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "759 416 400 415"
+        sizeHint = "400 415"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageBuffer1
+    useFileCache = TRUE
+    path = /tmp/
+    useCompression = FALSE
+    compressionMode = ZLIB
+    mode = LIFO
+    maxSize = 1
+    index = 1
+  }
+}
+module ImageSave {
+  internal  {
+    frame = "2757 -5339 104 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "736 460 446 382"
+        sizeHint = "446 382"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ImageSave
+    taskVerboseLogging = FALSE
+    filename = /mnt/Multimedia/CADMICompetition/examples/candidates/example05.dcm
+    format = DICOMTIFF
+    comment = MeVisLab
+    allowOverwrite = TRUE
+    autoFilename = FALSE
+    sourceName = /mnt/Multimedia/CADMICompetition/examples/resampled/example05.dcm
+    postfix = .result1
+    dicomNameUsed = TRUE
+    dicomMetaHeader = TRUE
+    dicomDerived = TRUE
+    dicomDiscardTags = FrameSpecific
+    dicomStoreTimeInfo = None
+    dicomSetWindow = FALSE
+    dicomWindowCenter = 0
+    dicomWindowWidth = 0
+    dicomIgnoreHalfVoxelShift = FALSE
+    tiffCompression = LZW
+    tiffTileX = 128
+    tiffTileY = 128
+    tiffTileXAuto = TRUE
+    tiffTileYAuto = TRUE
+    saveDicomHeaderOnly = FALSE
+    pngCompression = Default
+    pngInterlaced = FALSE
+    jpegQuality = 75
+    jpegProgressive = FALSE
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2365 -4045 168 56"
+    moduleGroupName = "Phased Thresholding"
+  }
+  fields  {
+    instanceName = PageToImageExtent3
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module View3D {
+  internal  {
+    frame = "1881 -5291 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "465 286 988 675"
+        sizeHint = "988 675"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = View3D
+    autoViewAll = TRUE
+    inventorInputOn = TRUE
+    inventorOutputOn = FALSE
+    lutType = Ramp
+    currentTimePoint = 0
+    staticSamplingRate = 1
+    quality = 1
+    lutEditorColorPoints = "[ 0 0 0 0, 4095 1 1 1 ]"
+    lutEditorAlphaPoints = "[ 0 0, 4095 1 ]"
+    lutEditorRelativeLut = FALSE
+    lutEditorColorInterpolation = InterpolateRGB
+    lutEditorAlphaFactor = 1
+    orientationProjectionType = PERSPECTIVE
+    orientationLocation = LOWER_RIGHT
+    orientationOn = TRUE
+    orientationModel = CUBE
+    greyCenter = 0.50499952
+    greyWidth = 0.14999998
+    alphaFactor = 1
+    colorFactor = "1 1 1"
+    camType = TRUE
+    camPosition = "452.51123046875 695.667358398438 -5.37286376953125"
+    camOrientation = "-0.113378122448921 -0.789599657058716 -0.603056967258453 3.58520698547363"
+    initialCameraOrientation = CAMERA_KEEP_AS_IS
+    camFar = 865.2926
+    camNear = 386.75012
+    camFocal = 625.78265
+    camHeight = 0.78539801
+    decoration = FALSE
+    annotations = TRUE
+    background = TRUE
+    mode = VolumeRendering
+    interactiveQuality = Medium
+  }
+  internalFields  {
+    renderer.gradientQuality = GradientQualityAutomatic
+    renderer.enhancementAlphaMix = 0.25
+    renderer.boundaryEnhancement = FALSE
+    renderer.boundaryEnhancementFactor = 1
+    renderer.boundaryEnhancementExponent = 1
+    renderer.boundaryEnhancementGradientBias = 0
+    renderer.silhouetteEnhancement = FALSE
+    renderer.silhouetteEnhancementExponent = 1
+    renderer.silhouetteEnhancementFactor = 1
+    renderer.toneShading = FALSE
+    renderer.toneShadingWarmColor = "0.67451000213623 0.533333003520966 0.141176000237465"
+    renderer.toneShadingColdColor = "0 0 0.400000005960464"
+    renderer.toneShadingWarmDiffuse = 0.60000002
+    renderer.toneShadingColdDiffuse = 0.2
+    renderer.toneShadingAngle = 45
+    renderer.materialAmbient = 0.60000002
+    renderer.materialDiffuse = 1
+    renderer.materialSpecular = 1
+    renderer.materialSpecularity = 32
+    renderer.light1Enabled = TRUE
+    renderer.light1DiffuseIntensity = 1
+    renderer.light1SpecularIntensity = 1
+    renderer.light1Color = "1 1 1"
+    renderer.light1PolarPhi = 45
+    renderer.light1PolarRho = 0
+    renderer.light2Enabled = FALSE
+    renderer.light2DiffuseIntensity = 1
+    renderer.light2SpecularIntensity = 1
+    renderer.light2Color = "1 1 1"
+    renderer.light2PolarPhi = 0
+    renderer.light2PolarRho = 0
+    renderer.light3Enabled = FALSE
+    renderer.light3DiffuseIntensity = 1
+    renderer.light3SpecularIntensity = 1
+    renderer.light3Color = "1 1 1"
+    renderer.light3PolarPhi = -45
+    renderer.light3PolarRho = 0
+    renderer.sizeOutputX = 256
+    renderer.sizeOutputY = 256
+    renderer.sizeOutputZ = 240
+    renderer.subVolumeStartX = 0
+    renderer.subVolumeStartY = 0
+    renderer.subVolumeStartZ = 0
+    renderer.subVolumeEndX = 256
+    renderer.subVolumeEndY = 256
+    renderer.subVolumeEndZ = 240
+    clip.hideGeometry = FALSE
+    clip.on = FALSE
+    clip.left = FALSE
+    clip.right = FALSE
+    clip.top = FALSE
+    clip.bottom = FALSE
+    clip.rear = FALSE
+    clip.front = FALSE
+    clip.translation0 = "1 0 0"
+    clip.translation1 = "-1 0 0"
+    clip.translation2 = "0 1 0"
+    clip.translation3 = "0 -1 0"
+    clip.translation4 = "0 0 1"
+    clip.translation5 = "0 0 -1"
+    clip.rotation0 = "0 0 0.999999940395355 1.57079994678497"
+    clip.rotation1 = "0 0 -0.999999940395355 1.57079994678497"
+    clip.rotation2 = "0 0 -1 3.1415901184082"
+    clip.rotation3 = "0 0 1 0"
+    clip.rotation4 = "-0.999999940395355 0 0 1.57079994678497"
+    clip.rotation5 = "0.999999940395355 0 0 1.57079994678497"
+  }
+}
+module IntervalThreshold {
+  internal  {
+    frame = "1393 -5307 144 56"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "753 437 412 372"
+        sizeHint = "412 372"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = IntervalThreshold
+    lowerType = UserDef
+    innerType = UserDef
+    upperType = UserDef
+    centerWidthSet = FALSE
+    threshCenter = 50000.5
+    threshWidth = 99999
+    threshMin = 1
+    threshMax = 100000
+    lowerUserValue = 0
+    innerUserValue = 1
+    upperUserValue = 0
+    changeMinMax = TRUE
+    changedMin = -100000
+    changedMax = 100000
+  }
+}
+module MultiRegionGrowing {
+  internal  {
+    frame = "2369 -4275 160 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "434 617 164 64"
+        sizeHint = "151 64"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = MultiRegionGrowing
+    tolerance = 0.075000003
+    size = 20
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "2311 -4160 160 56"
+    moduleGroupName = "Phased Thresholding"
+  }
+  fields  {
+    instanceName = PageToImageExtent
+    setX = TRUE
+    setY = TRUE
+    setZ = TRUE
+    setC = TRUE
+    setT = TRUE
+    setU = TRUE
+  }
+}
+module ConnectedComponents {
+  internal  {
+    frame = "2357 -3930 184 56"
+    moduleGroupName = "Phased Thresholding"
+    windows  {
+      window _default {
+        geometry = "937 479 523 441"
+        sizeHint = "523 441"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConnectedComponents3
+    autoUpdate = TRUE
+    useAdditionalSeed = FALSE
+    additionalSeed = "0 0 0 0 0 0"
+    additionalSeedType = 0
+    additionalSeedCoordSystem = VoxelCoordinates
+    clusterMode = IdenticalIntensities
+    similarityToleranceIntensities = 0
+    similarityToleranceVectors = 0.98
+    clusterArraySizeHint = 300000
+    fillValue = 0
+    originalObject = FALSE
+    objectValue = 255
+    minClusterSize = 0.005
+    clusterSizeInterpretation = ml
+    invertClusterSelection = FALSE
+    inputIgnoreValue = 0
+    neighborhoodType = NBH_3D_18_XYZ
+    useMask = FALSE
+  }
+}
+module Centroids {
+  internal  {
+    frame = "2490 -4160 96 56"
+    moduleGroupName = "Phased Thresholding"
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module Arithmetic {
+  internal  {
+    frame = "2397 -3771 104 56"
     moduleGroupName = "Phased Thresholding"
     windows  {
       window _default {
@@ -339,7 +790,7 @@ module View2D {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "960 52 960 1028"
+        geometry = "1094 334 764 697"
         sizeHint = "400 400"
         wasOpen = no
       }
@@ -350,7 +801,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 51
+    startSlice = 0
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -375,8 +826,8 @@ module View2D {
     plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0.31999999
-    lutWidth = 0
+    lutCenter = 0.5
+    lutWidth = 1
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -417,7 +868,7 @@ module ImageBuffer {
     moduleGroupName = "Phased Thresholding"
     windows  {
       window _default {
-        geometry = "759 360 400 415"
+        geometry = "1491 462 400 415"
         sizeHint = "400 415"
         wasOpen = no
       }
@@ -425,7 +876,7 @@ module ImageBuffer {
   }
   fields  {
     instanceName = ImageBuffer
-    useFileCache = FALSE
+    useFileCache = TRUE
     path = /tmp/
     useCompression = FALSE
     compressionMode = ZLIB
@@ -1357,7 +1808,7 @@ module ImageLoad {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "793 411 332 369"
+        geometry = "254 542 332 369"
         sizeHint = "332 369"
         wasOpen = no
       }
@@ -1365,7 +1816,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = StrictMask
-    filename = /mnt/Multimedia/CADMICompetition/examples/strictmask/example02.dcm
+    filename = /mnt/Multimedia/CADMICompetition/examples/strictmask/example05.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -1434,22 +1885,13 @@ module Convolution {
     predefKernel = "5x5 Gauss Kernel"
   }
 }
-module Centroids {
-  internal  {
-    frame = "2101 -729 104 56"
-    moduleGroupName = "Trachea Seedpoint"
-  }
-  fields  {
-    instanceName = Centroids1
-  }
-}
 module ImageBuffer {
   internal  {
     frame = "2713 -1487 112 64"
     moduleGroupName = HessianFeatures
     windows  {
       window _default {
-        geometry = "1438 545 400 415"
+        geometry = "1078 638 400 415"
         sizeHint = "400 415"
         wasOpen = no
       }
@@ -1462,7 +1904,7 @@ module ImageBuffer {
   }
   fields  {
     instanceName = HessianBuffer
-    useFileCache = FALSE
+    useFileCache = TRUE
     path = /tmp/
     useCompression = FALSE
     compressionMode = ZLIB
@@ -1496,8 +1938,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale10
-    inputMin = -628.25
-    inputMax = 628.25
+    inputMin = -752.5
+    inputMax = 752.5
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -1512,8 +1954,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale9
-    inputMin = -628.25
-    inputMax = 628.25
+    inputMin = -752.5
+    inputMax = 752.5
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -1528,8 +1970,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale8
-    inputMin = -628.25
-    inputMax = 628.25
+    inputMin = -752.5
+    inputMax = 752.5
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -1544,8 +1986,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale7
-    inputMin = -628.25
-    inputMax = 628.25
+    inputMin = -752.5
+    inputMax = 752.5
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -1810,7 +2252,7 @@ module Scale {
   fields  {
     instanceName = Scale6
     inputMin = -1000
-    inputMax = 1132
+    inputMax = 1353
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -1877,50 +2319,13 @@ module MaskToMarkers {
     vectorMode = Zero
   }
 }
-module PageToImageExtent {
-  internal  {
-    frame = "2061 -569 168 56"
-    moduleGroupName = "Trachea Seedpoint"
-  }
-  fields  {
-    instanceName = PageToImageExtent1
-    setX = TRUE
-    setY = TRUE
-    setZ = TRUE
-    setC = TRUE
-    setT = TRUE
-    setU = TRUE
-  }
-}
-module AxisEdgeMask {
-  internal  {
-    frame = "2081 -641 128 56"
-    moduleGroupName = "Trachea Seedpoint"
-    windows  {
-      window _default {
-        geometry = "500 311 279 221"
-        sizeHint = "279 221"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = AxisEdgeMask
-    front = FALSE
-    back = FALSE
-    right = FALSE
-    left = FALSE
-    top = TRUE
-    bottom = FALSE
-  }
-}
 module ImageLoad {
   internal  {
-    frame = "1733 -303 104 64"
+    frame = "2205 -311 104 64"
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "84 280 332 369"
+        geometry = "84 308 332 369"
         sizeHint = "332 369"
         wasOpen = no
       }
@@ -1928,7 +2333,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = LungMask
-    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask/example02.dcm
+    filename = /mnt/Multimedia/CADMICompetition/examples/lungmask/example05.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -1952,7 +2357,7 @@ module ImageLoad {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "478 524 332 369"
+        geometry = "478 580 332 369"
         sizeHint = "332 369"
         wasOpen = no
       }
@@ -1965,7 +2370,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = FullImage
-    filename = /mnt/Multimedia/CADMICompetition/examples/resampled/example02.dcm
+    filename = /mnt/Multimedia/CADMICompetition/examples/resampled/example05.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -1989,9 +2394,9 @@ module RunPythonScript {
     moduleGroupName = ""
     windows  {
       window _default {
-        geometry = "14 421 698 599"
+        geometry = "881 370 923 553"
         sizeHint = "698 553"
-        wasOpen = no
+        wasOpen = yes
       }
       window _automatic {
         geometry = "379 295 500 600"
@@ -2091,8 +2496,8 @@ def loadFile(path, file):
 	inMask = path + "lungmask/" + basename(file).split(".")[0] + ".dcm"	
 	CTX.field("LungMask.filename").value = inMask
 
-	inAnnotations = path_wieke_annotations + basename(file).split(".")[0] + ".dcm"
-	CTX.field("AnnotationsInput.filename").value = inAnnotations
+	inMask = path + "strictmask/" + basename(file).split(".")[0] + ".dcm"	
+	CTX.field("StrictMask.filename").value = inMask
 
 # Load expert annotations in marker editor
 def getMarkers(filepath, subjectNr, scale):
@@ -2129,12 +2534,14 @@ def WorldVoxelConvert(x,y,z):
 	z = CTX.field("WorldVoxelConvert.worldZ").value
 	return x,y,z
 
+def saveFiles(outpath, file):
+	# Store resampled image
+	candidates = outpath + "candidates/" + basename(file).split(".")[0] + ".dcm"
+	CTX.field("ImageSave.filename").value = candidates
+	CTX.field("ImageSave.save").touch()
+
 def calculateData(path):
 	
-	# Open Target file
-	dataFile = open(path + 'per_pixel_annotations_data_gauss.csv', 'w')
-#	locationFile = open(path + 'candidate_locations.txt', 'w')
-
 	# Loop over marked subjects
 	for file in getFilePaths(path):
 		
@@ -2143,26 +2550,54 @@ def calculateData(path):
 		loadFile(path, file)
 
 		# Calculate the Hessian
+		print "Calculating Hessian"
 		CTX.field("HessianBuffer.clear").touch()
 		CTX.field("HessianBuffer.push").touch()
 
-		# Load the expert annotations
-		subjectNr = int(basename(file).split(".")[0][-2:])
-		scale = 0.5
-		
-		dataFile.write("# File " + basename(file) + "\\r\\n")
-		output = collectOutputs()
-		dataFile.write(output)
-		dataFile.flush()
+		print "Calculating NN"
+		CTX.field("ImageBuffer.clear").touch()
+		CTX.field("ImageBuffer.push").touch()
+
+		print "Growing Regions"
+		CTX.field("ImageBuffer1.clear").touch()
+		CTX.field("ImageBuffer1.push").touch()
+
+		print("Saving Candidates")
+		saveFiles(path, file)
 
 	print "Done processing."
-	dataFile.close()
 			
+
 
 
 *"
     wakeUpCode = ""
-    code = calculateData(path_wieke)
+    code = "*#calculateData(path_wieke)
+
+path = path_wieke
+file = getFilePaths(path)[4]
+
+# Load the relevant subject masks
+print "Loading " + basename(file)
+loadFile(path, file)
+
+# Calculate the Hessian
+print "Calculating Hessian"
+CTX.field("HessianBuffer.clear").touch()
+CTX.field("HessianBuffer.push").touch()
+
+print "Calculating NN"
+CTX.field("ImageBuffer.clear").touch()
+CTX.field("ImageBuffer.push").touch()
+
+print "Growing Regions"
+CTX.field("ImageBuffer1.clear").touch()
+CTX.field("ImageBuffer1.push").touch()
+
+print("Saving Candidates")
+saveFiles(path, file)
+
+*"
     showFields = FALSE
     showInitCode = TRUE
     showWakeUpCode = FALSE
@@ -2185,7 +2620,7 @@ module Scale {
   fields  {
     instanceName = Scale5
     inputMin = 0
-    inputMax = 1.89083290100098
+    inputMax = 1.94775223731995
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -2208,8 +2643,8 @@ module RegionGrowing {
   fields  {
     instanceName = RegionGrowing
     autoUpdateMode = AutoUpdate
-    lowerThreshold = -75.65
-    upperThreshold = 75.65
+    lowerThreshold = -100.5
+    upperThreshold = 100.5
     autoThreshold = TRUE
     basicNeighborhoodType = BNBH_3D_6_XYZ
     extendedNeighborhoodType = ENBH_2D_4_XY
@@ -2403,7 +2838,7 @@ module Scale {
   fields  {
     instanceName = Scale4
     inputMin = 0
-    inputMax = 0.931227147579193
+    inputMax = 0.945737838745117
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -2526,8 +2961,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale3
-    inputMin = -9.44298299182862e+18
-    inputMax = 5.96546135939403e+18
+    inputMin = -1.37086944824368e+19
+    inputMax = 6.12975148632795e+18
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -2549,8 +2984,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale2
-    inputMin = -9.3810398052546e+18
-    inputMax = 6.27167644724127e+18
+    inputMin = -1.26885587980932e+19
+    inputMax = 5.94341725076875e+18
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -2591,7 +3026,7 @@ module Scale {
   fields  {
     instanceName = Scale1
     inputMin = -1000
-    inputMax = 1101
+    inputMax = 1269
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -2849,13 +3284,13 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 164.5
-    voxelY = 213.5
+    voxelX = 144.107566872294
+    voxelY = 187.033225090413
     voxelZ = 13
     worldX = 204.339922708
     worldY = 265.207133728
     worldZ = 18.199999738
-    voxelPos = "164.5 213.5 13"
+    voxelPos = "144.107566872294 187.033225090413 13"
     worldPos = "204.339922708 265.207133728 18.199999738"
     voxelMode = FALSE
     worldMode = TRUE
@@ -3050,7 +3485,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = FALSE
+    ownsList = TRUE
     applySelect = FALSE
     id = -1
     name = ""
@@ -3139,7 +3574,7 @@ module RunPythonScript {
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "52 487 698 553"
+        geometry = "52 515 698 553"
         sizeHint = "698 553"
         wasOpen = no
       }
@@ -3306,8 +3741,27 @@ module View2D {
   }
 }
 connections  {
-  Morphology1.input0 = Morphology.output0
-  Morphology.input0 = Arithmetic9.output0
+  AxisEdgeMask2.input0 = PageToImageExtent2.output0
+  PageToImageExtent2.input0 = LungMask.output0
+  Centroids3.input0 = AxisEdgeMask2.output0
+  Arithmetic5.input0 = Centroids3.output0
+  Arithmetic5.input1 = Centroids2.output0
+  Arithmetic5.i1 = ImageStatistics.totalMaxVal
+  ImageStatistics.input0 = Centroids3.output0
+  PageToImageExtent13.input0 = Arithmetic4.output0
+  Centroids2.input0 = AxisEdgeMask1.output0
+  AxisEdgeMask1.input0 = PageToImageExtent13.output0
+  Arithmetic4.input0 = LungMask.output0
+  ImageBuffer1.inImage = MultiRegionGrowing.output0
+  ImageSave.input0 = ImageBuffer1.outImage
+  PageToImageExtent3.input0 = ConnectedComponents3.output0
+  View3D.inImage = ImageBuffer1.outImage
+  IntervalThreshold.input0 = MultiRegionGrowing.output0
+  MultiRegionGrowing.input0 = PageToImageExtent.output0
+  MultiRegionGrowing.input1 = Centroids.output0
+  PageToImageExtent.input0 = Convolution1.output0
+  ConnectedComponents3.input0 = Arithmetic9.output0
+  Centroids.input0 = PageToImageExtent3.output0
   Arithmetic9.input0 = Mask3.output0
   Arithmetic9.input1 = Mask5.output0
   Arithmetic9.input2 = Mask6.output0
@@ -3323,7 +3777,7 @@ connections  {
   Mask5.input1 = ConnectedComponents1.output0
   Mask4.input0 = Mask1.output0
   Mask4.input1 = IntervalThreshold2.output0
-  View2D.inImage = Morphology1.output0
+  View2D.inImage = IntervalThreshold.output0
   View2D.inInvPostLUT = SoView2DMarkerEditor.self
   Mask3.input0 = IntervalThreshold2.output0
   Mask3.input1 = ConnectedComponents.output0
@@ -3332,7 +3786,7 @@ connections  {
   IntervalThreshold2.input0 = Mask1.output0
   Morphology2.input0 = IntervalThreshold1.output0
   Mask2.input0 = ImageBuffer.outImage
-  Mask2.input1 = LungMask.output0
+  Mask2.input1 = Mask.output0
   Mask1.input0 = Mask2.output0
   Mask1.input1 = Morphology2.output0
   Scale11.input0 = Arithmetic1.output0
@@ -3389,7 +3843,6 @@ connections  {
   weight0_1.input0 = Scale4.output0
   weight0_0.input0 = Scale6.output0
   Convolution1.input0 = StrictImageFeatureConnector.output0
-  Centroids1.input0 = AxisEdgeMask.output0
   HessianBuffer.inImage = GaussHessian.output0
   Scale10.input0 = CurvednessArith.output0
   Scale9.input0 = ShapeIndexArith.output0
@@ -3408,9 +3861,7 @@ connections  {
   GaussHessian.input0 = Convolution1.output0
   Scale6.input0 = Convolution1.output0
   Mask.input0 = StrictMask.output0
-  TracheaMarker.input0 = Centroids1.output0
-  PageToImageExtent1.input0 = LungMask.output0
-  AxisEdgeMask.input0 = PageToImageExtent1.output0
+  TracheaMarker.input0 = Arithmetic5.output0
   Scale5.input0 = DtfSkeletonization.output0
   RegionGrowing.input0 = CalculateVesselness.output0
   RegionGrowing.inMarkerList = TracheaMarker.outputXMarkerList
@@ -3480,17 +3931,6 @@ networkModel  {
       MLABNetworkModelItem MLABNetworkModelItemGroup {
         uniqueId = 138
         objectName = Vesselness
-        parentUniqueId = 0
-        color  {
-          r = 45
-          g = 226
-          b = 226
-          a = 40
-        }
-      }
-      MLABNetworkModelItem MLABNetworkModelItemGroup {
-        uniqueId = 225
-        objectName = "Trachea Seedpoint"
         parentUniqueId = 0
         color  {
           r = 45
