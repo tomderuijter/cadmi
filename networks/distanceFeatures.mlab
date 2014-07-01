@@ -1,0 +1,266 @@
+// MDL v1 utf8
+network  {
+  watchlist = ""
+}
+module Scale {
+  internal  {
+    frame = "757 -103 64 56"
+    moduleGroupName = "Distance To Slice Center"
+  }
+  fields  {
+    instanceName = Scale1
+    inputMin = 0
+    inputMax = 362
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module Scale {
+  internal  {
+    frame = "529 171 64 56"
+    moduleGroupName = "Distance To Lung Wall"
+  }
+  fields  {
+    instanceName = Scale
+    inputMin = 0
+    inputMax = 515
+    updateMode = AutoUpdateMinMaxOn
+    useTrueRange = FALSE
+    typeSelect = Automatic
+    outputMin = 0
+    outputMax = 1
+  }
+}
+module EuclideanDTF {
+  internal  {
+    frame = "733 12 112 56"
+    moduleGroupName = "Distance To Slice Center"
+    windows  {
+      window _default {
+        geometry = "180 222 548 364"
+        sizeHint = "448 364"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = EuclideanDTF1
+    outputMode = DistanceOnly
+    dtfPrecision = FloatPrecision
+    distanceScaling = 1
+    applyTime = OnRequest
+    dimension = 2D
+    minValue = 1
+    maxValue = 1
+    cacheSizeKB = -1
+    selectedAlgorithm = AutoSelectFastest
+    autoUpdateMode = AutoUpdate
+    autoUpdateTime = ImmediatelyOnInputChange
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "729 -218 120 56"
+    moduleGroupName = "Distance To Slice Center"
+  }
+  fields  {
+    instanceName = DistanceToSliceCenter
+    Output = ""
+  }
+}
+module Centroids {
+  internal  {
+    frame = "749 127 80 56"
+    moduleGroupName = "Distance To Slice Center"
+  }
+  fields  {
+    instanceName = Centroids
+  }
+}
+module PageToImageExtent {
+  internal  {
+    frame = "721 242 136 56"
+    moduleGroupName = "Distance To Slice Center"
+    windows  {
+      window _default {
+        geometry = "601 367 76 176"
+        sizeHint = "76 176"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = PageToImageExtent1
+    setX = TRUE
+    setY = TRUE
+    setZ = FALSE
+    setC = FALSE
+    setT = FALSE
+    setU = FALSE
+  }
+}
+module Info {
+  internal  {
+    frame = "893 357 56 56"
+    moduleGroupName = "Distance To Slice Center"
+    windows  {
+      window _automatic {
+        geometry = "79 147 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Info
+    bypassIndex = -1
+    inPlaceIndex = -1
+  }
+}
+module ConstantImage {
+  internal  {
+    frame = "737 357 104 56"
+    moduleGroupName = "Distance To Slice Center"
+    windows  {
+      window _default {
+        geometry = "836 262 239 252"
+        sizeHint = "239 252"
+        wasOpen = no
+      }
+      window _automatic {
+        geometry = "649 115 500 600"
+        sizeHint = "260 223"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = ConstantImage
+    sizeX = 256
+    sizeY = 256
+    sizeZ = 181
+    sizeC = 1
+    sizeT = 1
+    sizeU = 1
+    dataType = "unsigned int8"
+    fillValue = 1
+    autoApply = TRUE
+  }
+}
+module LabelledStatistics {
+  internal  {
+    frame = "493 48 136 64"
+    moduleGroupName = "Distance To Lung Wall"
+  }
+  fields  {
+    instanceName = DistanceToLungWall
+    Output = ""
+  }
+}
+module EuclideanDTF {
+  internal  {
+    frame = "509 286 104 56"
+    moduleGroupName = "Distance To Lung Wall"
+    windows  {
+      window _default {
+        geometry = "196 311 548 364"
+        sizeHint = "448 364"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = EuclideanDTF
+    outputMode = DistanceOnly
+    dtfPrecision = FloatPrecision
+    distanceScaling = 1
+    applyTime = OnRequest
+    dimension = 3D
+    minValue = 0
+    maxValue = 0
+    cacheSizeKB = -1
+    selectedAlgorithm = AutoSelectFastest
+    autoUpdateMode = AutoUpdate
+    autoUpdateTime = ImmediatelyOnInputChange
+  }
+}
+module ImageLoad {
+  internal  {
+    frame = "516 450 88 64"
+    moduleGroupName = ""
+    windows  {
+      window _default {
+        geometry = "473 243 332 369"
+        sizeHint = "332 369"
+        wasOpen = no
+      }
+    }
+  }
+  fields  {
+    instanceName = Mask
+    filename = /home/wieke/git-workspace/cadmi/data/examples/strictmask/example02.dcm
+    autoLoad = TRUE
+    readRaw = FALSE
+    rawX = 1
+    rawY = 1
+    rawZ = 1
+    rawC = 1
+    rawT = 1
+    rawU = 1
+    dataTypeRaw = "unsigned int8"
+    planarConfig = Contiguous
+    byteOrder = LittleEndian
+    dataOffset = 0
+    pageSizeHint = "0 0 0 0 0 0"
+    suppressErrorLog = FALSE
+    dicomIgnoreHalfVoxelShift = FALSE
+  }
+}
+connections  {
+  Scale1.input0 = EuclideanDTF1.output0
+  Scale.input0 = EuclideanDTF.output0
+  EuclideanDTF1.input0 = Centroids.output0
+  DistanceToSliceCenter.input1 = Scale1.output0
+  Centroids.input0 = PageToImageExtent1.output0
+  PageToImageExtent1.input0 = ConstantImage.output0
+  Info.input0 = Mask.output0
+  ConstantImage.sizeX = Info.sizeX
+  ConstantImage.sizeY = Info.sizeY
+  ConstantImage.sizeZ = Info.sizeZ
+  ConstantImage.sizeC = Info.sizeC
+  ConstantImage.sizeT = Info.sizeT
+  ConstantImage.sizeU = Info.sizeU
+  DistanceToLungWall.input1 = Scale.output0
+  EuclideanDTF.input0 = Mask.output0
+}
+networkModel  {
+  parentItems  {
+    0  {
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 84
+        objectName = "Distance To Lung Wall"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+      MLABNetworkModelItem MLABNetworkModelItemGroup {
+        uniqueId = 126
+        objectName = "Distance To Slice Center"
+        parentUniqueId = 0
+        color  {
+          r = 45
+          g = 226
+          b = 226
+          a = 40
+        }
+      }
+    }
+  }
+}
