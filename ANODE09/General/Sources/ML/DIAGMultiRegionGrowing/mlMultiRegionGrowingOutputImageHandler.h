@@ -82,7 +82,8 @@ bool check(std::vector<std::vector<std::vector<int> > > & image,
   int y,
   int z,
   float tolerance,
-  std::vector<float> startValue);
+  std::vector<float> startValue,
+  std::vector<int> & size);
 
 bool grow(std::vector<std::vector<std::vector<int> > > & image,
   const TSubImage<MLfloat>& inputSubImage0,

@@ -1,9 +1,9 @@
 all: release debug
 
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Release: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/DIAGMultiRegionGrowing.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
 #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Debug: /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/DIAGMultiRegionGrowing.pro
-#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab2.5.1GCC-4.6.3/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
+#	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing && /opt/MeVisLab/Packages/MeVis/ThirdParty/Python/Release/bin/python /opt/MeVisLab/Packages/MeVis/BuildSystem/BuildTools/Scripts/createProject.py DIAGMultiRegionGrowing
 
 release: #/home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing/Makefile.DIAGMultiRegionGrowing.Release
 	cd /home/wieke/git-workspace/cadmi/ANODE09/General/Sources/ML/DIAGMultiRegionGrowing
