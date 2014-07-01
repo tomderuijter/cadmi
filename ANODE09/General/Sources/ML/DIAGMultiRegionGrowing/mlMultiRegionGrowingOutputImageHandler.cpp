@@ -119,9 +119,6 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
     
   }
 
-  for(int i = 0; i < max; i++)
-    std::cout << "size[" << i << "]=" << size[i] << std::endl;
-
   // Process all voxels of the valid region of the output page.
   for (p.u=validOutBox.v1.u;  p.u<=validOutBox.v2.u;  ++p.u) {
     for (p.t=validOutBox.v1.t;  p.t<=validOutBox.v2.t;  ++p.t) {
