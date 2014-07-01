@@ -49,10 +49,10 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
 
     sub_perm = None
     # Subsample negatives
-    sub_perm = cad_io.resample_negatives(data_y, .1)
-    data_X = data_X[sub_perm]
-    data_y = data_y[sub_perm]
-    locations = locations[sub_perm]
+    # sub_perm = cad_io.resample_negatives(data_y, .1)
+    # data_X = data_X[sub_perm]
+    # data_y = data_y[sub_perm]
+    # locations = locations[sub_perm]
 
     # Piggyback subjects to labels
     subjects = cad_io.get_subjects(locations)
@@ -68,9 +68,9 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
     ##### Initialising classifier
     logger.info("Initialising classifier")
     # params = {}
-    # params = {'n_jobs': 1, 'verbose': 1, 'n_estimators': 100, 'max_depth': 15}
-    # classifier = cad_classifier.create_tree_classifier(**params)
-    classifier = cad_classifier.create_logistic_regressor()
+    params = {'n_jobs': 1, 'verbose': 1, 'n_estimators': 100, 'max_depth': 15}
+    classifier = cad_classifier.create_tree_classifier(**params)
+    # classifier = cad_classifier.create_logistic_regressor()
     
     ##### Grid search
     # logger.info("Starting grid search")
@@ -103,18 +103,17 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
     ##### Evaluate on cross validation
     if test_data_path is None:
         logger.info("Evaluating performance")
+        # Remove this
+        # classifier.fit(data_X, data_y)
+        # predicted_y = classifier.predict_proba(data_X)      # Predict on whole set
+        # predicted_y = predicted_y[:,1]
         
         predicted_y = cad_evaluation.cross_validation(classifier, data_X, data_y, subjects)
-
-        # train_X, test_X, train_y, test_y, train_perm, test_perm = cad_io.split_data(data_X, data_y, 3000)    
-#         classifier.fit(train_X, train_y)
-#         predicted_y = classifier.predict_proba(test_X)      # Predict on whole set
-#         predicted_y = predicted_y[:,1]
                 
         fpr, tpr, thresholds = sklmetrics.roc_curve(data_y, predicted_y, pos_label=1)
         print("AUC Score: "+ str(sklmetrics.auc(fpr, tpr)))
         
-        curve, thresh = cad_metrics.froc(data_y, predicted_y, subjects, pos_label=1, misses=misses)
+        curve, thresh = cad_metrics.froc(data_y, predicted_y, subjects, pos_label=1, misses=misses-14)
         score = cad_metrics.fp_mean(curve)
         logger.info("Score: " + str(score))
         
@@ -132,8 +131,8 @@ def main(train_data_path, train_location_path, annotation_location_path, test_da
 if __name__ == "__main__":
     # data_path = sys.argv[1]
    
-    train_data_path = '/Users/tom/Documents/workspace/cadmi/data/examples/features_solid.csv'
-    train_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/coordinates_solid.txt'
+    train_data_path = '/Users/tom/Documents/workspace/cadmi/data/examples/features_voxel.csv'
+    train_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/coordinates_voxel.txt'
     annotation_location_path = '/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt'
     # test_data_path = '/Users/tom/Documents/workspace/cadmi/data/test/features.csv'
     # test_location_path = '/Users/tom/Documents/workspace/cadmi/data/test/coordinates.txt'
