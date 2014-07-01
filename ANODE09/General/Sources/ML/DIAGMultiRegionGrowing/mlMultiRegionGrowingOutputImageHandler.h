@@ -71,8 +71,28 @@ void typedCalculateOutputSubImage(TSubImage<MLuint32>& outputSubImage,
     const TSubImage<MLfloat>& inputSubImage0,
     const TSubImage<MLuint32>& inputSubImage1,
     UserThreadData* /*userThreadData*/);
-};
 
+
+bool check(std::vector<std::vector<std::vector<int> > > & image,
+  const TSubImage<MLfloat>& inputSubImage0,
+  int width,
+  int depth,
+  int height,
+  int x,
+  int y,
+  int z,
+  float tolerance,
+  std::vector<float> startValue);
+
+bool grow(std::vector<std::vector<std::vector<int> > > & image,
+  const TSubImage<MLfloat>& inputSubImage0,
+  int x,
+  int y,
+  int z,
+  float tolerance,
+  int label,
+  std::vector<float> startValue);
+};
 
 
 ML_END_NAMESPACE
