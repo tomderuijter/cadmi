@@ -51,6 +51,11 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
   
   inputSubImage1.calculateMinMax(min, max, NULL);
 
+  MLfloat minValue;
+  MLfloat maxValue;
+  
+  inputSubImage0.calculateMinMax(minValue, maxValue, NULL);
+
   const int nrCandidates = (int) max;
   std::vector<float> startvalue(nrCandidates);
   std::vector<int> size(nrCandidates, 1);
@@ -113,7 +118,7 @@ void MultiRegionGrowingOutputImageHandler::typedCalculateOutputSubImage(TSubImag
         {
           if (outputold[x][y][z] > 0)
             if (size[outputold[x][y][z]-1] < limit)
-              if (check(output, inputSubImage0, width, depth, height, x, y, z, tolerance, startvalue, size))
+              if (check(output, inputSubImage0, width, depth, height, x, y, z, tolerance, startvalue, size, minValue, maxValue))
                 change = true;
         }
     
@@ -154,7 +159,9 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   int z,
   float tolerance,
   std::vector<float> startValue,
-  std::vector<int> & size)
+  std::vector<int> & size,
+  float min,
+  float max)
 {
 
   // Figure out neighbor bounds
@@ -162,7 +169,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   int label = image[x][y][z];
   if (x > 0)
   {
-      if (grow(image, inputSubImage0, x -1, y, z, tolerance, label, startValue))
+      if (grow(image, inputSubImage0, x -1, y, z, tolerance, label, startValue, min, max))
       {
         change = true;
         size[label-1] = size[label-1] + 1;
@@ -170,7 +177,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   }
   if (x < (width -1))
   {
-    if (grow(image, inputSubImage0, x +1, y, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x +1, y, z, tolerance, label, startValue, min, max))
     {
       change = true;
       size[label-1] = size[label-1] + 1;
@@ -178,7 +185,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   }
   if (y > 0)
   {
-    if (grow(image, inputSubImage0, x, y -1, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y -1, z, tolerance, label, startValue, min, max))
     {
       change = true;
       size[label-1] = size[label-1] + 1;
@@ -186,7 +193,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   }
   if (y < (depth -1))
   {
-    if (grow(image, inputSubImage0, x, y +1, z, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y +1, z, tolerance, label, startValue, min, max))
     {
       change = true;
       size[label-1] = size[label-1] + 1;
@@ -194,7 +201,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   }
   if (z > 0)
   {
-    if (grow(image, inputSubImage0, x, y, z -1, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y, z -1, tolerance, label, startValue, min, max))
     {
       change = true;
       size[label-1] = size[label-1] + 1;
@@ -202,7 +209,7 @@ bool MultiRegionGrowingOutputImageHandler::check(std::vector<std::vector<std::ve
   }
   if (z < (height -1))
   {
-    if (grow(image, inputSubImage0, x, y, z +1, tolerance, label, startValue))
+    if (grow(image, inputSubImage0, x, y, z +1, tolerance, label, startValue, min, max))
     {
       change = true;
       size[label-1] = size[label-1] + 1;
@@ -218,7 +225,9 @@ bool MultiRegionGrowingOutputImageHandler::grow(std::vector<std::vector<std::vec
   int z,
   float tolerance,
   int label,
-  std::vector<float> startValue)
+  std::vector<float> startValue,
+  float min,
+  float max)
 {
   if(image[x][y][z] > 0)
     return false;
@@ -232,7 +241,8 @@ bool MultiRegionGrowingOutputImageHandler::grow(std::vector<std::vector<std::vec
   p.x = x;
 
   const MLfloat* inVoxel = inputSubImage0.getImagePointer(p);
-  float diff = std::abs(1 - *inVoxel / startValue[label - 1]);
+
+  float diff = std::abs(*inVoxel - startValue[label - 1]) / (max - min);
 
   if (diff < tolerance)
   {
