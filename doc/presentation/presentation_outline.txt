@@ -1,0 +1,75 @@
+Lung segmentation (1 min)
+- Thresholding and outside region growing
+	- procedure
+		* Image -> Image -> Image
+	- strict and leniant
+		* Images of both types
+	- problems
+		- in or exclusion of membrane
+			* Image of candidates on wall
+		- nodules attached to membrane
+			* Image of dissapeared nodule
+		- overlap with lower abdomen
+			* Image
+		- other artifacts
+			* Image
+
+Candidate selection (3 min)
+- Estimating quality of candidates
+	- Annotation based statistics
+	- Feature based (count, volume, ...)
+- Single threshold
+	* Image & stats
+- Multiple threshold
+	* Image & stats
+- Threshold with airway removal
+	* Images (before and after) & stats
+- Seedpoints from Hessian features
+	* Image per type
+- Per voxel classification
+	* Image (probability density) & stats
+	- Features and annotations
+
+Feature extraction (2 min)
+- List of features
+	* Philosophy: more is better
+	- Greyscale features
+	- Geometrical features
+	- Vesselness
+	- Hessian features (blobness, curvedness, ... )
+	- Distance based features
+- Quality of features
+	* Images of graphs (poor feature vs. great feature)
+	- separation of classes
+
+Preprocessing (2 min)
+- Resampling negatives
+- Feature based thresholding for false positive reduction
+	* Images of feature graph with thresholds added
+	- Single features
+	- Combined features
+
+Evaluation (3 min)
+- Train set
+	- Cross validation on subjects
+	- Cumulative FROC, mean FROC and AUC
+	- Visualisation for specific false positives
+- Test set
+	- Visualisation based on location and common sense
+
+Classification (2 min)
+- Classifiers
+	- Random forest
+		- Non-deterministic, Robust, Probabilistic interpretation
+	- Logistic regression
+		- Deterministic, Fast, robust, probabilistic interpretation
+	- Ridge Classifier
+		- Deterministic, fast, parameter dependent, non-proba interpretation
+- Parameter selection
+	- Grid search per subject
+
+Postprocessing (0 min)
+- No postprocessing
+
+Results (1 min)
+* Images of system in action / Demo
