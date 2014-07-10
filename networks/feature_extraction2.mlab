@@ -2,24 +2,6 @@
 network  {
   watchlist = ""
 }
-module MultiRegionGrowing {
-  internal  {
-    frame = "925 -91 152 56"
-    moduleGroupName = "Candidate Merging"
-    windows  {
-      window _default {
-        geometry = "575 390 136 62"
-        sizeHint = "128 62"
-        wasOpen = no
-      }
-    }
-  }
-  fields  {
-    instanceName = MultiRegionGrowing
-    tolerance = 0.050000001
-    size = 25
-  }
-}
 module Arithmetic {
   internal  {
     frame = "1657 -2323 96 56"
@@ -507,7 +489,7 @@ module Scale {
   fields  {
     instanceName = Scale
     inputMin = 0
-    inputMax = 515
+    inputMax = 580
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -536,7 +518,7 @@ module ConstantImage {
     instanceName = ConstantImage1
     sizeX = 256
     sizeY = 256
-    sizeZ = 181
+    sizeZ = 267
     sizeC = 1
     sizeT = 1
     sizeU = 1
@@ -1063,8 +1045,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale12
-    inputMin = -7.01506450511784e+19
-    inputMax = 7.2553319850427e+19
+    inputMin = -8.07256071496396e+19
+    inputMax = 1.69442693508374e+20
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -1086,8 +1068,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale11
-    inputMin = -9.55297813507133e+18
-    inputMax = 1.05335061120475e+19
+    inputMin = -1.07582045073231e+19
+    inputMax = 2.67913094518318e+19
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -3053,7 +3035,7 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0.699999988079071"
+    plane = "0 0 1 0"
     useShaders = TRUE
     useManagedInteraction = FALSE
     lutCenter = 0
@@ -8539,7 +8521,7 @@ module Scale {
   fields  {
     instanceName = Scale6
     inputMin = -1000
-    inputMax = 782
+    inputMax = 1784
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -8718,7 +8700,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = LungMask
-    filename = /Users/tom/Documents/workspace/cadmi/data/examples/lungmask/example02.dcm
+    filename = /Users/tom/Documents/workspace/cadmi/data/validation/lungmask/test08.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -8755,7 +8737,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = FullImage
-    filename = /Users/tom/Documents/workspace/cadmi/data/examples/resampled/example02.dcm
+    filename = /Users/tom/Documents/workspace/cadmi/data/validation/resampled/test08.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -8851,7 +8833,7 @@ from os.path import basename
 CTX=ctx.owner().owner()
 
 path_wieke = "/mnt/Multimedia/CADMICompetition/examples/"
-path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/"
+path_tom = "/Users/tom/Documents/workspace/cadmi/data/validation/"
 
 featureModules = 	[
 								"GreyValues",
@@ -9036,7 +9018,7 @@ module Scale {
   fields  {
     instanceName = Scale5
     inputMin = 0
-    inputMax = 2.77322149276733
+    inputMax = 2.41416263580322
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = FALSE
     typeSelect = Automatic
@@ -9059,8 +9041,8 @@ module RegionGrowing {
   fields  {
     instanceName = RegionGrowing
     autoUpdateMode = AutoUpdate
-    lowerThreshold = -75.65
-    upperThreshold = 75.65
+    lowerThreshold = -111.25
+    upperThreshold = 111.25
     autoThreshold = TRUE
     basicNeighborhoodType = BNBH_3D_6_XYZ
     extendedNeighborhoodType = ENBH_2D_4_XY
@@ -9231,7 +9213,7 @@ module Scale {
   fields  {
     instanceName = Scale4
     inputMin = 0
-    inputMax = 0.608248114585876
+    inputMax = 0.644721925258636
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -9303,8 +9285,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale3
-    inputMin = -3.47411985340941e+19
-    inputMax = 4.24903761667524e+19
+    inputMin = -3.93049634377365e+19
+    inputMax = 9.57387523316651e+19
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -9326,8 +9308,8 @@ module Scale {
   }
   fields  {
     instanceName = Scale2
-    inputMin = -7.41580350809335e+18
-    inputMax = 1.27577939457826e+19
+    inputMin = -1.09724773333441e+19
+    inputMax = 2.07679098769679e+19
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -9517,7 +9499,7 @@ module ImageLoad {
   }
   fields  {
     instanceName = StrictMask
-    filename = /Users/tom/Documents/workspace/cadmi/data/examples/strictmask/example02.dcm
+    filename = /Users/tom/Documents/workspace/cadmi/data/validation/strictmask/test08.dcm
     autoLoad = TRUE
     readRaw = FALSE
     rawX = 1
@@ -9724,7 +9706,7 @@ module Scale {
   fields  {
     instanceName = Scale1
     inputMin = -1000
-    inputMax = 354
+    inputMax = 1643
     updateMode = AutoUpdateMinMaxOn
     useTrueRange = TRUE
     typeSelect = Automatic
@@ -10008,12 +9990,12 @@ module ImagePropertyConvert {
     cDimInfo = ""
     tDimInfo = ""
     uDimInfo = ""
-    a00 = 1.242188
+    a00 = 1.230468
     a01 = 0
     a02 = 0
     a03 = 0
     a10 = 0
-    a11 = 1.242188
+    a11 = 1.230468
     a12 = 0
     a13 = 0
     a20 = 0
@@ -10024,8 +10006,8 @@ module ImagePropertyConvert {
     a31 = 0
     a32 = 0
     a33 = 1
-    worldMatrix = "1.24218797683716 0 0 0
-0 1.24218797683716 0 0
+    worldMatrix = "1.23046803474426 0 0 0
+0 1.23046803474426 0 0
 0 0 1.39999997615814 0
 0 0 0 1"
     changeDatatype = FALSE
@@ -10042,8 +10024,8 @@ module ImagePropertyConvert {
     changeMaxGreyvalue = FALSE
     maxGreyvalue = -1000
     changeWorldMatrix = TRUE
-    voxelSizeX = 1.242188
-    voxelSizeY = 1.242188
+    voxelSizeX = 1.230468
+    voxelSizeY = 1.230468
     voxelSizeZ = 1.4
     autoApply = TRUE
   }
@@ -10069,7 +10051,7 @@ module ConstantImage {
     instanceName = ConstantImage
     sizeX = 256
     sizeY = 256
-    sizeZ = 181
+    sizeZ = 267
     sizeC = 1
     sizeT = 1
     sizeU = 1
@@ -10097,14 +10079,14 @@ module WorldVoxelConvert {
   }
   fields  {
     instanceName = WorldVoxelConvert
-    voxelX = 260.263918222748
-    voxelY = 164.37721151029
-    voxelZ = 47
-    worldX = 323.296710842
-    worldY = 204.187396322
-    worldZ = 65.799999058
-    voxelPos = "260.263918222748 164.37721151029 47"
-    worldPos = "323.296710842 204.187396322 65.799999058"
+    voxelX = 101
+    voxelY = 139.5
+    voxelZ = 232.5
+    worldX = 124.277271032
+    worldY = 171.650290187
+    worldZ = 325.499995348
+    voxelPos = "101 139.5 232.5"
+    worldPos = "124.277271032 171.650290187 325.499995348"
     voxelMode = FALSE
     worldMode = TRUE
     intVoxelCoords = FALSE
@@ -10298,7 +10280,7 @@ module SoView2DMarkerEditor {
     index = -1
     persistent = FALSE
     listStringEnable = FALSE
-    ownsList = TRUE
+    ownsList = FALSE
     applySelect = FALSE
     id = -1
     name = ""
@@ -10340,19 +10322,19 @@ module ConstantXMarkerList {
   }
   fields  {
     instanceName = AnnotationMarkers
-    markerList = "241.763549117 217.658092607 235.199996638 0 0 0 1
-263.742053582 207.732316397 229.599996718 0 0 0 1
-128.326106717 235.382692982 177.099997468 0 0 0 2
-285.011574032 131.162042777 170.099997568 0 0 0 2
-59.554657262 177.246003752 156.799997758 0 0 0 1
-61.681609307 171.574131632 156.099997768 0 0 0 2
-143.923755047 99.257762102 153.999997798 0 0 0 2
-306.281094482 144.632739062 152.599997818 0 0 0 2
-139.669850957 100.675730132 136.499998048 0 0 0 1
-298.482270317 202.060444277 113.399998378 0 0 0 2
-107.765570282 104.220650207 112.699998388 0 0 0 2
-313.370934632 209.150284427 99.399998578 0 0 0 1
-323.296710842 204.187396322 65.799999058 0 0 0 1
+    markerList = "251.015478122 128.583909137 74.199998938 0 0 0 1
+247.324074032 185.185438517 76.999998898 0 0 0 1
+44.912083097 105.205016567 125.999998198 0 0 0 1
+51.679657262 95.976506342 147.699997888 0 0 0 1
+62.753869532 105.820250582 158.899997728 0 0 0 1
+68.906209682 113.818292777 162.399997678 0 0 0 1
+59.062465442 94.746038312 182.699997388 0 0 0 1
+228.867053582 99.052676417 186.899997328 0 0 0 1
+233.788925702 101.513612477 191.099997268 0 0 0 1
+89.208932177 84.287060057 220.499996848 0 0 0 1
+94.130804297 86.132762102 232.399996678 0 0 0 1
+62.138635517 169.804588142 291.899995828 0 0 0 1
+124.277271032 171.650290187 325.499995348 0 0 0 1
 \\"
   }
 }
@@ -10362,7 +10344,7 @@ module RunPythonScript {
     moduleGroupName = "Marked View"
     windows  {
       window _default {
-        geometry = "52 67 669 551"
+        geometry = "77 62 669 551"
         sizeHint = "669 551"
         wasOpen = no
       }
@@ -10431,8 +10413,7 @@ global CTX
 # Use this to access the network context
 CTX=ctx.owner().owner()
 
-example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/examples/example_annotations.txt"
-example_path_wieke = "/mnt/Multimedia/CADMICompetition/examples/example_annotations.txt"
+example_path_tom = "/Users/tom/Documents/workspace/cadmi/data/validation/example_annotations.txt"
 
 def getMarkers(filepath, subjectNr, scale):
 	markers = "";
@@ -10456,12 +10437,12 @@ def WorldVoxelConvert(x,y,z):
 	z = CTX.field("WorldVoxelConvert.worldZ").value
 	return x,y,z*"
     wakeUpCode = ""
-    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,5,0.5)*"
+    code = "*CTX.field("AnnotationMarkers.markerList").value = getMarkers(example_path_tom,8,0.5)*"
     showFields = FALSE
     showInitCode = TRUE
     showWakeUpCode = FALSE
     showCode = TRUE
-    showConsole = FALSE
+    showConsole = TRUE
   }
 }
 module View2D {
@@ -10486,7 +10467,7 @@ module View2D {
     inventorInputOn = TRUE
     inventorOutputOn = FALSE
     view2DExtensionsOn = TRUE
-    startSlice = 0
+    startSlice = 78
     numSlices = 1
     numXSlices = 1
     sliceStep = 1
@@ -10508,11 +10489,11 @@ module View2D {
     baseColor = "1 1 1"
     margin = "2 2"
     sliceOrigin = "0 0"
-    plane = "0 0 1 0"
+    plane = "0 0 1 109.900001525879"
     useShaders = TRUE
     useManagedInteraction = FALSE
-    lutCenter = 0.5
-    lutWidth = 1
+    lutCenter = 15.875
+    lutWidth = 3225
     annotationOn = TRUE
     annotationMode = ANNO_MODE_AUTO
     annotationSizeMode = ANNO_SHOW_DETAILED
@@ -10548,8 +10529,6 @@ module Mask {
   }
 }
 connections  {
-  MultiRegionGrowing.input0 = ApplyLungMask.output0
-  MultiRegionGrowing.input1 = Candidates.output0
   Arithmetic.input0 = DistanceToLungMembrane.output0
   Arithmetic.input1 = DistanceToSliceCenter.output0
   EuclideanDTF.input0 = StrictImageFeatureConnector.output0
@@ -10669,8 +10648,10 @@ connections  {
   GreyValues.input1 = PageToImageExtent5.output0
   PageToImageExtent4.input0 = TPs.output0
   PageToImageExtent3.input0 = Centroids.output0
+  PageToImageExtent2.input0 = Morphology1.output0
   CandidateLabels.input0 = CandidateCentroid.output0
   CandidateLabels.input1 = ImagePropertyConvert1.output0
+  Morphology1.input0 = Candidates.output0
   TPs.input0 = MarkerToMask.output0
   Scale6.input0 = StrictImageFeatureConnector.output0
   Morphology.input0 = LungMask.output0
@@ -10680,6 +10661,7 @@ connections  {
   TracheaMarker.input0 = Arithmetic5.output0
   PageToImageExtent1.input0 = LungMask.output0
   AxisEdgeMask.input0 = PageToImageExtent1.output0
+  PageToImageExtent.input0 = Candidates.output0
   Centroids.input0 = PageToImageExtent.output0
   CandidateFeatureConnector.input0 = ImagePropertyConvert2.output0
   Scale5.input0 = DtfSkeletonization.output0
@@ -10725,6 +10707,7 @@ connections  {
   WorldVoxelConvert.input0 = ApplyStrictMask.output0
   SoView2DMarkerEditor.stylePalette = StylePalette.outStylePalette
   SoView2DMarkerEditor.inXMarkerList = AnnotationMarkers.outputXMarkerList
+  view.inImage = ApplyStrictMask.output0
   view.inInvPostLUT = SoView2DMarkerEditor.self
   ApplyStrictMask.input0 = FullImage.output0
   ApplyStrictMask.input1 = StrictMask.output0
