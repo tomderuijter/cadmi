@@ -63,17 +63,66 @@ Universiteit Nijmegen}}}\\[0.5cm]\rule{\linewidth}{0.3mm}}
 \section{Introduction}
 % 1 page at most
 
+% Paragraph explaining the problam and justifying the system (prevalence of lung cancer, usefullness of screenings and early detection and such)
+
+% Paragraph explaining the purpose of the system.
+
+% Paragraph explaining our general methods (eh aanpak?) and source for inspiration.
+
 \section{Methods}
 % Overview, description of the techniques you used, motivate your system design (max 4 pages)
+
+	\subsection{Overview}
+	% High level overview of our system. 
+
+	% Basically a flow-chart with a little explenation / motivation.
+
+	\subsection{Preprocessing}
+
+	% Short, resampling + lungmask.
+
+	\subsection{Candidate Selection}
+
+	% Simple thresholding and probably a bit about the other stuff we tried (as part of motivation).
+
+	\subsection{Features}
+
+	% List of features + source. Maybe including a graph or example. Basic phillosophy more = better.
+
+	\subsection{Classification}
+
+	% Subject folded grid-search. 3 different algorithms tried. Motivation ( = keep it relatively simple?).
+
 
 \section{Results}
 % Present FROC curves, show some examples, make comparisons to show how effective subsections of your system are, etc.
 
-\subsection{ANODE Evaluation}
-% Mandatory: Evaluation on ANODE database and comparison with the existing algorithms. 
+	\subsection{Candidate Selection}
+
+	% Performance of candidate selection. Show some examples of stuff missed.
+
+	\subsection{Classification}
+
+	% Performance on training set as measured by ourselves. Show some examples of misclassifications.
+
+	\subsection{ANODE Evaluation}
+	% Mandatory: Evaluation on ANODE database and comparison with the existing algorithms. 
+
+	% Performance on test set as measeured by the ANODE people.
 
 \section{Discussion}
 % What are weaknesses and strengths of your system.  (1 page max)
+
+% Paragraph per system part.
+
+% Image preprocessing. Lungmask not-ideal (not really bad either), better (or seperate) way of handling areas near the lung membrance could result in a marked improvement. Resampling increases time-performance.
+
+% Candidate Selection. Quick. Not that great. Undermines the geometric features. Point of improvement: some form of vessel extraction.
+
+% Features. Some were good. Some weren't. The pipeline was set up in such a way that adding more would be relatively easy.
+
+% Classification. Features in a csv file means we are really flexible in how we implement classification. Use of scikitlearn means we could easily change things up and try different algorithms.
+
 
 \bibliography{references}{}
 \addcontentsline{toc}{section}{References}
