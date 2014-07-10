@@ -1,0 +1,82 @@
+% Needed packages
+\documentclass[a4paper, 10pt, english, onecolumn]{article}
+\usepackage[english]{babel}
+\usepackage[cm]{fullpage}
+\usepackage{cite}
+\usepackage{anysize}
+\usepackage[compact]{titlesec}
+\usepackage{hyperref}
+
+\usepackage{amssymb,amsmath}
+
+% Margins & Headers
+\marginsize{2.5cm}{2.5cm}{3.0cm}{2.0cm}
+\columnsep 0.4in
+\footskip 0.4in 
+\usepackage{changepage}
+
+% E-mail formatting
+\usepackage{color,hyperref}
+    \catcode`\_=11\relax
+    \newcommand\email[1]{\_email #1\q_nil}
+    \def\_email#1@#2\q_nil{
+      \href{mailto:#1@#2}{{\emailfont #1\emailampersat #2}}
+    }
+    \newcommand\emailfont{\sffamily}
+    \newcommand\emailampersat{{\color{red}\small@}}
+    \catcode`\_=8\relax 
+
+% List modifications
+\newenvironment{packed_item}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{itemize}}
+
+\newenvironment{packed_enum}{
+\begin{enumerate}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}{\end{enumerate}}
+
+% ############## End Macros ##############
+
+% Title
+\title{\fontfamily{phv}\selectfont{Lung Nodule CAD System Proposal}}
+\author{
+  \textbf{W. Kanters} - \href{mailto:kantersw@gmail.com}{kantersw@gmail.com} \\
+  \textbf{T. de Ruijter} - \href{mailto:t.deruijter@student.ru.nl}{t.deruijter@student.ru.nl}\\
+}
+
+\date{\fontfamily{ptm}\selectfont{\small{\bfseries{\today - Radboud
+Universiteit Nijmegen}}}\\[0.5cm]\rule{\linewidth}{0.3mm}}
+
+\begin{document}
+
+\maketitle
+
+\setlength{\parindent}{0.0cm}
+\setlength{\parskip}{0.25cm}
+
+\section{Introduction}
+% 1 page at most
+
+\section{Methods}
+% Overview, description of the techniques you used, motivate your system design (max 4 pages)
+
+\section{Results}
+% Present FROC curves, show some examples, make comparisons to show how effective subsections of your system are, etc.
+
+\subsection{ANODE Evaluation}
+% Mandatory: Evaluation on ANODE database and comparison with the existing algorithms. 
+
+\section{Discussion}
+% What are weaknesses and strengths of your system.  (1 page max)
+
+\bibliography{references}{}
+\addcontentsline{toc}{section}{References}
+\bibliographystyle{apalike}
+
+\end{document}
